@@ -1,0 +1,533 @@
+/* ==================== 设置模态框专用布局 ==================== */
+.tsp-settings-modal {
+    width: 95vw;
+    max-width: 1440px;
+    height: 85vh;
+    max-height: 1080px;
+}
+
+.tsp-settings-modal .tsp-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    flex-shrink: 0;
+}
+
+.tsp-settings-modal .tsp-modal-body {
+    flex: 1;
+    overflow: hidden;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.tsp-settings-modal .tsp-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: var(--tsp-bg-tertiary);
+    border-top: 1px solid var(--tsp-border);
+    flex-shrink: 0;
+}
+
+.tsp-footer-left,
+.tsp-footer-right {
+    display: flex;
+    gap: 8px;
+}
+
+/* 顶部控制栏 */
+.tsp-header-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.tsp-mode-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tsp-mode-switcher label {
+    font-size: 0.9em;
+    color: var(--tsp-text-secondary);
+    white-space: nowrap;
+}
+
+.tsp-mode-switcher select {
+    min-width: 160px;
+}
+
+/* ==================== 左右侧栏布局 ==================== */
+.tsp-settings-layout {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    min-height: 0;
+}
+
+/* 左侧导航栏 */
+.tsp-settings-sidebar {
+    width: 200px;
+    flex-shrink: 0;
+    background: var(--tsp-bg-tertiary);
+    border-right: 1px solid var(--tsp-border);
+    padding: 16px 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.tsp-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: var(--tsp-text-secondary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.tsp-nav-link:hover {
+    background: rgba(122, 162, 247, 0.1);
+    color: var(--tsp-text-primary);
+}
+
+.tsp-nav-link.active {
+    background: rgba(122, 162, 247, 0.15);
+    color: var(--tsp-accent-primary);
+    border-left-color: var(--tsp-accent-primary);
+}
+
+.tsp-nav-link i {
+    width: 20px;
+    text-align: center;
+    font-size: 1em;
+}
+
+.tsp-nav-link span {
+    font-size: 0.9em;
+}
+
+.tsp-nav-link.tsp-nav-mode {
+    background: rgba(122, 162, 247, 0.05);
+    border: 1px dashed var(--tsp-accent-primary);
+    border-left: 3px solid transparent;
+    margin: 8px 12px;
+    border-radius: 6px;
+    padding: 10px 16px;
+}
+
+.tsp-nav-link.tsp-nav-mode.active {
+    border-style: solid;
+}
+
+.tsp-nav-divider {
+    margin: 12px 16px;
+    border: none;
+    border-top: 1px solid var(--tsp-border);
+}
+
+/* 右侧内容区 */
+.tsp-settings-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+    min-height: 0;
+}
+
+.tsp-settings-pane {
+    display: none;
+    height: 100%;
+}
+
+.tsp-settings-pane.active {
+    display: block;
+}
+
+.tsp-settings-pane-inner {
+    display: block;
+}
+
+/* ==================== 表单与分组 ==================== */
+.tsp-settings-group {
+    background: var(--tsp-bg-secondary);
+    border: 1px solid var(--tsp-border);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.tsp-settings-group-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 16px 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--tsp-text-primary);
+}
+
+.tsp-settings-group-title i {
+    color: var(--tsp-accent-primary);
+}
+
+.tsp-form-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.tsp-form-row .tsp-form-group {
+    flex: 1;
+    min-width: 150px;
+}
+
+.tsp-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.tsp-form-group label {
+    font-size: 0.85em;
+    font-weight: 500;
+    color: var(--tsp-text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.tsp-form-group textarea {
+    min-height: 60px;
+    resize: vertical;
+}
+
+.tsp-form-group input[type="checkbox"] {
+    width: auto;
+    cursor: pointer;
+    accent-color: var(--tsp-accent-primary);
+}
+
+/* ==================== 开关与滑块 ==================== */
+.tsp-switch-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.tsp-switch {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    appearance: none;
+    outline: none;
+    background: var(--tsp-border);
+    border-radius: 12px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.tsp-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.tsp-switch:checked {
+    background: var(--tsp-accent-green);
+}
+
+.tsp-switch:checked::after {
+    transform: translateX(20px);
+}
+
+.tsp-switch-slider {
+    display: none;
+}
+
+.tsp-slider-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tsp-slider-group label {
+    min-width: 80px;
+    font-size: 0.9em;
+    color: var(--tsp-text-secondary);
+}
+
+.tsp-slider {
+    flex: 1;
+    height: 6px;
+    appearance: none;
+    background: var(--tsp-bg-tertiary);
+    border-radius: 3px;
+    outline: none;
+}
+
+.tsp-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--tsp-accent-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.tsp-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.tsp-slider-value {
+    min-width: 45px;
+    text-align: right;
+    font-family: monospace;
+    font-weight: 600;
+    color: var(--tsp-accent-primary);
+}
+
+/* ==================== 折叠面板 ==================== */
+.tsp-collapsible {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tsp-collapsible:hover {
+    opacity: 0.9;
+}
+
+.tsp-collapse-icon {
+    transition: transform 0.2s ease;
+    font-size: 0.85em;
+    color: var(--tsp-text-muted);
+}
+
+.tsp-collapsible.tsp-collapsed .tsp-collapse-icon {
+    transform: rotate(-90deg);
+}
+
+.tsp-collapsible-content {
+    transition: max-height 0.3s ease, opacity 0.2s ease;
+    overflow: hidden;
+}
+
+.tsp-collapsible-content.tsp-hidden {
+    max-height: 0 !important;
+    opacity: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ==================== 触发词设置 (修复堆叠问题) ==================== */
+.tsp-triggers-list {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 8px;
+    display: flex;
+    flex-direction: column !important; /* 强制垂直排列 */
+    gap: 8px;
+    min-height: 50px; /* 保证有最小高度 */
+}
+
+.tsp-trigger-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    background: var(--tsp-bg-input);
+    border: 1px solid var(--tsp-border);
+    border-radius: var(--tsp-radius-sm);
+    transition: background 0.15s ease, border-color 0.15s ease;
+
+    /* 关键修复属性：防止项目重叠或消失 */
+    flex-shrink: 0;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.tsp-trigger-item:hover {
+    background: var(--tsp-bg-secondary);
+    border-color: var(--tsp-accent-primary);
+    z-index: 1; /* 悬停时稍微浮起，虽然 flex 不需要 */
+}
+
+.tsp-trigger-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.tsp-trigger-key {
+    font-weight: 600;
+    color: var(--tsp-accent-primary);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.tsp-trigger-arrow {
+    color: var(--tsp-text-muted);
+    flex-shrink: 0;
+}
+
+.tsp-trigger-value {
+    color: var(--tsp-text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+    min-width: 0;
+}
+
+.tsp-trigger-delete {
+    flex-shrink: 0;
+    margin-left: 8px;
+    opacity: 0.6;
+    transition: opacity 0.15s ease;
+}
+
+.tsp-trigger-item:hover .tsp-trigger-delete {
+    opacity: 1;
+}
+
+#trigger-test-output {
+    background: var(--tsp-bg-input);
+    color: var(--tsp-accent-green);
+    font-family: monospace;
+}
+
+/* ==================== 设置面板移动端适配 ==================== */
+@media (max-width: 900px) {
+    .tsp-settings-modal {
+        width: 95%;
+        height: 90dvh;
+        max-width: none;
+        max-height: none;
+        border-radius: 0;
+        border-radius: 8px;
+        margin-bottom: 10vh;
+    }
+
+    .tsp-settings-layout {
+        flex-direction: column;
+    }
+
+    .tsp-settings-sidebar {
+        width: 100%;
+        padding: 8px;
+        overflow-y: hidden;
+        overflow-x: auto;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 4px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--tsp-border) var(--tsp-bg-tertiary);
+    }
+
+    .tsp-nav-link {
+        padding: 8px 12px;
+        border-left: none;
+        border-bottom: 2px solid transparent;
+        border-radius: 4px;
+        flex-shrink: 0;
+    }
+
+    .tsp-nav-link.active {
+        border-left: none;
+        border-bottom-color: var(--tsp-accent-primary);
+    }
+
+    .tsp-nav-link span {
+        display: none;
+    }
+
+    .tsp-nav-link.tsp-nav-mode {
+        margin: 0;
+    }
+
+    .tsp-nav-divider {
+        display: none;
+    }
+
+    .tsp-settings-content {
+        padding: 16px;
+    }
+
+    .tsp-header-controls {
+        flex-direction: row;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .tsp-mode-switcher {
+        flex-direction: row;
+        gap: 4px;
+        align-items: center;
+    }
+
+    .tsp-mode-switcher label {
+        display: none;
+    }
+
+    .tsp-header-controls .tsp-btn#tsp-settings-close {
+        padding: 6px;
+        min-width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .tsp-settings-modal .tsp-modal-header {
+        padding: 10px 16px;
+    }
+}
+/* 增加权重覆盖默认 .tsp-input 的样式 */
+input[type="color"].tsp-input {
+    padding: 2px;             /* 缩小内边距，给颜色块留空间 */
+    height: 20px;             /* 设定固定高度，防止塌陷 */
+    min-width: 50px;          /* 保证最小宽度 */
+    cursor: pointer;          /* 鼠标变成手型 */
+    background-color: var(--tsp-bg-input); /* 保持背景一致 */
+    overflow: hidden;         /* 防止溢出 */
+}
+
+/* Chrome / Edge / Safari 内核颜色块样式 */
+input[type="color"].tsp-input::-webkit-color-swatch-wrapper {
+    padding: 2px; /* 颜色块与边框的距离 */
+}
+
+input[type="color"].tsp-input::-webkit-color-swatch {
+    border: 1px solid var(--tsp-border); /* 给颜色块加个细微边框 */
+    border-radius: var(--tsp-radius-sm); /* 圆角 */
+    box-shadow: inset 0 0 2px rgba(0,0,0,0.2); /* 增加一点内阴影提升质感 */
+}
+
+/* Firefox 内核颜色块样式 */
+input[type="color"].tsp-input::-moz-color-swatch {
+    border: 1px solid var(--tsp-border);
+    border-radius: var(--tsp-radius-sm);
+    box-shadow: inset 0 0 2px rgba(0,0,0,0.2);
+}

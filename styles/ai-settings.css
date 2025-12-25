@@ -1,0 +1,281 @@
+/* ==========================================================================
+   AI 提示词后处理 (AI Secondary Processing) 专用样式
+   对应 JS: ai-settings-modal.js 或相关模块
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   主要布局容器 (Desktop / Default)
+   -------------------------------------------------------------------------- */
+   .ai-settings-layout {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+    overflow: hidden; /* 防止外层出现双重滚动条 */
+    min-height: 0;    /* Flex 布局嵌套滚动的关键修复 */
+}
+
+/* --------------------------------------------------------------------------
+   左侧导航栏 (Sidebar)
+   -------------------------------------------------------------------------- */
+.ai-settings-nav {
+    width: 200px;
+    flex-shrink: 0;
+    background: var(--tsp-bg-tertiary);
+    border-radius: var(--tsp-radius-md);
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    border-right: 1px solid var(--tsp-border);
+}
+
+.ai-settings-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ai-settings-nav li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    cursor: pointer;
+    border-radius: var(--tsp-radius-sm);
+    color: var(--tsp-text-secondary);
+    transition: all 0.2s ease;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+/* 导航项悬停状态 */
+.ai-settings-nav li:hover {
+    background: rgba(122, 162, 247, 0.1);
+    color: var(--tsp-text-primary);
+}
+
+/* 导航项激活状态 */
+.ai-settings-nav li.active {
+    background: var(--tsp-accent-primary);
+    color: var(--tsp-bg-main);
+    font-weight: 600;
+}
+
+.ai-settings-nav li i {
+    width: 20px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+/* --------------------------------------------------------------------------
+   右侧内容区域 (Content Area)
+   -------------------------------------------------------------------------- */
+.ai-settings-content {
+    flex: 1;
+    min-width: 0; /* 防止内容过宽撑开布局 */
+    overflow-y: auto; /* 内容区域独立滚动 */
+    padding-right: 8px; /* 预留滚动条空间 */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 独立的面板容器 */
+.ai-content-panel {
+    display: none; /* 默认隐藏 */
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.ai-content-panel.active {
+    display: block; /* 激活时显示 */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------------------------------------------------------------
+   通用内容区块 (Sections & Components)
+   -------------------------------------------------------------------------- */
+.ai-settings-section {
+    background: rgba(16, 17, 26, 0.3);
+    border: 1px solid var(--tsp-border);
+    border-radius: var(--tsp-radius-md);
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.ai-settings-section h4 {
+    margin: 0 0 16px 0;
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--tsp-accent-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid rgba(122, 162, 247, 0.2);
+    padding-bottom: 8px;
+}
+
+.tsp-form-hint {
+    font-size: 0.85em;
+    color: var(--tsp-text-muted);
+    margin-top: 4px;
+    font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   预设面板 (Preset Panel)
+   -------------------------------------------------------------------------- */
+.ai-preset-header {
+    display: flex;
+    gap: 16px;
+    align-items: flex-end; /* 让按钮底部对齐 */
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.ai-preset-actions {
+    display: flex;
+    gap: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   世界书 / 正则 / Tag参考 面板列表
+   -------------------------------------------------------------------------- */
+.ai-worldbook-header,
+.ai-regex-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.ai-worldbook-list,
+.ai-regex-list,
+.ai-tagref-folders {
+    max-height: 350px;
+    overflow-y: auto;
+    background: var(--tsp-bg-input);
+    border: 1px solid var(--tsp-border);
+    border-radius: var(--tsp-radius-sm);
+    padding: 4px;
+}
+
+/* 列表项样式 */
+.ai-list-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--tsp-border);
+    background: rgba(255, 255, 255, 0.02);
+    transition: background 0.2s;
+}
+
+.ai-list-item-row:last-child {
+    border-bottom: none;
+}
+
+.ai-list-item-row:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.ai-list-item-row label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   移动端/小屏幕适配 (Max Width: 900px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 900px) {
+    /*
+       将左右布局改为上下布局
+       导航栏变为顶部的横向滚动菜单
+    */
+    .ai-settings-layout {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* 导航栏适配 */
+    .ai-settings-nav {
+        width: 100%;
+        height: auto;
+        flex-shrink: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--tsp-border);
+        padding: 4px;
+        background: transparent; /* 融入背景 */
+    }
+
+    .ai-settings-nav ul {
+        flex-direction: row; /* 变为横向 */
+        overflow-x: auto;    /* 允许横向滚动 */
+        overflow-y: hidden;
+        white-space: nowrap; /* 防止换行 */
+        gap: 8px;
+        padding-bottom: 4px; /* 为滚动条留空 */
+
+        /* 隐藏滚动条但保留功能 (可选) */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .ai-settings-nav ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    .ai-settings-nav li {
+        flex: 0 0 auto; /* 防止被压缩 */
+        padding: 8px 12px;
+        font-size: 0.9em;
+        background: var(--tsp-bg-input); /* 手机端给个背景色区分 */
+        border: 1px solid var(--tsp-border);
+    }
+
+    .ai-settings-nav li.active {
+        border-color: var(--tsp-accent-primary);
+    }
+
+    /* 内容区域适配 */
+    .ai-settings-content {
+        padding: 0 4px;
+    }
+
+    .ai-settings-section {
+        padding: 12px;
+    }
+
+    /* 预设头部适配 */
+    .ai-preset-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .ai-preset-actions {
+        justify-content: space-between; /* 按钮均分空间 */
+    }
+
+    .ai-preset-actions .tsp-btn {
+        flex: 1;
+        justify-content: center;
+    }
+
+    /* 列表高度调整，适应手机屏幕 */
+    .ai-worldbook-list,
+    .ai-regex-list,
+    .ai-tagref-folders {
+        max-height: 250px;
+    }
+}

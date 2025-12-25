@@ -1,0 +1,400 @@
+/* ==================== 历史记录查看器 (样式集 A：适配 showImageHistoryLightbox) ==================== */
+
+/* 1. 容器 */
+.tsp-history-lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 10005;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tsp-history-lightbox-overlay.visible {
+    opacity: 1;
+}
+
+/* 2. 控制按钮区域 */
+.tsp-lightbox-controls {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 10;
+}
+
+.tsp-lightbox-controls button {
+    font-size: 28px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    text-shadow: 0 0 5px black;
+    transition: all 0.2s ease;
+    padding: 5px;
+}
+
+.tsp-lightbox-confirm-btn:hover { transform: scale(1.1); color: #8f8; }
+.tsp-lightbox-close-btn:hover { transform: scale(1.1); color: #ff5577; }
+
+/* 3. 胶卷条容器 */
+.tsp-filmstrip-container {
+    flex-shrink: 0;
+    width: 90%;
+    padding: 10px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    text-align: center;
+    scrollbar-width: thin;
+    scrollbar-color: #555 #333;
+    margin-bottom: 10px;
+}
+
+/* 4. 胶卷缩略图 */
+.tsp-filmstrip-thumb {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+    vertical-align: middle;
+    background: #000;
+}
+
+.tsp-filmstrip-thumb:hover { border-color: #aaa; }
+.tsp-filmstrip-thumb.selected {
+    border-color: hotpink;
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+}
+
+/* 5. 主图片显示区 */
+.tsp-main-image-viewer {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.tsp-main-image-viewer img,
+.tsp-main-image-viewer video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+/* ==================== 历史记录查看器 (样式集 B：适配 createHistoryLightbox - 旧版/Iframe兼容) ==================== */
+
+.tsp-history-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 10005;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tsp-history-lightbox.visible {
+    opacity: 1;
+}
+
+.tsp-history-controls {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 10;
+}
+
+.tsp-history-controls button {
+    font-size: 28px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    text-shadow: 0 0 5px black;
+    transition: all 0.2s ease;
+    padding: 5px;
+}
+
+.tsp-history-confirm:hover { transform: scale(1.1); color: #8f8; }
+.tsp-history-close:hover { transform: scale(1.1); color: #ff5577; }
+
+.tsp-history-filmstrip {
+    flex-shrink: 0;
+    width: 90%;
+    padding: 10px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    text-align: center;
+    scrollbar-width: thin;
+    scrollbar-color: #555 #333;
+    margin-bottom: 10px;
+}
+
+.tsp-history-thumb {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+    vertical-align: middle;
+    background: #000;
+}
+
+.tsp-history-thumb:hover { border-color: #aaa; }
+.tsp-history-thumb.selected {
+    border-color: hotpink;
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+}
+
+.tsp-history-main {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 0;
+    position: relative;
+}
+
+.tsp-history-main img,
+.tsp-history-main video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+/* ==================== 简易全屏灯箱 (保持不变) ==================== */
+.tsp-simple-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 20000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    cursor: zoom-out;
+}
+
+.tsp-simple-lightbox.visible { opacity: 1; }
+
+.tsp-simple-lightbox img,
+.tsp-simple-lightbox video {
+    max-width: 95vw;
+    max-height: 95vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    transform: scale(0.95);
+    transition: transform 0.2s ease;
+    user-select: none;
+    pointer-events: none;
+}
+
+.tsp-simple-lightbox.visible img,
+.tsp-simple-lightbox.visible video { transform: scale(1); }
+
+/* ==================== 编辑 (图生图) 模态框 (保持不变) ==================== */
+.tsp-edit-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 10010;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.tsp-edit-modal.visible { opacity: 1; }
+
+.tsp-edit-content {
+    background: var(--tsp-bg-secondary);
+    color: var(--tsp-text-primary);
+    border-radius: 8px;
+    padding: 25px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--tsp-border);
+    transform: scale(0.95);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tsp-edit-modal.visible .tsp-edit-content { transform: scale(1); }
+.tsp-edit-content.tsp-edit-advanced { max-width: 800px; }
+
+.editor-header {
+    text-align: center;
+    margin: 0 0 10px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--tsp-border);
+    font-size: 18px;
+}
+
+.editor-main-content {
+    display: flex;
+    gap: 20px;
+    min-height: 0;
+}
+
+.prompt-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tsp-edit-textarea {
+    flex-grow: 1;
+    min-height: 200px;
+    resize: vertical;
+    background-color: var(--tsp-bg-input);
+    color: var(--tsp-text-primary);
+    border: 1px solid var(--tsp-border);
+    border-radius: 5px;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.i2i-section {
+    flex-shrink: 0;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tsp-i2i-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border: 2px dashed var(--tsp-border);
+    border-radius: 6px;
+    background-color: var(--tsp-bg-input);
+    overflow: hidden;
+}
+
+.tsp-i2i-container img,
+.tsp-i2i-container canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tsp-i2i-container canvas {
+    z-index: 2;
+    cursor: crosshair;
+}
+
+.tsp-canvas-controls {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.tsp-edit-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 900px) {
+    .tsp-history-thumb,
+    .tsp-filmstrip-thumb {
+        width: 60px;
+        height: 60px;
+    }
+
+    .tsp-edit-modal {
+        align-items: flex-start;
+        padding-top: 5vh;
+    }
+
+    .tsp-edit-content {
+        padding: 20px;
+        width: 90vw;
+        max-width: 90vw;
+        max-height: 85vh;
+    }
+
+    .editor-main-content {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .i2i-section {
+        width: 100%;
+    }
+
+    .tsp-edit-actions {
+        flex-direction: column;
+    }
+}

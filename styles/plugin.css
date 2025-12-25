@@ -1,0 +1,30 @@
+/*
+ * chami_tavern-scene-plugin 主样式入口
+ * 请确保 styles 目录下存在以下文件
+ */
+
+/* 基础样式 (变量、模态框、按钮、输入框、通用组件) */
+@import url('base.css');
+
+/* 设置面板布局 (侧边栏、表单组) */
+@import url('settings.css');
+
+/* 聊天界面集成 (悬浮球、行内按钮、消息内图片) */
+@import url('chat.css');
+
+/* 图片查看与编辑 (灯箱、历史记录、图片编辑器) */
+@import url('image-viewer.css');
+
+/* 预设与缓存网格 (预设浏览器、图片缓存库) */
+@import url('presets.css');
+
+/* 标签超市 (从 JS 抽离的样式 + 原有样式) */
+@import url('tag-market.css');
+
+/* 角色数据库 */
+@import url('character-db.css');
+
+/* 特定模式样式 (SD ControlNet, ComfyUI 工作流, NAI 参考图) */
+@import url('modes.css');
+/* 新增：AI 提示词后处理样式 */
+@import url('ai-settings.css');

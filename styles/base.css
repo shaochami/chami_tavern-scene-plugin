@@ -1,0 +1,398 @@
+/* ==================== 基础变量定义 ==================== */
+:root {
+    /* --- 核心背景色 --- */
+    --tsp-bg-main: #1a1b26;
+    --tsp-bg-secondary: #23283d;
+    --tsp-bg-tertiary: #16161e;
+    --tsp-bg-input: #292e42;
+    --tsp-border: #414868;
+
+    /* --- 核心文字色 --- */
+    --tsp-text-primary: #c0caf5;
+    --tsp-text-secondary: #a9b1d6;
+    --tsp-text-muted: #6a7199;
+    --tsp-text-input: #c0caf5;
+    /* --- 功能色 --- */
+    --tsp-accent-primary: #7aa2f7;      /* 确认按钮/激活状态 */
+    --tsp-accent-green: #9ece6a;        /* 成功 */
+    --tsp-accent-red: #f7768e;          /* 危险/删除按钮 */
+    --tsp-accent-yellow: #e0af68;
+
+    /* --- 阴影 --- */
+    --tsp-shadow: rgba(0, 0, 0, 0.4);
+
+    /* --- 生成按钮专用变量 (默认为玄色) --- */
+    --tsp-btn-gen-grad-1: #f0c36a;
+    --tsp-btn-gen-grad-2: #d49a3a;
+    --tsp-btn-gen-text: #1b1b1b;
+
+    /* 圆角保持不变 */
+    --tsp-radius-sm: 4px;
+    --tsp-radius-md: 8px;
+    --tsp-radius-lg: 12px;
+}
+
+/* ==================== 模态框基础结构 ==================== */
+.tsp-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 10003;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.tsp-modal-overlay.visible {
+    opacity: 1;
+}
+
+.tsp-modal {
+    background: linear-gradient(145deg, var(--tsp-bg-secondary), var(--tsp-bg-main));
+    color: var(--tsp-text-primary);
+    border: 1px solid var(--tsp-border);
+    border-radius: var(--tsp-radius-lg);
+    box-shadow: 0 0 50px var(--tsp-shadow), inset 0 0 1px rgba(122, 162, 247, 0.3);
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+    transform: scale(0.95);
+    transition: transform 0.2s ease-out;
+    width: min(600px, 95vw);
+}
+
+.tsp-modal-overlay.visible .tsp-modal {
+    transform: scale(1);
+}
+
+
+.tsp-modal-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--tsp-border);
+    flex-shrink: 0;
+}
+
+.tsp-modal-title {
+    flex: 1;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--tsp-accent-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tsp-modal-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.tsp-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 12px 20px;
+    border-top: 1px solid var(--tsp-border);
+    flex-shrink: 0;
+}
+
+/* ==================== 按钮样式 ==================== */
+.tsp-btn {
+    padding: 8px 16px;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--tsp-text-primary);
+    background-color: var(--tsp-bg-input);
+    border: 1px solid var(--tsp-border);
+    border-radius: var(--tsp-radius-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.tsp-btn:hover {
+    border-color: var(--tsp-accent-primary);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px var(--tsp-shadow);
+}
+
+.tsp-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.tsp-btn-primary {
+    background-color: var(--tsp-accent-green);
+    color: var(--tsp-bg-main);
+    border-color: var(--tsp-accent-green);
+}
+
+.tsp-btn-primary:hover {
+    background-color: #b9f27c;
+    border-color: var(--tsp-accent-green);
+}
+
+.tsp-btn-success {
+    background-color: var(--tsp-accent-green);
+    color: var(--tsp-bg-main);
+    border-color: var(--tsp-accent-green);
+}
+
+.tsp-btn-danger {
+    background-color: var(--tsp-accent-red);
+    color: var(--tsp-bg-main);
+    border-color: var(--tsp-accent-red);
+}
+
+.tsp-btn-danger:hover {
+    background-color: #ff85a1;
+}
+
+.tsp-btn-icon {
+    padding: 8px;
+    min-width: 36px;
+}
+
+.tsp-btn-sm {
+    padding: 4px 10px;
+    font-size: 0.85em;
+}
+
+.tsp-btn-xs {
+    padding: 2px 6px;
+    font-size: 0.75em;
+}
+
+.tsp-btn-block {
+    width: 100%;
+}
+
+.tsp-btn-group {
+    display: flex;
+    gap: 8px;
+}
+
+/* ==================== 输入框样式 ==================== */
+.tsp-input {
+    width: 100%;
+    padding: 8px 12px;
+    background-color: var(--tsp-bg-input);
+    /* [修改] 使用专用变量，并增加 !important 以防被酒馆全局样式覆盖 */
+    color: var(--tsp-text-input, var(--tsp-text-primary)) !important;
+    border: 1px solid var(--tsp-border);
+    border-radius: var(--tsp-radius-sm);
+    font-size: 0.9em;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+select.tsp-input {
+    /* 强制应用背景色 */
+    background-color: var(--tsp-bg-input) !important;
+    /* 告诉浏览器这是深色区域，让自带的下拉箭头和滚动条变暗 */
+    color-scheme: dark;
+}
+select.tsp-input option {
+    background-color: var(--tsp-bg-input) !important;
+    color: var(--tsp-text-input, var(--tsp-text-primary)) !important;
+    padding: 8px;
+}
+
+.tsp-input:focus {
+    outline: none;
+    border-color: var(--tsp-accent-primary);
+    box-shadow: 0 0 8px rgba(122, 162, 247, 0.3);
+}
+
+.tsp-input::placeholder {
+    color: var(--tsp-text-muted);
+}
+
+.tsp-input-group {
+    display: flex;
+    gap: 8px;
+    align-items: stretch;
+}
+
+.tsp-input-group .tsp-input {
+    flex: 1;
+}
+
+.tsp-textarea-lg {
+    min-height: 120px;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+/* ==================== 滚动条美化 ==================== */
+.tsp-modal-body::-webkit-scrollbar,
+.tsp-list::-webkit-scrollbar,
+.tsp-tag-content::-webkit-scrollbar,
+.tsp-nav-list::-webkit-scrollbar,
+.tsp-settings-content::-webkit-scrollbar,
+.tsp-settings-sidebar::-webkit-scrollbar {
+    width: 6px;
+    height: 4px; /* 横向滚动条 */
+}
+
+.tsp-modal-body::-webkit-scrollbar-track,
+.tsp-list::-webkit-scrollbar-track,
+.tsp-tag-content::-webkit-scrollbar-track,
+.tsp-nav-list::-webkit-scrollbar-track,
+.tsp-settings-content::-webkit-scrollbar-track,
+.tsp-settings-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 3px;
+}
+
+.tsp-modal-body::-webkit-scrollbar-thumb,
+.tsp-list::-webkit-scrollbar-thumb,
+.tsp-tag-content::-webkit-scrollbar-thumb,
+.tsp-nav-list::-webkit-scrollbar-thumb,
+.tsp-settings-content::-webkit-scrollbar-thumb,
+.tsp-settings-sidebar::-webkit-scrollbar-thumb {
+    background: var(--tsp-border);
+    border-radius: 3px;
+}
+
+.tsp-modal-body::-webkit-scrollbar-thumb:hover,
+.tsp-list::-webkit-scrollbar-thumb:hover,
+.tsp-tag-content::-webkit-scrollbar-thumb:hover,
+.tsp-nav-list::-webkit-scrollbar-thumb:hover,
+.tsp-settings-content::-webkit-scrollbar-thumb:hover,
+.tsp-settings-sidebar::-webkit-scrollbar-thumb:hover {
+    background: var(--tsp-accent-primary);
+}
+
+/* ==================== 通用列表样式 ==================== */
+.tsp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 12px;
+}
+
+.tsp-list-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(122, 162, 247, 0.05);
+    border: 1px solid transparent;
+    border-radius: var(--tsp-radius-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tsp-list-item:hover {
+    background: rgba(122, 162, 247, 0.15);
+    transform: translateX(3px);
+}
+
+.tsp-list-item.active {
+    background: var(--tsp-accent-primary);
+    color: var(--tsp-bg-main);
+    font-weight: 600;
+}
+
+/* ==================== 工具类 ==================== */
+.tsp-text-muted {
+    color: var(--tsp-text-muted);
+}
+
+.tsp-text-sm {
+    font-size: 0.8em;
+}
+
+.tsp-hidden {
+    display: none !important;
+}
+
+.tsp-section {
+    margin-bottom: 20px;
+}
+
+.tsp-card {
+    background: var(--tsp-bg-tertiary);
+    border: 1px solid var(--tsp-border);
+    border-radius: var(--tsp-radius-md);
+    padding: 10px;
+}
+
+.tsp-info-box {
+    background: rgba(122, 162, 247, 0.1);
+    border: 1px solid rgba(122, 162, 247, 0.3);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 0.9em;
+    color: var(--tsp-text-secondary);
+}
+
+.tsp-info-box i {
+    color: var(--tsp-accent-primary);
+    margin-right: 6px;
+}
+
+.tsp-code-block {
+    background: var(--tsp-bg-tertiary);
+    border: 1px solid var(--tsp-border);
+    border-radius: 6px;
+    padding: 12px;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.85em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
+}
+
+/* ==================== 进度条 ==================== */
+.tsp-progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: var(--tsp-bg-input);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 8px;
+    border: 1px solid var(--tsp-border);
+}
+
+.tsp-progress-fill {
+    height: 100%;
+    background-color: var(--tsp-accent-green);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* ==================== 移动端通用适配 ==================== */
+@media screen and (max-width: 900px) {
+    .tsp-modal {
+        width: 95vw;
+        max-height: 85vh;
+        border-radius: var(--tsp-radius-md);
+    }
+
+    .tsp-input-group {
+        flex-direction: column !important;
+        align-items: stretch;
+    }
+
+    .tsp-btn-group {
+        flex-wrap: wrap;
+    }
+}

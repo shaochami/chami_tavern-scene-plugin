@@ -1,0 +1,178 @@
+/* ==================== ComfyUI 工作流编辑器 ==================== */
+.tsp-workflow-editor-container {
+    display: flex;
+    gap: 16px;
+}
+
+.tsp-form-group .tsp-workflow-editor {
+    flex: 2;
+    min-height: 320px;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 0.85em;
+    white-space: pre;
+    resize: vertical;
+}
+
+.tsp-param-checker {
+    flex: 1;
+    background: var(--tsp-bg-tertiary);
+    border: 1px solid var(--tsp-border);
+    border-radius: 8px;
+    padding: 16px;
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+.tsp-param-checker h5 {
+    margin: 0 0 12px 0;
+    color: var(--tsp-accent-primary);
+    font-size: 0.95em;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--tsp-border);
+}
+
+.tsp-param-checker ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tsp-param-checker li {
+    padding: 6px 0;
+    font-size: 0.9em;
+}
+
+/* ==================== NAI Vibe / ControlNet 预览 ==================== */
+.tsp-vibe-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tsp-vibe-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--tsp-bg-tertiary);
+    border: 1px solid var(--tsp-border);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.tsp-vibe-thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.tsp-vibe-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* ControlNet 单元样式 */
+.tsp-cn-unit {
+    background: var(--tsp-bg-tertiary);
+    border: 1px solid var(--tsp-border);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.tsp-cn-unit-preview {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--tsp-border);
+}
+
+.tsp-cn-unit-preview:last-child {
+    border-bottom: none;
+}
+
+.tsp-cn-unit-badge {
+    background: var(--tsp-accent-primary);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+.cn-image-upload-wrapper {
+    width: 140px;
+    height: 140px;
+    border: 2px dashed var(--tsp-border);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background: var(--tsp-bg-input);
+    transition: border-color 0.2s;
+}
+
+.cn-image-upload-wrapper:hover {
+    border-color: var(--tsp-accent-primary);
+}
+
+.cn-preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.cn-image-clear-btn:hover {
+    background: rgba(255, 0, 0, 0.8) !important;
+}
+
+#tsp-cn-modal {
+    z-index: 10006;
+}
+
+/* ==================== LoRA 配置单元 (ComfyUI) ==================== */
+.tsp-lora-unit {
+    background: var(--tsp-bg-tertiary);
+    border: 1px solid var(--tsp-border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+}
+
+.tsp-lora-preview {
+    background: rgba(122, 162, 247, 0.1);
+    border: 1px solid rgba(122, 162, 247, 0.3);
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 12px;
+}
+
+/* ==================== 移动端适配 ==================== */
+@media screen and (max-width: 900px) {
+    .tsp-workflow-editor-container {
+        flex-direction: column;
+    }
+
+    .tsp-form-group .tsp-workflow-editor {
+        min-height: 500px;
+    }
+
+    .tsp-param-checker {
+        max-height: 150px;
+    }
+
+    .tsp-vibe-item {
+        flex-wrap: wrap;
+    }
+
+    .tsp-vibe-info {
+        width: 100%;
+    }
+}
