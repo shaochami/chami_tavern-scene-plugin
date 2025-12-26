@@ -398,3 +398,143 @@
         flex-direction: column;
     }
 }
+/* ==================== 灯箱通用导航与操作按钮 (新增) ==================== */
+
+/* 导航箭头 (左右翻页) */
+.tsp-lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 15;
+    background-color: rgba(var(--tsp-bg-secondary-rgb, 35, 40, 61), 0.5); /* 使用 RGB 变量以支持透明度 */
+    color: var(--tsp-text-primary);
+    border: 1px solid var(--tsp-border);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    backdrop-filter: blur(4px);
+}
+
+.tsp-lightbox-nav:hover {
+    background-color: var(--tsp-accent-primary);
+    color: var(--tsp-bg-main);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 15px var(--tsp-shadow);
+}
+
+.tsp-lightbox-nav:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.tsp-lightbox-nav.prev {
+    left: 15px;
+}
+
+.tsp-lightbox-nav.next {
+    right: 15px;
+}
+
+/* 底部操作区域 (保存按钮) */
+.tsp-lightbox-actions {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 15;
+    background-color: rgba(var(--tsp-bg-secondary-rgb, 35, 40, 61), 0.6);
+    padding: 8px;
+    border-radius: var(--tsp-radius-md);
+    backdrop-filter: blur(4px);
+    display: flex;
+    gap: 10px;
+    box-shadow: 0 0 20px var(--tsp-shadow);
+    border: 1px solid var(--tsp-border);
+}
+
+.tsp-lightbox-save-btn {
+    /* [修改] 改为使用主题的主要高亮色，而不是固定的绿色 */
+    background: var(--tsp-accent-primary);
+    color: var(--tsp-bg-main);
+    border-color: var(--tsp-accent-primary);
+    /* 让它看起来像一个真正的按钮，而不是一个标签 */
+    padding: 8px 16px;
+    font-size: 0.9em;
+    font-weight: 500;
+    border-radius: var(--tsp-radius-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.tsp-lightbox-save-btn:hover {
+    /* [修改] 使用滤镜提升亮度，而不是写死颜色，以适应所有主题 */
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+}
+/* ==================== 缓存查看器模式标签 (新增) ==================== */
+.tsp-cache-thumb-mode {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    z-index: 2;
+    padding: 2px 6px;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--tsp-bg-main); /* 文字颜色通常是深色背景，所以用主背景色 */
+    border-radius: var(--tsp-radius-sm);
+    text-transform: uppercase; /* 显示为大写，例如 "SD" */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    pointer-events: none; /* 确保不影响点击 */
+    user-select: none;
+}
+
+/* --- 根据模式设置不同颜色 --- */
+/* Stable Diffusion: 使用主题高亮色 */
+.tsp-cache-thumb-mode[data-mode="sd"] {
+    background-color: var(--tsp-accent-primary);
+}
+
+/* NovelAI: 使用主题黄色 */
+.tsp-cache-thumb-mode[data-mode="nai"] {
+    background-color: var(--tsp-accent-yellow);
+    color: var(--tsp-bg-main); /* 黄色背景通常需要深色文字 */
+}
+
+/* ComfyUI: 使用主题绿色 */
+.tsp-cache-thumb-mode[data-mode="comfyui"] {
+    background-color: var(--tsp-accent-green);
+}
+
+/* 其他模式或未知模式: 使用边框灰色 */
+.tsp-cache-thumb-mode[data-mode="other"],
+.tsp-cache-thumb-mode[data-mode="tag_supermarket"] {
+    background-color: var(--tsp-border);
+}
+/* 手机端适配 */
+@media screen and (max-width: 900px) {
+    .tsp-lightbox-nav {
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+    }
+    .tsp-lightbox-nav.prev {
+        left: 5px;
+    }
+    .tsp-lightbox-nav.next {
+        right: 5px;
+    }
+    .tsp-lightbox-actions {
+        bottom: 10px;
+    }
+}

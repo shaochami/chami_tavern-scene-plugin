@@ -1,8 +1,13 @@
+/* ==================================================== */
+/*                  角色数据库 (Character DB)            */
+/* ==================================================== */
+
 .tsp-modal-large {
-    /* [修改] 增大模态框尺寸以容纳新布局 */
+    /* 模态框尺寸 */
     width: min(1440px, 95vw);
     height: min(1080px, 82vh);
 }
+
 .tsp-chardb-layout {
     display: flex;
     gap: 20px;
@@ -15,14 +20,12 @@
     flex-direction: column;
     gap: 16px;
     overflow-y: auto;
-    /* [新增] 增加一点内边距，避免滚动条紧贴边缘 */
     padding-right: 10px;
 }
 
-/* [修改] 编辑器区域重构为卡片式 */
 .tsp-chardb-editor {
     flex: 1;
-    position: relative; /* 用于背景图定位 */
+    position: relative;
     background: rgba(16, 17, 26, 0.5);
     border: 1px solid var(--tsp-border);
     border-radius: var(--tsp-radius-md);
@@ -33,7 +36,6 @@
     transition: background-image 0.3s ease;
 }
 
-/* [新增] 卡片背景图样式 */
 .tsp-chardb-editor::before {
     content: '';
     position: absolute;
@@ -41,39 +43,66 @@
     left: 0;
     right: 0;
     bottom: 0;
+    background-image: var(--char-db-bg-image, none);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: var(--bg-opacity, 0.2); /* 使用CSS变量控制透明度 */
+    opacity: var(--bg-opacity, 0.2);
     z-index: -1;
     border-radius: var(--tsp-radius-md);
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, background-image 0.3s ease;
 }
 
+/* ▼▼▼ 修改开始：问题二修复 ▼▼▼ */
+/* 将机器人图标的颜色固定为“启用”状态色（通常是绿色），不再使用主色调 */
+.tsp-list-item-name .tsp-icon-sm {
+    font-size: 0.8em;
+    margin-right: 6px;
+    color: var(--tsp-status-enabled, #9ece6a); /* 使用启用状态颜色 */
+    vertical-align: middle;
+    transition: transform 0.2s; /* 添加一点交互效果 */
+}
+/* 鼠标悬停时稍微放大，提高可交互性 */
+.tsp-list-item-name .tsp-icon-sm:hover {
+    transform: scale(1.2);
+}
+/* ▲▲▲ 修改结束 ▲▲▲ */
 
-/* [修改] 帮助说明部分使用主题颜色 */
+
+/* ▼▼▼ 修改开始：问题一修复 ▼▼▼ */
 .tsp-placeholder {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
-    color: var(--tsp-text-secondary); /* [修改] 使用主题次要文字颜色 */
+    /* 默认使用次要文字颜色，比静音色更清晰 */
+    color: var(--tsp-text-secondary);
     text-align: center;
     flex-grow: 1;
 }
 
-.tsp-placeholder i {
+.tsp-placeholder i.fa-book-open {
     font-size: 3em;
     margin-bottom: 16px;
-    color: var(--tsp-text-muted); /* [修改] 使用主题静音文字颜色 */
+    /* 图标也使用次要文字颜色，确保可见性 */
+    color: var(--tsp-text-secondary);
+    opacity: 0.6; /* 让它比文字稍微淡一点 */
+}
+
+/* 占位符中的帮助步骤文字，确保清晰 */
+.tsp-help-steps p,
+.tsp-help-steps .tsp-text-muted {
+    color: var(--tsp-text-secondary) !important;
 }
 
 .tsp-help-steps p strong {
-    color: var(--tsp-text-primary); /* [修改] 步骤标题使用主要文字颜色 */
+    color: var(--tsp-text-primary) !important;
 }
+/* ▲▲▲ 修改结束 ▲▲▲ */
 
-/* [新增] 卡片式表单布局 */
+
+/* 卡片式表单布局 */
 .tsp-editor-card-layout {
     display: flex;
     gap: 24px;
@@ -137,25 +166,8 @@
     padding-top: 20px;
     border-top: 1px solid var(--tsp-border);
 }
-/* [新增] 卡片背景图样式 */
-.tsp-chardb-editor::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* ▼▼▼ 核心修复：使用 CSS 变量来接收背景图 ▼▼▼ */
-    background-image: var(--char-db-bg-image, none);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: var(--bg-opacity, 0.2); /* 使用CSS变量控制透明度 */
-    z-index: -1;
-    border-radius: var(--tsp-radius-md);
-    transition: opacity 0.3s ease, background-image 0.3s ease; /* [修改] 增加背景图过渡效果 */
-}
-/* [新增] 自定义特征样式 */
+
+/* 自定义特征样式 */
 .tsp-custom-features-section {
     margin-top: 20px;
 }
@@ -174,7 +186,7 @@
 .tsp-custom-feature-item input:first-child { flex-basis: 30%; }
 .tsp-custom-feature-item input:nth-child(2) { flex-grow: 1; }
 
-/* [新增] 角色列表项增加状态开关 */
+/* 角色列表项增加状态开关 */
 #tsp-role-list .tsp-list-item {
     display: flex;
     align-items: center;
@@ -186,17 +198,17 @@
     cursor: pointer;
 }
 #tsp-role-list .tsp-role-status-toggle i {
-    color: var(--tsp-status-disabled, var(--tsp-text-muted)); /* 默认禁用状态 */
+    color: var(--tsp-status-disabled, var(--tsp-text-muted));
     transition: color 0.2s;
 }
 #tsp-role-list .tsp-role-status-toggle.enabled i {
-    color: var(--tsp-status-enabled, var(--tsp-success)); /* 启用状态 */
+    color: var(--tsp-status-enabled, var(--tsp-success));
 }
 #tsp-role-list .tsp-role-status-toggle:hover i {
     color: var(--tsp-accent-primary);
 }
 
-/* [新增] 背景透明度滑块 */
+/* 背景透明度滑块 */
 .tsp-bg-opacity-slider {
     width: 100%;
     display: flex;

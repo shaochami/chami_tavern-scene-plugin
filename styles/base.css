@@ -10,7 +10,7 @@
     /* --- 核心文字色 --- */
     --tsp-text-primary: #c0caf5;
     --tsp-text-secondary: #a9b1d6;
-    --tsp-text-muted: #6a7199;
+    --tsp-text-muted: #6a7199; 
     --tsp-text-input: #c0caf5;
     /* --- 功能色 --- */
     --tsp-accent-primary: #7aa2f7;      /* 确认按钮/激活状态 */
@@ -25,7 +25,7 @@
     --tsp-btn-gen-grad-1: #f0c36a;
     --tsp-btn-gen-grad-2: #d49a3a;
     --tsp-btn-gen-text: #1b1b1b;
-
+    --tsp-bg-secondary-rgb: 35, 40, 61; /* #23283d 的 RGB 值 */
     /* 圆角保持不变 */
     --tsp-radius-sm: 4px;
     --tsp-radius-md: 8px;
