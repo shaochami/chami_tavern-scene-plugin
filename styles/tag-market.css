@@ -431,6 +431,18 @@
     .ts-detail-item { flex-direction: column !important; }
     .ts-detail-img { width: 100% !important; }
 }
+#ts-content-area {
+    /* 1. 设置最小高度为屏幕高度的 60%~70%，确保有足够的空间展示图片 */
+    min-height: 65vh !important;
+
+    /* 2. 禁止 Flex 压缩，防止被上方搜索框挤压 */
+    flex: none !important;
+
+    /* 3. (可选) 如果你希望整个长页面滚动而不是在这个小区域内滚动，
+       取消注释下面两行，这通常在手机上体验更好 */
+    height: auto !important; 
+    overflow-y: visible !important; 
+}
 /* ==================== 标签超市自定义功能样式 ==================== */
 
 /* 功能控制按钮（添加/删除） */
