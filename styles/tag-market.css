@@ -339,6 +339,17 @@
         padding: 8px 12px !important;
         min-height: 45px !important;
     }
+    /* [新增] 当处于展开模式时，隐藏右侧面板(预览/按钮区) */
+    .ts-layout.mobile-expanded-mode .ts-right-panel {
+        display: none !important;
+    }
+
+    /* [新增] 展开模式下，强制左侧面板占满高度 */
+    .ts-layout.mobile-expanded-mode .ts-left-panel {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
     .tsp-modal-title {
         font-size: 1.1em !important;
         margin-bottom: 0 !important;
@@ -411,7 +422,9 @@
         grid-template-columns: 1fr 1fr !important;
         gap: 8px;
     }
-
+    .ts-content-grid.ts-nai-artist-grid {
+        grid-template-columns: 1fr !important; /* 强制单列 */
+    }
     /* 详情页适配 */
     .ts-detail-view { height: auto !important; min-height: 100%; overflow: visible; }
     .ts-detail-content { overflow: visible !important; flex: none !important; }
@@ -611,7 +624,111 @@
     gap: 12px !important;
     padding: 8px 5px !important;
 }
+/* H:\SillyTavern-1.13.4\public\scripts\extensions\third-party\chami_tavern-scene-plugin\styles\tag-market.css */
 
+/* ... 在文件末尾追加 ... */
+
+/* ==================== NAI 画师新布局样式 ==================== */
+.nai-artist-card {
+    background: var(--tsp-bg-input);
+    border: 1px solid var(--tsp-border);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nai-artist-card:hover {
+    border-color: var(--tsp-accent-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nai-artist-card-header {
+    /* [修改] 从 flex 改为 grid 布局 */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* [修改] 定义三列，与下方图片网格一致 */
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 6px;
+    font-size: 0.8em;
+    gap: 5px; /* [修改] 缩小 gap 以适应网格布局 */
+}
+
+.nai-artist-card-header span {
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: 3px;
+    transition: background 0.2s;
+    /* [新增] 关键样式，让文本在自己的格子内居中和换行 */
+    text-align: center;
+    word-break: break-word; /* 强制长单词换行 */
+    min-width: 0; /* 允许网格项收缩 */
+}
+
+.nai-artist-card-header span:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nai-artist-image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    width: 100%;
+    aspect-ratio: 3 / 1.5; /* 保持图片区域的比例 */
+}
+
+.nai-artist-image-grid .image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.nai-artist-image-grid img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nai-artist-prompt {
+    font-size: 0.85em;
+    color: var(--tsp-text-secondary);
+    background: rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+    word-break: break-all;
+    cursor: copy;
+}
+/* 1. 确保图片容器可以相对定位 Badge */
+.ts-card-img-wrap {
+    position: relative;
+}
+
+/* 2. Badge 元素的具体样式 */
+.ts-card-model-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; /* 确保在图片之上 */
+    padding: 2px 6px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    font-size: 0.75em;
+    font-weight: bold;
+    border-bottom-right-radius: 6px; /* 右下角圆角， tạo hiệu ứng đẹp */
+    text-transform: uppercase; /* 让文字大写，例如 'sd' -> 'SD' */
+    pointer-events: none; /* 让鼠标可以穿透 Badge 点击下方的图片 */
+}
 @media (min-width: 901px) {
     .ts-mobile-toggle { display: none; }
     .ts-mobile-content-wrap { display: flex !important; flex-direction: column; gap: 10px; height: 100%; }
