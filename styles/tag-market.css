@@ -329,120 +329,165 @@
 
 /* ==================== 移动端深度适配 ==================== */
 @media (max-width: 900px) {
-    /* 头部强制调整 */
-    .tsp-modal-header {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        padding: 8px 12px !important;
-        min-height: 45px !important;
-    }
-    /* [新增] 当处于展开模式时，隐藏右侧面板(预览/按钮区) */
-    .ts-layout.mobile-expanded-mode .ts-right-panel {
-        display: none !important;
-    }
-
-    /* [新增] 展开模式下，强制左侧面板占满高度 */
-    .ts-layout.mobile-expanded-mode .ts-left-panel {
-        height: 100%;
+    /* 1. 让 Modal Body 负责整体滚动，而不是禁止溢出 */
+    .tsp-modal-body {
+        overflow-y: auto !important; /* 允许竖向滚动 */
+        overflow-x: hidden;
         display: flex;
         flex-direction: column;
-    }
-    .tsp-modal-title {
-        font-size: 1.1em !important;
-        margin-bottom: 0 !important;
-        white-space: nowrap;
-    }
-    #ts-close-btn {
-        margin: 0 !important;
-        padding: 6px 10px !important;
+        position: relative; /* 为吸底元素提供定位上下文 */
     }
 
-    /* 布局调整 */
-    .ts-layout { flex-direction: column; }
+    /* 2. 布局调整：取消 Flex 锁定，允许内容撑开高度 */
+    .ts-layout {
+        flex-direction: column;
+        height: auto !important; /* 允许高度随内容增长 */
+        min-height: 100%;
+        gap: 0; /* 去除间隙，由 Padding 控制 */
+    }
 
+    /* 3. 右侧面板 (预览区+功能按钮) */
     .ts-right-panel {
-        flex: 0 0 auto;
+        flex: 0 0 auto; /* 不伸缩 */
         width: 100%;
         height: auto;
-        padding-bottom: 5px;
-        order: -1; /* 放到最前 */
+        padding: 10px 0;
+        order: -1; /* 放在最顶部 */
         padding-left: 0;
         border-left: none;
         border-bottom: 1px solid var(--tsp-border);
     }
-    #ts-preview-area { height: 180px; }
+    #ts-preview-area { height: 200px; } /* 固定预览高度 */
 
+    /* 4. 左侧面板 (标签内容区) */
     .ts-left-panel {
-        flex: 1;
-        overflow: hidden;
+        flex: 1 0 auto; /* 允许伸长 */
+        overflow: visible !important; /* 解除内部滚动限制 */
         min-height: 0;
+        display: flex;
+        flex-direction: column;
     }
 
-    /* 移动端内容包装器 */
+    /* 5. 移动端内容包裹层 */
     .ts-mobile-content-wrap {
         display: none;
-        flex: 1;
-        overflow-y: auto;
+        width: 100%;
+        /* 关键：取消 flex: 1，允许内容无限撑开 */
+        flex: none;
+        height: auto;
+        overflow: visible;
         flex-direction: column;
         order: 1;
+        /* 给底部吸底按钮留出空间，防止内容被遮挡 */
         padding: 0 5px 60px 5px;
     }
     .ts-mobile-content-wrap.active { display: flex; }
 
-    /* 折叠按钮 */
+    /* 6. 内容区域 (#ts-content-area) 修复：无限拉伸 */
+    #ts-content-area {
+        min-height: 400px !important; /* 给个最小高度方便查看 */
+        flex: none !important;        /* 禁止 Flex 计算高度 */
+        height: auto !important;      /* 随内容自动增高 */
+        overflow-y: visible !important; /* 显示所有内容，不截断 */
+    }
+    /* 修复网格在移动端的列数 */
+    .ts-content-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px; /* 保持间距 */
+    }
+    /* 特殊处理：NAI 画师需要保持单列 (因为卡片信息比较宽) */
+    .ts-content-grid.ts-nai-artist-grid {
+        grid-template-columns: 1fr !important;
+    }
+    /* 7. 核心：折叠按钮吸底 (Sticky) */
     .ts-mobile-toggle {
         order: 2;
+        /* 必须设置为 sticky 才能在滚动容器内吸底 */
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        /* 样式美化 */
+        height: 44px;
         flex: 0 0 44px;
         border-top: 1px solid var(--tsp-accent-primary);
-        background: var(--tsp-bg-input);
-        z-index: 100;
+        background: var(--tsp-bg-input); /* 确保不透明 */
+        backdrop-filter: blur(10px);     /* 毛玻璃效果 */
+        z-index: 1000;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+        box-shadow: 0 -4px 15px rgba(0,0,0,0.3); /* 阴影突出层次 */
+        margin-top: auto; /* 辅助定位 */
     }
 
-    /* 搜索框适配 */
-    .ts-search-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        padding: 5px 0;
+    /* 展开模式下的特殊处理 (隐藏预览区) */
+    .ts-layout.mobile-expanded-mode .ts-right-panel {
+        display: none !important;
     }
+
+    /* 搜索框适配保持不变... */
+    .ts-search-grid { display: flex; flex-direction: column; gap: 8px; padding: 5px 0; }
     .ts-search-item label { display: none; }
     .ts-search-box { width: 100%; gap: 8px; }
     .ts-search-box input { flex: 1; min-height: 40px; width: 0; }
     .ts-search-box button { flex: 0 0 50px; height: 40px; }
 
-    /* 内容网格适配 */
-    .ts-content-grid {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 8px;
+    /* 1. 详情页容器：解除高度限制 */
+    .ts-detail-view {
+        height: auto !important;
+        min-height: 100%;
+        overflow: visible;
+        display: block; /* 防止 flex 干扰 */
     }
-    .ts-content-grid.ts-nai-artist-grid {
-        grid-template-columns: 1fr !important; /* 强制单列 */
+    .ts-detail-content {
+        overflow: visible !important;
+        flex: none !important;
+        display: block;
     }
-    /* 详情页适配 */
-    .ts-detail-view { height: auto !important; min-height: 100%; overflow: visible; }
-    .ts-detail-content { overflow: visible !important; flex: none !important; }
-    .ts-detail-item { flex-direction: column !important; }
-    .ts-detail-img { width: 100% !important; }
+    /* 2. 详情项：强制改为竖向排列 (上图下文)，并限制宽度 */
+    .ts-detail-item {
+        display: flex !important;
+        flex-direction: column !important; /* 关键：变回竖排 */
+        width: 100% !important; /* 强制宽度不超屏幕 */
+        box-sizing: border-box; /* 让 padding 包含在宽度内 */
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    /* 3. 图片容器：占满屏幕宽度 */
+    .ts-detail-img {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* 4. 文字区域：防止长文本把容器撑宽 */
+    .ts-detail-meta {
+        width: 100% !important;
+        min-width: 0; /* Flex 布局下的防溢出大法 */
+        word-wrap: break-word; /* 强制换行 */
+        overflow-wrap: break-word;
+    }
+    /* 代码块内部也要允许滚动/换行 */
+    .ts-code-block {
+        white-space: pre-wrap !important;
+        word-break: break-all !important;
+    }
 }
 #ts-content-area {
-    /* 1. 设置最小高度为屏幕高度的 60%~70%，确保有足够的空间展示图片 */
-    min-height: 65vh !important;
+    /* 删除原有的 min-height: 65vh !important 等强制代码 */
 
-    /* 2. 禁止 Flex 压缩，防止被上方搜索框挤压 */
-    flex: none !important;
+    /* 1. PC端核心修复：利用 Flex 剩余空间，内部独立滚动 */
+    flex: 1;
+    min-height: 0; /* 关键：允许 Flex 容器收缩 */
+    overflow-y: auto; /* PC端内部滚动 */
+    height: 100%;     /* 撑满父容器高度 */
 
-    /* 3. (可选) 如果你希望整个长页面滚动而不是在这个小区域内滚动，
-       取消注释下面两行，这通常在手机上体验更好 */
-    height: auto !important; 
-    overflow-y: visible !important; 
+    /* 2. 视觉优化 */
+    background: rgba(0,0,0,0.1); /* 保持原有背景 */
+    position: relative;
 }
+
 /* ==================== 标签超市自定义功能样式 ==================== */
 
 /* 功能控制按钮（添加/删除） */
