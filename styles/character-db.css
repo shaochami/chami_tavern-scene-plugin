@@ -221,24 +221,57 @@
 }
 
 /* 响应式调整 */
+/* 响应式调整 - 修复手机端无法编辑的问题 */
 @media screen and (max-width: 900px) {
+    /* 1. 布局容器不再限制高度，改为由内容撑开 */
     .tsp-chardb-layout {
         flex-direction: column;
+        height: auto;        /* 关键：取消固定高度 */
+        overflow: visible;   /* 关键：取消内部裁剪 */
     }
+
+    /* 2. 侧边栏：限制最大高度，防止列表太长导致找不到编辑器 */
     .tsp-chardb-sidebar {
         flex: none;
+        width: 100%;
+        max-height: 200px; /* 给一个固定高度，列表过长时只在列表内部滚动 */
+        padding-right: 0;
+        border-bottom: 1px solid var(--tsp-border);
+        margin-bottom: 15px;
+        padding-bottom: 15px;
     }
+
+    /* 3. 编辑器：取消Flex剩余空间计算，由内容完全撑开 */
+    .tsp-chardb-editor {
+        flex: none;          /* 不再自动伸缩 */
+        width: 100%;
+        height: auto;        /* 高度随表单内容自动增长 */
+        overflow: visible;   /* 取消内部滚动条，让整个页面滚动 */
+        min-height: 400px;   /* 保证最小高度 */
+    }
+
+    /* 4. 调整卡片布局为垂直，适应手机宽度 */
     .tsp-editor-card-layout {
         flex-direction: column;
     }
+
+    /* 5. 头像区域布局微调 */
     .tsp-editor-avatar-section {
         flex-direction: row;
         align-items: center;
+        width: 100%;
+        justify-content: flex-start;
+        margin-bottom: 20px; /* 增加底部间距 */
     }
+
     .tsp-editor-avatar {
         width: 80px;
         height: 80px;
+        flex-shrink: 0; /* 防止头像被挤扁 */
+        margin-right: 20px;
     }
+
+    /* 6. 表单网格改为单列 */
     .tsp-editor-grid {
         grid-template-columns: 1fr;
     }
