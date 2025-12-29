@@ -217,7 +217,7 @@ body.tsp-mode-double-click .tsp-regenerate-btn {
     transition: transform 0.1s ease;
 }
 
-.mes_text img.tsp-generated-image {
+.mes_text .tsp-generated-image { /* <--- 修改在这里 */
     display: block;
     max-width: 100%;
     height: auto;
