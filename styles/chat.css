@@ -106,7 +106,7 @@
     }
 
     .tsp-fab {
-        width: 42px;  /* 移动端建议保留一定大小以便触摸，例如 40-42px */
+        width: 42px;  
         height: 42px;
         font-size: 18px;
     }
@@ -127,21 +127,17 @@
     padding: 4px 10px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 8px;
-    /* 修改前: background: linear-gradient(160deg, #f0c36a, #d49a3a); */
-    /* 修改后: 使用变量，默认为玄色方案的金色 */
     background: linear-gradient(160deg, var(--tsp-btn-gen-grad-1, #f0c36a), var(--tsp-btn-gen-grad-2, #d49a3a));
     color: var(--tsp-btn-gen-text, #1b1b1b); /* 增加文字颜色变量 */
     font-size: 14px;
     cursor: pointer;
-    box-shadow: 0 2px 8px rgba(212, 154, 58, 0.35); /* 阴影也可以改为变量，这里暂时保留 */
+    box-shadow: 0 2px 8px rgba(212, 154, 58, 0.35); 
     transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
     vertical-align: middle;
     white-space: nowrap;
 }
 
 .tsp-inline-gen-btn:hover {
-    /* 修改前: background: linear-gradient(160deg, #ffd27a, #c9852c); */
-    /* 修改后: 使用变量并稍微调亮 */
     filter: brightness(1.1);
     background: linear-gradient(160deg, var(--tsp-btn-gen-grad-1, #f0c36a), var(--tsp-btn-gen-grad-2, #d49a3a));
     transform: translateY(-1px) scale(1.06);
@@ -163,12 +159,14 @@
 
 /* ==================== 聊天内嵌图片 ==================== */
 .tsp-image-slot {
-    display: inline-flex !important;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    vertical-align: top;
-    margin: 4px 2px;
+    display: block;           
+    width: fit-content;        
+    max-width: 100%;             
+    margin: 10px 0;              
+    /* flex-direction: column; */
+    /* align-items: flex-start; */
+    /* gap: 0; */
+    /* vertical-align: top; */
 }
 
 .tsp-regenerate-btn {
@@ -200,12 +198,16 @@ body.tsp-mode-double-click .tsp-regenerate-btn {
 }
 
 .tsp-inline-image {
-    max-width: 300px;
-    max-height: 400px;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
+    margin-top: 0 !important;
+    object-fit: contain;  
 }
 
 .tsp-inline-image:hover {
@@ -217,11 +219,12 @@ body.tsp-mode-double-click .tsp-regenerate-btn {
     transition: transform 0.1s ease;
 }
 
-.mes_text .tsp-generated-image { /* <--- 修改在这里 */
+.mes_text .tsp-generated-image {
     display: block;
     max-width: 100%;
     height: auto;
     border-radius: 8px;
     margin-top: 8px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    object-fit: contain;  
 }
