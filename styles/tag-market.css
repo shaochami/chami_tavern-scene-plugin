@@ -329,6 +329,15 @@
 
 /* ==================== 移动端深度适配 ==================== */
 @media (max-width: 900px) {
+    .tsp-modal-xlarge {
+        width: 95%;
+        height: 90dvh;
+        max-width: none;
+        max-height: none;
+        border-radius: 0;
+        border-radius: 8px;
+        margin-bottom: 10vh;
+    }
     /* 1. 让 Modal Body 负责整体滚动，而不是禁止溢出 */
     .tsp-modal-body {
         overflow-y: auto !important; /* 允许竖向滚动 */
