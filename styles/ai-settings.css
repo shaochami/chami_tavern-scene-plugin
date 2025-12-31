@@ -100,8 +100,8 @@
 /* --------------------------------------------------------------------------
    通用内容区块 (Sections & Components)
    -------------------------------------------------------------------------- */
-.ai-settings-section {
-    background: rgba(16, 17, 26, 0.3);
+   .ai-settings-section {
+    background: var(--tsp-bg-secondary); /* <-- 修改后 */
     border: 1px solid var(--tsp-border);
     border-radius: var(--tsp-radius-md);
     padding: 16px;
@@ -285,7 +285,7 @@
 }
 
 .ai-regex-item {
-    background: rgba(0, 0, 0, 0.2);
+    background: var(--tsp-bg-input); 
     border: 1px solid var(--tsp-border);
     border-radius: 6px;
     margin-bottom: 8px;
