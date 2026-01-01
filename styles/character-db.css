@@ -219,17 +219,92 @@
     font-size: 0.9em;
     color: var(--tsp-text-muted);
 }
+.tsp-autocomplete-container {
+    position: absolute;
+    z-index: 10005 !important;
+    /* 背景色使用次级背景，保证和弹窗有区分 */
+    background: var(--tsp-bg-secondary, #1a1b26);
+    /* 边框颜色 */
+    border: 1px solid var(--tsp-border, #3a3b4a);
+    border-radius: 6px;
+    max-height: 250px;
+    overflow-y: auto;
+    /* 稍微加重阴影，更有悬浮感 */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+    max-width: 90vw;
+    min-width: 200px;
+    /* 隐藏溢出，防止圆角被子元素遮挡 */
+    overflow-x: hidden;
+}
 
+.tsp-autocomplete-item {
+    padding: 10px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    /* 分隔线改用非常淡的颜色，适应所有主题 */
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+    /* 必须设置左边框为透明，防止 hover 时布局跳动 */
+    border-left: 4px solid transparent;
+    transition: all 0.15s ease;
+    color: var(--tsp-text-primary, #fff); /* 默认文字颜色跟随主题 */
+}
+
+.tsp-autocomplete-item:last-child {
+    border-bottom: none;
+}
+
+.tsp-autocomplete-item.highlight,
+.tsp-autocomplete-item:hover {
+    /* 1. 背景不再用强色，而是用通用的半透明叠加，这样深浅主题都能看清 */
+    background-color: rgba(128, 128, 128, 0.1);
+
+    /* 2. 左侧出现强调色条，指示当前选中，既醒目又不影响文字阅读 */
+    border-left-color: var(--tsp-accent-primary, #7aa2f7);
+
+    /* 3. 给一个轻微的缩进反馈 */
+    padding-left: 16px;
+}
+
+/* 匹配高亮样式 */
+.tsp-highlight-match {
+    font-weight: 800;
+    /* 搜索匹配词使用主题的强调色，或者警告色 */
+    color: var(--tsp-accent-primary, #7aa2f7);
+    background: transparent !important;
+}
+
+/* 选中状态下，让搜索词稍微更亮一点（可选） */
+.tsp-autocomplete-item.highlight .tsp-highlight-match {
+    filter: brightness(1.2);
+}
 /* 响应式调整 */
 /* 响应式调整 - 修复手机端无法编辑的问题 */
 @media screen and (max-width: 900px) {
+    .tsp-modal-large {
+        width: 95%;
+        height: 90dvh;
+        max-width: none;
+        max-height: none;
+        border-radius: 0;
+        border-radius: 8px;
+        margin-bottom: 10vh;
+    }
     /* 1. 布局容器不再限制高度，改为由内容撑开 */
     .tsp-chardb-layout {
         flex-direction: column;
         height: auto;        /* 关键：取消固定高度 */
         overflow: visible;   /* 关键：取消内部裁剪 */
     }
-
+    .tsp-autocomplete-container {
+        font-size: 16px; /* 增大字号防止点击困难 */
+    }
+    .tsp-autocomplete-item {
+        padding: 12px; /* 增大点击区域 */
+    }
     /* 2. 侧边栏：限制最大高度，防止列表太长导致找不到编辑器 */
     .tsp-chardb-sidebar {
         flex: none;
