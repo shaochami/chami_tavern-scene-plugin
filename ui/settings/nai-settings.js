@@ -1,1 +1,972 @@
-'use strict';let p=typeof globalThis!=='undefined'?globalThis:typeof window!=='undefined'?window:global,G_7b65a9=p['G_7b65a9']||(p['G_7b65a9']={});const Q_b90773=(function(){let a=[{'i':[0xa0,null,0x8,0x0,0x47,0x0,0x3,null,0xa0,null,0x2,null,0x47,0x1,0x3,null,0xa0,null,0x0,0x2,0x47,0x3,0x3,null,0xa0,null,0x0,0x4,0x47,0x5,0x3,null,0xa0,null,0x4d,null,0x4,null,0x0,0x6,0x47,0x7,0x3,null,0x4,null,0x0,0x8,0x47,0x9,0x3,null,0x4,null,0x0,0x8,0x47,0xa,0x3,null,0x4,null,0x0,0xb,0x47,0xc,0x3,null,0x4,null,0x0,0xd,0x47,0xe,0x3,null,0x4,null,0x0,0xf,0x47,0x10,0x3,null,0x4,null,0x0,0x11,0x47,0x12,0x3,null,0x4,null,0x0,0x13,0x47,0x14,0x3,null,0x4,null,0x0,0x15,0x47,0x16,0x3,null,0x4,null,0x0,0x17,0x47,0x18,0x3,null,0x4,null,0x0,0x19,0x47,0x1a,0x3,null,0x4,null,0x0,0x1b,0x47,0x1c,0x3,null,0x4,null,0x0,0xb,0x47,0x1d,0x3,null,0x4,null,0x0,0x1e,0x47,0x1f,0x3,null,0x4,null,0x0,0x1e,0x47,0x20,0x3,null,0x4,null,0x0,0x1e,0x47,0x21,0x3,null,0x4,null,0x0,0x1e,0x47,0x22,0x3,null,0x4,null,0x0,0x1e,0x47,0x23,0x3,null,0x4,null,0x0,0x24,0x47,0x25,0x3,null,0x4,null,0x0,0x17,0x47,0x26,0x3,null,0x4,null,0x0,0x27,0x47,0x28,0x3,null,0x4,null,0x0,0x1e,0x47,0x29,0x3,null,0x4,null,0x0,0x2a,0x47,0x2b,0x3,null,0x4,null,0x0,0x1e,0x47,0x2c,0x3,null,0x4,null,0x0,0x2d,0x47,0x2e,0x3,null,0x4,null,0x5a,null,0x47,0x2f,0x3,null,0x47,0x30,0x3,null,0xa0,null,0x5a,null,0x47,0x2f,0x3,null,0xa0,null,0x0,0x2a,0x47,0x2b,0x3,null,0xa0,null,0x5a,null,0x47,0x31,0x3,null,0xa0,null,0x0,0x8,0x47,0x32,0x3,null,0x1,null,0x38,null],'c':["ctx","containerEl","https://image.novelai.net/ai/generate-image","DEFAULT_OFFICIAL_URL","1","DEFAULT_PROXY_URL","proxy","channel","","proxyUrl","apiKey",!![],"proxyStream","nai-diffusion-3","model","k_euler_ancestral","sampler","native","noiseSchedule",0x1c,"steps",0x5,"scale",0x0,"cfgRescale",0x340,"width",0x4c0,"height","sm",![],"dyn","variety","decrisper","multiRoleEnabled","useCoords",0.7,"i2iStrength","i2iNoise",0x1,"inpaintStrength","vibeEnabled","vibe","referenceMode","directorStyleAware",0.6,"directorStrength","vibeImages","defaultSettings","naiPresets","activePresetName"],'p':0x1,'l':0x0},{'i':[0x3a,null,0x0,0x0,0xa0,null,0x46,0x1,0x4,null,0x4e,0x2,0x4,null,0x2,null,0x2a,null,0x33,null,0x4,null,0x1,null,0x2a,null,0x33,null,0x0,0x3,0x37,0x1,0x32,null,0x3,null,0x3,null,0x3,null,0x1,null,0x7,0x0,0x6,0x0,0x4e,0x4,0x4e,0x5,0x4,null,0x33,null,0x3,null,0x4d,null,0x7,0x1,0x6,0x1,0x46,0x6,0x4,null,0x33,null,0x3,null,0x5a,null,0x7,0x2,0x6,0x1,0x46,0x7,0x4,null,0x33,null,0x3,null,0x0,0x8,0x7,0x3,0x4d,null,0xa0,null,0x46,0x9,0x51,null,0x6,0x1,0x51,null,0x4,null,0x6,0x2,0x47,0x6,0x3,null,0x4,null,0x6,0x3,0x47,0x7,0x3,null,0x38,null,0x3b,null,0x32,null,0xd5,0x0,0xd2,0x0,0x3c,0xa,0x0,0xb,0xd3,0xa,0x4b,0xc,0x4,null,0x46,0xd,0x0,0xe,0x37,0x2,0x3,null,0xa0,null,0x46,0x9,0x38,null,0xd6,0x0,0x32,null,0x1,null,0x38,null],'c':["imageGen","ctx","getModule",0x1,"settings","nai","naiPresets","naiTriggersEnabled",![],"defaultSettings","e$$1","[NAISettings] 获取设置失败，使用默认值","console","warn",0x2],'p':0x0,'l':0x4,'j':{0x9:0x11,0xd:0x11,0x10:0x15,0x1a:0x1d,0x21:0x24,0x28:0x2b,0x3c:0x4d,0x4c:0x4d},'x':{0x0:[0x3d,-0x1,0x4d]}},{'i':[0xa0,null,0x4,null,0x46,0x0,0x0,0x1,0x37,0x0,0x7,0x0,0xa0,null,0x6,0x0,0x46,0x2,0x4,null,0x33,null,0x3,null,0x5a,null,0x47,0x2,0x3,null,0xa0,null,0xa0,null,0x46,0x2,0x46,0x3,0x0,0x1,0x2e,null,0x34,null,0xa0,null,0x46,0x2,0x0,0x1,0x48,null,0x46,0x4,0x32,null,0x0,0x5,0x47,0x6,0x3,null,0xa0,null,0x6,0x0,0x46,0x7,0x4,null,0x33,null,0x3,null,0x5a,null,0x47,0x7,0x3,null,0xa0,null,0x6,0x0,0x46,0x8,0x4,null,0x33,null,0x3,null,0x0,0x9,0x47,0x8,0x3,null,0x6,0x0,0x46,0xa,0x0,0xb,0x2a,null,0x34,null,0xa0,null,0x46,0xc,0x32,null,0xa0,null,0x46,0xd,0x7,0x1,0x6,0x0,0x46,0xe,0x4,null,0x33,null,0x3,null,0x6,0x1,0x7,0x2,0x0,0xf,0x6,0x0,0x46,0xa,0x0,0x10,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x12,0xa,null,0x6,0x0,0x46,0xa,0x0,0xb,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x13,0xa,null,0x6,0x2,0xa,null,0x0,0x14,0xa,null,0x6,0x1,0xa,null,0x0,0x15,0xa,null,0x6,0x0,0x46,0x16,0x4,null,0x33,null,0x3,null,0x0,0x5,0xa,null,0x0,0x17,0xa,null,0x6,0x0,0x46,0xa,0x0,0xb,0x2a,null,0x34,null,0x0,0x18,0x32,null,0x0,0x5,0xa,null,0x0,0x19,0xa,null,0x6,0x0,0x46,0x1a,0x0,0x1b,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x1c,0xa,null,0x6,0x0,0x46,0x1a,0x0,0x1d,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x1e,0xa,null,0x6,0x0,0x46,0x1f,0x0,0x20,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x21,0xa,null,0x6,0x0,0x46,0x1f,0x0,0x22,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x23,0xa,null,0x6,0x0,0x46,0x1f,0x0,0x24,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x25,0xa,null,0x6,0x0,0x46,0x1f,0x0,0x26,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x27,0xa,null,0x6,0x0,0x46,0x1f,0x0,0x28,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x29,0xa,null,0x6,0x0,0x46,0x1f,0x0,0x2a,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x2b,0xa,null,0x6,0x0,0x46,0x2c,0x0,0x2d,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x2e,0xa,null,0x6,0x0,0x46,0x2c,0x0,0x2f,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x30,0xa,null,0x6,0x0,0x46,0x2c,0x0,0x31,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x32,0xa,null,0x6,0x0,0x46,0x2c,0x0,0x33,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x34,0xa,null,0x6,0x0,0x46,0x2c,0x0,0x35,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x36,0xa,null,0x6,0x0,0x46,0x2c,0x0,0x37,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x38,0xa,null,0x6,0x0,0x46,0x39,0x0,0x3a,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x3b,0xa,null,0x6,0x0,0x46,0x39,0x0,0x3c,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x3d,0xa,null,0x6,0x0,0x46,0x39,0x0,0x3e,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x3f,0xa,null,0x6,0x0,0x46,0x39,0x0,0x40,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x41,0xa,null,0x6,0x0,0x46,0x42,0xa,null,0x0,0x43,0xa,null,0x6,0x0,0x46,0x44,0xa,null,0x0,0x45,0xa,null,0x6,0x0,0x46,0x46,0xa,null,0x0,0x47,0xa,null,0x6,0x0,0x46,0x48,0xa,null,0x0,0x49,0xa,null,0x6,0x0,0x46,0x4a,0xa,null,0x0,0x4b,0xa,null,0x6,0x0,0x46,0x4c,0x0,0x1b,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x4d,0xa,null,0x6,0x0,0x46,0x4c,0x0,0x1b,0x2b,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x4e,0xa,null,0x6,0x0,0x46,0x4f,0x0,0x1b,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x4d,0xa,null,0x6,0x0,0x46,0x4f,0x0,0x1b,0x2b,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x50,0xa,null,0x6,0x0,0x46,0x51,0x0,0x1b,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x4d,0xa,null,0x6,0x0,0x46,0x51,0x0,0x1b,0x2b,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x52,0xa,null,0x6,0x0,0x46,0x53,0x0,0x1b,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x4d,0xa,null,0x6,0x0,0x46,0x53,0x0,0x1b,0x2b,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x54,0xa,null,0x6,0x0,0x46,0x55,0x34,null,0x0,0x56,0x32,null,0x0,0x5,0xa,null,0x0,0x57,0xa,null,0x6,0x0,0x46,0x58,0x0,0x1b,0x2a,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x4d,0xa,null,0x6,0x0,0x46,0x58,0x0,0x1b,0x2b,null,0x34,null,0x0,0x11,0x32,null,0x0,0x5,0xa,null,0x0,0x59,0xa,null,0x6,0x0,0x46,0x5a,0xa,null,0x0,0x5b,0xa,null,0x6,0x0,0x46,0x5c,0xa,null,0x0,0x5d,0xa,null,0x6,0x0,0x46,0x5e,0xa,null,0x0,0x5f,0xa,null,0x6,0x0,0x46,0x60,0x34,null,0x0,0x56,0x32,null,0x0,0x5,0xa,null,0x0,0x61,0xa,null,0x6,0x0,0x46,0x62,0x34,null,0x0,0x56,0x32,null,0x0,0x5,0xa,null,0x0,0x63,0xa,null,0x6,0x0,0x46,0x62,0x34,null,0x0,0x5,0x32,null,0x0,0x64,0xa,null,0x0,0x65,0xa,null,0xa0,null,0x46,0x8,0x0,0x9,0x2a,null,0x34,null,0x0,0x66,0x32,null,0x0,0x5,0xa,null,0x0,0x67,0xa,null,0xa0,null,0x46,0x8,0x0,0x68,0x2a,null,0x34,null,0x0,0x66,0x32,null,0x0,0x5,0xa,null,0x0,0x69,0xa,null,0xa0,null,0x46,0x8,0x0,0x68,0x2a,null,0x34,null,0x0,0x6a,0x32,null,0x0,0x6b,0xa,null,0x0,0x6c,0xa,null,0x6,0x0,0x46,0x6d,0x34,null,0x0,0x56,0x32,null,0x0,0x5,0xa,null,0x0,0x6e,0xa,null,0x6,0x0,0x46,0x6f,0xa,null,0x0,0x70,0xa,null,0x0,0x71,0x6,0x0,0x46,0x6f,0x4b,0x72,0x0,0x73,0x36,0x1,0x4,null,0x46,0x74,0x0,0x73,0x37,0x1,0xa,null,0x0,0x75,0xa,null,0x38,null],'c':["_getSettings",0x0,"naiPresets","length","name","","activePresetName","vibeImages","referenceMode","vibe","channel","official","DEFAULT_OFFICIAL_URL","DEFAULT_PROXY_URL","proxyUrl","\n        <div class=\"tsp-settings-pane-inner\">\n            <!-- API 设置 -->\n            <div class=\"tsp-settings-group\">\n                <h4 class=\"tsp-settings-group-title\">\n                    <i class=\"fa-solid fa-key\"></i> API 设置\n                </h4>\n                <div class=\"tsp-form-group\">\n                    <label>渠道</label>\n                    <select class=\"tsp-input\" id=\"nai-channel\">\n                        <option value=\"proxy\" ","proxy","selected",">第三方代理</option>\n                        <option value=\"official\" ",">官方 (Official)</option>\n                    </select>\n                </div>\n                <div class=\"tsp-form-group\">\n                    <label>API 地址 (URL)</label>\n                    <input type=\"text\" class=\"tsp-input\" id=\"nai-api-url\"\n                           value=\"","\"\n                           placeholder=\"默认: ","\">\n                </div>\n                <div class=\"tsp-form-group\">\n                    <label>密钥 (Key)</label>\n                    <input type=\"password\" class=\"tsp-input\" id=\"nai-token\"\n                           value=\"","apiKey","\"\n                           placeholder=\"API Key 或密钥\">\n                </div>\n                <div class=\"tsp-form-group\" id=\"nai-proxy-stream-group\" style=\"","display:none;","\">\n                    <label>第三方代理流式传输</label>\n                    <select class=\"tsp-input\" id=\"nai-proxy-stream\">\n                        <option value=\"true\" ","proxyStream",!![],">启用 (Stream)</option>\n                        <option value=\"false\" ",![],">禁用 (Direct Image)</option>\n                    </select>\n                    <small class=\"tsp-text-muted\">如果代理直接返回图片而不是 URL，请选择\"禁用\"</small>\n                </div>\n            </div>\n\n            <!-- 模型与采样 -->\n            <div class=\"tsp-settings-group\">\n                <h4 class=\"tsp-settings-group-title\">\n                    <i class=\"fa-solid fa-cube\"></i> 模型与采样\n                </h4>\n                <div class=\"tsp-form-row\">\n                    <div class=\"tsp-form-group\">\n                        <label>模型 (Model)</label>\n                        <select class=\"tsp-input\" id=\"nai-model\">\n                            <option value=\"nai-diffusion-3\" ","model","nai-diffusion-3",">NAI Diffusion 3</option>\n                            <option value=\"nai-diffusion-furry-3\" ","nai-diffusion-furry-3",">NAI Diffusion Furry 3</option>\n                            <option value=\"nai-diffusion-4-full\" ","nai-diffusion-4-full",">NAI Diffusion 4 Full</option>\n                            <option value=\"nai-diffusion-4-curated-preview\" ","nai-diffusion-4-curated-preview",">NAI Diffusion 4 Curated</option>\n                            <option value=\"nai-diffusion-4-5-full\" ","nai-diffusion-4-5-full",">NAI Diffusion 4.5 Full</option>\n                            <option value=\"nai-diffusion-4-5-curated\" ","nai-diffusion-4-5-curated",">NAI Diffusion 4.5 Curated</option>\n                        </select>\n                    </div>\n                    <div class=\"tsp-form-group\">\n                        <label>采样器 (Sampler)</label>\n                        <select class=\"tsp-input\" id=\"nai-sampler\">\n                            <option value=\"k_euler\" ","sampler","k_euler",">Euler</option>\n                            <option value=\"k_euler_ancestral\" ","k_euler_ancestral",">Euler Ancestral</option>\n                            <option value=\"k_dpmpp_2s_ancestral\" ","k_dpmpp_2s_ancestral",">DPM++ 2S Ancestral</option>\n                            <option value=\"k_dpmpp_2m_sde\" ","k_dpmpp_2m_sde",">DPM++ 2M SDE</option>\n                            <option value=\"k_dpmpp_2m\" ","k_dpmpp_2m",">DPM++ 2M</option>\n                            <option value=\"k_dpmpp_sde\" ","k_dpmpp_sde",">DPM++ SDE</option>\n                        </select>\n                    </div>\n                </div>\n                <div class=\"tsp-form-group\">\n                    <label>噪点调度 (Noise Schedule)</label>\n                    <select class=\"tsp-input\" id=\"nai-noise-schedule\">\n                        <option value=\"native\" ","noiseSchedule","native",">native</option>\n                        <option value=\"exponential\" ","exponential",">exponential</option>\n                        <option value=\"polyexponential\" ","polyexponential",">polyexponential</option>\n                        <option value=\"karras\" ","karras",">karras</option>\n                    </select>\n                </div>\n                <div class=\"tsp-form-row\">\n                    <div class=\"tsp-form-group\">\n                        <label>步数 (Steps)</label>\n                        <input type=\"number\" class=\"tsp-input\" id=\"nai-steps\"\n                               value=\"","steps","\" min=\"1\" max=\"50\">\n                    </div>\n                    <div class=\"tsp-form-group\">\n                        <label>Scale</label>\n                        <input type=\"number\" class=\"tsp-input\" id=\"nai-scale\"\n                               value=\"","scale","\" min=\"1\" max=\"30\" step=\"0.5\">\n                    </div>\n                    <div class=\"tsp-form-group\">\n                        <label>CFG Rescale</label>\n                        <input type=\"number\" class=\"tsp-input\" id=\"nai-cfg-rescale\"\n                               value=\"","cfgRescale","\" min=\"0\" max=\"1\" step=\"0.05\">\n                    </div>\n                </div>\n                <div class=\"tsp-form-row\">\n                    <div class=\"tsp-form-group\">\n                        <label>宽度</label>\n                        <input type=\"number\" class=\"tsp-input\" id=\"nai-width\"\n                               value=\"","width","\" min=\"64\" step=\"64\">\n                    </div>\n                    <div class=\"tsp-form-group\">\n                        <label>高度</label>\n                        <input type=\"number\" class=\"tsp-input\" id=\"nai-height\"\n                               value=\"","height","\" min=\"64\" step=\"64\">\n                    </div>\n                </div>\n            </div>\n\n            <!-- 高级参数 -->\n            <div class=\"tsp-settings-group\">\n                <h4 class=\"tsp-settings-group-title\">\n                    <i class=\"fa-solid fa-sliders\"></i> 高级参数\n                </h4>\n                <div class=\"tsp-form-row\">\n                    <div class=\"tsp-form-group\">\n                        <label>SM (V3)</label>\n                        <select class=\"tsp-input\" id=\"nai-sm\">\n                            <option value=\"true\" ","sm",">True</option>\n                            <option value=\"false\" ",">False</option>\n                        </select>\n                    </div>\n                    <div class=\"tsp-form-group\">\n                        <label>SMEA+DYN (V3)</label>\n                        <select class=\"tsp-input\" id=\"nai-dyn\">\n                            <option value=\"true\" ","dyn",">False</option>\n                        </select>\n                    </div>\n                </div>\n                <div class=\"tsp-form-row\">\n                    <div class=\"tsp-form-group\">\n                        <label>多样性 (Variety)</label>\n                        <select class=\"tsp-input\" id=\"nai-variety\">\n                            <option value=\"true\" ","variety",">False</option>\n                        </select>\n                    </div>\n                    <div class=\"tsp-form-group\">\n                        <label>Decrisper</label>\n                        <select class=\"tsp-input\" id=\"nai-decrisper\">\n                            <option value=\"true\" ","decrisper",">False</option>\n                        </select>\n                    </div>\n                </div>\n                <div class=\"tsp-form-row\">\n                    <div class=\"tsp-form-group\" style=\"display: flex; align-items: center; padding-top: 25px;\">\n                        <label class=\"tsp-switch-label\">\n                            <input type=\"checkbox\" class=\"tsp-switch\" id=\"nai-multi-role\" ","multiRoleEnabled","checked",">\n                            <span class=\"tsp-switch-slider\"></span>\n                            <span>启用多角色模式</span>\n                        </label>\n                    </div>\n                    <div class=\"tsp-form-group\">\n                        <label>角色位置 (V4+)</label>\n                        <select class=\"tsp-input\" id=\"nai-use-coords\">\n                            <option value=\"true\" ","useCoords",">False</option>\n                        </select>\n                    </div>\n                </div>\n            </div>\n\n            <!-- 图生图 -->\n            <div class=\"tsp-settings-group\">\n                <h4 class=\"tsp-settings-group-title\">\n                    <i class=\"fa-solid fa-image\"></i> 图生图 (Image to Image)\n                </h4>\n                <p class=\"tsp-text-muted\" style=\"margin-top: -10px;\">在聊天记录中长按生成的图片，可上传图生图底图。</p>\n                <div class=\"tsp-form-row\">\n                    <div class=\"tsp-form-group\">\n                        <label>重绘强度 (Strength)</label>\n                        <input type=\"number\" class=\"tsp-input\" id=\"nai-strength\"\n                               value=\"","i2iStrength","\" min=\"0\" max=\"0.99\" step=\"0.01\">\n                    </div>\n                    <div class=\"tsp-form-group\">\n                        <label>重绘噪声 (Noise)</label>\n                        <input type=\"number\" class=\"tsp-input\" id=\"nai-noise\"\n                               value=\"","i2iNoise","\" min=\"0\" max=\"0.99\" step=\"0.01\">\n                    </div>\n                    <div class=\"tsp-form-group\">\n                        <label>蒙版重绘幅度</label>\n                        <input type=\"number\" class=\"tsp-input\" id=\"nai-inpaint-strength\"\n                               value=\"","inpaintStrength","\" min=\"0.01\" max=\"1\" step=\"0.01\">\n                    </div>\n                </div>\n            </div>\n\n            <!-- 参考模式 -->\n            <div class=\"tsp-settings-group\">\n                <h4 class=\"tsp-settings-group-title\">\n                    <i class=\"fa-solid fa-wand-magic-sparkles\"></i> 参考模式 (Reference)\n                </h4>\n\n                <!-- [新增] 预设管理区域 开始 -->\n                <div class=\"tsp-settings-group\" style=\"padding: 12px; background: rgba(0,0,0,0.1); border-radius:8px;\">\n                    <h5 style=\"margin-top:0; font-size:0.9em; color:var(--tsp-text-secondary);\">预设管理</h5>\n                    <div class=\"tsp-form-row\">\n                        <div class=\"tsp-form-group\" style=\"flex:2;\">\n                            <label>选择预设</label>\n                            <select class=\"tsp-input\" id=\"nai-preset-select\">\n                                <option value=\"\">-- 新建预设 --</option>\n                            </select>\n                        </div>\n                        <div class=\"tsp-btn-group\" style=\"flex:1; align-self: flex-end; justify-content: flex-end;\">\n                            <button type=\"button\" class=\"tsp-btn\" id=\"nai-preset-save\" title=\"将当前配置另存为新预设\">\n                                <i class=\"fa-solid fa-save\"></i> 保存\n                            </button>\n                            <button type=\"button\" class=\"tsp-btn tsp-btn-danger\" id=\"nai-preset-delete\" title=\"删除当前预设\">\n                                <i class=\"fa-solid fa-trash\"></i> 删除\n                            </button>\n                        </div>\n                    </div>\n                    <div class=\"tsp-form-group\">\n                        <label>触发词 (用 , 分隔)</label>\n                        <input type=\"text\" class=\"tsp-input\" id=\"nai-preset-triggers\" placeholder=\"例如: 街拍, cyberpunk, neon\">\n                    </div>\n                </div>\n                <!-- [新增] 预设管理区域 结束 -->\n\n\n                <div class=\"tsp-form-group\" style=\"margin-top: 15px;\">\n                    <label class=\"tsp-switch-label\">\n                        <input type=\"checkbox\" class=\"tsp-switch\" id=\"nai-triggers-enabled\" ","naiTriggersEnabled",">\n                        <span class=\"tsp-switch-slider\"></span>\n                        <span>启用触发词模式 (与手动开启参考模式互斥)</span>\n                    </label>\n                </div>\n                <div class=\"tsp-form-group\">\n                    <label class=\"tsp-switch-label\">\n                        <input type=\"checkbox\" class=\"tsp-switch\" id=\"nai-vibe-enabled\" ","vibeEnabled",">\n                        <span class=\"tsp-switch-slider\"></span>\n                        <span>手动开启参考模式</span>\n                    </label>\n                </div>\n\n                <div id=\"nai-ref-controls\" style=\"","opacity: 0.5; pointer-events: none;","\">\n                    <div class=\"tsp-btn-group\" id=\"nai-ref-mode-buttons\" style=\"margin-bottom: 15px;\">\n                        <button type=\"button\" class=\"tsp-btn ","tsp-btn-primary","\"\n                                data-mode=\"vibe\">氛围模式 (Vibe)</button>\n                        <button type=\"button\" class=\"tsp-btn ","director","\"\n                                data-mode=\"director\">人物参考 (Character)</button>\n                    </div>\n\n                    <div id=\"nai-director-controls\" style=\"display: ","block","none","; background: rgba(0,0,0,0.2); padding: 12px; border-radius: 8px; margin-bottom: 15px;\">\n                        <label style=\"display: flex; align-items: center; gap: 8px; margin-bottom: 10px;\">\n                            <input type=\"checkbox\" id=\"nai-director-style-aware\" ","directorStyleAware",">\n                            <span><strong style=\"color: var(--tsp-accent-primary);\">Style Aware:</strong> 同时参考\"角色\"与\"风格\"</span>\n                        </label>\n                        <div class=\"tsp-slider-group\">\n                            <label>参考强度</label>\n                            <input type=\"range\" class=\"tsp-slider\" id=\"nai-director-strength\"\n                                   min=\"0.01\" max=\"1\" step=\"0.01\" value=\"","directorStrength","\">\n                            <span class=\"tsp-slider-value\" id=\"nai-director-strength-value\">",0x2,"Number",0x1,"toFixed","</span>\n                        </div>\n                    </div>\n\n                    <button type=\"button\" class=\"tsp-btn\" id=\"nai-vibe-upload-btn\" style=\"margin-bottom: 10px;\">\n                        <i class=\"fa-solid fa-upload\"></i> 上传参考图\n                    </button>\n                    <input type=\"file\" id=\"nai-vibe-upload-input\" multiple accept=\"image/*,.naiv4vibe,.json,.naiv4vibebundle\" style=\"display: none;\">\n\n                    <p id=\"nai-vibe-status\" class=\"tsp-text-muted\" style=\"margin-bottom: 10px;\"></p>\n\n                    <div id=\"nai-vibe-image-list\" class=\"tsp-vibe-list\"></div>\n                </div>\n            </div>\n        </div>\n        "],'p':0x0,'l':0x3,'j':{0xa:0xd,0x15:0x1c,0x1b:0x1d,0x23:0x26,0x2c:0x2f,0x35:0x39,0x38:0x3b,0x3f:0x42,0x48:0x4b,0x4a:0x4c,0x53:0x56,0x55:0x57,0x65:0x68,0x6f:0x72,0x71:0x73,0x7a:0x7d,0x7c:0x7e,0x85:0x88,0x87:0x89,0x90:0x93,0x92:0x94,0x9b:0x9e,0x9d:0x9f,0xa6:0xa9,0xa8:0xaa,0xb1:0xb4,0xb3:0xb5,0xbc:0xbf,0xbe:0xc0,0xc7:0xca,0xc9:0xcb,0xd2:0xd5,0xd4:0xd6,0xdd:0xe0,0xdf:0xe1,0xe8:0xeb,0xea:0xec,0xf3:0xf6,0xf5:0xf7,0xfe:0x101,0x100:0x102,0x109:0x10c,0x10b:0x10d,0x114:0x117,0x116:0x118,0x11f:0x122,0x121:0x123,0x12a:0x12d,0x12c:0x12e,0x135:0x138,0x137:0x139,0x159:0x15c,0x15b:0x15d,0x164:0x167,0x166:0x168,0x16f:0x172,0x171:0x173,0x17a:0x17d,0x17c:0x17e,0x185:0x188,0x187:0x189,0x190:0x193,0x192:0x194,0x19b:0x19e,0x19d:0x19f,0x1a6:0x1a9,0x1a8:0x1aa,0x1af:0x1b2,0x1b1:0x1b3,0x1ba:0x1bd,0x1bc:0x1be,0x1c5:0x1c8,0x1c7:0x1c9,0x1dd:0x1e0,0x1df:0x1e1,0x1e6:0x1e9,0x1e8:0x1ea,0x1ef:0x1f2,0x1f1:0x1f3,0x1fa:0x1fd,0x1fc:0x1fe,0x205:0x208,0x207:0x209,0x210:0x213,0x212:0x214,0x219:0x21c,0x21b:0x21d}},{'i':[0xd5,0x0,0xd2,0x0,0xd3,0x0,0x8,0x0,0x46,0x1,0x46,0x2,0x47,0x3,0x3,null,0xd3,0x0,0x4,null,0x46,0x4,0x0,0x5,0x37,0x0,0x3,null],'c':["__this__","target","value","activePresetName","_applyActivePresetToUI",0x0],'p':0x1,'l':0x0,'a':0x1},{'i':[0xd5,0x0,0xd2,0x0,0xd3,0x0,0x4,null,0x46,0x1,0x0,0x2,0x37,0x0,0x7a,null,0x3,null],'c':["__this__","_saveAsNewPreset",0x0],'p':0x0,'l':0x0,'a':0x1,'s':0x1},{'i':[0xd5,0x0,0xd2,0x0,0xd3,0x0,0x4,null,0x46,0x1,0x0,0x2,0x37,0x0,0x7a,null,0x3,null],'c':["__this__","_deleteActivePreset",0x0],'p':0x0,'l':0x0,'a':0x1,'s':0x1},{'i':[0xd5,0x0,0xd2,0x0,0x8,0x0,0x46,0x0,0x46,0x1,0xd3,0x2,0x4,null,0x46,0x3,0x0,0x4,0x37,0x1,0x3,null],'c':["target","value","__this__","_updateActivePresetTriggerWords",0x1],'p':0x1,'l':0x0,'a':0x1},{'i':[0xd5,0x0,0xd2,0x0,0x8,0x0,0x46,0x0,0x46,0x1,0x0,0x2,0x2a,null,0x7,0x1,0x0,0x3,0xd3,0x4,0x4,null,0x46,0x5,0x0,0x6,0x37,0x1,0x7,0x2,0xd3,0x7,0x34,null,0xd3,0x7,0x46,0x8,0xd3,0x9,0x34,null,0x0,0xa,0x32,null,0x0,0xb,0x47,0xc,0x3,null],'c':["target","value","official","#nai-proxy-stream-group","containerEl","querySelector",0x1,"streamGroup","style","isOfficial","none","block","display"],'p':0x1,'l':0x2,'j':{0x10:0x1a,0x14:0x17,0x16:0x18},'a':0x1},{'i':[0xd5,0x0,0xd2,0x0,0x0,0x0,0xd3,0x1,0x4,null,0x46,0x2,0x0,0x3,0x37,0x1,0x7,0x1,0xd3,0x4,0x34,null,0xd3,0x4,0x46,0x5,0x8,0x0,0x46,0x6,0x46,0x7,0x34,null,0x0,0x8,0x32,null,0x0,0x9,0x47,0xa,0x3,null],'c':["#nai-ref-controls","containerEl","querySelector",0x1,"controls","style","target","checked","","opacity: 0.5; pointer-events: none;","cssText"],'p':0x1,'l':0x1,'j':{0xa:0x16,0x10:0x13,0x12:0x14},'a':0x1},{'i':[0xd5,0x0,0xd2,0x0,0x8,0x0,0x4,null,0x46,0x0,0x0,0x1,0x37,0x0,0x3,null,0x8,0x0,0x4,null,0x46,0x2,0x0,0x1,0x37,0x0,0x3,null,0x0,0x3,0xd3,0x4,0x46,0x5,0x46,0x6,0x4b,0x7,0x4,null,0x46,0x8,0x0,0x9,0x37,0x2,0x3,null,0xd3,0xa,0xd3,0x4,0x46,0x5,0x46,0x6,0x47,0xb,0x3,null,0xd3,0xa,0x4,null,0x46,0xc,0x0,0x1,0x37,0x0,0x3,null],'c':["preventDefault",0x0,"stopPropagation","[NAISettings] 点击参考模式按钮:","btn","dataset","mode","console","log",0x2,"__this__","referenceMode","_updateRefModeUI"],'p':0x1,'l':0x0,'a':0x1},{'i':[0xd5,0x0,0xd2,0x0,0x8,0x0,0xd7,0x0,0x3,null,0x0,0x1,0xd3,0x0,0x46,0x2,0x46,0x3,0x4b,0x4,0x4,null,0x46,0x5,0x0,0x6,0x37,0x2,0x3,null,0x0,0x7,0x0,0x8,0x64,null,0xd3,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x2,0x3,null],'c':["btn","[NAISettings] 绑定按钮事件:","dataset","mode","console","log",0x2,"click",0x9,"addEventListener"],'p':0x1,'l':0x0,'a':0x1},{'i':[0xd5,0x0,0xd2,0x0,0xd3,0x0,0x0,0x1,0xd3,0x2,0x46,0x3,0x4b,0x4,0x0,0x5,0x36,0x1,0x4,null,0x46,0x6,0x0,0x5,0x37,0x1,0x47,0x7,0x3,null],'c':["directorValue",0x2,"directorSlider","value","parseFloat",0x1,"toFixed","textContent"],'p':0x0,'l':0x0,'a':0x1},{'i':[0xd5,0x0,0xd2,0x0,0x0,0x0,0xd3,0x1,0x4,null,0x46,0x2,0x0,0x3,0x37,0x1,0x4,null,0x4e,0x4,0x4,null,0x2,null,0x2a,null,0x33,null,0x4,null,0x1,null,0x2a,null,0x33,null,0x0,0x5,0x37,0x0,0x32,null,0x3,null,0x3,null,0x1,null,0x3,null],'c':["#nai-vibe-upload-input","containerEl","querySelector",0x1,"click",0x0],'p':0x0,'l':0x0,'j':{0xd:0x15,0x11:0x15,0x14:0x18},'a':0x1},{'i':[0xd5,0x0,0xd2,0x0,0x8,0x0,0x46,0x0,0x46,0x1,0xd3,0x2,0x4,null,0x46,0x3,0x0,0x4,0x37,0x1,0x3,null],'c':["target","files","__this__","_handleVibeUpload",0x1],'p':0x1,'l':0x0,'a':0x1},{'i':[0xd2,0x0,0x8,0x0,0xd7,0x0,0x3,null,0xa0,null,0xd4,0x2a,0x3,null,0xda,0x1,0xda,0x2,0xa0,null,0xd3,0x0,0x47,0x0,0x3,null,0xa0,null,0x4,null,0x46,0x3,0x0,0x4,0x37,0x0,0x3,null,0xa0,null,0x4,null,0x46,0x5,0x0,0x4,0x37,0x0,0x3,null,0x0,0x6,0x0,0x7,0x64,null,0x0,0x8,0xd3,0x0,0x4,null,0x46,0x9,0x0,0xa,0x37,0x1,0x4,null,0x4e,0xb,0x4,null,0x2,null,0x2a,null,0x33,null,0x4,null,0x1,null,0x2a,null,0x33,null,0x0,0xc,0x37,0x2,0x32,null,0x3,null,0x3,null,0x3,null,0x3,null,0x1,null,0x3,null,0x0,0xd,0x0,0xe,0x64,null,0x0,0xf,0xd3,0x0,0x4,null,0x46,0x9,0x0,0xa,0x37,0x1,0x4,null,0x4e,0xb,0x4,null,0x2,null,0x2a,null,0x33,null,0x4,null,0x1,null,0x2a,null,0x33,null,0x0,0xc,0x37,0x2,0x32,null,0x3,null,0x3,null,0x3,null,0x3,null,0x1,null,0x3,null,0x0,0xd,0x0,0x10,0x64,null,0x0,0x11,0xd3,0x0,0x4,null,0x46,0x9,0x0,0xa,0x37,0x1,0x4,null,0x4e,0xb,0x4,null,0x2,null,0x2a,null,0x33,null,0x4,null,0x1,null,0x2a,null,0x33,null,0x0,0xc,0x37,0x2,0x32,null,0x3,null,0x3,null,0x3,null,0x3,null,0x1,null,0x3,null,0x0,0x12,0x0,0x13,0x64,null,0x0,0x14,0xd3,0x0,0x4,null,0x46,0x9,0x0,0xa,0x37,0x1,0x4,null,0x4e,0xb,0x4,null,0x2,null,0x2a,null,0x33,null,0x4,null,0x1,null,0x2a,null,0x33,null,0x0,0xc,0x37,0x2,0x32,null,0x3,null,0x3,null,0x3,null,0x3,null,0x1,null,0x3,null,0xa0,null,0x4,null,0x46,0x15,0x0,0x4,0x37,0x0,0x3,null,0xa0,null,0x4,null,0x46,0x16,0x0,0x4,0x37,0x0,0x3,null,0x0,0x6,0x0,0x17,0x64,null,0x0,0x18,0xd3,0x0,0x4,null,0x46,0x9,0x0,0xa,0x37,0x1,0x4,null,0x4e,0xb,0x4,null,0x2,null,0x2a,null,0x33,null,0x4,null,0x1,null,0x2a,null,0x33,null,0x0,0xc,0x37,0x2,0x32,null,0x3,null,0x3,null,0x3,null,0x3,null,0x1,null,0x3,null,0x0,0x6,0x0,0x19,0x64,null,0x0,0x1a,0xd3,0x0,0x4,null,0x46,0x9,0x0,0xa,0x37,0x1,0x4,null,0x4e,0xb,0x4,null,0x2,null,0x2a,null,0x33,null,0x4,null,0x1,null,0x2a,null,0x33,null,0x0,0xc,0x37,0x2,0x32,null,0x3,null,0x3,null,0x3,null,0x3,null,0x1,null,0x3,null,0x0,0x1b,0xd3,0x0,0x4,null,0x46,0x1c,0x0,0xa,0x37,0x1,0x7,0x1,0x0,0x1d,0x6,0x1,0x46,0x1e,0x4b,0x1f,0x4,null,0x46,0x20,0x0,0xc,0x37,0x2,0x3,null,0x0,0x21,0x64,null,0x6,0x1,0x4,null,0x46,0x22,0x0,0xa,0x37,0x1,0x3,null,0x0,0x23,0xd3,0x0,0x4,null,0x46,0x9,0x0,0xa,0x37,0x1,0xd9,0x1,0x0,0x24,0xd3,0x0,0x4,null,0x46,0x9,0x0,0xa,0x37,0x1,0xd9,0x2,0xd3,0x1,0x4,null,0x34,null,0x3,null,0xd3,0x2,0x34,null,0x0,0x12,0x0,0x25,0x64,null,0xd3,0x1,0x4,null,0x46,0xb,0x0,0xc,0x37,0x2,0x3,null,0x0,0xd,0x0,0x26,0x64,null,0x0,0x27,0xd3,0x0,0x4,null,0x46,0x9,0x0,0xa,0x37,0x1,0x4,null,0x4e,0xb,0x4,null,0x2,null,0x2a,null,0x33,null,0x4,null,0x1,null,0x2a,null,0x33,null,0x0,0xc,0x37,0x2,0x32,null,0x3,null,0x3,null,0x3,null,0x3,null,0x1,null,0x3,null,0x0,0x6,0x0,0x28,0x64,null,0x0,0x29,0xd3,0x0,0x4,null,0x46,0x9,0x0,0xa,0x37,0x1,0x4,null,0x4e,0xb,0x4,null,0x2,null,0x2a,null,0x33,null,0x4,null,0x1,null,0x2a,null,0x33,null,0x0,0xc,0x37,0x2,0x32,null,0x3,null,0x3,null,0x3,null,0x3,null,0x1,null,0x3,null,0xd6,0x0,0x1,null,0x38,null],'c':["containerEl","directorSlider","directorValue","_renderPresetDropdown",0x0,"_applyActivePresetToUI","change",0x3,"#nai-preset-select","querySelector",0x1,"addEventListener",0x2,"click",0x4,"#nai-preset-save",0x5,"#nai-preset-delete","input",0x6,"#nai-preset-triggers","_renderVibeList","_updateVibeStatus",0x7,"#nai-channel",0x8,"#nai-vibe-enabled","#nai-ref-mode-buttons button","querySelectorAll","[NAISettings] 找到参考模式按钮数量:","length","console","log",0xa,"forEach","#nai-director-strength","#nai-director-strength-value",0xb,0xc,"#nai-vibe-upload-btn",0xd,"#nai-vibe-upload-input","__this__"],'p':0x1,'l':0x3,'j':{0x27:0x2f,0x2b:0x2f,0x2e:0x34,0x43:0x4b,0x47:0x4b,0x4a:0x50,0x5f:0x67,0x63:0x67,0x66:0x6c,0x7b:0x83,0x7f:0x83,0x82:0x88,0xa3:0xab,0xa7:0xab,0xaa:0xb0,0xbf:0xc7,0xc3:0xc7,0xc6:0xcc,0xf5:0xf8,0xf8:0x102,0x110:0x118,0x114:0x118,0x117:0x11d,0x12c:0x134,0x130:0x134,0x133:0x139}},{'i':[0x8,0x0,0x46,0x0,0x46,0x1,0xd3,0x2,0x46,0x3,0x2a,null,0x7,0x1,0x0,0x4,0x8,0x0,0x46,0x0,0x46,0x1,0x0,0x5,0x6,0x1,0x0,0x6,0x0,0x7,0x8,0x0,0x46,0x8,0x4,null,0x46,0x9,0x0,0xa,0x37,0x1,0x4b,0xb,0x4,null,0x46,0xc,0x0,0xd,0x37,0x6,0x3,null,0x0,0x7,0x6,0x1,0x8,0x0,0x46,0x8,0x4,null,0x46,0xe,0x0,0xf,0x37,0x2,0x3,null],'c':["dataset","mode","__this__","referenceMode","[NAISettings] 按钮","应该激活:","当前有 tsp-btn-primary:","tsp-btn-primary","classList","contains",0x1,"console","log",0x6,"toggle",0x2],'p':0x1,'l':0x1,'a':0x1},{'i':[0xa0,null,0xd4,0x16,0x3,null,0x0,0x0,0xa0,null,0x46,0x1,0x4b,0x2,0x4,null,0x46,0x3,0x0,0x4,0x37,0x2,0x3,null,0xa0,null,0x46,0x5,0x20,null,0x34,null,0x0,0x6,0x4b,0x2,0x4,null,0x46,0x3,0x0,0x7,0x37,0x1,0x3,null,0x1,null,0x38,null,0x0,0x8,0x64,null,0x0,0x9,0xa0,null,0x46,0x5,0x4,null,0x46,0xa,0x0,0x7,0x37,0x1,0x4,null,0x46,0xb,0x0,0x7,0x37,0x1,0x3,null,0x0,0xc,0xa0,null,0x46,0x5,0x4,null,0x46,0xd,0x0,0x7,0x37,0x1,0x7,0x0,0x6,0x0,0x34,null,0x6,0x0,0x46,0xe,0xa0,null,0x46,0x1,0x0,0xf,0x2a,null,0x34,null,0x0,0x10,0x32,null,0x0,0x11,0x47,0x12,0x3,null,0xa0,null,0x4,null,0x46,0x13,0x0,0x14,0x37,0x0,0x3,null,0xa0,null,0x4,null,0x46,0x15,0x0,0x14,0x37,0x0,0x3,null,0x1,null,0x38,null],'c':["[NAISettings] _updateRefModeUI 被调用, referenceMode:","referenceMode","console","log",0x2,"containerEl","[NAISettings] containerEl 为空，退出",0x1,0xf,"#nai-ref-mode-buttons button","querySelectorAll","forEach","#nai-director-controls","querySelector","style","director","block","none","display","_renderVibeList",0x0,"_updateVibeStatus","__this__"],'p':0x0,'l':0x1,'j':{0xf:0x19,0x30:0x3d,0x37:0x3a,0x39:0x3b}},{'i':[0xd5,0x0,0xd2,0x0,0x8,0x0,0xd3,0x0,0x4,null,0x46,0x1,0x0,0x2,0x37,0x1,0x38,null],'c':["__this__","_addVibeImage",0x1],'p':0x1,'l':0x0,'a':0x1},{'i':[0xa0,null,0xd4,0x2f,0x3,null,0x8,0x0,0x20,null,0x4,null,0x33,null,0x3,null,0x8,0x0,0x46,0x0,0x0,0x1,0x2a,null,0x34,null,0x1,null,0x38,null,0x8,0x0,0x7f,null,0x7,0x1,0x3,null,0x0,0x2,0x7,0x2,0x3,null,0x0,0x2,0x7,0x2,0x3,null,0x6,0x1,0x7b,null,0x4,null,0x80,null,0x33,null,0x46,0x3,0x7,0x3,0x3a,null,0x3a,null,0x0,0x4,0x6,0x3,0x46,0x5,0x4,null,0x46,0x6,0x0,0x7,0x37,0x1,0x4,null,0x33,null,0x3,null,0x0,0x8,0x6,0x3,0x46,0x5,0x4,null,0x46,0x6,0x0,0x7,0x37,0x1,0x34,null,0x6,0x3,0x4,null,0x46,0x9,0x0,0x1,0x37,0x0,0x7a,null,0x7,0x4,0x6,0x4,0x4b,0xa,0x4,null,0x46,0xb,0x0,0x7,0x37,0x1,0x7,0x5,0x6,0x5,0x46,0xc,0x20,null,0x34,null,0x0,0xd,0x4b,0xe,0x4,null,0x46,0xf,0x0,0x7,0x37,0x1,0x3,null,0x0,0x10,0x7,0x2,0x3,null,0x40,null,0x0,0x11,0x7,0x6,0x6,0x5,0x46,0x12,0x34,null,0x0,0x13,0x6,0x5,0x46,0x12,0x4,null,0x46,0x14,0x0,0x7,0x37,0x1,0x34,null,0x6,0x5,0x46,0x12,0x32,null,0x0,0x15,0x6,0x5,0x46,0x12,0xa,null,0x4,null,0x7,0x6,0x3,null,0x4d,null,0x4,null,0x0,0x16,0x47,0x17,0x3,null,0x4,null,0x6,0x5,0x47,0x18,0x3,null,0x4,null,0x6,0x6,0x47,0x19,0x3,null,0x4,null,0x6,0x6,0x47,0x12,0x3,null,0x4,null,0x0,0x1a,0x47,0x1b,0x3,null,0x4,null,0x0,0x7,0x47,0x1c,0x3,null,0x4,null,0x6,0x5,0x46,0x5,0x4,null,0x33,null,0x3,null,0x6,0x3,0x46,0x5,0x47,0x5,0x3,null,0xa0,null,0x4,null,0x46,0x1d,0x0,0x7,0x37,0x1,0x3,null,0x0,0x1e,0x6,0x5,0x46,0x5,0x4,null,0x33,null,0x3,null,0x6,0x3,0x46,0x5,0x4b,0xe,0x4,null,0x46,0x1f,0x0,0x20,0x37,0x2,0x3,null,0x32,null,0x0,0x21,0x6,0x3,0x46,0x5,0x4,null,0x46,0x6,0x0,0x7,0x37,0x1,0x34,null,0xd5,0x0,0xd2,0x0,0xda,0x9,0xda,0x22,0x6,0x3,0x4,null,0x46,0x9,0x0,0x1,0x37,0x0,0x7a,null,0xd9,0x23,0xd3,0x23,0x4b,0xa,0x4,null,0x46,0xb,0x0,0x7,0x37,0x1,0xd9,0x24,0xd3,0x24,0x4b,0x25,0x4,null,0x46,0x26,0x0,0x7,0x37,0x1,0x34,null,0x0,0x27,0x64,null,0xd3,0x24,0x4,null,0x46,0x28,0x0,0x7,0x37,0x1,0x3,null,0x32,null,0xd3,0x24,0xa0,null,0x4,null,0x46,0x1d,0x0,0x7,0x37,0x1,0x3,null,0xd6,0x0,0x32,null,0x6,0x3,0xa0,null,0x4,null,0x46,0x29,0x0,0x7,0x37,0x1,0x7a,null,0x7,0x9,0x4d,null,0x4,null,0x0,0x19,0x47,0x17,0x3,null,0x4,null,0x6,0x9,0x47,0x19,0x3,null,0x4,null,0x0,0x1a,0x47,0x1b,0x3,null,0x4,null,0x0,0x7,0x47,0x1c,0x3,null,0xa0,null,0x4,null,0x46,0x1d,0x0,0x7,0x37,0x1,0x3,null,0x3b,null,0x32,null,0xd5,0x0,0xd2,0x0,0x3c,0x2a,0x0,0x2b,0xd3,0x2a,0x4b,0xe,0x4,null,0x46,0x2c,0x0,0x20,0x37,0x2,0x3,null,0xd6,0x0,0x32,null,0x3b,null,0x32,null,0x3d,null,0x6,0x2,0x33,null,0x6,0x1,0x7c,null,0x3e,null,0x3,null,0xa0,null,0x4,null,0x46,0x2d,0x0,0x1,0x37,0x0,0x3,null,0xa0,null,0x4,null,0x46,0x2e,0x0,0x1,0x37,0x0,0x3,null,0x1,null,0x38,null],'c':["length",0x0,![],"value",".naiv4vibe","name","endsWith",0x1,".naiv4vibebundle","text","JSON","parse","encodings","[NAISettings] 无效的 .naiv4vibe 文件：缺少 encodings 字段","console","warn",!![],"","thumbnail","data:","startsWith","data:image/png;base64,","vibeFile","type","vibeData","image",0.6,"strength","infoExtracted","_addVibeImage","[NAISettings] 已加载 .naiv4vibe 文件:","log",0x2,".json","data","text$$4","data$$4","Array","isArray",0x11,"forEach","_readFileAsDataURL","error$$3","[NAISettings] 处理文件失败:","error","_renderVibeList","_updateVibeStatus","__this__"],'p':0x1,'l':0x8,'j':{0x6:0xc,0xc:0xf,0x1d:0x109,0x2a:0x33,0x33:0xa0,0x45:0x51,0x50:0x102,0x55:0x68,0x5d:0x61,0x60:0x65,0x85:0x89,0x95:0x99,0x9f:0xf2,0xa7:0xd3,0xc0:0xca,0xc9:0xd1,0xd2:0xf2,0xf3:0x101,0x100:0x101,0x102:0x16,0x105:0x108},'x':{0x20:[-0x1,0x103,0x10a],0x21:[0xf4,-0x1,0x101]},'s':0x1},{'i':[0xa0,null,0x46,0x0,0x0,0x1,0x2a,null,0x34,null,0xa0,null,0x5a,null,0x8,0x0,0x5b,null,0x47,0x2,0x3,null,0x32,null,0x8,0x0,0xa0,null,0x46,0x2,0x4,null,0x46,0x3,0x0,0x4,0x37,0x1,0x3,null,0x1,null,0x38,null],'c':["referenceMode","director","vibeImages","push",0x1],'p':0x1,'l':0x0,'j':{0x4:0xc,0xb:0x14}},{'i':[0x8,0x0,0x46,0x0,0x0,0x1,0x2a,null,0x7,0x2,0x8,0x0,0x46,0x2,0x4,null,0x33,null,0x3,null,0x8,0x0,0x46,0x3,0x4,null,0x33,null,0x3,null,0x0,0x4,0x7,0x3,0x6,0x2,0x34,null,0x0,0x5,0x32,null,0x0,0x4,0x7,0x4,0x8,0x0,0x46,0x6,0x34,null,0x0,0x7,0x8,0x0,0x46,0x6,0xa,null,0x0,0x8,0xa,null,0x32,null,0x0,0x4,0x7,0x5,0x6,0x3,0x34,null,0x0,0x9,0x6,0x3,0xa,null,0x0,0xa,0xa,null,0x32,null,0x0,0xb,0x7,0x6,0xd3,0xc,0x46,0xd,0x0,0xe,0x2b,null,0x7,0x7,0x6,0x7,0x34,null,0x0,0xf,0x8,0x1,0xa,null,0x0,0x10,0xa,null,0x8,0x0,0x46,0x11,0x4,null,0x35,null,0x3,null,0x0,0x12,0xa,null,0x0,0x13,0xa,null,0x0,0x14,0x8,0x0,0x46,0x11,0x4,null,0x35,null,0x3,null,0x0,0x12,0x4b,0x15,0x0,0x12,0x36,0x1,0x4,null,0x46,0x16,0x0,0x12,0x37,0x1,0xa,null,0x0,0x17,0xa,null,0x32,null,0x0,0x4,0x7,0x8,0x0,0x18,0x8,0x1,0xa,null,0x0,0x19,0xa,null,0x6,0x6,0xa,null,0x0,0x1a,0xa,null,0x6,0x5,0xa,null,0x0,0x1b,0xa,null,0x6,0x8,0xa,null,0x0,0x1c,0xa,null,0x6,0x4,0xa,null,0x0,0x1d,0xa,null,0x8,0x1,0xa,null,0x0,0x1e,0xa,null,0x8,0x0,0x46,0x1f,0x4,null,0x35,null,0x3,null,0x0,0x20,0xa,null,0x0,0x21,0xa,null,0x0,0x14,0x8,0x0,0x46,0x1f,0x4,null,0x35,null,0x3,null,0x0,0x20,0x4b,0x15,0x0,0x12,0x36,0x1,0x4,null,0x46,0x16,0x0,0x12,0x37,0x1,0xa,null,0x0,0x22,0xa,null,0x8,0x1,0xa,null,0x0,0x23,0xa,null,0x38,null],'c':["type","vibeFile","image","thumbnail","","<span style=\"font-size: 0.7em; color: var(--tsp-accent-primary); margin-left: 5px;\">.naiv4vibe</span>","name","<div style=\"font-size: 0.75em; color: var(--tsp-text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 150px;\">","</div>","<img src=\"","\" class=\"tsp-vibe-thumbnail\" style=\"width: 60px; height: 60px; object-fit: cover; border-radius: 6px;\">","<div class=\"tsp-vibe-thumbnail\" style=\"width: 60px; height: 60px; border-radius: 6px; background: rgba(122,162,247,0.2); display: flex; align-items: center; justify-content: center;\"><i class=\"fa-solid fa-file-code\" style=\"font-size: 1.5em; color: var(--tsp-accent-primary);\"></i></div>","__this__","referenceMode","director","\n                    <div class=\"tsp-slider-group\" style=\"font-size: 0.85em; margin-bottom: 4px;\">\n                        <label style=\"min-width: 50px;\">信息量</label>\n                        <input type=\"range\" class=\"tsp-slider vibe-info\" data-index=\"","\"\n                               min=\"0.01\" max=\"1\" step=\"0.01\" value=\"","infoExtracted",0x1,"\">\n                        <span class=\"tsp-slider-value\">",0x2,"Number","toFixed","</span>\n                    </div>","\n                <div class=\"tsp-vibe-item\" data-index=\"","\">\n                    ","\n                    <div class=\"tsp-vibe-info\" style=\"flex: 1;\">\n                        ","\n                        ","\n                        <div class=\"tsp-slider-group\" style=\"font-size: 0.85em;\">\n                            <label style=\"min-width: 50px;\">强度","</label>\n                            <input type=\"range\" class=\"tsp-slider vibe-strength\" data-index=\"","\"\n                                   min=\"0.01\" max=\"1\" step=\"0.01\" value=\"","strength",0.6,"\">\n                            <span class=\"tsp-slider-value\">","</span>\n                        </div>\n                    </div>\n                    <button class=\"tsp-btn tsp-btn-icon tsp-btn-danger vibe-delete\" data-index=\"","\">\n                        <i class=\"fa-solid fa-trash\"></i>\n                    </button>\n                </div>\n            "],'p':0x2,'l':0x7,'j':{0x8:0xc,0xd:0x10,0x12:0x15,0x14:0x16,0x19:0x21,0x20:0x22,0x24:0x2b,0x2a:0x2c,0x33:0x54,0x3c:0x3f,0x46:0x49,0x53:0x55,0x72:0x75,0x7c:0x7f},'a':0x1},{'i':[0x8,0x0,0x46,0x0,0x46,0x1,0x46,0x2,0x4b,0x3,0x0,0x4,0x36,0x1,0x7,0x1,0xd3,0x5,0x46,0x6,0x6,0x1,0x48,null,0x8,0x0,0x46,0x0,0x46,0x7,0x4b,0x8,0x0,0x4,0x36,0x1,0x47,0x9,0x3,null,0x8,0x0,0x46,0x0,0x46,0xa,0x0,0xb,0x8,0x0,0x46,0x0,0x46,0x7,0x4b,0x8,0x0,0x4,0x36,0x1,0x4,null,0x46,0xc,0x0,0x4,0x37,0x1,0x47,0xd,0x3,null],'c':["target","dataset","index","parseInt",0x1,"__this__","vibeImages","value","parseFloat","strength","nextElementSibling",0x2,"toFixed","textContent"],'p':0x1,'l':0x1,'a':0x1},{'i':[0x0,0x0,0x0,0x1,0x64,null,0x8,0x0,0x4,null,0x46,0x2,0x0,0x3,0x37,0x2,0x3,null],'c':["input",0x15,"addEventListener",0x2],'p':0x1,'l':0x0,'a':0x1},{'i':[0x8,0x0,0x46,0x0,0x46,0x1,0x46,0x2,0x4b,0x3,0x0,0x4,0x36,0x1,0x7,0x1,0xd3,0x5,0x46,0x6,0x6,0x1,0x48,null,0x8,0x0,0x46,0x0,0x46,0x7,0x4b,0x8,0x0,0x4,0x36,0x1,0x47,0x9,0x3,null,0x8,0x0,0x46,0x0,0x46,0xa,0x0,0xb,0x8,0x0,0x46,0x0,0x46,0x7,0x4b,0x8,0x0,0x4,0x36,0x1,0x4,null,0x46,0xc,0x0,0x4,0x37,0x1,0x47,0xd,0x3,null],'c':["target","dataset","index","parseInt",0x1,"__this__","vibeImages","value","parseFloat","infoExtracted","nextElementSibling",0x2,"toFixed","textContent"],'p':0x1,'l':0x1,'a':0x1},{'i':[0x0,0x0,0x0,0x1,0x64,null,0x8,0x0,0x4,null,0x46,0x2,0x0,0x3,0x37,0x2,0x3,null],'c':["input",0x17,"addEventListener",0x2],'p':0x1,'l':0x0,'a':0x1},{'i':[0x8,0x0,0x46,0x0,0x46,0x1,0x46,0x2,0x4b,0x3,0x0,0x4,0x36,0x1,0x7,0x1,0x6,0x1,0x0,0x4,0xd3,0x5,0x46,0x6,0x4,null,0x46,0x7,0x0,0x8,0x37,0x2,0x3,null,0xd3,0x5,0x4,null,0x46,0x9,0x0,0xa,0x37,0x0,0x3,null,0xd3,0x5,0x4,null,0x46,0xb,0x0,0xa,0x37,0x0,0x3,null],'c':["currentTarget","dataset","index","parseInt",0x1,"__this__","vibeImages","splice",0x2,"_renderVibeList",0x0,"_updateVibeStatus"],'p':0x1,'l':0x1,'a':0x1},{'i':[0x0,0x0,0x0,0x1,0x64,null,0x8,0x0,0x4,null,0x46,0x2,0x0,0x3,0x37,0x2,0x3,null],'c':["click",0x19,"addEventListener",0x2],'p':0x1,'l':0x0,'a':0x1},{'i':[0xa0,null,0xd4,0x15,0x3,null,0x0,0x0,0xa0,null,0x46,0x1,0x4,null,0x4e,0x2,0x4,null,0x2,null,0x2a,null,0x33,null,0x4,null,0x1,null,0x2a,null,0x33,null,0x0,0x3,0x37,0x1,0x32,null,0x3,null,0x3,null,0x3,null,0x1,null,0x7,0x0,0x6,0x0,0x20,null,0x34,null,0x1,null,0x38,null,0xa0,null,0x46,0x4,0x46,0x5,0x0,0x6,0x2a,null,0x34,null,0x6,0x0,0x0,0x7,0x47,0x8,0x3,null,0x1,null,0x38,null,0x6,0x0,0x0,0x9,0x0,0xa,0x64,null,0xa0,null,0x46,0x4,0x4,null,0x46,0xb,0x0,0x3,0x37,0x1,0x4,null,0x46,0xc,0x0,0x3,0x37,0x1,0x47,0x8,0x3,null,0x0,0xd,0x64,null,0x0,0xe,0x6,0x0,0x4,null,0x46,0xf,0x0,0x3,0x37,0x1,0x4,null,0x46,0x10,0x0,0x3,0x37,0x1,0x3,null,0x0,0x11,0x64,null,0x0,0x12,0x6,0x0,0x4,null,0x46,0xf,0x0,0x3,0x37,0x1,0x4,null,0x46,0x10,0x0,0x3,0x37,0x1,0x3,null,0x0,0x13,0x64,null,0x0,0x14,0x6,0x0,0x4,null,0x46,0xf,0x0,0x3,0x37,0x1,0x4,null,0x46,0x10,0x0,0x3,0x37,0x1,0x3,null,0x1,null,0x38,null],'c':["#nai-vibe-image-list","containerEl","querySelector",0x1,"vibeImages","length",0x0,"<p class=\"tsp-text-muted\">暂无参考图片</p>","innerHTML","",0x14,"map","join",0x16,".vibe-strength","querySelectorAll","forEach",0x18,".vibe-info",0x1a,".vibe-delete","__this__"],'p':0x0,'l':0x1,'j':{0xb:0x13,0xf:0x13,0x12:0x17,0x1a:0x1d,0x22:0x29}},{'i':[0xd5,0x0,0xd2,0x0,0x0,0x0,0x4b,0x1,0x4,null,0x46,0x2,0x0,0x3,0x37,0x1,0x7,0x1,0x6,0x1,0x8,0x0,0x46,0x4,0x47,0x5,0x3,null,0x6,0x1,0x8,0x0,0x46,0x4,0x47,0x6,0x3,null,0x6,0x1,0x8,0x0,0x46,0x4,0xd3,0x7,0x46,0x8,0x2a,null,0x47,0x9,0x3,null,0x6,0x1,0xd3,0xa,0x4,null,0x46,0xb,0x0,0x3,0x37,0x1,0x3,null],'c':["option","document","createElement",0x1,"name","value","textContent","__this__","activePresetName","selected","select","appendChild"],'p':0x1,'l':0x1,'a':0x1},{'i':[0xd2,0x0,0xa0,null,0xd4,0xa,0x3,null,0xda,0x0,0x0,0x1,0xa0,null,0x46,0x2,0x4,null,0x46,0x3,0x0,0x4,0x37,0x1,0xd9,0x0,0xd3,0x0,0x20,null,0x34,null,0x1,null,0x38,null,0xd3,0x0,0x0,0x5,0x47,0x6,0x3,null,0x0,0x7,0x64,null,0xa0,null,0x46,0x8,0x4,null,0x46,0x9,0x0,0x4,0x37,0x1,0x3,null,0xd6,0x0,0x1,null,0x38,null],'c':["select","#nai-preset-select","containerEl","querySelector",0x1,"<option value=\"\">-- 新建预设 --</option>","innerHTML",0x1c,"naiPresets","forEach","__this__"],'p':0x0,'l':0x1,'j':{0xf:0x12}},{'i':[0x8,0x0,0x46,0x0,0xd3,0x1,0x46,0x2,0x2a,null,0x38,null],'c':["name","__this__","activePresetName"],'p':0x1,'l':0x0,'a':0x1},{'i':[0xa0,null,0xd4,0x1f,0x3,null,0x0,0x0,0x64,null,0xa0,null,0x46,0x1,0x4,null,0x46,0x2,0x0,0x3,0x37,0x1,0x7,0x0,0x0,0x4,0xa0,null,0x46,0x5,0x4,null,0x46,0x6,0x0,0x3,0x37,0x1,0x7,0x1,0x0,0x7,0xa0,null,0x46,0x5,0x4,null,0x46,0x6,0x0,0x3,0x37,0x1,0x7,0x2,0x6,0x0,0x34,null,0xa0,null,0x6,0x0,0x46,0x8,0x4,null,0x33,null,0x3,null,0x5a,null,0x47,0x9,0x3,null,0xa0,null,0x6,0x0,0x46,0xa,0x4,null,0x33,null,0x3,null,0x0,0xb,0x47,0xa,0x3,null,0x0,0xc,0xa0,null,0x46,0x5,0x4,null,0x46,0x6,0x0,0x3,0x37,0x1,0x7,0x3,0x6,0x3,0x34,null,0x6,0x3,0x6,0x0,0x46,0xd,0x4,null,0x33,null,0x3,null,0x0,0xe,0x47,0xf,0x3,null,0x0,0x10,0xa0,null,0x46,0x5,0x4,null,0x46,0x6,0x0,0x3,0x37,0x1,0x7,0x4,0x6,0x4,0x34,null,0x6,0x4,0x6,0x0,0x46,0x11,0x4,null,0x33,null,0x3,null,0x0,0x12,0x47,0x13,0x3,null,0x0,0x14,0xa0,null,0x46,0x5,0x4,null,0x46,0x6,0x0,0x3,0x37,0x1,0x7,0x5,0x6,0x5,0x34,null,0x6,0x5,0x0,0x15,0x6,0x0,0x46,0x11,0x4,null,0x33,null,0x3,null,0x0,0x12,0x4b,0x16,0x0,0x3,0x36,0x1,0x4,null,0x46,0x17,0x0,0x3,0x37,0x1,0x47,0x18,0x3,null,0x6,0x1,0x34,null,0x6,0x1,0x6,0x0,0x46,0x19,0x4,null,0x33,null,0x3,null,0x0,0x1a,0x47,0x13,0x3,null,0x6,0x2,0x34,null,0x6,0x2,0x0,0xe,0x47,0x1b,0x3,null,0x32,null,0xa0,null,0x5a,null,0x47,0x9,0x3,null,0xa0,null,0x0,0xb,0x47,0xa,0x3,null,0x6,0x1,0x34,null,0x6,0x1,0x0,0x1a,0x47,0x13,0x3,null,0x6,0x2,0x34,null,0x6,0x2,0x0,0x1c,0x47,0x1b,0x3,null,0xa0,null,0x4,null,0x46,0x1d,0x0,0x1e,0x37,0x0,0x3,null,0x1,null,0x38,null],'c':[0x1e,"naiPresets","find",0x1,"#nai-preset-triggers","containerEl","querySelector","#nai-preset-delete","images","vibeImages","referenceMode","vibe","#nai-director-style-aware","directorStyleAware",![],"checked","#nai-director-strength","directorStrength",0.6,"value","#nai-director-strength-value",0x2,"Number","toFixed","textContent","triggerWords","","disabled",!![],"_updateRefModeUI",0x0,"__this__"],'p':0x0,'l':0x6,'j':{0x1d:0x83,0x22:0x25,0x2b:0x2e,0x39:0x43,0x3e:0x41,0x4c:0x56,0x51:0x54,0x5f:0x71,0x65:0x68,0x72:0x7c,0x77:0x7a,0x7d:0x82,0x82:0x97,0x8c:0x91,0x92:0x97}},{'i':[0x8,0x0,0x46,0x0,0xd3,0x1,0x46,0x2,0x2a,null,0x38,null],'c':["name","__this__","activePresetName"],'p':0x1,'l':0x0,'a':0x1},{'i':[0xa0,null,0xd4,0x8,0x3,null,0xa0,null,0x46,0x0,0x20,null,0x34,null,0x1,null,0x38,null,0x0,0x1,0x64,null,0xa0,null,0x46,0x2,0x4,null,0x46,0x3,0x0,0x4,0x37,0x1,0x7,0x1,0x6,0x1,0x34,null,0x6,0x1,0x8,0x0,0x4,null,0x46,0x5,0x0,0x6,0x37,0x0,0x47,0x7,0x3,null,0x1,null,0x38,null],'c':["activePresetName",0x20,"naiPresets","find",0x1,"trim",0x0,"triggerWords","__this__"],'p':0x1,'l':0x1,'j':{0x6:0x9,0x13:0x1c}},{'i':[0xd5,0x0,0xd2,0x0,0x8,0x0,0x46,0x0,0xd3,0x1,0x2a,null,0x38,null],'c':["name","newName"],'p':0x1,'l':0x0,'a':0x1},{'i':[0xd2,0x0,0xda,0x0,0x0,0x1,0xa0,null,0x46,0x2,0x46,0x3,0x4,null,0x46,0x4,0x0,0x5,0x37,0x1,0x7a,null,0xd9,0x0,0xd3,0x0,0x20,null,0x4,null,0x33,null,0x3,null,0xd3,0x0,0x4,null,0x46,0x6,0x0,0x7,0x37,0x0,0x20,null,0x34,null,0x1,null,0x38,null,0x0,0x8,0x64,null,0xa0,null,0x46,0x9,0x4,null,0x46,0xa,0x0,0x5,0x37,0x1,0x34,null,0x0,0xb,0x0,0xc,0xa0,null,0x46,0x2,0x46,0x3,0x4,null,0x46,0xd,0x0,0xe,0x37,0x2,0x3,null,0x1,null,0x38,null,0x4d,null,0x4,null,0xd3,0x0,0x47,0xf,0x3,null,0x4,null,0x0,0x10,0xa0,null,0x46,0x11,0x4,null,0x46,0x12,0x0,0x5,0x37,0x1,0x4e,0x13,0x4,null,0x46,0x6,0x0,0x7,0x37,0x0,0x4,null,0x33,null,0x3,null,0x0,0x14,0x47,0x15,0x3,null,0x4,null,0xa0,null,0x46,0x16,0x47,0x16,0x3,null,0x4,null,0xa0,null,0x46,0x17,0x4b,0x18,0x4,null,0x46,0x19,0x0,0x5,0x37,0x1,0x4b,0x18,0x4,null,0x46,0x1a,0x0,0x5,0x37,0x1,0x47,0x1b,0x3,null,0x4,null,0x0,0x1c,0xa0,null,0x46,0x11,0x4,null,0x46,0x12,0x0,0x5,0x37,0x1,0x4e,0x1d,0x4,null,0x33,null,0x3,null,0x0,0x1e,0x47,0x1f,0x3,null,0x4,null,0x0,0x20,0xa0,null,0x46,0x11,0x4,null,0x46,0x12,0x0,0x5,0x37,0x1,0x4e,0x13,0x4b,0x21,0x0,0x5,0x36,0x1,0x4,null,0x33,null,0x3,null,0x0,0x22,0x47,0x23,0x3,null,0x7,0x1,0x6,0x1,0xa0,null,0x46,0x9,0x4,null,0x46,0x24,0x0,0x5,0x37,0x1,0x3,null,0xa0,null,0xd3,0x0,0x47,0x25,0x3,null,0xa0,null,0x4,null,0x46,0x26,0x0,0x7,0x37,0x0,0x3,null,0x0,0x27,0x0,0x28,0xa0,null,0x46,0x2,0x46,0x3,0x4,null,0x46,0xd,0x0,0xe,0x37,0x2,0x3,null,0xd6,0x0,0x1,null,0x38,null],'c':["newName","输入预设名称","ctx","helpers","promptInput",0x1,"trim",0x0,0x22,"naiPresets","some","预设名称已存在","error","showToast",0x2,"name","#nai-preset-triggers","containerEl","querySelector","value","","triggerWords","referenceMode","vibeImages","JSON","stringify","parse","images","#nai-director-style-aware","checked",![],"directorStyleAware","#nai-director-strength","parseFloat",0.6,"directorStrength","push","activePresetName","_renderPresetDropdown","预设已保存","success"],'p':0x0,'l':0x2,'j':{0xf:0x17,0x17:0x1a,0x22:0x2f,0x42:0x45,0x65:0x68,0x77:0x7a},'s':0x1},{'i':[0x8,0x0,0x46,0x0,0xd3,0x1,0x46,0x2,0x2a,null,0x38,null],'c':["name","__this__","activePresetName"],'p':0x1,'l':0x0,'a':0x1},{'i':[0x8,0x0,0x46,0x0,0xd3,0x1,0x46,0x2,0x2b,null,0x38,null],'c':["name","__this__","activePresetName"],'p':0x1,'l':0x0,'a':0x1},{'i':[0xa0,null,0xd4,0x21,0x3,null,0xa0,null,0x46,0x0,0x20,null,0x34,null,0x1,null,0x38,null,0x0,0x1,0xa0,null,0x46,0x0,0xa,null,0x0,0x2,0xa,null,0xa0,null,0x46,0x3,0x46,0x4,0x4,null,0x46,0x5,0x0,0x6,0x37,0x1,0x7a,null,0x7,0x0,0x6,0x0,0x20,null,0x34,null,0x1,null,0x38,null,0x0,0x7,0x64,null,0xa0,null,0x46,0x8,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x7,0x1,0x6,0x1,0x34,null,0x0,0xa,0xa0,null,0x46,0x3,0x4,null,0x46,0xb,0x0,0x6,0x37,0x1,0x7,0x2,0x6,0x2,0x4,null,0x34,null,0x3,null,0x6,0x2,0x46,0xc,0x34,null,0x0,0xd,0x0,0xe,0xa0,null,0x46,0x3,0x46,0x4,0x4,null,0x46,0xf,0x0,0x10,0x37,0x2,0x3,null,0x3a,null,0x6,0x1,0x6,0x2,0x46,0xc,0x4,null,0x46,0x11,0x0,0x6,0x37,0x1,0x7a,null,0x3,null,0x3b,null,0x32,null,0xd5,0x0,0xd2,0x0,0x3c,0x12,0x0,0x13,0x0,0x14,0xa0,null,0x46,0x3,0x46,0x4,0x4,null,0x46,0xf,0x0,0x10,0x37,0x2,0x3,null,0x0,0x15,0xd3,0x12,0x4b,0x16,0x4,null,0x46,0x14,0x0,0x10,0x37,0x2,0x3,null,0xd6,0x0,0x32,null,0xa0,null,0x0,0x17,0x64,null,0xa0,null,0x46,0x8,0x4,null,0x46,0x18,0x0,0x6,0x37,0x1,0x47,0x8,0x3,null,0xa0,null,0xa0,null,0x46,0x8,0x46,0x19,0x0,0x1a,0x2e,null,0x34,null,0xa0,null,0x46,0x8,0x0,0x1a,0x48,null,0x46,0x1b,0x32,null,0x0,0x1c,0x47,0x0,0x3,null,0xa0,null,0x4,null,0x46,0x1d,0x0,0x1a,0x37,0x0,0x3,null,0xa0,null,0x4,null,0x46,0x1e,0x0,0x1a,0x37,0x0,0x3,null,0x0,0x1f,0x0,0x20,0xa0,null,0x46,0x3,0x46,0x4,0x4,null,0x46,0xf,0x0,0x10,0x37,0x2,0x3,null,0x1,null,0x38,null],'c':["activePresetName","确定要删除预设 \"","\" 吗?","ctx","helpers","promptConfirm",0x1,0x24,"naiPresets","find","imageGen","getModule","storageManager","正在删除服务器上的关联图片...","info","showToast",0x2,"deleteNaiPresetFiles","e$$3","删除服务器图片时出错，部分文件可能残留","error","[NAISettings] 删除预设图片失败:","console",0x25,"filter","length",0x0,"name","","_renderPresetDropdown","_applyActivePresetToUI","预设已删除","success","__this__"],'p':0x0,'l':0x3,'j':{0x6:0x9,0x1a:0x1d,0x27:0x64,0x32:0x36,0x36:0x64,0x4c:0x64,0x63:0x64,0x75:0x7c,0x7b:0x7d},'x':{0x41:[0x4d,-0x1,0x64]},'s':0x1},{'i':[0x0,0x0,0xa0,null,0x46,0x1,0x4,null,0x4e,0x2,0x4,null,0x2,null,0x2a,null,0x33,null,0x4,null,0x1,null,0x2a,null,0x33,null,0x0,0x3,0x37,0x1,0x32,null,0x3,null,0x3,null,0x3,null,0x1,null,0x7,0x0,0x6,0x0,0x20,null,0x34,null,0x1,null,0x38,null,0xa0,null,0x46,0x4,0x46,0x5,0x0,0x6,0x2a,null,0x34,null,0x6,0x0,0x0,0x7,0x47,0x8,0x3,null,0x1,null,0x38,null,0xa0,null,0x46,0x9,0x0,0xa,0x2a,null,0x34,null,0x0,0xb,0x32,null,0x0,0xc,0x7,0x1,0x6,0x0,0x0,0xd,0x6,0x1,0xa,null,0x0,0xe,0xa,null,0xa0,null,0x46,0x4,0x46,0x5,0xa,null,0x0,0xf,0xa,null,0x47,0x8,0x3,null,0x1,null,0x38,null],'c':["#nai-vibe-status","containerEl","querySelector",0x1,"vibeImages","length",0x0,"","textContent","referenceMode","vibe","氛围模式","人物参考模式","当前: ","，"," 张参考图"],'p':0x0,'l':0x2,'j':{0x8:0x10,0xc:0x10,0xf:0x14,0x17:0x1a,0x1f:0x26,0x2a:0x2d,0x2c:0x2e}},{'i':[0xd5,0x0,0xd2,0x0,0xd3,0x0,0x46,0x1,0xd3,0x2,0x0,0x3,0x36,0x1,0x38,null],'c':["reader","result","resolve",0x1],'p':0x0,'l':0x0,'a':0x1},{'i':[0xd5,0x0,0xd2,0x0,0x8,0x0,0xd7,0x0,0x3,null,0xda,0x1,0x4b,0x2,0x0,0x3,0x68,0x0,0xd9,0x1,0xd3,0x1,0x0,0x4,0x64,null,0x47,0x5,0x3,null,0xd3,0x1,0x8,0x1,0x47,0x6,0x3,null,0xd3,0x7,0xd3,0x1,0x4,null,0x46,0x8,0x0,0x9,0x37,0x1,0x3,null],'c':["resolve","reader","FileReader",0x0,0x28,"onload","onerror","file","readAsDataURL",0x1],'p':0x2,'l':0x1,'a':0x1},{'i':[0xd2,0x0,0x8,0x0,0xd7,0x0,0x3,null,0x4b,0x1,0x0,0x2,0x64,null,0x0,0x3,0x68,0x1,0x38,null,0xd6,0x0,0x1,null,0x38,null],'c':["file","Promise",0x29,0x1],'p':0x1,'l':0x0},{'i':[0x0,0x0,0xa0,null,0x46,0x1,0x4,null,0x4e,0x2,0x4,null,0x2,null,0x2a,null,0x33,null,0x4,null,0x1,null,0x2a,null,0x33,null,0x0,0x3,0x37,0x1,0x32,null,0x3,null,0x3,null,0x3,null,0x1,null,0x4e,0x4,0x4b,0x5,0x0,0x3,0x36,0x1,0x4,null,0x33,null,0x3,null,0x0,0x6,0x7,0x0,0x0,0x7,0xa0,null,0x46,0x1,0x4,null,0x4e,0x2,0x4,null,0x2,null,0x2a,null,0x33,null,0x4,null,0x1,null,0x2a,null,0x33,null,0x0,0x3,0x37,0x1,0x32,null,0x3,null,0x3,null,0x3,null,0x1,null,0x4e,0x4,0x4b,0x5,0x0,0x3,0x36,0x1,0x4,null,0x33,null,0x3,null,0x0,0x8,0x7,0x1,0x6,0x0,0x0,0x6,0x2a,null,0x4,null,0x34,null,0x3,null,0x6,0x1,0x0,0x8,0x2a,null,0x34,null,0x0,0x9,0x38,null,0x6,0x0,0x0,0x8,0x2a,null,0x4,null,0x34,null,0x3,null,0x6,0x1,0x0,0x6,0x2a,null,0x34,null,0x0,0xa,0x38,null,0x6,0x0,0x0,0xb,0x2a,null,0x4,null,0x34,null,0x3,null,0x6,0x1,0x0,0xb,0x2a,null,0x34,null,0x0,0xc,0x38,null,0x0,0xd,0x38,null],'c':["#nai-width","containerEl","querySelector",0x1,"value","parseInt",0x340,"#nai-height",0x4c0,"竖图","横图",0x400,"方图","Custom"],'p':0x0,'l':0x2,'j':{0x8:0x10,0xc:0x10,0xf:0x14,0x19:0x1c,0x25:0x2d,0x29:0x2d,0x2c:0x31,0x36:0x39,0x3e:0x43,0x43:0x46,0x4a:0x4f,0x4f:0x52,0x56:0x5b,0x5b:0x5e}},{'i':[0xd5,0x0,0xd2,0x0,0x8,0x0,0x46,0x0,0xd3,0x1,0x46,0x2,0x2a,null,0x38,null],'c':["name","__this__","activePresetName"],'p':0x1,'l':0x0,'a':0x1},{'i':[0xa0,null,0xd4,0x58,0x3,null,0xa0,null,0x46,0x0,0x20,null,0x34,null,0x2,null,0x38,null,0xa0,null,0x46,0x1,0x34,null,0xd5,0x0,0xd2,0x0,0xda,0x2,0x0,0x3,0x64,null,0xa0,null,0x46,0x4,0x4,null,0x46,0x5,0x0,0x6,0x37,0x1,0xd9,0x7,0xd3,0x7,0x34,null,0xd3,0x7,0x0,0x8,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x4,null,0x46,0xb,0x0,0xc,0x37,0x0,0x4,null,0x33,null,0x3,null,0x0,0xd,0x47,0xe,0x3,null,0xd3,0x7,0xa0,null,0x46,0xf,0x47,0xf,0x3,null,0xd3,0x7,0xa0,null,0x46,0x10,0x4b,0x11,0x4,null,0x46,0x12,0x0,0x6,0x37,0x1,0x4b,0x11,0x4,null,0x46,0x13,0x0,0x6,0x37,0x1,0x47,0x14,0x3,null,0xd3,0x7,0x0,0x15,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0x16,0x4,null,0x33,null,0x3,null,0x0,0x17,0x47,0x18,0x3,null,0xd3,0x7,0x0,0x19,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x4b,0x1a,0x0,0x6,0x36,0x1,0x4,null,0x33,null,0x3,null,0x0,0x1b,0x47,0x1c,0x3,null,0xd6,0x0,0x4d,null,0x4,null,0x0,0x1d,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x4,null,0x33,null,0x3,null,0x0,0x1e,0x47,0x1f,0x3,null,0x4,null,0x0,0x20,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x4,null,0x33,null,0x3,null,0x0,0xd,0x47,0x21,0x3,null,0x4,null,0x0,0x22,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x4,null,0x33,null,0x3,null,0x0,0xd,0x47,0x23,0x3,null,0x4,null,0x0,0x24,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x0,0x25,0x2a,null,0x47,0x26,0x3,null,0x4,null,0x0,0x27,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x4,null,0x33,null,0x3,null,0x0,0x28,0x47,0x29,0x3,null,0x4,null,0x0,0x2a,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x4,null,0x33,null,0x3,null,0x0,0x2b,0x47,0x2c,0x3,null,0x4,null,0x0,0x2d,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x4,null,0x33,null,0x3,null,0x0,0x2e,0x47,0x2f,0x3,null,0x4,null,0x0,0x30,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x4b,0x31,0x0,0x6,0x36,0x1,0x4,null,0x33,null,0x3,null,0x0,0x32,0x47,0x33,0x3,null,0x4,null,0x0,0x34,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x4b,0x1a,0x0,0x6,0x36,0x1,0x4,null,0x33,null,0x3,null,0x0,0x35,0x47,0x36,0x3,null,0x4,null,0x0,0x37,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x4b,0x1a,0x0,0x6,0x36,0x1,0x4,null,0x33,null,0x3,null,0x0,0xc,0x47,0x38,0x3,null,0x4,null,0x0,0x39,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x4b,0x31,0x0,0x6,0x36,0x1,0x4,null,0x33,null,0x3,null,0x0,0x3a,0x47,0x3b,0x3,null,0x4,null,0x0,0x3c,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x4b,0x31,0x0,0x6,0x36,0x1,0x4,null,0x33,null,0x3,null,0x0,0x3d,0x47,0x3e,0x3,null,0x4,null,0xa0,null,0x4,null,0x46,0x3f,0x0,0xc,0x37,0x0,0x47,0x40,0x3,null,0x4,null,0x0,0x41,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x0,0x25,0x2a,null,0x47,0x42,0x3,null,0x4,null,0x0,0x43,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x0,0x25,0x2a,null,0x47,0x44,0x3,null,0x4,null,0x0,0x45,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x0,0x25,0x2a,null,0x47,0x46,0x3,null,0x4,null,0x0,0x47,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x0,0x25,0x2a,null,0x47,0x48,0x3,null,0x4,null,0x0,0x49,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0x16,0x4,null,0x33,null,0x3,null,0x0,0x17,0x47,0x4a,0x3,null,0x4,null,0x0,0x4b,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x0,0x25,0x2a,null,0x47,0x4c,0x3,null,0x4,null,0x0,0x4d,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x4b,0x1a,0x0,0x6,0x36,0x1,0x4,null,0x33,null,0x3,null,0x0,0x4e,0x47,0x4f,0x3,null,0x4,null,0x0,0x50,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x4b,0x1a,0x0,0x6,0x36,0x1,0x4,null,0x33,null,0x3,null,0x0,0xc,0x47,0x51,0x3,null,0x4,null,0x0,0x52,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x4b,0x1a,0x0,0x6,0x36,0x1,0x4,null,0x33,null,0x3,null,0x0,0x6,0x47,0x53,0x3,null,0x4,null,0x0,0x54,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0x16,0x4,null,0x33,null,0x3,null,0x0,0x17,0x47,0x55,0x3,null,0x4,null,0x0,0x56,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0x16,0x4,null,0x33,null,0x3,null,0x0,0x17,0x47,0x57,0x3,null,0x4,null,0xa0,null,0x46,0x4,0x47,0x4,0x3,null,0x4,null,0xa0,null,0x46,0xf,0x47,0xf,0x3,null,0x4,null,0x0,0x15,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0x16,0x4,null,0x33,null,0x3,null,0x0,0x17,0x47,0x18,0x3,null,0x4,null,0x0,0x19,0xa0,null,0x46,0x0,0x4,null,0x46,0x9,0x0,0x6,0x37,0x1,0x4e,0xa,0x4b,0x1a,0x0,0x6,0x36,0x1,0x4,null,0x33,null,0x3,null,0x0,0x1b,0x47,0x1c,0x3,null,0x4,null,0xa0,null,0x46,0x10,0x47,0x10,0x3,null,0x38,null],'c':["containerEl","activePresetName","preset",0x2c,"naiPresets","find",0x1,"preset$$1","#nai-preset-triggers","querySelector","value","trim",0x0,"","triggerWords","referenceMode","vibeImages","JSON","stringify","parse","images","#nai-director-style-aware","checked",![],"directorStyleAware","#nai-director-strength","parseFloat",0.6,"directorStrength","#nai-channel","proxy","channel","#nai-api-url","proxyUrl","#nai-token","apiKey","#nai-proxy-stream","true","proxyStream","#nai-model","nai-diffusion-3","model","#nai-sampler","k_euler_ancestral","sampler","#nai-noise-schedule","karras","noiseSchedule","#nai-steps","parseInt",0x1c,"steps","#nai-scale",0x5,"scale","#nai-cfg-rescale","cfgRescale","#nai-width",0x340,"width","#nai-height",0x4c0,"height","_getSizePreset","sizePreset","#nai-sm","sm","#nai-dyn","dyn","#nai-variety","variety","#nai-decrisper","decrisper","#nai-multi-role","multiRoleEnabled","#nai-use-coords","useCoords","#nai-strength",0.7,"i2iStrength","#nai-noise","i2iNoise","#nai-inpaint-strength","inpaintStrength","#nai-vibe-enabled","vibeEnabled","#nai-triggers-enabled","naiTriggersEnabled","__this__"],'p':0x0,'l':0x1,'j':{0x6:0x9,0xb:0x63,0x19:0x62,0x28:0x2b,0x4b:0x4e,0x5d:0x60,0x6e:0x71,0x7d:0x80,0x8c:0x8f,0xa8:0xab,0xb7:0xba,0xc6:0xc9,0xd8:0xdb,0xea:0xed,0xfc:0xff,0x10e:0x111,0x120:0x123,0x16b:0x16e,0x18a:0x18d,0x19c:0x19f,0x1ae:0x1b1,0x1bd:0x1c0,0x1cc:0x1cf,0x1e5:0x1e8,0x1f7:0x1fa}}];function S(c){return a[c];}for(let c=0x0;c<a['length'];c++){let R=a[c];if(R['c'])for(let g=0x0;g<R['c']['length'];g++){let x=R['c'][g];if(typeof x==='string'&&x['length']>0x1&&x[x['length']-0x1]==='n')try{R['c'][g]=BigInt(x['slice'](0x0,-0x1));}catch(z){}}}let N={0x0:0x112,0x1:0x1fa,0x2:0xb7,0x3:0x6f,0x4:0xd2,0x5:0x18b,0x6:0xb6,0x7:0x87,0x8:0x199,0x9:0x1f3,0xa:0x4c,0xb:0x26,0xc:0x103,0xd:0xf8,0xe:0x1d1,0xf:0xbc,0x10:0x13b,0x11:0x1a,0x12:0x96,0x13:0x182,0x14:0x54,0x15:0x118,0x16:0x3,0x17:0x1b4,0x18:0xe1,0x19:0x1af,0x1a:0x16,0x1b:0x66,0x20:0x19,0x28:0xb4,0x29:0x13e,0x2a:0x16c,0x2b:0xf2,0x2c:0x14e,0x2d:0x1db,0x2e:0x1eb,0x2f:0x9d,0x32:0x80,0x33:0x165,0x34:0x144,0x35:0x1bb,0x36:0x1ab,0x37:0x19e,0x38:0xaf,0x39:0x16d,0x3a:0xeb,0x3b:0x2,0x3c:0x1c2,0x3d:0x171,0x3e:0x189,0x3f:0x177,0x40:0x1b6,0x41:0x11a,0x46:0xd3,0x47:0x13f,0x48:0x1e5,0x49:0x170,0x4a:0x159,0x4b:0x92,0x4c:0x1cd,0x4d:0x179,0x4e:0x34,0x4f:0xc1,0x50:0x107,0x51:0x1b0,0x52:0x19b,0x5a:0x191,0x5b:0xa4,0x5c:0x1cc,0x5d:0x2f,0x5e:0x1e1,0x5f:0x18a,0x64:0x141,0x65:0x29,0x66:0xf0,0x67:0x10c,0x68:0x25,0x69:0xb5,0x6a:0x133,0x6b:0x57,0x6e:0x13c,0x6f:0xb8,0x70:0x12f,0x78:0x1c6,0x79:0x2a,0x7a:0x132,0x7b:0x17a,0x7c:0x90,0x7d:0x21,0x7e:0x3e,0x7f:0x15e,0x80:0x1a1,0x81:0x119,0x82:0xca,0x83:0x184,0x84:0x62,0x8c:0xcd,0x8d:0x100,0x8e:0x6e,0x8f:0x31,0x90:0xd0,0x91:0x5c,0x92:0x82,0x93:0xbf,0x94:0xa3,0x95:0x1d2,0x96:0x4f,0x97:0x1d4,0x98:0x1d,0x99:0x1b7,0x9a:0x1ad,0x9b:0x1d5,0x9c:0x195,0x9d:0x30,0x9e:0x185,0xa0:0xf,0xa1:0x153,0xa2:0x1ed,0xa3:0x1d9,0xa4:0x2c,0xa6:0x95,0xa7:0x1f7,0xa8:0x11e,0xa9:0x1d6,0xaa:0x109,0xab:0x110,0xac:0x190,0xad:0x10a,0xae:0xfc,0xaf:0xee,0xc8:0xb2,0xc9:0x168,0xca:0x1f,0xd2:0x176,0xd3:0x3b,0xd4:0x84,0xd5:0x17,0xd6:0x14a,0xd7:0xc,0xd8:0x121,0xd9:0x1f5,0xda:0x140,0xdb:0x3a,0xfa:0xc0,0xfb:0xbe,0xfc:0x164,0xfd:0x1e9,0xfe:0xc8,0xff:0x1a3,0x100:0x4,0x101:0xae,0x102:0x162,0x103:0x102,0x104:0x17e,0x105:0x55},w=new WeakSet();function A(K,t){let H=[];for(let o=0x0;o<t;o++){let d=K();if(d&&typeof d==='object'&&w['has'](d)){let Y=d['value'];if(Array['isArray'](Y))for(let M=Y['length']-0x1;M>=0x0;M--){H['push'](Y[M]);}}else H['push'](d);}return H['reverse'](),H;}function n(K){let t=[];for(let H in K){t['push'](H);}return t;}let v=![],b=0x0,U=0x0,O=![],l=0x1388,F=0x3;function L(){if(!v||O)return;let K=Date['now']();if(b===0x0){b=K;return;}let t=K-b;b=K;if(t>l){U++;if(U>=F){O=!![];for(let H in N){N[H]=N[H]+0x1&0x1ff;}}}else U=0x0;}function P(K,t,H,o,d,Y){let i=[],M=0x0,V=new Array((K['p']||0x0)+(K['l']||0x0)),C=0x0,m=K['c'],y=K['i'],r=K['j']||{},h=K['x']||{},j=y['length']>>0x1,J=[],B0=null,B1={['_$YthHOs']:![],['_$CU1WUk']:undefined},B2={['_$fctTS0']:![],['_$8f71z9']:0x0},B3={['_$l7yJjg']:![],['_$KWa9Ei']:0x0},B4=K['o']||N;var B5=0x0,B6=null;let B7=K['seKey'],B8,B9,BB,BT,BW,Bf;if(B7!==undefined){let Ba=BS=>typeof BS==='number'&&Number['isFinite'](BS)&&Number['isInteger'](BS)&&BS>=-0x80000000&&BS<=0x7fffffff?BS^B7|0x0:BS;B8=BS=>{i[M++]=Ba(BS);},B9=()=>Ba(i[--M]),BB=()=>Ba(i[M-0x1]),BT=BS=>{i[M-0x1]=Ba(BS);},BW=BS=>Ba(i[M-BS]),Bf=(BS,BN)=>{i[M-BS]=Ba(BN);};}else B8=BS=>{i[M++]=BS;},B9=()=>i[--M],BB=()=>i[M-0x1],BT=BS=>{i[M-0x1]=BS;},BW=BS=>i[M-BS],Bf=(BS,BN)=>{i[M-BS]=BN;};let BQ=BS=>BS,BX={['_$2scfS2']:H,['_$0oqWSu']:Object['create'](null)};if(t)for(let BS=0x0;BS<Math['min'](t['length'],K['p']||0x0);BS++){V[BS]=t[BS];}let Bk=null,BI=![];if(K['nfe']&&K['ni']!==undefined&&o){let BN=K['c'][K['ni']];BX['_$0oqWSu'][BN]=o;if(!BX['_$ao1mua'])BX['_$ao1mua']={};BX['_$ao1mua'][BN]=!![];try{Object['defineProperty'](o,'name',{'value':BN,'writable':![],'enumerable':![],'configurable':!![]});}catch(Bw){}}while(C<j){try{while(C<j){let BA=C<<0x1,Bn=y[BA],Bv=Bn,Bb=B4[Bv],BU=y[BA+0x1],BO=BU===null?undefined:BU;if(typeof Bp==='undefined')var Bq=![],BD,BG={0x0:0x2d,0x1:0x65,0x2:0x55,0x3:0x84,0x4:0x18,0x5:0x4b,0x6:0x81,0x7:0x5f,0x8:0x7f,0x9:0x60,0xa:0x30,0xb:0x28,0xc:0x57,0xd:0x52,0xe:0x63,0xf:0x74,0x10:0x6c,0x11:0x2e,0x12:0x3,0x13:0x19,0x14:0x8c,0x15:0x10,0x16:0x86,0x17:0x85,0x18:0x2f,0x19:0x73,0x1a:0x21,0x1b:0x11,0x20:0x2a,0x28:0x76,0x29:0x4d,0x2a:0x70,0x2b:0x23,0x2c:0x88,0x2d:0x77,0x2e:0x20,0x2f:0x64,0x32:0x4f,0x33:0x61,0x34:0x48,0x35:0x7e,0x36:0x25,0x37:0x45,0x38:0x8d,0x39:0x89,0x3a:0x49,0x3b:0x53,0x3c:0x6b,0x3d:0xe,0x3e:0x6d,0x3f:0x80,0x40:0x75,0x46:0x5b,0x47:0x33,0x48:0x7,0x49:0x41,0x4a:0x1c,0x4b:0x7c,0x4c:0x1e,0x4d:0x1d,0x4e:0x40,0x4f:0x22,0x51:0x38,0x52:0x62,0x5a:0x3f,0x5b:0x2c,0x5d:0x12,0x5e:0x35,0x5f:0x16,0x64:0x5d,0x68:0x3d,0x69:0x2,0x6a:0x1a,0x6e:0x34,0x6f:0x3c,0x70:0x5a,0x7b:0x4,0x7c:0x9,0x7f:0x36,0x80:0x68,0x81:0x66,0x82:0x17,0x83:0x5c,0x84:0x51,0x8c:0xc,0x8d:0x15,0x8e:0x6e,0x8f:0x72,0x90:0x8,0x91:0x4e,0x92:0x71,0x93:0x27,0x94:0x4a,0x95:0x0,0x96:0x44,0x97:0x7a,0x98:0xb,0x99:0x69,0x9a:0x24,0x9b:0x5e,0x9c:0x1f,0x9d:0x6a,0x9e:0x46,0xa0:0x5,0xa1:0x7b,0xa2:0x56,0xa3:0x26,0xa4:0x14,0xa7:0x6f,0xa8:0x79,0xa9:0x78,0xaa:0x31,0xab:0x29,0xac:0x1b,0xad:0x37,0xae:0x59,0xaf:0xa,0xc8:0x83,0xc9:0x58,0xca:0x43,0xd2:0x3e,0xd3:0x8a,0xd4:0x3b,0xd5:0x42,0xd6:0x82,0xd7:0x6,0xd8:0x2b,0xd9:0x54,0xda:0x3a,0xdb:0x50,0xfa:0xf,0xfb:0x39,0xfc:0x7d,0xfd:0x32,0xfe:0x8b,0xff:0x87,0x100:0x1,0x101:0x67,0x102:0x4c,0x103:0x47,0x104:0x13,0x105:0xd},Bp=[function(Bl){while(!![]){let BF=B9(),BL=BB(),BP=m[Bl];Object['defineProperty'](BL,BP,{'set':BF,'enumerable':![],'configurable':!![]}),C++;break;}},function(Bl){while(!![]){let BF=Bl&0xffff,BL=Bl>>>0x10;B8(V[BF]<m[BL]),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=A(B9,BF),BP=B9();if(Bl===0x1){B8(BL),C++;break;}if(G_7b65a9['_$superCalled']){C++;break;}if(typeof BP!=='function')throw new TypeError('Super expression must be a constructor');G_7b65a9['_$yEqSGq']=d;try{let BE=BP['apply'](Y,BL);BE!==undefined&&BE!==Y&&typeof BE==='object'&&(Y&&Object['assign'](BE,Y),Y=BE,BI=!![]);}catch(Bu){if(Bu instanceof TypeError&&(Bu['message']['includes']("'new'")||Bu['message']['includes']('constructor'))){let Bs=Reflect['construct'](BP,BL,d);Bs!==Y&&Y&&Object['assign'](Bs,Y),Y=Bs,BI=!![];}else throw Bu;}finally{delete G_7b65a9['_$yEqSGq'];}C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(Math['pow'](BL,BF)),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=BF['next']();B8(BL),C++;break;}},function(Bl){while(!![]){B8(Y),C++;break;}},function(Bl){while(!![]){let BF=m[Bl],BL=B9();if(BX['_$c0kS3T']){BF in BX['_$c0kS3T']&&delete BX['_$c0kS3T'][BF];let BP=BF['split']('$$')[0x0];BP!==BF&&BP in BX['_$c0kS3T']&&delete BX['_$c0kS3T'][BP];}BX['_$0oqWSu'][BF]=BL,C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();if(BL===null||BL===undefined)throw new TypeError("Cannot read property '"+String(BF)+"' of "+BL);B8(BL[BF]),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=BB(),BP=m[Bl];Object['defineProperty'](BL['prototype'],BP,{'value':BF,'writable':!![],'enumerable':![],'configurable':!![]}),C++;break;}},function(Bl){while(!![]){let BF=B9();BF&&typeof BF['return']==='function'&&BF['return']();C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9(),BP=BB();Object['defineProperty'](BP,BL,{'set':BF,'enumerable':![],'configurable':!![]}),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9(),BP=m[Bl];!G_7b65a9['_$cjuLFE']&&(G_7b65a9['_$cjuLFE']=new Map());let BE=G_7b65a9['_$cjuLFE'];!BE['has'](BP)&&BE['set'](BP,new WeakMap());let Bu=BE['get'](BP);if(Bu['has'](BL))throw new TypeError("Cannot initialize "+BP+" twice on the same object");Bu['set'](BL,BF),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9(),BP=Bl,BE=function(Bu,Bs,BZ){let Bc;return BZ?Bc=function(){if(Bs){G_7b65a9['_$vy5e3Z']=Bc;let BR='_$yEqSGq'in G_7b65a9;!BR&&(G_7b65a9['_$yEqSGq']=new.target);try{let Bg=[];for(let Bx=0x0;Bx<arguments['length'];Bx++){Bg['push'](arguments[Bx]);}return Bs['apply'](this,Bg);}finally{delete G_7b65a9['_$vy5e3Z'],!BR&&delete G_7b65a9['_$yEqSGq'];}}}:Bc=function(){if(Bs){let BR='_$yEqSGq'in G_7b65a9;!BR&&(G_7b65a9['_$yEqSGq']=new.target);try{let Bg=[];for(let Bx=0x0;Bx<arguments['length'];Bx++){Bg['push'](arguments[Bx]);}return Bs['apply'](this,Bg);}finally{!BR&&delete G_7b65a9['_$yEqSGq'];}}},Bc;}(BF,BL,BP);BF&&Object['defineProperty'](BE,'name',{'value':BF,'configurable':!![]});B8(BE),C++;break;}},function(Bl){while(!![]){let BF=V[Bl]-0x1;V[Bl]=BF,B8(BF),C++;break;}},function(Bl){while(!![]){if(J['length']>0x0){let BF=J[J['length']-0x1];BF['_$q8XdV4']===C&&(BF['_$6BZnrd']!==undefined&&(B0=BF['_$6BZnrd']),J['pop']());}C++;break;}},function(Bl){while(!![]){V[Bl]=V[Bl]+0x1,C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL|BF),C++;break;}},function(Bl){while(!![]){let BF=BW(0x3),BL=BW(0x2),BP=BB();Bf(0x3,BL),Bf(0x2,BP),BT(BF),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL={'value':BF};w['add'](BL),B8(BL),C++;break;}},function(Bl){while(!![]){let BF=V[Bl]+0x1;V[Bl]=BF,B8(BF),C++;break;}},function(Bl){while(!![]){B8(d),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=BB(),BP=![];try{let BE=Object['create'](BF['prototype']),Bu=BF['apply'](BE,[]);Bu!==undefined&&Bu!==BE&&(BP=!![]);}catch(Bs){Bs instanceof TypeError&&(Bs['message']['includes']("'new'")||Bs['message']['includes']('constructor')||Bs['message']['includes']('Illegal constructor'))&&(BP=!![]);}if(BP){let BZ=BL,Bc=G_7b65a9,BR='_$yEqSGq',Bg='_$vy5e3Z',Bx='_$superCalled';try{let Bz=new Function('ParentClass','vmCtorFunc','vmGlobals','ntKey','ctKey','scKey','let RC = class extends ParentClass {'+'  constructor(...args) {'+'    super(...args);'+'    vmGlobals[scKey] = true;'+'    vmGlobals[ctKey] = new.target || RC;'+'    let hadNt = ntKey in vmGlobals;'+'    if (!hadNt) vmGlobals[ntKey] = new.target;'+'    try {'+'      vmCtorFunc.apply(this, args);'+'    } finally {'+'      delete vmGlobals[scKey];'+'      delete vmGlobals[ctKey];'+'      if (!hadNt) delete vmGlobals[ntKey];'+'    }'+'  }'+'};'+'return RC;')(BF,BZ,Bc,BR,Bg,Bx);Object['getOwnPropertyNames'](BZ)['forEach'](function(BK){if(BK!=='prototype'&&BK!=='length'&&BK!=='name')try{Object['defineProperty'](Bz,BK,Object['getOwnPropertyDescriptor'](BZ,BK));}catch(Bt){}});BZ['prototype']&&(Object['getOwnPropertyNames'](BZ['prototype'])['forEach'](function(BK){if(BK!=='constructor')try{Object['defineProperty'](Bz['prototype'],BK,Object['getOwnPropertyDescriptor'](BZ['prototype'],BK));}catch(Bt){}}),Object['getOwnPropertySymbols'](BZ['prototype'])['forEach'](function(BK){try{Object['defineProperty'](Bz['prototype'],BK,Object['getOwnPropertyDescriptor'](BZ['prototype'],BK));}catch(Bt){}}));B9(),B8(Bz),Bz['_$LsdSV1']=BF,C++;break;}catch(BK){}}Object['setPrototypeOf'](BL['prototype'],BF['prototype']),Object['setPrototypeOf'](BL,BF),BL['_$LsdSV1']=BF,C++;break;}},function(Bl){while(!![]){let BF=BB();BF['length']++,C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=BF['next']();B8(Promise['resolve'](BL)),C++;break;}},function(Bl){while(!![]){let BF=B9();B8(BF),B8(BF),C++;break;}},function(Bl){while(!![]){B8(+B9()),C++;break;}},function(Bl){while(!![]){let BF=B9();B8(import(BF)),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9(),BP=BB(),BE=typeof BP==='function'&&BP['prototype']?BP['prototype']:BP;Object['defineProperty'](BE,BL,{'get':BF,'enumerable':BE===BP,'configurable':!![]}),C++;break;}},function(Bl){while(!![]){let BF,BL;Bl!==undefined?(BL=B9(),BF=m[Bl]):(BF=B9(),BL=B9());let BP=delete BL[BF];B8(BP),C++;break;}},function(Bl){while(!![]){B8({}),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=m[Bl],BP=!(BL in G_7b65a9)&&!(BL in p);G_7b65a9[BL]=BF;BL in p&&(p[BL]=BF);BP&&(p[BL]=BF);B8(BF),C++;break;}},function(Bl){while(!![]){let BF=B9();B9();let BL=BB(),BP=m[Bl];!G_7b65a9['_$cjuLFE']&&(G_7b65a9['_$cjuLFE']=new Map());let BE=G_7b65a9['_$cjuLFE'];!BE['has'](BP)&&BE['set'](BP,new WeakMap());let Bu=BE['get'](BP);Bu['set'](BL,BF),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL>BF),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL>>>BF),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL in BF),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL!==BF),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9(),BP=m[Bl],BE=null;if(G_7b65a9['_$cjuLFE']){let BZ=G_7b65a9['_$cjuLFE'],Bc=BZ['get'](BP);Bc&&Bc['has'](BL)&&(BE=Bc['get'](BL));}if(BE===null){let BR='_$RfnKWi'+BP['substring'](0x1)+'_$XxwTRv';BR in BL&&(BE=BL[BR]);}if(BE===null)throw new TypeError("Cannot read private member "+BP+" from an object whose class did not declare it");if(typeof BE!=='function')throw new TypeError(BP+" is not a function");let Bu=[];for(let Bg=0x0;Bg<BF;Bg++){Bu['unshift'](B9());}let Bs=BE['apply'](BL,Bu);B8(Bs),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9(),BP=G_7b65a9['_$tHY4J4'];G_7b65a9['_$tHY4J4']=undefined;try{let BE=BL['apply'](undefined,A(B9,BF));B8(BE);}finally{G_7b65a9['_$tHY4J4']=BP;}C++;break;}},function(Bl){while(!![]){B9(),B8(undefined),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=BB(),BP=m[Bl];Object['defineProperty'](BL,BP,{'value':BF,'writable':!![],'enumerable':![],'configurable':!![]}),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL-BF),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9(),BP=BB();Object['defineProperty'](BP,BL,{'value':BF,'writable':!![],'enumerable':![],'configurable':!![]}),C++;break;}},function(Bl){while(!![]){B8(!B9()),C++;break;}},function(Bl){while(!![]){let BF=m[Bl],BL=B9(),BP=BX,BE=![];while(BP){if(BP['_$0oqWSu']&&BF in BP['_$0oqWSu']){if(BP['_$ao1mua']&&BF in BP['_$ao1mua'])break;BP['_$0oqWSu'][BF]=BL;!BP['_$ao1mua']&&(BP['_$ao1mua']={});BP['_$ao1mua'][BF]=!![],BE=!![];break;}BP=BP['_$2scfS2'];}!BE&&(BX['_$c0kS3T']&&BF in BX['_$c0kS3T']&&delete BX['_$c0kS3T'][BF],BX['_$0oqWSu'][BF]=BL,!BX['_$ao1mua']&&(BX['_$ao1mua']={}),BX['_$ao1mua'][BF]=!![]);C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=BB();BL['push'](BF),C++;break;}},function(Bl){while(!![]){B8(m[Bl]),C++;break;}},function(Bl){while(!![]){let BF=B9();B8(typeof BF==='bigint'?BF-0x1n:BF-0x1),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL<<BF),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL+BF),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9(),BP=BB();Object['defineProperty'](BP['prototype'],BL,{'value':BF,'writable':!![],'enumerable':![],'configurable':!![]}),C++;break;}},function(Bl){while(!![]){let BF=Bl&0xffff,BL=Bl>>>0x10;B8(V[BF]-m[BL]),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9(),BP=m[Bl];if(BL===null||BL===undefined)throw new TypeError("Cannot set property '"+String(BP)+"' of "+BL);BL[BP]=BF,B8(BF),C++;break;}},function(Bl){while(!![]){B8(typeof B9()),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=BB();if(Array['isArray'](BF))Array['prototype']['push']['apply'](BL,BF);else for(let BP of BF){BL['push'](BP);}C++;break;}},function(Bl){while(!![]){let BF=B9();if(BF==null)throw new TypeError('Cannot iterate over '+BF);let BL=BF[Symbol['iterator']];if(typeof BL!=='function')throw new TypeError('Object is not iterable');B8(BL['call'](BF)),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9(),BP=BB(),BE=typeof BP==='function'&&BP['prototype']?BP['prototype']:BP;Object['defineProperty'](BE,BL,{'set':BF,'enumerable':BE===BP,'configurable':!![]}),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=BB();BF!==null&&BF!==undefined&&Object['assign'](BL,BF);C++;break;}},function(Bl){while(!![]){V[Bl]=V[Bl]-0x1,C++;break;}},function(Bl){while(!![]){let BF=m[Bl];!BX['_$c0kS3T']&&(BX['_$c0kS3T']={});BX['_$c0kS3T'][BF]=!![],C++;break;}},function(Bl){while(!![]){let BF=m[Bl],BL=B9(),BP=BX,BE=![];while(BP){if(BP['_$0oqWSu']&&BF in BP['_$0oqWSu']){if(BP['_$ao1mua']&&BF in BP['_$ao1mua'])throw new TypeError('Assignment to constant variable.');BP['_$c0kS3T']&&BF in BP['_$c0kS3T']&&delete BP['_$c0kS3T'][BF];BP['_$0oqWSu'][BF]=BL,BE=!![];break;}BP=BP['_$2scfS2'];}if(!BE){if(BF in G_7b65a9)G_7b65a9[BF]=BL;else BF in p?p[BF]=BL:p[BF]=BL;}C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL instanceof BF),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=A(B9,BF),BP=B9();if(typeof BP!=='function')throw new TypeError(BP+' is not a constructor');let BE=G_7b65a9['_$tHY4J4'];G_7b65a9['_$tHY4J4']=undefined;let Bu;try{Bu=Reflect['construct'](BP,BL);}finally{G_7b65a9['_$tHY4J4']=BE;}B8(Bu),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL={['_$0oqWSu']:Object['create'](null),['_$ao1mua']:Object['create'](null),['_$c0kS3T']:Object['create'](null),['_$2scfS2']:BF};BX=BL,C++;break;}},function(Bl){while(!![]){B8([]),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=m[Bl];BF===null||BF===undefined?B8(undefined):B8(BF[BL]);C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9(),BP=B9();if(BP===null||BP===undefined)throw new TypeError("Cannot set property '"+String(BL)+"' of "+BP);BP[BL]=BF,B8(BF),C++;break;}},function(Bl){while(!![]){B8(BX),C++;break;}},function(Bl){while(!![]){return M>0x0?B9():undefined;break;}},function(Bl){while(!![]){let BF=B9(),BL=m[Bl];!G_7b65a9['_$cjuLFE']&&(G_7b65a9['_$cjuLFE']=new Map());let BP=G_7b65a9['_$cjuLFE'],BE="get_"+BL,Bu=BP['get'](BE);if(Bu&&Bu['has'](BF)){let BR=Bu['get'](BF);B8(BR['call'](BF)),C++;break;}let Bs='_$RfnKWi'+"get_"+BL['substring'](0x1)+'_$XxwTRv';if(BF['constructor']&&Bs in BF['constructor']){let Bg=BF['constructor'][Bs];B8(Bg['call'](BF)),C++;break;}let BZ=BP['get'](BL);if(BZ&&BZ['has'](BF)){B8(BZ['get'](BF)),C++;break;}let Bc='_$9ruMW4'+BL['substring'](0x1)+'_$teZjwv';if(Bc in BF){B8(BF[Bc]),C++;break;}throw new TypeError("Cannot read private member "+BL+" from an object whose class did not declare it");break;}},function(Bl){while(!![]){let BF=B9(),BL=B9(),BP=B9();if(typeof BL!=='function')throw new TypeError(BL+' is not a function');let BE=G_7b65a9['_$DhoohJ'],Bu=BE&&BE['get'](BL),Bs=G_7b65a9['_$tHY4J4'];Bu&&(G_7b65a9['_$qVHQT3']=!![],G_7b65a9['_$tHY4J4']=Bu);try{let BZ=BL['apply'](BP,A(B9,BF));B8(BZ);}finally{Bu&&(G_7b65a9['_$qVHQT3']=![],G_7b65a9['_$tHY4J4']=Bs);}C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9(),BP=m[Bl];if(G_7b65a9['_$cjuLFE']){let Bu=G_7b65a9['_$cjuLFE'],Bs="set_"+BP,BZ=Bu['get'](Bs);if(BZ&&BZ['has'](BL)){let BR=BZ['get'](BL);BR['call'](BL,BF),B8(BF),C++;break;}let Bc=Bu['get'](BP);if(Bc&&Bc['has'](BL)){Bc['set'](BL,BF),B8(BF),C++;break;}}let BE='_$9ruMW4'+BP['substring'](0x1)+'_$teZjwv';if(BE in BL){BL[BE]=BF,B8(BF),C++;break;}throw new TypeError("Cannot write private member "+BP+" to an object whose class did not declare it");break;}},function(Bl){while(!![]){V[Bl]=B9(),C++;break;}},function(Bl){while(!![]){!B9()?C=BQ(r[C]):C++;break;}},function(Bl){while(!![]){let BF=h[C];J['push']({['_$bXwkk8']:BF[0x0]>=0x0?BQ(BF[0x0]):undefined,['_$q8XdV4']:BF[0x1]>=0x0?BQ(BF[0x1]):undefined,['_$BRnf5C']:BF[0x2]>=0x0?BQ(BF[0x2]):undefined,['_$nYHz1p']:M}),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=BB(),BP=m[Bl];Object['defineProperty'](BL,BP,{'get':BF,'enumerable':![],'configurable':!![]}),C++;break;}},function(Bl){while(!![]){let BF=BB();BT(BW(0x2)),Bf(0x2,BF),C++;break;}},function(Bl){while(!![]){let BF=Bl&0xffff,BL=Bl>>>0x10,BP=B9(),BE=A(B9,BP),Bu=V[BF],Bs=m[BL],BZ=Bu[Bs];B8(BZ['apply'](Bu,BE)),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL!=BF),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=BB(),BP=m[Bl],BE=typeof BL==='function'&&BL['prototype']?BL['prototype']:BL;Object['defineProperty'](BE,BP,{'get':BF,'enumerable':BE===BL,'configurable':!![]}),C++;break;}},function(Bl){while(!![]){C=BQ(r[C]);break;}},function(Bl){while(!![]){let BF=m[Bl],BL=B9(),BP=BX['_$2scfS2'];BP&&(BP['_$0oqWSu'][BF]=BL);C++;break;}},function(Bl){while(!![]){let BF=B9();B8(n(BF)),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL/BF),C++;break;}},function(Bl){while(!![]){J['pop'](),C++;break;}},function(Bl){while(!![]){let BF=m[Bl],BL=B9();if(BX['_$c0kS3T']){BF in BX['_$c0kS3T']&&delete BX['_$c0kS3T'][BF];let BP=BF['split']('$$')[0x0];BP!==BF&&BP in BX['_$c0kS3T']&&delete BX['_$c0kS3T'][BP];}BX['_$0oqWSu'][BF]=BL;!BX['_$ao1mua']&&(BX['_$ao1mua']={});BX['_$ao1mua'][BF]=!![],C++;break;}},function(Bl){while(!![]){B8(null),C++;break;}},function(Bl){while(!![]){let BF=Bl&0xffff,BL=Bl>>0x10,BP=m[BF],BE=m[BL];B8(new RegExp(BP,BE)),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL*BF),C++;break;}},function(Bl){while(!![]){C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9(),BP=BB();Object['defineProperty'](BP,BL,{'get':BF,'enumerable':![],'configurable':!![]}),C++;break;}},function(Bl){while(!![]){let BF=m[Bl];BF in G_7b65a9?B8(typeof G_7b65a9[BF]):B8(typeof p[BF]);C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=m[Bl];if(BF===null||BF===undefined)throw new TypeError("Cannot read property '"+String(BL)+"' of "+BF);B8(BF[BL]),C++;break;}},function(Bl){while(!![]){let BF=B9();BF&&typeof BF['return']==='function'?B8(Promise['resolve'](BF['return']())):B8(Promise['resolve']());C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=S(BF),BP=BL&&BL['a'],BE=BL&&BL['s'],Bu=BL&&BL['g'],Bs=BX,BZ=u,Bc=s,BR=Z,Bg=BL&&BL['ni']!==undefined?BL['c'][BL['ni']]:undefined,Bx=BL&&BL['p']||0x0,Bz=BP?Y:undefined,BK=function(Bt,BH,Bo,Bd,BY,Bi,BM,BV,BC,Bm,By){let Br,Be;if(BY)Be=function(){let Bh=[];for(let Bj=0x0;Bj<arguments['length'];Bj++){Bh['push'](arguments[Bj]);}return BV['call'](this,Bt,Bh,BH,Br);};else Bd?Be=async function(){let Bh=[];for(let BJ=0x0;BJ<arguments['length'];BJ++){Bh['push'](arguments[BJ]);}let Bj=new.target!==undefined?new.target:G_7b65a9['_$yEqSGq'];return Bo?await BM['call'](Bm,Bt,Bh,BH,Br,undefined):await BM['call'](this,Bt,Bh,BH,Br,Bj);}:Be=function(){let Bh=[];for(let BJ=0x0;BJ<arguments['length'];BJ++){Bh['push'](arguments[BJ]);}let Bj=new.target!==undefined?new.target:G_7b65a9['_$yEqSGq'];return Bo?Bi['call'](Bm,Bt,Bh,BH,Br,undefined):Bi['call'](this,Bt,Bh,BH,Br,Bj);};Br=Be;if(BC)try{Object['defineProperty'](Br,'name',{'value':BC,'writable':![],'enumerable':![],'configurable':!![]});}catch(Bh){}try{Object['defineProperty'](Br,'length',{'value':By,'writable':![],'enumerable':![],'configurable':!![]});}catch(Bj){}return Br;}(BF,Bs,BP,BE,Bu,BZ,Bc,BR,Bg,Bz,Bx);if(!BK)throw new Error('VM Error: Failed to create closure');B8(BK),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=m[Bl];if(BF==null){B8(undefined),C++;break;}!G_7b65a9['_$cjuLFE']&&(G_7b65a9['_$cjuLFE']=new Map());let BP=G_7b65a9['_$cjuLFE'],BE=BP['get'](BL);if(!BE||!BE['has'](BF))throw new TypeError("Cannot read private member "+BL+" from an object whose class did not declare it");B8(BE['get'](BF)),C++;break;}},function(Bl){while(!![]){V[Bl]=B9(),C++;break;}},function(Bl){while(!![]){t[Bl]=B9(),C++;break;}},function(Bl){while(!![]){B9()?C=BQ(r[C]):C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();BL===null||BL===undefined?B8(undefined):B8(BL[BF]);C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL%BF),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL>=BF),C++;break;}},function(Bl){while(!![]){B8(undefined),C++;break;}},function(Bl){while(!![]){let BF=B9();if(BF==null)throw new TypeError('Cannot iterate over '+BF);let BL=BF[Symbol['asyncIterator']];if(typeof BL==='function')B8(BL['call'](BF));else{let BP=BF[Symbol['iterator']];if(typeof BP!=='function')throw new TypeError('Object is not async iterable');B8(BP['call'](BF));}C++;break;}},function(Bl){while(!![]){let BF=Bl&0xffff,BL=Bl>>>0x10;V[BF]<m[BL]?C=BQ(r[C]):C++;break;}},function(Bl){while(!![]){let BF=B9();B8(!!BF['done']),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=m[Bl],BP=![];if(G_7b65a9['_$cjuLFE']){let BE=G_7b65a9['_$cjuLFE'],Bu=BE['get'](BL);BP=Bu&&Bu['has'](BF);}B8(BP),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=m[Bl];if(G_7b65a9['_$cjuLFE']){let BE=G_7b65a9['_$cjuLFE'],Bu="get_"+BL,Bs=BE['get'](Bu);if(Bs&&Bs['has'](BF)){let Bc=Bs['get'](BF);B8(Bc['call'](BF)),C++;break;}let BZ=BE['get'](BL);if(BZ&&BZ['has'](BF)){B8(BZ['get'](BF)),C++;break;}}let BP='_$9ruMW4'+BL['substring'](0x1)+'_$teZjwv';if(BP in BF){B8(BF[BP]),C++;break;}throw new TypeError("Cannot read private member "+BL+" from an object whose class did not declare it");break;}},function(Bl){while(!![]){let BF=B9();if(Bl>=0x0){let BL=m[Bl];BX['_$0oqWSu'][BL]=BF;}C++;break;}},function(Bl){while(!![]){let BF=B9();B8(typeof BF==='bigint'?BF+0x1n:BF+0x1),C++;break;}},function(Bl){while(!![]){if(B1['_$YthHOs']){let BF=B1['_$CU1WUk'];B1['_$YthHOs']=![],B1['_$CU1WUk']=undefined,Bq=!![],BD=BF;return;}if(B2['_$fctTS0']){let BL=B2['_$8f71z9'];B2['_$fctTS0']=![],B2['_$8f71z9']=0x0,C=BL;break;}if(B3['_$l7yJjg']){let BP=B3['_$KWa9Ei'];B3['_$l7yJjg']=![],B3['_$KWa9Ei']=0x0,C=BP;break;}if(B0!==null){let BE=B0;B0=null;throw BE;}C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9(),BP=G_7b65a9['_$tHY4J4'],BE;if(BP)BE=Object['getPrototypeOf'](BP);else{if(typeof BL==='function')BE=Object['getPrototypeOf'](BL);else{let Bc=Object['getPrototypeOf'](BL),BR=Bc&&Bc['constructor']&&Bc['constructor']['prototype']===Bc;BR?BE=Object['getPrototypeOf'](Bc):BE=Bc;}}let Bu=null,Bs=BE;while(Bs!==null){Bu=Object['getOwnPropertyDescriptor'](Bs,BF);if(Bu)break;Bs=Object['getPrototypeOf'](Bs);}let BZ;if(Bu&&Bu['get'])BZ=Bu['get']['call'](BL),B8(BZ);else{if(Bu&&Bu['set']&&!('value'in Bu))B8(undefined);else{BZ=Bs?Bs[BF]:BE[BF];if(typeof BZ==='function'){let Bg=Bs||BE,Bx=BZ['bind'](BL),Bz=BZ['constructor']&&BZ['constructor']['name'],BK=Bz==='GeneratorFunction'||Bz==='AsyncFunction'||Bz==='AsyncGeneratorFunction';!BK&&(!G_7b65a9['_$DhoohJ']&&(G_7b65a9['_$DhoohJ']=new WeakMap()),G_7b65a9['_$DhoohJ']['set'](Bx,Bg)),B8(Bx);}else B8(BZ);}}C++;break;}},function(Bl){while(!![]){if(Bl===-0x1)B8(Symbol());else{let BF=B9();B8(Symbol(BF));}C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL===BF),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=BB(),BP=m[Bl],BE=typeof BL==='function'&&BL['prototype']?BL['prototype']:BL;Object['defineProperty'](BE,BP,{'set':BF,'enumerable':BE===BL,'configurable':!![]}),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9(),BP=B9(),BE;if(typeof BP==='function')BE=Object['getPrototypeOf'](BP);else{let BZ=Object['getPrototypeOf'](BP),Bc=BZ&&BZ['constructor']&&BZ['constructor']['prototype']===BZ;Bc?BE=Object['getPrototypeOf'](BZ):BE=BZ;}let Bu=null,Bs=BE;while(Bs!==null){Bu=Object['getOwnPropertyDescriptor'](Bs,BL);if(Bu)break;Bs=Object['getPrototypeOf'](Bs);}Bu&&Bu['set']?Bu['set']['call'](BP,BF):BE[BL]=BF;B8(BF),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL>>BF),C++;break;}},function(Bl){while(!![]){B8(-B9()),C++;break;}},function(Bl){while(!![]){if(J['length']>0x0){let BF=J[J['length']-0x1];if(BF['_$q8XdV4']!==undefined){B3['_$l7yJjg']=!![],B3['_$KWa9Ei']=BQ(r[C]),C=BF['_$q8XdV4'];break;}}C=BQ(r[C]);break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL==BF),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL<=BF),C++;break;}},function(Bl){while(!![]){let BF=B9();B8(Symbol['keyFor'](BF)),C++;break;}},function(Bl){while(!![]){let BF=m[Bl];B8(Symbol['for'](BF)),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9(),BP=m[Bl];!G_7b65a9['_$cjuLFE']&&(G_7b65a9['_$cjuLFE']=new Map());let BE=G_7b65a9['_$cjuLFE'],Bu="set_"+BP,Bs=BE['get'](Bu);if(Bs&&Bs['has'](BL)){let Bg=Bs['get'](BL);Bg['call'](BL,BF),B8(BF),C++;break;}let BZ='_$RfnKWi'+"set_"+BP['substring'](0x1)+'_$XxwTRv';if(BL['constructor']&&BZ in BL['constructor']){let Bx=BL['constructor'][BZ];Bx['call'](BL,BF),B8(BF),C++;break;}let Bc=BE['get'](BP);if(Bc&&Bc['has'](BL)){Bc['set'](BL,BF),B8(BF),C++;break;}let BR='_$9ruMW4'+BP['substring'](0x1)+'_$teZjwv';if(BR in BL){BL[BR]=BF,B8(BF),C++;break;}throw new TypeError("Cannot write private member "+BP+" to an object whose class did not declare it");break;}},function(Bl){while(!![]){if(Bk===null){let BF=t?t['length']:0x0,BL={};Bk=new Proxy([],{'get':function(BP,BE,Bu){if(BE==='length')return BF;if(BE==='callee')return o;if(BE===Symbol['iterator'])return function(){let BZ=0x0,Bc=BF;return{'next':function(){if(BZ<Bc){let BR=BZ<t['length']?t[BZ]:BL[BZ];return BZ++,{'value':BR,'done':![]};}return{'done':!![]};}};};if(typeof BE==='string'){let BZ=parseInt(BE,0xa);if(!isNaN(BZ)&&BZ>=0x0){if(BZ<t['length'])return t[BZ];return BL[BZ];}}let Bs=Array['prototype'][BE];if(typeof Bs==='function')return function(){let Bc=[];for(let BR=0x0;BR<BF;BR++){Bc[BR]=BR<t['length']?t[BR]:BL[BR];}return Bs['apply'](Bc,arguments);};return undefined;},'set':function(BP,BE,Bu){if(BE==='length')return BF=Bu,!![];if(typeof BE==='string'){let Bs=parseInt(BE,0xa);if(!isNaN(Bs)&&Bs>=0x0){Bs<t['length']?t[Bs]=Bu:BL[Bs]=Bu;if(Bs>=BF)BF=Bs+0x1;return!![];}}return!![];},'has':function(BP,BE){if(BE==='length'||BE==='callee')return!![];if(typeof BE==='string'){let Bu=parseInt(BE,0xa);if(!isNaN(Bu)&&Bu>=0x0&&Bu<BF)return!![];}return BE in Array['prototype'];}});}B8(Bk),C++;break;}},function(Bl){while(!![]){let BF=m[Bl],BL;if(BF in G_7b65a9)BL=G_7b65a9[BF];else{if(BF in p)BL=p[BF];else throw new ReferenceError(BF+' is not defined');}B8(BL),C++;break;}},function(Bl){while(!![]){let BF=Bl&0xffff,BL=Bl>>>0x10;B8(V[BF]+m[BL]),C++;break;}},function(Bl){while(!![]){let BF=B9();BF!==null&&BF!==undefined?C=BQ(r[C]):C++;break;}},function(Bl){while(!![]){B8(t[Bl]),C++;break;}},function(Bl){while(!![]){if(J['length']>0x0){let BF=J[J['length']-0x1];if(BF['_$q8XdV4']!==undefined){B2['_$fctTS0']=!![],B2['_$8f71z9']=BQ(r[C]),C=BF['_$q8XdV4'];break;}}C=BQ(r[C]);break;}},function(Bl){while(!![]){B8(V[Bl]),C++;break;}},function(Bl){while(!![]){BX&&BX['_$2scfS2']&&(BX=BX['_$2scfS2']);C++;break;}},function(Bl){while(!![]){debugger;C++;break;}},function(Bl){while(!![]){B9(),C++;break;}},function(Bl){while(!![]){B8(~B9()),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL^BF),C++;break;}},function(Bl){while(!![]){let BF=Bl&0xffff,BL=Bl>>>0x10,BP=V[BF],BE=m[BL];B8(BP[BE]),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL<BF),C++;break;}},function(Bl){while(!![]){throw B9();break;}},function(Bl){while(!![]){let BF=m[Bl],BL=BX,BP,BE=![],Bu=BF['indexOf']('$$')!==-0x1?BF['split']('$$')[0x0]:BF;while(BL){if(BL['_$c0kS3T']&&BF in BL['_$c0kS3T'])throw new ReferenceError("Cannot access '"+BF+"' before initialization");if(Bu!==BF&&BL['_$c0kS3T']&&Bu in BL['_$c0kS3T']){if(!(BL['_$0oqWSu']&&BF in BL['_$0oqWSu']))throw new ReferenceError("Cannot access '"+Bu+"' before initialization");}if(BL['_$0oqWSu']&&BF in BL['_$0oqWSu']){BP=BL['_$0oqWSu'][BF],BE=!![];break;}BL=BL['_$2scfS2'];}BF==='__this__'&&(BP=Y,BE=!![]);!BE&&(BF in G_7b65a9?BP=G_7b65a9[BF]:BP=p[BF]);B8(BP),C++;break;}},function(Bl){while(!![]){let BF=Bl&0xffff,BL=Bl>>>0x10;B8(V[BF]*m[BL]),C++;break;}},function(Bl){while(!![]){let BF=B9(),BL=B9();B8(BL&BF),C++;break;}},function(Bl){while(!![]){if(J['length']>0x0){let BF=J[J['length']-0x1];if(BF['_$q8XdV4']!==undefined){B1['_$YthHOs']=!![],B1['_$CU1WUk']=B9(),C=BF['_$q8XdV4'];break;}}B1['_$YthHOs']&&(B1['_$YthHOs']=![],B1['_$CU1WUk']=undefined);Bq=!![],BD=B9();return;break;}}];Bp[BG[Bv]](BO);if(Bq)return Bq=![],BD;}break;}catch(Bl){if(J['length']>0x0){let BF=J[J['length']-0x1];M=BF['_$nYHz1p'];if(BF['_$bXwkk8']!==undefined)B8(Bl),C=BF['_$bXwkk8'],BF['_$bXwkk8']=undefined,BF['_$q8XdV4']===undefined&&J['pop']();else BF['_$q8XdV4']!==undefined?(C=BF['_$q8XdV4'],BF['_$6BZnrd']=Bl):(C=BF['_$BRnf5C'],J['pop']());continue;}throw Bl;}}return M>0x0?B9():BI?Y:undefined;}function*E(K,t,H,o,d,Y){let i=[],M=0x0,V=new Array((K['p']||0x0)+(K['l']||0x0)),C=0x0,m=K['c'],y=K['i'],r=K['j']||{},h=K['x']||{},j=y['length']>>0x1,J=[],B0=null,B1={['_$YthHOs']:![],['_$CU1WUk']:undefined},B2={['_$fctTS0']:![],['_$8f71z9']:0x0},B3={['_$l7yJjg']:![],['_$KWa9Ei']:0x0},B4=K['o']||N;var B5=0x0,B6=null;let B7=K['seKey'],B8,B9,BB,BT,BW,Bf;if(B7!==undefined){let Ba=BS=>typeof BS==='number'&&Number['isFinite'](BS)&&Number['isInteger'](BS)&&BS>=-0x80000000&&BS<=0x7fffffff?BS^B7|0x0:BS;B8=BS=>{i[M++]=Ba(BS);},B9=()=>Ba(i[--M]),BB=()=>Ba(i[M-0x1]),BT=BS=>{i[M-0x1]=Ba(BS);},BW=BS=>Ba(i[M-BS]),Bf=(BS,BN)=>{i[M-BS]=Ba(BN);};}else B8=BS=>{i[M++]=BS;},B9=()=>i[--M],BB=()=>i[M-0x1],BT=BS=>{i[M-0x1]=BS;},BW=BS=>i[M-BS],Bf=(BS,BN)=>{i[M-BS]=BN;};let BQ=BS=>BS,BX={['_$2scfS2']:H,['_$0oqWSu']:Object['create'](null)};if(t)for(let BS=0x0;BS<Math['min'](t['length'],K['p']||0x0);BS++){V[BS]=t[BS];}let Bk=null,BI=![];if(K['nfe']&&K['ni']!==undefined&&o){let BN=K['c'][K['ni']];BX['_$0oqWSu'][BN]=o;if(!BX['_$ao1mua'])BX['_$ao1mua']={};BX['_$ao1mua'][BN]=!![];try{Object['defineProperty'](o,'name',{'value':BN,'writable':![],'enumerable':![],'configurable':!![]});}catch(Bw){}}while(C<j){try{while(C<j){let BA=C<<0x1,Bn=y[BA],Bv=Bn,Bb=B4[Bv],BU=y[BA+0x1],BO=BU===null?undefined:BU;if(Bv===0x7a){let Bl=B9(),BF=yield{['_$smFjk3']:0x1,['_$2gZ1nB']:Bl};B8(BF),C++;continue;}if(Bv===0x78){let BL=B9(),BP=yield{['_$smFjk3']:0x2,['_$2gZ1nB']:BL};if(BP&&typeof BP==='object'&&BP['_$smFjk3']===0x4){let BE=BP['_$2gZ1nB'];if(J['length']>0x0){let Bu=J[J['length']-0x1];if(Bu['_$q8XdV4']!==undefined){B1['_$YthHOs']=!![],B1['_$CU1WUk']=BE,C=Bu['_$q8XdV4'];continue;}}return BE;}B8(BP),C++;continue;}if(Bv===0x79){let Bs=B9(),BZ=yield{['_$smFjk3']:0x3,['_$2gZ1nB']:Bs};B8(BZ),C++;continue;}if(typeof Bp==='undefined')var Bq=![],BD,BG={0x0:0x2d,0x1:0x65,0x2:0x55,0x3:0x84,0x4:0x18,0x5:0x4b,0x6:0x81,0x7:0x5f,0x8:0x7f,0x9:0x60,0xa:0x30,0xb:0x28,0xc:0x57,0xd:0x52,0xe:0x63,0xf:0x74,0x10:0x6c,0x11:0x2e,0x12:0x3,0x13:0x19,0x14:0x8c,0x15:0x10,0x16:0x86,0x17:0x85,0x18:0x2f,0x19:0x73,0x1a:0x21,0x1b:0x11,0x20:0x2a,0x28:0x76,0x29:0x4d,0x2a:0x70,0x2b:0x23,0x2c:0x88,0x2d:0x77,0x2e:0x20,0x2f:0x64,0x32:0x4f,0x33:0x61,0x34:0x48,0x35:0x7e,0x36:0x25,0x37:0x45,0x38:0x8d,0x39:0x89,0x3a:0x49,0x3b:0x53,0x3c:0x6b,0x3d:0xe,0x3e:0x6d,0x3f:0x80,0x40:0x75,0x46:0x5b,0x47:0x33,0x48:0x7,0x49:0x41,0x4a:0x1c,0x4b:0x7c,0x4c:0x1e,0x4d:0x1d,0x4e:0x40,0x4f:0x22,0x51:0x38,0x52:0x62,0x5a:0x3f,0x5b:0x2c,0x5d:0x12,0x5e:0x35,0x5f:0x16,0x64:0x5d,0x68:0x3d,0x69:0x2,0x6a:0x1a,0x6e:0x34,0x6f:0x3c,0x70:0x5a,0x7b:0x4,0x7c:0x9,0x7f:0x36,0x80:0x68,0x81:0x66,0x82:0x17,0x83:0x5c,0x84:0x51,0x8c:0xc,0x8d:0x15,0x8e:0x6e,0x8f:0x72,0x90:0x8,0x91:0x4e,0x92:0x71,0x93:0x27,0x94:0x4a,0x95:0x0,0x96:0x44,0x97:0x7a,0x98:0xb,0x99:0x69,0x9a:0x24,0x9b:0x5e,0x9c:0x1f,0x9d:0x6a,0x9e:0x46,0xa0:0x5,0xa1:0x7b,0xa2:0x56,0xa3:0x26,0xa4:0x14,0xa7:0x6f,0xa8:0x79,0xa9:0x78,0xaa:0x31,0xab:0x29,0xac:0x1b,0xad:0x37,0xae:0x59,0xaf:0xa,0xc8:0x83,0xc9:0x58,0xca:0x43,0xd2:0x3e,0xd3:0x8a,0xd4:0x3b,0xd5:0x42,0xd6:0x82,0xd7:0x6,0xd8:0x2b,0xd9:0x54,0xda:0x3a,0xdb:0x50,0xfa:0xf,0xfb:0x39,0xfc:0x7d,0xfd:0x32,0xfe:0x8b,0xff:0x87,0x100:0x1,0x101:0x67,0x102:0x4c,0x103:0x47,0x104:0x13,0x105:0xd},Bp=[function(Bc){while(!![]){let BR=B9(),Bg=BB(),Bx=m[Bc];Object['defineProperty'](Bg,Bx,{'set':BR,'enumerable':![],'configurable':!![]}),C++;break;}},function(Bc){while(!![]){let BR=Bc&0xffff,Bg=Bc>>>0x10;B8(V[BR]<m[Bg]),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=A(B9,BR),Bx=B9();if(Bc===0x1){B8(Bg),C++;break;}if(G_7b65a9['_$superCalled']){C++;break;}if(typeof Bx!=='function')throw new TypeError('Super expression must be a constructor');G_7b65a9['_$yEqSGq']=d;try{let Bz=Bx['apply'](Y,Bg);Bz!==undefined&&Bz!==Y&&typeof Bz==='object'&&(Y&&Object['assign'](Bz,Y),Y=Bz,BI=!![]);}catch(BK){if(BK instanceof TypeError&&(BK['message']['includes']("'new'")||BK['message']['includes']('constructor'))){let Bt=Reflect['construct'](Bx,Bg,d);Bt!==Y&&Y&&Object['assign'](Bt,Y),Y=Bt,BI=!![];}else throw BK;}finally{delete G_7b65a9['_$yEqSGq'];}C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Math['pow'](Bg,BR)),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=BR['next']();B8(Bg),C++;break;}},function(Bc){while(!![]){B8(Y),C++;break;}},function(Bc){while(!![]){let BR=m[Bc],Bg=B9();if(BX['_$c0kS3T']){BR in BX['_$c0kS3T']&&delete BX['_$c0kS3T'][BR];let Bx=BR['split']('$$')[0x0];Bx!==BR&&Bx in BX['_$c0kS3T']&&delete BX['_$c0kS3T'][Bx];}BX['_$0oqWSu'][BR]=Bg,C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();if(Bg===null||Bg===undefined)throw new TypeError("Cannot read property '"+String(BR)+"' of "+Bg);B8(Bg[BR]),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=BB(),Bx=m[Bc];Object['defineProperty'](Bg['prototype'],Bx,{'value':BR,'writable':!![],'enumerable':![],'configurable':!![]}),C++;break;}},function(Bc){while(!![]){let BR=B9();BR&&typeof BR['return']==='function'&&BR['return']();C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9(),Bx=BB();Object['defineProperty'](Bx,Bg,{'set':BR,'enumerable':![],'configurable':!![]}),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9(),Bx=m[Bc];!G_7b65a9['_$cjuLFE']&&(G_7b65a9['_$cjuLFE']=new Map());let Bz=G_7b65a9['_$cjuLFE'];!Bz['has'](Bx)&&Bz['set'](Bx,new WeakMap());let BK=Bz['get'](Bx);if(BK['has'](Bg))throw new TypeError("Cannot initialize "+Bx+" twice on the same object");BK['set'](Bg,BR),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9(),Bx=Bc,Bz=function(BK,Bt,BH){let Bo;return BH?Bo=function(){if(Bt){G_7b65a9['_$vy5e3Z']=Bo;let Bd='_$yEqSGq'in G_7b65a9;!Bd&&(G_7b65a9['_$yEqSGq']=new.target);try{let BY=[];for(let Bi=0x0;Bi<arguments['length'];Bi++){BY['push'](arguments[Bi]);}return Bt['apply'](this,BY);}finally{delete G_7b65a9['_$vy5e3Z'],!Bd&&delete G_7b65a9['_$yEqSGq'];}}}:Bo=function(){if(Bt){let Bd='_$yEqSGq'in G_7b65a9;!Bd&&(G_7b65a9['_$yEqSGq']=new.target);try{let BY=[];for(let Bi=0x0;Bi<arguments['length'];Bi++){BY['push'](arguments[Bi]);}return Bt['apply'](this,BY);}finally{!Bd&&delete G_7b65a9['_$yEqSGq'];}}},Bo;}(BR,Bg,Bx);BR&&Object['defineProperty'](Bz,'name',{'value':BR,'configurable':!![]});B8(Bz),C++;break;}},function(Bc){while(!![]){let BR=V[Bc]-0x1;V[Bc]=BR,B8(BR),C++;break;}},function(Bc){while(!![]){if(J['length']>0x0){let BR=J[J['length']-0x1];BR['_$q8XdV4']===C&&(BR['_$6BZnrd']!==undefined&&(B0=BR['_$6BZnrd']),J['pop']());}C++;break;}},function(Bc){while(!![]){V[Bc]=V[Bc]+0x1,C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg|BR),C++;break;}},function(Bc){while(!![]){let BR=BW(0x3),Bg=BW(0x2),Bx=BB();Bf(0x3,Bg),Bf(0x2,Bx),BT(BR),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg={'value':BR};w['add'](Bg),B8(Bg),C++;break;}},function(Bc){while(!![]){let BR=V[Bc]+0x1;V[Bc]=BR,B8(BR),C++;break;}},function(Bc){while(!![]){B8(d),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=BB(),Bx=![];try{let Bz=Object['create'](BR['prototype']),BK=BR['apply'](Bz,[]);BK!==undefined&&BK!==Bz&&(Bx=!![]);}catch(Bt){Bt instanceof TypeError&&(Bt['message']['includes']("'new'")||Bt['message']['includes']('constructor')||Bt['message']['includes']('Illegal constructor'))&&(Bx=!![]);}if(Bx){let BH=Bg,Bo=G_7b65a9,Bd='_$yEqSGq',BY='_$vy5e3Z',Bi='_$superCalled';try{let BM=new Function('ParentClass','vmCtorFunc','vmGlobals','ntKey','ctKey','scKey','let RC = class extends ParentClass {'+'  constructor(...args) {'+'    super(...args);'+'    vmGlobals[scKey] = true;'+'    vmGlobals[ctKey] = new.target || RC;'+'    let hadNt = ntKey in vmGlobals;'+'    if (!hadNt) vmGlobals[ntKey] = new.target;'+'    try {'+'      vmCtorFunc.apply(this, args);'+'    } finally {'+'      delete vmGlobals[scKey];'+'      delete vmGlobals[ctKey];'+'      if (!hadNt) delete vmGlobals[ntKey];'+'    }'+'  }'+'};'+'return RC;')(BR,BH,Bo,Bd,BY,Bi);Object['getOwnPropertyNames'](BH)['forEach'](function(BV){if(BV!=='prototype'&&BV!=='length'&&BV!=='name')try{Object['defineProperty'](BM,BV,Object['getOwnPropertyDescriptor'](BH,BV));}catch(BC){}});BH['prototype']&&(Object['getOwnPropertyNames'](BH['prototype'])['forEach'](function(BV){if(BV!=='constructor')try{Object['defineProperty'](BM['prototype'],BV,Object['getOwnPropertyDescriptor'](BH['prototype'],BV));}catch(BC){}}),Object['getOwnPropertySymbols'](BH['prototype'])['forEach'](function(BV){try{Object['defineProperty'](BM['prototype'],BV,Object['getOwnPropertyDescriptor'](BH['prototype'],BV));}catch(BC){}}));B9(),B8(BM),BM['_$LsdSV1']=BR,C++;break;}catch(BV){}}Object['setPrototypeOf'](Bg['prototype'],BR['prototype']),Object['setPrototypeOf'](Bg,BR),Bg['_$LsdSV1']=BR,C++;break;}},function(Bc){while(!![]){let BR=BB();BR['length']++,C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=BR['next']();B8(Promise['resolve'](Bg)),C++;break;}},function(Bc){while(!![]){let BR=B9();B8(BR),B8(BR),C++;break;}},function(Bc){while(!![]){B8(+B9()),C++;break;}},function(Bc){while(!![]){let BR=B9();B8(import(BR)),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9(),Bx=BB(),Bz=typeof Bx==='function'&&Bx['prototype']?Bx['prototype']:Bx;Object['defineProperty'](Bz,Bg,{'get':BR,'enumerable':Bz===Bx,'configurable':!![]}),C++;break;}},function(Bc){while(!![]){let BR,Bg;Bc!==undefined?(Bg=B9(),BR=m[Bc]):(BR=B9(),Bg=B9());let Bx=delete Bg[BR];B8(Bx),C++;break;}},function(Bc){while(!![]){B8({}),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=m[Bc],Bx=!(Bg in G_7b65a9)&&!(Bg in p);G_7b65a9[Bg]=BR;Bg in p&&(p[Bg]=BR);Bx&&(p[Bg]=BR);B8(BR),C++;break;}},function(Bc){while(!![]){let BR=B9();B9();let Bg=BB(),Bx=m[Bc];!G_7b65a9['_$cjuLFE']&&(G_7b65a9['_$cjuLFE']=new Map());let Bz=G_7b65a9['_$cjuLFE'];!Bz['has'](Bx)&&Bz['set'](Bx,new WeakMap());let BK=Bz['get'](Bx);BK['set'](Bg,BR),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg>BR),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg>>>BR),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg in BR),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg!==BR),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9(),Bx=m[Bc],Bz=null;if(G_7b65a9['_$cjuLFE']){let BH=G_7b65a9['_$cjuLFE'],Bo=BH['get'](Bx);Bo&&Bo['has'](Bg)&&(Bz=Bo['get'](Bg));}if(Bz===null){let Bd='_$RfnKWi'+Bx['substring'](0x1)+'_$XxwTRv';Bd in Bg&&(Bz=Bg[Bd]);}if(Bz===null)throw new TypeError("Cannot read private member "+Bx+" from an object whose class did not declare it");if(typeof Bz!=='function')throw new TypeError(Bx+" is not a function");let BK=[];for(let BY=0x0;BY<BR;BY++){BK['unshift'](B9());}let Bt=Bz['apply'](Bg,BK);B8(Bt),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9(),Bx=G_7b65a9['_$tHY4J4'];G_7b65a9['_$tHY4J4']=undefined;try{let Bz=Bg['apply'](undefined,A(B9,BR));B8(Bz);}finally{G_7b65a9['_$tHY4J4']=Bx;}C++;break;}},function(Bc){while(!![]){B9(),B8(undefined),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=BB(),Bx=m[Bc];Object['defineProperty'](Bg,Bx,{'value':BR,'writable':!![],'enumerable':![],'configurable':!![]}),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg-BR),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9(),Bx=BB();Object['defineProperty'](Bx,Bg,{'value':BR,'writable':!![],'enumerable':![],'configurable':!![]}),C++;break;}},function(Bc){while(!![]){B8(!B9()),C++;break;}},function(Bc){while(!![]){let BR=m[Bc],Bg=B9(),Bx=BX,Bz=![];while(Bx){if(Bx['_$0oqWSu']&&BR in Bx['_$0oqWSu']){if(Bx['_$ao1mua']&&BR in Bx['_$ao1mua'])break;Bx['_$0oqWSu'][BR]=Bg;!Bx['_$ao1mua']&&(Bx['_$ao1mua']={});Bx['_$ao1mua'][BR]=!![],Bz=!![];break;}Bx=Bx['_$2scfS2'];}!Bz&&(BX['_$c0kS3T']&&BR in BX['_$c0kS3T']&&delete BX['_$c0kS3T'][BR],BX['_$0oqWSu'][BR]=Bg,!BX['_$ao1mua']&&(BX['_$ao1mua']={}),BX['_$ao1mua'][BR]=!![]);C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=BB();Bg['push'](BR),C++;break;}},function(Bc){while(!![]){B8(m[Bc]),C++;break;}},function(Bc){while(!![]){let BR=B9();B8(typeof BR==='bigint'?BR-0x1n:BR-0x1),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg<<BR),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg+BR),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9(),Bx=BB();Object['defineProperty'](Bx['prototype'],Bg,{'value':BR,'writable':!![],'enumerable':![],'configurable':!![]}),C++;break;}},function(Bc){while(!![]){let BR=Bc&0xffff,Bg=Bc>>>0x10;B8(V[BR]-m[Bg]),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9(),Bx=m[Bc];if(Bg===null||Bg===undefined)throw new TypeError("Cannot set property '"+String(Bx)+"' of "+Bg);Bg[Bx]=BR,B8(BR),C++;break;}},function(Bc){while(!![]){B8(typeof B9()),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=BB();if(Array['isArray'](BR))Array['prototype']['push']['apply'](Bg,BR);else for(let Bx of BR){Bg['push'](Bx);}C++;break;}},function(Bc){while(!![]){let BR=B9();if(BR==null)throw new TypeError('Cannot iterate over '+BR);let Bg=BR[Symbol['iterator']];if(typeof Bg!=='function')throw new TypeError('Object is not iterable');B8(Bg['call'](BR)),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9(),Bx=BB(),Bz=typeof Bx==='function'&&Bx['prototype']?Bx['prototype']:Bx;Object['defineProperty'](Bz,Bg,{'set':BR,'enumerable':Bz===Bx,'configurable':!![]}),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=BB();BR!==null&&BR!==undefined&&Object['assign'](Bg,BR);C++;break;}},function(Bc){while(!![]){V[Bc]=V[Bc]-0x1,C++;break;}},function(Bc){while(!![]){let BR=m[Bc];!BX['_$c0kS3T']&&(BX['_$c0kS3T']={});BX['_$c0kS3T'][BR]=!![],C++;break;}},function(Bc){while(!![]){let BR=m[Bc],Bg=B9(),Bx=BX,Bz=![];while(Bx){if(Bx['_$0oqWSu']&&BR in Bx['_$0oqWSu']){if(Bx['_$ao1mua']&&BR in Bx['_$ao1mua'])throw new TypeError('Assignment to constant variable.');Bx['_$c0kS3T']&&BR in Bx['_$c0kS3T']&&delete Bx['_$c0kS3T'][BR];Bx['_$0oqWSu'][BR]=Bg,Bz=!![];break;}Bx=Bx['_$2scfS2'];}if(!Bz){if(BR in G_7b65a9)G_7b65a9[BR]=Bg;else BR in p?p[BR]=Bg:p[BR]=Bg;}C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg instanceof BR),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=A(B9,BR),Bx=B9();if(typeof Bx!=='function')throw new TypeError(Bx+' is not a constructor');let Bz=G_7b65a9['_$tHY4J4'];G_7b65a9['_$tHY4J4']=undefined;let BK;try{BK=Reflect['construct'](Bx,Bg);}finally{G_7b65a9['_$tHY4J4']=Bz;}B8(BK),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg={['_$0oqWSu']:Object['create'](null),['_$ao1mua']:Object['create'](null),['_$c0kS3T']:Object['create'](null),['_$2scfS2']:BR};BX=Bg,C++;break;}},function(Bc){while(!![]){B8([]),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=m[Bc];BR===null||BR===undefined?B8(undefined):B8(BR[Bg]);C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9(),Bx=B9();if(Bx===null||Bx===undefined)throw new TypeError("Cannot set property '"+String(Bg)+"' of "+Bx);Bx[Bg]=BR,B8(BR),C++;break;}},function(Bc){while(!![]){B8(BX),C++;break;}},function(Bc){while(!![]){return M>0x0?B9():undefined;break;}},function(Bc){while(!![]){let BR=B9(),Bg=m[Bc];!G_7b65a9['_$cjuLFE']&&(G_7b65a9['_$cjuLFE']=new Map());let Bx=G_7b65a9['_$cjuLFE'],Bz="get_"+Bg,BK=Bx['get'](Bz);if(BK&&BK['has'](BR)){let Bd=BK['get'](BR);B8(Bd['call'](BR)),C++;break;}let Bt='_$RfnKWi'+"get_"+Bg['substring'](0x1)+'_$XxwTRv';if(BR['constructor']&&Bt in BR['constructor']){let BY=BR['constructor'][Bt];B8(BY['call'](BR)),C++;break;}let BH=Bx['get'](Bg);if(BH&&BH['has'](BR)){B8(BH['get'](BR)),C++;break;}let Bo='_$9ruMW4'+Bg['substring'](0x1)+'_$teZjwv';if(Bo in BR){B8(BR[Bo]),C++;break;}throw new TypeError("Cannot read private member "+Bg+" from an object whose class did not declare it");break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9(),Bx=B9();if(typeof Bg!=='function')throw new TypeError(Bg+' is not a function');let Bz=G_7b65a9['_$DhoohJ'],BK=Bz&&Bz['get'](Bg),Bt=G_7b65a9['_$tHY4J4'];BK&&(G_7b65a9['_$qVHQT3']=!![],G_7b65a9['_$tHY4J4']=BK);try{let BH=Bg['apply'](Bx,A(B9,BR));B8(BH);}finally{BK&&(G_7b65a9['_$qVHQT3']=![],G_7b65a9['_$tHY4J4']=Bt);}C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9(),Bx=m[Bc];if(G_7b65a9['_$cjuLFE']){let BK=G_7b65a9['_$cjuLFE'],Bt="set_"+Bx,BH=BK['get'](Bt);if(BH&&BH['has'](Bg)){let Bd=BH['get'](Bg);Bd['call'](Bg,BR),B8(BR),C++;break;}let Bo=BK['get'](Bx);if(Bo&&Bo['has'](Bg)){Bo['set'](Bg,BR),B8(BR),C++;break;}}let Bz='_$9ruMW4'+Bx['substring'](0x1)+'_$teZjwv';if(Bz in Bg){Bg[Bz]=BR,B8(BR),C++;break;}throw new TypeError("Cannot write private member "+Bx+" to an object whose class did not declare it");break;}},function(Bc){while(!![]){V[Bc]=B9(),C++;break;}},function(Bc){while(!![]){!B9()?C=BQ(r[C]):C++;break;}},function(Bc){while(!![]){let BR=h[C];J['push']({['_$bXwkk8']:BR[0x0]>=0x0?BQ(BR[0x0]):undefined,['_$q8XdV4']:BR[0x1]>=0x0?BQ(BR[0x1]):undefined,['_$BRnf5C']:BR[0x2]>=0x0?BQ(BR[0x2]):undefined,['_$nYHz1p']:M}),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=BB(),Bx=m[Bc];Object['defineProperty'](Bg,Bx,{'get':BR,'enumerable':![],'configurable':!![]}),C++;break;}},function(Bc){while(!![]){let BR=BB();BT(BW(0x2)),Bf(0x2,BR),C++;break;}},function(Bc){while(!![]){let BR=Bc&0xffff,Bg=Bc>>>0x10,Bx=B9(),Bz=A(B9,Bx),BK=V[BR],Bt=m[Bg],BH=BK[Bt];B8(BH['apply'](BK,Bz)),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg!=BR),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=BB(),Bx=m[Bc],Bz=typeof Bg==='function'&&Bg['prototype']?Bg['prototype']:Bg;Object['defineProperty'](Bz,Bx,{'get':BR,'enumerable':Bz===Bg,'configurable':!![]}),C++;break;}},function(Bc){while(!![]){C=BQ(r[C]);break;}},function(Bc){while(!![]){let BR=m[Bc],Bg=B9(),Bx=BX['_$2scfS2'];Bx&&(Bx['_$0oqWSu'][BR]=Bg);C++;break;}},function(Bc){while(!![]){let BR=B9();B8(n(BR)),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg/BR),C++;break;}},function(Bc){while(!![]){J['pop'](),C++;break;}},function(Bc){while(!![]){let BR=m[Bc],Bg=B9();if(BX['_$c0kS3T']){BR in BX['_$c0kS3T']&&delete BX['_$c0kS3T'][BR];let Bx=BR['split']('$$')[0x0];Bx!==BR&&Bx in BX['_$c0kS3T']&&delete BX['_$c0kS3T'][Bx];}BX['_$0oqWSu'][BR]=Bg;!BX['_$ao1mua']&&(BX['_$ao1mua']={});BX['_$ao1mua'][BR]=!![],C++;break;}},function(Bc){while(!![]){B8(null),C++;break;}},function(Bc){while(!![]){let BR=Bc&0xffff,Bg=Bc>>0x10,Bx=m[BR],Bz=m[Bg];B8(new RegExp(Bx,Bz)),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg*BR),C++;break;}},function(Bc){while(!![]){C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9(),Bx=BB();Object['defineProperty'](Bx,Bg,{'get':BR,'enumerable':![],'configurable':!![]}),C++;break;}},function(Bc){while(!![]){let BR=m[Bc];BR in G_7b65a9?B8(typeof G_7b65a9[BR]):B8(typeof p[BR]);C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=m[Bc];if(BR===null||BR===undefined)throw new TypeError("Cannot read property '"+String(Bg)+"' of "+BR);B8(BR[Bg]),C++;break;}},function(Bc){while(!![]){let BR=B9();BR&&typeof BR['return']==='function'?B8(Promise['resolve'](BR['return']())):B8(Promise['resolve']());C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=S(BR),Bx=Bg&&Bg['a'],Bz=Bg&&Bg['s'],BK=Bg&&Bg['g'],Bt=BX,BH=u,Bo=s,Bd=Z,BY=Bg&&Bg['ni']!==undefined?Bg['c'][Bg['ni']]:undefined,Bi=Bg&&Bg['p']||0x0,BM=Bx?Y:undefined,BV=function(BC,Bm,By,Br,Be,Bh,Bj,BJ,T0,T1,T2){let T3,T4;if(Be)T4=function(){let T5=[];for(let T6=0x0;T6<arguments['length'];T6++){T5['push'](arguments[T6]);}return BJ['call'](this,BC,T5,Bm,T3);};else Br?T4=async function(){let T5=[];for(let T7=0x0;T7<arguments['length'];T7++){T5['push'](arguments[T7]);}let T6=new.target!==undefined?new.target:G_7b65a9['_$yEqSGq'];return By?await Bj['call'](T1,BC,T5,Bm,T3,undefined):await Bj['call'](this,BC,T5,Bm,T3,T6);}:T4=function(){let T5=[];for(let T7=0x0;T7<arguments['length'];T7++){T5['push'](arguments[T7]);}let T6=new.target!==undefined?new.target:G_7b65a9['_$yEqSGq'];return By?Bh['call'](T1,BC,T5,Bm,T3,undefined):Bh['call'](this,BC,T5,Bm,T3,T6);};T3=T4;if(T0)try{Object['defineProperty'](T3,'name',{'value':T0,'writable':![],'enumerable':![],'configurable':!![]});}catch(T5){}try{Object['defineProperty'](T3,'length',{'value':T2,'writable':![],'enumerable':![],'configurable':!![]});}catch(T6){}return T3;}(BR,Bt,Bx,Bz,BK,BH,Bo,Bd,BY,BM,Bi);if(!BV)throw new Error('VM Error: Failed to create closure');B8(BV),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=m[Bc];if(BR==null){B8(undefined),C++;break;}!G_7b65a9['_$cjuLFE']&&(G_7b65a9['_$cjuLFE']=new Map());let Bx=G_7b65a9['_$cjuLFE'],Bz=Bx['get'](Bg);if(!Bz||!Bz['has'](BR))throw new TypeError("Cannot read private member "+Bg+" from an object whose class did not declare it");B8(Bz['get'](BR)),C++;break;}},function(Bc){while(!![]){V[Bc]=B9(),C++;break;}},function(Bc){while(!![]){t[Bc]=B9(),C++;break;}},function(Bc){while(!![]){B9()?C=BQ(r[C]):C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();Bg===null||Bg===undefined?B8(undefined):B8(Bg[BR]);C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg%BR),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg>=BR),C++;break;}},function(Bc){while(!![]){B8(undefined),C++;break;}},function(Bc){while(!![]){let BR=B9();if(BR==null)throw new TypeError('Cannot iterate over '+BR);let Bg=BR[Symbol['asyncIterator']];if(typeof Bg==='function')B8(Bg['call'](BR));else{let Bx=BR[Symbol['iterator']];if(typeof Bx!=='function')throw new TypeError('Object is not async iterable');B8(Bx['call'](BR));}C++;break;}},function(Bc){while(!![]){let BR=Bc&0xffff,Bg=Bc>>>0x10;V[BR]<m[Bg]?C=BQ(r[C]):C++;break;}},function(Bc){while(!![]){let BR=B9();B8(!!BR['done']),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=m[Bc],Bx=![];if(G_7b65a9['_$cjuLFE']){let Bz=G_7b65a9['_$cjuLFE'],BK=Bz['get'](Bg);Bx=BK&&BK['has'](BR);}B8(Bx),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=m[Bc];if(G_7b65a9['_$cjuLFE']){let Bz=G_7b65a9['_$cjuLFE'],BK="get_"+Bg,Bt=Bz['get'](BK);if(Bt&&Bt['has'](BR)){let Bo=Bt['get'](BR);B8(Bo['call'](BR)),C++;break;}let BH=Bz['get'](Bg);if(BH&&BH['has'](BR)){B8(BH['get'](BR)),C++;break;}}let Bx='_$9ruMW4'+Bg['substring'](0x1)+'_$teZjwv';if(Bx in BR){B8(BR[Bx]),C++;break;}throw new TypeError("Cannot read private member "+Bg+" from an object whose class did not declare it");break;}},function(Bc){while(!![]){let BR=B9();if(Bc>=0x0){let Bg=m[Bc];BX['_$0oqWSu'][Bg]=BR;}C++;break;}},function(Bc){while(!![]){let BR=B9();B8(typeof BR==='bigint'?BR+0x1n:BR+0x1),C++;break;}},function(Bc){while(!![]){if(B1['_$YthHOs']){let BR=B1['_$CU1WUk'];B1['_$YthHOs']=![],B1['_$CU1WUk']=undefined,Bq=!![],BD=BR;return;}if(B2['_$fctTS0']){let Bg=B2['_$8f71z9'];B2['_$fctTS0']=![],B2['_$8f71z9']=0x0,C=Bg;break;}if(B3['_$l7yJjg']){let Bx=B3['_$KWa9Ei'];B3['_$l7yJjg']=![],B3['_$KWa9Ei']=0x0,C=Bx;break;}if(B0!==null){let Bz=B0;B0=null;throw Bz;}C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9(),Bx=G_7b65a9['_$tHY4J4'],Bz;if(Bx)Bz=Object['getPrototypeOf'](Bx);else{if(typeof Bg==='function')Bz=Object['getPrototypeOf'](Bg);else{let Bo=Object['getPrototypeOf'](Bg),Bd=Bo&&Bo['constructor']&&Bo['constructor']['prototype']===Bo;Bd?Bz=Object['getPrototypeOf'](Bo):Bz=Bo;}}let BK=null,Bt=Bz;while(Bt!==null){BK=Object['getOwnPropertyDescriptor'](Bt,BR);if(BK)break;Bt=Object['getPrototypeOf'](Bt);}let BH;if(BK&&BK['get'])BH=BK['get']['call'](Bg),B8(BH);else{if(BK&&BK['set']&&!('value'in BK))B8(undefined);else{BH=Bt?Bt[BR]:Bz[BR];if(typeof BH==='function'){let BY=Bt||Bz,Bi=BH['bind'](Bg),BM=BH['constructor']&&BH['constructor']['name'],BV=BM==='GeneratorFunction'||BM==='AsyncFunction'||BM==='AsyncGeneratorFunction';!BV&&(!G_7b65a9['_$DhoohJ']&&(G_7b65a9['_$DhoohJ']=new WeakMap()),G_7b65a9['_$DhoohJ']['set'](Bi,BY)),B8(Bi);}else B8(BH);}}C++;break;}},function(Bc){while(!![]){if(Bc===-0x1)B8(Symbol());else{let BR=B9();B8(Symbol(BR));}C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg===BR),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=BB(),Bx=m[Bc],Bz=typeof Bg==='function'&&Bg['prototype']?Bg['prototype']:Bg;Object['defineProperty'](Bz,Bx,{'set':BR,'enumerable':Bz===Bg,'configurable':!![]}),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9(),Bx=B9(),Bz;if(typeof Bx==='function')Bz=Object['getPrototypeOf'](Bx);else{let BH=Object['getPrototypeOf'](Bx),Bo=BH&&BH['constructor']&&BH['constructor']['prototype']===BH;Bo?Bz=Object['getPrototypeOf'](BH):Bz=BH;}let BK=null,Bt=Bz;while(Bt!==null){BK=Object['getOwnPropertyDescriptor'](Bt,Bg);if(BK)break;Bt=Object['getPrototypeOf'](Bt);}BK&&BK['set']?BK['set']['call'](Bx,BR):Bz[Bg]=BR;B8(BR),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg>>BR),C++;break;}},function(Bc){while(!![]){B8(-B9()),C++;break;}},function(Bc){while(!![]){if(J['length']>0x0){let BR=J[J['length']-0x1];if(BR['_$q8XdV4']!==undefined){B3['_$l7yJjg']=!![],B3['_$KWa9Ei']=BQ(r[C]),C=BR['_$q8XdV4'];break;}}C=BQ(r[C]);break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg==BR),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg<=BR),C++;break;}},function(Bc){while(!![]){let BR=B9();B8(Symbol['keyFor'](BR)),C++;break;}},function(Bc){while(!![]){let BR=m[Bc];B8(Symbol['for'](BR)),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9(),Bx=m[Bc];!G_7b65a9['_$cjuLFE']&&(G_7b65a9['_$cjuLFE']=new Map());let Bz=G_7b65a9['_$cjuLFE'],BK="set_"+Bx,Bt=Bz['get'](BK);if(Bt&&Bt['has'](Bg)){let BY=Bt['get'](Bg);BY['call'](Bg,BR),B8(BR),C++;break;}let BH='_$RfnKWi'+"set_"+Bx['substring'](0x1)+'_$XxwTRv';if(Bg['constructor']&&BH in Bg['constructor']){let Bi=Bg['constructor'][BH];Bi['call'](Bg,BR),B8(BR),C++;break;}let Bo=Bz['get'](Bx);if(Bo&&Bo['has'](Bg)){Bo['set'](Bg,BR),B8(BR),C++;break;}let Bd='_$9ruMW4'+Bx['substring'](0x1)+'_$teZjwv';if(Bd in Bg){Bg[Bd]=BR,B8(BR),C++;break;}throw new TypeError("Cannot write private member "+Bx+" to an object whose class did not declare it");break;}},function(Bc){while(!![]){if(Bk===null){let BR=t?t['length']:0x0,Bg={};Bk=new Proxy([],{'get':function(Bx,Bz,BK){if(Bz==='length')return BR;if(Bz==='callee')return o;if(Bz===Symbol['iterator'])return function(){let BH=0x0,Bo=BR;return{'next':function(){if(BH<Bo){let Bd=BH<t['length']?t[BH]:Bg[BH];return BH++,{'value':Bd,'done':![]};}return{'done':!![]};}};};if(typeof Bz==='string'){let BH=parseInt(Bz,0xa);if(!isNaN(BH)&&BH>=0x0){if(BH<t['length'])return t[BH];return Bg[BH];}}let Bt=Array['prototype'][Bz];if(typeof Bt==='function')return function(){let Bo=[];for(let Bd=0x0;Bd<BR;Bd++){Bo[Bd]=Bd<t['length']?t[Bd]:Bg[Bd];}return Bt['apply'](Bo,arguments);};return undefined;},'set':function(Bx,Bz,BK){if(Bz==='length')return BR=BK,!![];if(typeof Bz==='string'){let Bt=parseInt(Bz,0xa);if(!isNaN(Bt)&&Bt>=0x0){Bt<t['length']?t[Bt]=BK:Bg[Bt]=BK;if(Bt>=BR)BR=Bt+0x1;return!![];}}return!![];},'has':function(Bx,Bz){if(Bz==='length'||Bz==='callee')return!![];if(typeof Bz==='string'){let BK=parseInt(Bz,0xa);if(!isNaN(BK)&&BK>=0x0&&BK<BR)return!![];}return Bz in Array['prototype'];}});}B8(Bk),C++;break;}},function(Bc){while(!![]){let BR=m[Bc],Bg;if(BR in G_7b65a9)Bg=G_7b65a9[BR];else{if(BR in p)Bg=p[BR];else throw new ReferenceError(BR+' is not defined');}B8(Bg),C++;break;}},function(Bc){while(!![]){let BR=Bc&0xffff,Bg=Bc>>>0x10;B8(V[BR]+m[Bg]),C++;break;}},function(Bc){while(!![]){let BR=B9();BR!==null&&BR!==undefined?C=BQ(r[C]):C++;break;}},function(Bc){while(!![]){B8(t[Bc]),C++;break;}},function(Bc){while(!![]){if(J['length']>0x0){let BR=J[J['length']-0x1];if(BR['_$q8XdV4']!==undefined){B2['_$fctTS0']=!![],B2['_$8f71z9']=BQ(r[C]),C=BR['_$q8XdV4'];break;}}C=BQ(r[C]);break;}},function(Bc){while(!![]){B8(V[Bc]),C++;break;}},function(Bc){while(!![]){BX&&BX['_$2scfS2']&&(BX=BX['_$2scfS2']);C++;break;}},function(Bc){while(!![]){debugger;C++;break;}},function(Bc){while(!![]){B9(),C++;break;}},function(Bc){while(!![]){B8(~B9()),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg^BR),C++;break;}},function(Bc){while(!![]){let BR=Bc&0xffff,Bg=Bc>>>0x10,Bx=V[BR],Bz=m[Bg];B8(Bx[Bz]),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg<BR),C++;break;}},function(Bc){while(!![]){throw B9();break;}},function(Bc){while(!![]){let BR=m[Bc],Bg=BX,Bx,Bz=![],BK=BR['indexOf']('$$')!==-0x1?BR['split']('$$')[0x0]:BR;while(Bg){if(Bg['_$c0kS3T']&&BR in Bg['_$c0kS3T'])throw new ReferenceError("Cannot access '"+BR+"' before initialization");if(BK!==BR&&Bg['_$c0kS3T']&&BK in Bg['_$c0kS3T']){if(!(Bg['_$0oqWSu']&&BR in Bg['_$0oqWSu']))throw new ReferenceError("Cannot access '"+BK+"' before initialization");}if(Bg['_$0oqWSu']&&BR in Bg['_$0oqWSu']){Bx=Bg['_$0oqWSu'][BR],Bz=!![];break;}Bg=Bg['_$2scfS2'];}BR==='__this__'&&(Bx=Y,Bz=!![]);!Bz&&(BR in G_7b65a9?Bx=G_7b65a9[BR]:Bx=p[BR]);B8(Bx),C++;break;}},function(Bc){while(!![]){let BR=Bc&0xffff,Bg=Bc>>>0x10;B8(V[BR]*m[Bg]),C++;break;}},function(Bc){while(!![]){let BR=B9(),Bg=B9();B8(Bg&BR),C++;break;}},function(Bc){while(!![]){if(J['length']>0x0){let BR=J[J['length']-0x1];if(BR['_$q8XdV4']!==undefined){B1['_$YthHOs']=!![],B1['_$CU1WUk']=B9(),C=BR['_$q8XdV4'];break;}}B1['_$YthHOs']&&(B1['_$YthHOs']=![],B1['_$CU1WUk']=undefined);Bq=!![],BD=B9();return;break;}}];Bp[BG[Bv]](BO);if(Bq)return Bq=![],BD;}break;}catch(Bc){if(J['length']>0x0){let BR=J[J['length']-0x1];M=BR['_$nYHz1p'];if(BR['_$bXwkk8']!==undefined)B8(Bc),C=BR['_$bXwkk8'],BR['_$bXwkk8']=undefined,BR['_$q8XdV4']===undefined&&J['pop']();else BR['_$q8XdV4']!==undefined?(C=BR['_$q8XdV4'],BR['_$6BZnrd']=Bc):(C=BR['_$BRnf5C'],J['pop']());continue;}throw Bc;}}return M>0x0?B9():BI?Y:undefined;}let u=function(K,t,H,o,d){G_7b65a9['_$qVHQT3']?G_7b65a9['_$qVHQT3']=![]:G_7b65a9['_$tHY4J4']=undefined;let Y=S(K);return P(Y,t,H,o,d,this);},s=async function(K,t,H,o,d,Y){let i=S(K),M=E(i,t,H,o,d,this),V=M['next']();while(!V['done']){if(V['value']['_$smFjk3']===0x1)try{let C=await Promise['resolve'](V['value']['_$2gZ1nB']);G_7b65a9['_$tHY4J4']=Y,V=M['next'](C);}catch(m){G_7b65a9['_$tHY4J4']=Y,V=M['throw'](m);}else throw new Error('Unexpected yield in async context');}return V['value'];},Z=function(K,t,H,o,d){let Y=S(K),i=E(Y,t,H,o,undefined,this),M=![],V=null,C=undefined,m=![];function y(B0,B1){if(M)return{'value':undefined,'done':!![]};G_7b65a9['_$tHY4J4']=d;if(V){let B3;try{B3=B1?typeof V['throw']==='function'?V['throw'](B0):(V=null,(function(){throw B0;}())):V['next'](B0);}catch(B4){V=null;try{let B5=i['throw'](B4);return r(B5);}catch(B6){M=!![];throw B6;}}if(!B3['done'])return{'value':B3['value'],'done':![]};V=null,B0=B3['value'],B1=![];}let B2;try{B2=B1?i['throw'](B0):i['next'](B0);}catch(B7){M=!![];throw B7;}return r(B2);}function r(B0){if(B0['done']){M=!![];if(m)return m=![],{'value':C,'done':!![]};return{'value':B0['value'],'done':!![]};}let B1=B0['value'];if(B1['_$smFjk3']===0x2)return{'value':B1['_$2gZ1nB'],'done':![]};if(B1['_$smFjk3']===0x3){let B2=B1['_$2gZ1nB'],B3=B2;B3&&typeof B3[Symbol['iterator']]==='function'&&(B3=B3[Symbol['iterator']]());if(B3&&typeof B3['next']==='function'){let B4=B3['next']();if(!B4['done'])return V=B3,{'value':B4['value'],'done':![]};return y(B4['value'],![]);}return y(undefined,![]);}throw new Error('Unexpected signal in generator');}let h=Y&&Y['s'],j=async function(B0){if(M)return{'value':B0,'done':!![]};if(V&&typeof V['return']==='function'){try{await V['return']();}catch(B2){}V=null;}let B1;try{G_7b65a9['_$tHY4J4']=d,B1=i['next']({['_$smFjk3']:0x4,['_$2gZ1nB']:B0});}catch(B3){M=!![];throw B3;}while(!B1['done']){let B4=B1['value'];if(B4['_$smFjk3']===0x1)try{let B5=await Promise['resolve'](B4['_$2gZ1nB']);G_7b65a9['_$tHY4J4']=d,B1=i['next'](B5);}catch(B6){G_7b65a9['_$tHY4J4']=d,B1=i['throw'](B6);}else{if(B4['_$smFjk3']===0x2)try{G_7b65a9['_$tHY4J4']=d,B1=i['next']();}catch(B7){M=!![];throw B7;}else break;}}return M=!![],{'value':B1['value'],'done':!![]};},J=function(B0){if(M)return{'value':B0,'done':!![]};if(V&&typeof V['return']==='function'){try{V['return']();}catch(B2){}V=null;}C=B0,m=!![];let B1;try{G_7b65a9['_$tHY4J4']=d,B1=i['next']({['_$smFjk3']:0x4,['_$2gZ1nB']:B0});}catch(B3){M=!![],m=![];throw B3;}if(!B1['done']&&B1['value']&&B1['value']['_$smFjk3']===0x2)return{'value':B1['value']['_$2gZ1nB'],'done':![]};return M=!![],m=![],{'value':B1['value'],'done':!![]};};if(h){let B0=async function(B2,B3){if(M)return{'value':undefined,'done':!![]};G_7b65a9['_$tHY4J4']=d;if(V){let B5;try{B5=B3?typeof V['throw']==='function'?await V['throw'](B2):(V=null,(function(){throw B2;}())):await V['next'](B2);}catch(B6){V=null;try{G_7b65a9['_$tHY4J4']=d;let B7=i['throw'](B6);return await B1(B7);}catch(B8){M=!![];throw B8;}}if(!B5['done'])return{'value':B5['value'],'done':![]};V=null,B2=B5['value'],B3=![];}let B4;try{B4=B3?i['throw'](B2):i['next'](B2);}catch(B9){M=!![];throw B9;}return await B1(B4);};async function B1(B2){while(!B2['done']){let B3=B2['value'];if(B3['_$smFjk3']===0x1){let B4;try{B4=await Promise['resolve'](B3['_$2gZ1nB']),G_7b65a9['_$tHY4J4']=d,B2=i['next'](B4);}catch(B5){G_7b65a9['_$tHY4J4']=d,B2=i['throw'](B5);}continue;}if(B3['_$smFjk3']===0x2)return{'value':B3['_$2gZ1nB'],'done':![]};if(B3['_$smFjk3']===0x3){let B6=B3['_$2gZ1nB'],B7=B6;if(B7&&typeof B7[Symbol['asyncIterator']]==='function')B7=B7[Symbol['asyncIterator']]();else B7&&typeof B7[Symbol['iterator']]==='function'&&(B7=B7[Symbol['iterator']]());if(B7&&typeof B7['next']==='function'){let B8=await B7['next']();if(!B8['done'])return V=B7,{'value':B8['value'],'done':![]};G_7b65a9['_$tHY4J4']=d,B2=i['next'](B8['value']);continue;}G_7b65a9['_$tHY4J4']=d,B2=i['next'](undefined);continue;}throw new Error('Unexpected signal in async generator');}M=!![];if(m)return m=![],{'value':C,'done':!![]};return{'value':B2['value'],'done':!![]};}return{'next':function(B2){return B0(B2,![]);},'return':j,'throw':function(B2){if(M)return Promise['reject'](B2);return B0(B2,!![]);},[Symbol['asyncIterator']]:function(){return this;}};}else return{'next':function(B2){return y(B2,![]);},'return':J,'throw':function(B2){if(M)throw B2;return y(B2,!![]);},[Symbol['iterator']]:function(){return this;}};};return function(K,t,H,o,d){let Y=S(K);if(Y&&Y['g']){let i=G_7b65a9['_$tHY4J4'];return Z['call'](this,K,t,H,o,i);}else{if(Y&&Y['s']){let M=G_7b65a9['_$tHY4J4'];return s['call'](this,K,t,H,o,d,M);}else return u['call'](this,K,t,H,o,d);}};}());try{G_7b65a9['console']=console;}catch(T8){}try{G_7b65a9['Number']=Number;}catch(T9){}try{G_7b65a9['parseFloat']=parseFloat;}catch(TB){}try{G_7b65a9['JSON']=JSON;}catch(TT){}try{G_7b65a9['Array']=Array;}catch(TW){}try{G_7b65a9['parseInt']=parseInt;}catch(Tf){}try{G_7b65a9['document']=document;}catch(TQ){}try{G_7b65a9['Promise']=Promise;}catch(TX){}try{G_7b65a9['FileReader']=FileReader;}catch(Tk){}export class NAISettings{constructor(a){return Q_b90773['call'](this,0x0,Array['from'](arguments),undefined,undefined,new.target);}['_getSettings'](){return Q_b90773['call'](this,0x1,Array['from'](arguments),undefined,undefined,new.target);}['render'](){return Q_b90773['call'](this,0x2,Array['from'](arguments),undefined,undefined,new.target);}['bindEvents'](a){return Q_b90773['call'](this,0xe,Array['from'](arguments),undefined,undefined,new.target);}['_updateRefModeUI'](){return Q_b90773['call'](this,0x10,Array['from'](arguments),undefined,undefined,new.target);}async['_handleVibeUpload'](a){return Q_b90773['call'](this,0x12,Array['from'](arguments),undefined,undefined,new.target);}['_addVibeImage'](a){return Q_b90773['call'](this,0x13,Array['from'](arguments),undefined,undefined,new.target);}['_renderVibeList'](){return Q_b90773['call'](this,0x1b,Array['from'](arguments),undefined,undefined,new.target);}['_renderPresetDropdown'](){return Q_b90773['call'](this,0x1d,Array['from'](arguments),undefined,undefined,new.target);}['_applyActivePresetToUI'](){return Q_b90773['call'](this,0x1f,Array['from'](arguments),undefined,undefined,new.target);}['_updateActivePresetTriggerWords'](a){return Q_b90773['call'](this,0x21,Array['from'](arguments),undefined,undefined,new.target);}async['_saveAsNewPreset'](){return Q_b90773['call'](this,0x23,Array['from'](arguments),undefined,undefined,new.target);}async['_deleteActivePreset'](){return Q_b90773['call'](this,0x26,Array['from'](arguments),undefined,undefined,new.target);}['_updateVibeStatus'](){return Q_b90773['call'](this,0x27,Array['from'](arguments),undefined,undefined,new.target);}['_readFileAsDataURL'](a){return Q_b90773['call'](this,0x2a,Array['from'](arguments),undefined,undefined,new.target);}['_getSizePreset'](){return Q_b90773['call'](this,0x2b,Array['from'](arguments),undefined,undefined,new.target);}['collectSettings'](){return Q_b90773['call'](this,0x2d,Array['from'](arguments),undefined,undefined,new.target);}}
+'use strict';
+
+
+export class NAISettings {
+    constructor(context) {
+        this.ctx = context;
+        this.containerEl = null;
+        this.apiPresets = []; // 保存所有API预设
+        this.activeApiPreset = ''; // 当前选中的API预设名
+        // 默认 API 地址
+        this.DEFAULT_OFFICIAL_URL = 'https://image.novelai.net/ai/generate-image';
+        this.DEFAULT_PROXY_URL = '1';
+
+        // 默认设置
+        this.defaultSettings = {
+            channel: 'proxy',
+            proxyUrl: '', // 空时使用默认地址
+            apiPresets: [], // API 预设列表
+            activeApiPreset: '', // 当前激活的 API 预设名
+            apiKey: '',
+            proxyStream: true,
+            model: 'nai-diffusion-3',
+            sampler: 'k_euler_ancestral',
+            noiseSchedule: 'native',
+            steps: 28,
+            scale: 5,
+            cfgRescale: 0,
+            width: 832,
+            height: 1216,
+            sm: true,
+            dyn: false,
+            variety: false,
+            decrisper: false,
+            multiRoleEnabled: false,
+            useCoords: false,
+            i2iStrength: 0.7,
+            i2iNoise: 0,
+            inpaintStrength: 1,
+            vibeEnabled: false,
+            referenceMode: 'vibe',
+            directorStyleAware: false,
+            directorStrength: 0.6,
+            vibeImages: [],
+        };
+
+        this.vibeImages = [];
+        // 当前参考模式
+        this.referenceMode = 'vibe';
+
+        // [新增] 开始
+        // 参考预设管理
+        this.naiPresets = []; // 保存所有预设
+        this.activePresetName = ''; // 当前选中的预设名称
+        // [新增] 结束
+    }
+
+    /**
+     * 获取当前设置（带默认值）
+     */
+    _getSettings() {
+        try {
+            const imageGen = this.ctx?.getModule?.('imageGen');
+            const nai = imageGen?.settings?.nai || {};
+            // [修改] 同时加载 naiPresets 和 naiTriggersEnabled
+            const presets = nai.naiPresets || [];
+            const triggersEnabled = nai.naiTriggersEnabled || false;
+
+            return { ...this.defaultSettings, ...nai, naiPresets: presets, naiTriggersEnabled: triggersEnabled };
+        } catch (e) {
+            console.warn('[NAISettings] 获取设置失败，使用默认值', e);
+            return this.defaultSettings;
+        }
+    }
+
+    /**
+     * 渲染 NAI 设置面板
+     */
+    render() {
+        const s = this._getSettings();
+        // [修改] 初始化预设和触发器状态
+        this.naiPresets = s.naiPresets || [];
+        this.activePresetName = this.naiPresets.length > 0 ? this.naiPresets[0].name : '';
+    
+        this.vibeImages = s.vibeImages || [];
+        this.referenceMode = s.referenceMode || 'vibe';
+
+        // 根据渠道显示对应的默认地址（如果用户没有填写）
+        const defaultUrl = s.channel === 'official' ? this.DEFAULT_OFFICIAL_URL : this.DEFAULT_PROXY_URL;
+        const displayUrl = s.proxyUrl || defaultUrl;
+
+        return `
+        <div class="tsp-settings-pane-inner">
+            <!-- API 设置 -->
+            <div class="tsp-settings-group">
+                <h4 class="tsp-settings-group-title">
+                    <i class="fa-solid fa-key"></i> API 设置
+                </h4>
+                <div class="tsp-settings-group" style="padding: 12px; background: var(--tsp-bg-tertiary); border-radius:8px; margin-bottom:15px;">
+                    <h5 style="margin-top:0; font-size:0.9em; color:var(--tsp-text-secondary);">API 预设管理</h5>
+                    <div class="tsp-form-row">
+                        <div class="tsp-form-group" style="flex:2;">
+                            <label>选择预设</label>
+                            <select class="tsp-input" id="nai-api-preset-select">
+                                <option value="">-- 新建预设 --</option>
+                            </select>
+                        </div>
+                        <div class="tsp-btn-group" style="flex:1; align-self: flex-end; justify-content: flex-end;">
+                            <button type="button" class="tsp-btn" id="nai-api-preset-save" title="将当前配置另存为新预设">
+                                <i class="fa-solid fa-save"></i> 保存
+                            </button>
+                            <button type="button" class="tsp-btn tsp-btn-danger" id="nai-api-preset-delete" title="删除当前预设">
+                                <i class="fa-solid fa-trash"></i> 删除
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tsp-form-group">
+                    <label>渠道</label>
+                    <select class="tsp-input" id="nai-channel">
+                        <option value="proxy" ${s.channel === 'proxy' ? 'selected' : ''}>第三方代理</option>
+                        <option value="official" ${s.channel === 'official' ? 'selected' : ''}>官方 (Official)</option>
+                    </select>
+                </div>
+                <div class="tsp-form-group">
+                    <label>API 地址 (URL)</label>
+                    <input type="text" class="tsp-input" id="nai-api-url"
+                           value="${displayUrl}"
+                           placeholder="默认: ${defaultUrl}">
+                </div>
+                <div class="tsp-form-group">
+                    <label>密钥 (Key)</label>
+                    <input type="password" class="tsp-input" id="nai-token"
+                           value="${s.apiKey || ''}"
+                           placeholder="API Key 或密钥">
+                </div>
+                <div class="tsp-form-group" id="nai-proxy-stream-group" style="${s.channel === 'official' ? 'display:none;' : ''}">
+                    <label>第三方代理流式传输</label>
+                    <select class="tsp-input" id="nai-proxy-stream">
+                        <option value="true" ${s.proxyStream === true ? 'selected' : ''}>启用 (Stream)</option>
+                        <option value="false" ${s.proxyStream === false ? 'selected' : ''}>禁用 (Direct Image)</option>
+                    </select>
+                    <small class="tsp-text-muted">如果代理直接返回图片而不是 URL，请选择"禁用"</small>
+                </div>
+            </div>
+
+            <!-- 模型与采样 -->
+            <div class="tsp-settings-group">
+                <h4 class="tsp-settings-group-title">
+                    <i class="fa-solid fa-cube"></i> 模型与采样
+                </h4>
+                <div class="tsp-form-row">
+                    <div class="tsp-form-group">
+                        <label>模型 (Model)</label>
+                        <select class="tsp-input" id="nai-model">
+                            <option value="nai-diffusion-3" ${s.model === 'nai-diffusion-3' ? 'selected' : ''}>NAI Diffusion 3</option>
+                            <option value="nai-diffusion-furry-3" ${s.model === 'nai-diffusion-furry-3' ? 'selected' : ''}>NAI Diffusion Furry 3</option>
+                            <option value="nai-diffusion-4-full" ${s.model === 'nai-diffusion-4-full' ? 'selected' : ''}>NAI Diffusion 4 Full</option>
+                            <option value="nai-diffusion-4-curated-preview" ${s.model === 'nai-diffusion-4-curated-preview' ? 'selected' : ''}>NAI Diffusion 4 Curated</option>
+                            <option value="nai-diffusion-4-5-full" ${s.model === 'nai-diffusion-4-5-full' ? 'selected' : ''}>NAI Diffusion 4.5 Full</option>
+                            <option value="nai-diffusion-4-5-curated" ${s.model === 'nai-diffusion-4-5-curated' ? 'selected' : ''}>NAI Diffusion 4.5 Curated</option>
+                        </select>
+                    </div>
+                    <div class="tsp-form-group">
+                        <label>采样器 (Sampler)</label>
+                        <select class="tsp-input" id="nai-sampler">
+                            <option value="k_euler" ${s.sampler === 'k_euler' ? 'selected' : ''}>Euler</option>
+                            <option value="k_euler_ancestral" ${s.sampler === 'k_euler_ancestral' ? 'selected' : ''}>Euler Ancestral</option>
+                            <option value="k_dpmpp_2s_ancestral" ${s.sampler === 'k_dpmpp_2s_ancestral' ? 'selected' : ''}>DPM++ 2S Ancestral</option>
+                            <option value="k_dpmpp_2m_sde" ${s.sampler === 'k_dpmpp_2m_sde' ? 'selected' : ''}>DPM++ 2M SDE</option>
+                            <option value="k_dpmpp_2m" ${s.sampler === 'k_dpmpp_2m' ? 'selected' : ''}>DPM++ 2M</option>
+                            <option value="k_dpmpp_sde" ${s.sampler === 'k_dpmpp_sde' ? 'selected' : ''}>DPM++ SDE</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="tsp-form-group">
+                    <label>噪点调度 (Noise Schedule)</label>
+                    <select class="tsp-input" id="nai-noise-schedule">
+                        <option value="native" ${s.noiseSchedule === 'native' ? 'selected' : ''}>native</option>
+                        <option value="exponential" ${s.noiseSchedule === 'exponential' ? 'selected' : ''}>exponential</option>
+                        <option value="polyexponential" ${s.noiseSchedule === 'polyexponential' ? 'selected' : ''}>polyexponential</option>
+                        <option value="karras" ${s.noiseSchedule === 'karras' ? 'selected' : ''}>karras</option>
+                    </select>
+                </div>
+                <div class="tsp-form-row">
+                    <div class="tsp-form-group">
+                        <label>步数 (Steps)</label>
+                        <input type="number" class="tsp-input" id="nai-steps"
+                               value="${s.steps}" min="1" max="50">
+                    </div>
+                    <div class="tsp-form-group">
+                        <label>Scale</label>
+                        <input type="number" class="tsp-input" id="nai-scale"
+                               value="${s.scale}" min="1" max="30" step="0.5">
+                    </div>
+                    <div class="tsp-form-group">
+                        <label>CFG Rescale</label>
+                        <input type="number" class="tsp-input" id="nai-cfg-rescale"
+                               value="${s.cfgRescale}" min="0" max="1" step="0.05">
+                    </div>
+                </div>
+                <div class="tsp-form-row">
+                    <div class="tsp-form-group">
+                        <label>宽度</label>
+                        <input type="number" class="tsp-input" id="nai-width"
+                               value="${s.width}" min="64" step="64">
+                    </div>
+                    <div class="tsp-form-group">
+                        <label>高度</label>
+                        <input type="number" class="tsp-input" id="nai-height"
+                               value="${s.height}" min="64" step="64">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 高级参数 -->
+            <div class="tsp-settings-group">
+                <h4 class="tsp-settings-group-title">
+                    <i class="fa-solid fa-sliders"></i> 高级参数
+                </h4>
+                <div class="tsp-form-row">
+                    <div class="tsp-form-group">
+                        <label>SM (V3)</label>
+                        <select class="tsp-input" id="nai-sm">
+                            <option value="true" ${s.sm === true ? 'selected' : ''}>True</option>
+                            <option value="false" ${s.sm !== true ? 'selected' : ''}>False</option>
+                        </select>
+                    </div>
+                    <div class="tsp-form-group">
+                        <label>SMEA+DYN (V3)</label>
+                        <select class="tsp-input" id="nai-dyn">
+                            <option value="true" ${s.dyn === true ? 'selected' : ''}>True</option>
+                            <option value="false" ${s.dyn !== true ? 'selected' : ''}>False</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="tsp-form-row">
+                    <div class="tsp-form-group">
+                        <label>多样性 (Variety)</label>
+                        <select class="tsp-input" id="nai-variety">
+                            <option value="true" ${s.variety === true ? 'selected' : ''}>True</option>
+                            <option value="false" ${s.variety !== true ? 'selected' : ''}>False</option>
+                        </select>
+                    </div>
+                    <div class="tsp-form-group">
+                        <label>Decrisper</label>
+                        <select class="tsp-input" id="nai-decrisper">
+                            <option value="true" ${s.decrisper === true ? 'selected' : ''}>True</option>
+                            <option value="false" ${s.decrisper !== true ? 'selected' : ''}>False</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="tsp-form-row">
+                    <div class="tsp-form-group" style="display: flex; align-items: center; padding-top: 25px;">
+                        <label class="tsp-switch-label">
+                            <input type="checkbox" class="tsp-switch" id="nai-multi-role" ${s.multiRoleEnabled ? 'checked' : ''}>
+                            <span class="tsp-switch-slider"></span>
+                            <span>启用多角色模式</span>
+                        </label>
+                    </div>
+                    <div class="tsp-form-group">
+                        <label>角色位置 (V4+)</label>
+                        <select class="tsp-input" id="nai-use-coords">
+                            <option value="true" ${s.useCoords === true ? 'selected' : ''}>True</option>
+                            <option value="false" ${s.useCoords !== true ? 'selected' : ''}>False</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 图生图 -->
+            <div class="tsp-settings-group">
+                <h4 class="tsp-settings-group-title">
+                    <i class="fa-solid fa-image"></i> 图生图 (Image to Image)
+                </h4>
+                <p class="tsp-text-muted" style="margin-top: -10px;">在聊天记录中长按生成的图片，可上传图生图底图。</p>
+                <div class="tsp-form-row">
+                    <div class="tsp-form-group">
+                        <label>重绘强度 (Strength)</label>
+                        <input type="number" class="tsp-input" id="nai-strength"
+                               value="${s.i2iStrength}" min="0" max="0.99" step="0.01">
+                    </div>
+                    <div class="tsp-form-group">
+                        <label>重绘噪声 (Noise)</label>
+                        <input type="number" class="tsp-input" id="nai-noise"
+                               value="${s.i2iNoise}" min="0" max="0.99" step="0.01">
+                    </div>
+                    <div class="tsp-form-group">
+                        <label>蒙版重绘幅度</label>
+                        <input type="number" class="tsp-input" id="nai-inpaint-strength"
+                               value="${s.inpaintStrength}" min="0.01" max="1" step="0.01">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 参考模式 -->
+            <div class="tsp-settings-group">
+                <h4 class="tsp-settings-group-title">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> 参考模式 (Reference)
+                </h4>
+
+                <!-- [新增] 预设管理区域 开始 -->
+                <div class="tsp-settings-group" style="padding: 12px; background: rgba(0,0,0,0.1); border-radius:8px;">
+                    <h5 style="margin-top:0; font-size:0.9em; color:var(--tsp-text-secondary);">预设管理</h5>
+                    <div class="tsp-form-row">
+                        <div class="tsp-form-group" style="flex:2;">
+                            <label>选择预设</label>
+                            <select class="tsp-input" id="nai-preset-select">
+                                <option value="">-- 新建预设 --</option>
+                            </select>
+                        </div>
+                        <div class="tsp-btn-group" style="flex:1; align-self: flex-end; justify-content: flex-end;">
+                            <button type="button" class="tsp-btn" id="nai-preset-save" title="将当前配置另存为新预设">
+                                <i class="fa-solid fa-save"></i> 保存
+                            </button>
+                            <button type="button" class="tsp-btn tsp-btn-danger" id="nai-preset-delete" title="删除当前预设">
+                                <i class="fa-solid fa-trash"></i> 删除
+                            </button>
+                        </div>
+                    </div>
+                    <div class="tsp-form-group">
+                        <label>触发词 (用 , 分隔)</label>
+                        <input type="text" class="tsp-input" id="nai-preset-triggers" placeholder="例如: 街拍, cyberpunk, neon">
+                    </div>
+                </div>
+                <!-- [新增] 预设管理区域 结束 -->
+
+
+                <div class="tsp-form-group" style="margin-top: 15px;">
+                    <label class="tsp-switch-label">
+                        <input type="checkbox" class="tsp-switch" id="nai-triggers-enabled" ${s.naiTriggersEnabled ? 'checked' : ''}>
+                        <span class="tsp-switch-slider"></span>
+                        <span>启用触发词模式 (与手动开启参考模式互斥)</span>
+                    </label>
+                </div>
+                <div class="tsp-form-group">
+                    <label class="tsp-switch-label">
+                        <input type="checkbox" class="tsp-switch" id="nai-vibe-enabled" ${s.vibeEnabled ? 'checked' : ''}>
+                        <span class="tsp-switch-slider"></span>
+                        <span>手动开启参考模式</span>
+                    </label>
+                </div>
+
+                <div id="nai-ref-controls" style="${s.vibeEnabled ? '' : 'opacity: 0.5; pointer-events: none;'}">
+                    <div class="tsp-btn-group" id="nai-ref-mode-buttons" style="margin-bottom: 15px;">
+                        <button type="button" class="tsp-btn ${this.referenceMode === 'vibe' ? 'tsp-btn-primary' : ''}"
+                                data-mode="vibe">氛围模式 (Vibe)</button>
+                        <button type="button" class="tsp-btn ${this.referenceMode === 'director' ? 'tsp-btn-primary' : ''}"
+                                data-mode="director">人物参考 (Character)</button>
+                    </div>
+
+                    <div id="nai-director-controls" style="display: ${this.referenceMode === 'director' ? 'block' : 'none'}; background: rgba(0,0,0,0.2); padding: 12px; border-radius: 8px; margin-bottom: 15px;">
+                        <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                            <input type="checkbox" id="nai-director-style-aware" ${s.directorStyleAware ? 'checked' : ''}>
+                            <span><strong style="color: var(--tsp-accent-primary);">Style Aware:</strong> 同时参考"角色"与"风格"</span>
+                        </label>
+                        <div class="tsp-slider-group">
+                            <label>参考强度</label>
+                            <input type="range" class="tsp-slider" id="nai-director-strength"
+                                   min="0.01" max="1" step="0.01" value="${s.directorStrength}">
+                            <span class="tsp-slider-value" id="nai-director-strength-value">${Number(s.directorStrength).toFixed(2)}</span>
+                        </div>
+                    </div>
+
+                    <button type="button" class="tsp-btn" id="nai-vibe-upload-btn" style="margin-bottom: 10px;">
+                        <i class="fa-solid fa-upload"></i> 上传参考图
+                    </button>
+                    <input type="file" id="nai-vibe-upload-input" multiple accept="image/*,.naiv4vibe,.json,.naiv4vibebundle" style="display: none;">
+
+                    <p id="nai-vibe-status" class="tsp-text-muted" style="margin-bottom: 10px;"></p>
+
+                    <div id="nai-vibe-image-list" class="tsp-vibe-list"></div>
+                </div>
+            </div>
+        </div>
+        `;
+    }
+
+    /**
+     * 绑定事件
+     */
+    bindEvents(containerEl) {
+        this.containerEl = containerEl;
+        this._renderApiPresetDropdown();
+        this._applyActiveApiPresetToUI(); // 使用新名称
+
+        containerEl.querySelector('#nai-api-preset-select')?.addEventListener('change', (e) => {
+            this.activeApiPreset = e.target.value;
+            this._applyActiveApiPresetToUI(); // 使用新名称
+        });
+
+        containerEl.querySelector('#nai-api-preset-save')?.addEventListener('click', () => this._saveApiPreset());
+        containerEl.querySelector('#nai-api-preset-delete')?.addEventListener('click', () => this._deleteApiPreset());
+        // [新增] 渲染预设下拉框
+        this._renderPresetDropdown();
+        this._applyActivePresetToUI();
+
+        // [新增] 预设下拉框切换事件
+        containerEl.querySelector('#nai-preset-select')?.addEventListener('change', (e) => {
+            this.activePresetName = e.target.value;
+            this._applyActivePresetToUI();
+        });
+
+        // [新增] 预设保存事件
+        containerEl.querySelector('#nai-preset-save')?.addEventListener('click', async () => {
+            await this._saveAsNewPreset();
+        });
+
+        // [新增] 预设删除事件
+        containerEl.querySelector('#nai-preset-delete')?.addEventListener('click', async () => {
+            await this._deleteActivePreset();
+        });
+
+        // [新增] 触发词输入事件
+        containerEl.querySelector('#nai-preset-triggers')?.addEventListener('input', (e) => {
+            this._updateActivePresetTriggerWords(e.target.value);
+        });
+
+        // 渲染 Vibe 列表
+        this._renderVibeList();
+        this._updateVibeStatus();
+
+        // 渠道切换 - 只更新流式传输选项的显示，不自动替换 URL
+        containerEl.querySelector('#nai-channel')?.addEventListener('change', (e) => {
+            const isOfficial = e.target.value === 'official';
+            const streamGroup = containerEl.querySelector('#nai-proxy-stream-group');
+
+            if (streamGroup) {
+                streamGroup.style.display = isOfficial ? 'none' : 'block';
+            }
+        });
+
+        // Vibe 开关
+        containerEl.querySelector('#nai-vibe-enabled')?.addEventListener('change', (e) => {
+            const controls = containerEl.querySelector('#nai-ref-controls');
+            if (controls) {
+                controls.style.cssText = e.target.checked ? '' : 'opacity: 0.5; pointer-events: none;';
+            }
+        });
+
+        // 参考模式切换
+        const refModeButtons = containerEl.querySelectorAll('#nai-ref-mode-buttons button');
+        console.log('[NAISettings] 找到参考模式按钮数量:', refModeButtons.length);
+        refModeButtons.forEach((btn) => {
+            console.log('[NAISettings] 绑定按钮事件:', btn.dataset.mode);
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('[NAISettings] 点击参考模式按钮:', btn.dataset.mode);
+                this.referenceMode = btn.dataset.mode;
+                this._updateRefModeUI();
+            });
+        });
+
+        // Director 强度滑块
+        const directorSlider = containerEl.querySelector('#nai-director-strength');
+        const directorValue = containerEl.querySelector('#nai-director-strength-value');
+        if (directorSlider && directorValue) {
+            directorSlider.addEventListener('input', () => {
+                directorValue.textContent = parseFloat(directorSlider.value).toFixed(2);
+            });
+        }
+
+        // Vibe 上传
+        containerEl.querySelector('#nai-vibe-upload-btn')?.addEventListener('click', () => {
+            containerEl.querySelector('#nai-vibe-upload-input')?.click();
+        });
+
+        containerEl.querySelector('#nai-vibe-upload-input')?.addEventListener('change', (e) => {
+            this._handleVibeUpload(e.target.files);
+        });
+    }
+
+    /**
+     * 更新参考模式 UI
+     */
+    _updateRefModeUI() {
+        console.log('[NAISettings] _updateRefModeUI 被调用, referenceMode:', this.referenceMode);
+        if (!this.containerEl) {
+            console.log('[NAISettings] containerEl 为空，退出');
+            return;
+        }
+
+        this.containerEl.querySelectorAll('#nai-ref-mode-buttons button').forEach((btn) => {
+            const shouldBeActive = btn.dataset.mode === this.referenceMode;
+            console.log('[NAISettings] 按钮', btn.dataset.mode, '应该激活:', shouldBeActive, '当前有 tsp-btn-primary:', btn.classList.contains('tsp-btn-primary'));
+            btn.classList.toggle('tsp-btn-primary', shouldBeActive);
+        });
+
+        const directorControls = this.containerEl.querySelector('#nai-director-controls');
+        if (directorControls) {
+            directorControls.style.display = this.referenceMode === 'director' ? 'block' : 'none';
+        }
+        this._renderVibeList();
+
+        this._updateVibeStatus();
+    }
+
+    /**
+     * 处理 Vibe 图片上传
+     */
+    async _handleVibeUpload(files) {
+        if (!files || files.length === 0) return;
+
+        for (const file of files) {
+            try {
+                if (file.name.endsWith('.naiv4vibe') || file.name.endsWith('.naiv4vibebundle')) {
+                    // .naiv4vibe 文件 - NAI V4+ 专用 vibe 编码文件
+                    const text = await file.text();
+                    const vibeData = JSON.parse(text);
+
+                    // 验证 vibe 文件结构
+                    if (!vibeData.encodings) {
+                        console.warn('[NAISettings] 无效的 .naiv4vibe 文件：缺少 encodings 字段');
+                        continue;
+                    }
+
+                    // 尝试获取缩略图
+                    let thumbnail = '';
+                    if (vibeData.thumbnail) {
+                        thumbnail = vibeData.thumbnail.startsWith('data:')
+                            ? vibeData.thumbnail
+                            : `data:image/png;base64,${vibeData.thumbnail}`;
+                    }
+
+                    this._addVibeImage({
+                        type: 'vibeFile',
+                        vibeData: vibeData,
+                        image: thumbnail,
+                        thumbnail: thumbnail,
+                        strength: 0.6,
+                        infoExtracted: 1.0,
+                        name: vibeData.name || file.name,
+                    });
+
+                    console.log('[NAISettings] 已加载 .naiv4vibe 文件:', vibeData.name || file.name);
+                } else if (file.name.endsWith('.json')) {
+                    // 普通 JSON 文件 - 可能是导出的配置
+                    const text = await file.text();
+                    const data = JSON.parse(text);
+                    if (Array.isArray(data)) {
+                        data.forEach(item => this._addVibeImage(item));
+                    } else {
+                        this._addVibeImage(data);
+                    }
+                } else {
+                    // 普通图片文件
+                    const base64 = await this._readFileAsDataURL(file);
+                    this._addVibeImage({
+                        type: 'image',
+                        image: base64,
+                        strength: 0.6,
+                        infoExtracted: 1.0,
+                    });
+                }
+            } catch (error) {
+                console.error('[NAISettings] 处理文件失败:', error);
+            }
+        }
+
+        this._renderVibeList();
+        this._updateVibeStatus();
+    }
+
+    _addVibeImage(item) {
+        if (this.referenceMode === 'director') {
+            this.vibeImages = [item];
+        } else {
+            this.vibeImages.push(item);
+        }
+    }
+
+    _renderVibeList() {
+        const container = this.containerEl?.querySelector('#nai-vibe-image-list');
+        if (!container) return;
+
+        if (this.vibeImages.length === 0) {
+            container.innerHTML = '<p class="tsp-text-muted">暂无参考图片</p>';
+            return;
+        }
+
+        container.innerHTML = this.vibeImages.map((item, index) => {
+            const isVibeFile = item.type === 'vibeFile';
+            const thumbnailSrc = item.image || item.thumbnail || '';
+            const typeLabel = isVibeFile ? `<span style="font-size: 0.7em; color: var(--tsp-accent-primary); margin-left: 5px;">.naiv4vibe</span>` : '';
+            const nameLabel = item.name ? `<div style="font-size: 0.75em; color: var(--tsp-text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 150px;">${item.name}</div>` : '';
+
+            // 如果没有缩略图，显示占位符
+            const thumbnailHtml = thumbnailSrc
+                ? `<img src="${thumbnailSrc}" class="tsp-vibe-thumbnail" style="width: 60px; height: 60px; object-fit: cover; border-radius: 6px;">`
+                : `<div class="tsp-vibe-thumbnail" style="width: 60px; height: 60px; border-radius: 6px; background: rgba(122,162,247,0.2); display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-file-code" style="font-size: 1.5em; color: var(--tsp-accent-primary);"></i></div>`;
+
+                const showInfoSlider = this.referenceMode !== 'director';
+
+                const infoSliderHtml = showInfoSlider ? `
+                    <div class="tsp-slider-group" style="font-size: 0.85em; margin-bottom: 4px;">
+                        <label style="min-width: 50px;">信息量</label>
+                        <input type="range" class="tsp-slider vibe-info" data-index="${index}"
+                               min="0.01" max="1" step="0.01" value="${item.infoExtracted ?? 1.0}">
+                        <span class="tsp-slider-value">${Number(item.infoExtracted ?? 1.0).toFixed(2)}</span>
+                    </div>` : '';
+    
+                return `
+                <div class="tsp-vibe-item" data-index="${index}">
+                    ${thumbnailHtml}
+                    <div class="tsp-vibe-info" style="flex: 1;">
+                        ${nameLabel}
+                        ${infoSliderHtml}
+                        <div class="tsp-slider-group" style="font-size: 0.85em;">
+                            <label style="min-width: 50px;">强度${typeLabel}</label>
+                            <input type="range" class="tsp-slider vibe-strength" data-index="${index}"
+                                   min="0.01" max="1" step="0.01" value="${item.strength ?? 0.6}">
+                            <span class="tsp-slider-value">${Number(item.strength ?? 0.6).toFixed(2)}</span>
+                        </div>
+                    </div>
+                    <button class="tsp-btn tsp-btn-icon tsp-btn-danger vibe-delete" data-index="${index}">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            `;
+            // --- [修改结束] ---
+            }).join('');
+
+        // 绑定滑块事件
+        container.querySelectorAll('.vibe-strength').forEach(slider => {
+            slider.addEventListener('input', (e) => {
+                const idx = parseInt(e.target.dataset.index);
+                this.vibeImages[idx].strength = parseFloat(e.target.value);
+                e.target.nextElementSibling.textContent = parseFloat(e.target.value).toFixed(2);
+            });
+        });
+
+        // --- [新增] 绑定信息提取度滑块事件 ---
+        container.querySelectorAll('.vibe-info').forEach(slider => {
+            slider.addEventListener('input', (e) => {
+                const idx = parseInt(e.target.dataset.index);
+                this.vibeImages[idx].infoExtracted = parseFloat(e.target.value);
+                e.target.nextElementSibling.textContent = parseFloat(e.target.value).toFixed(2);
+            });
+        });
+
+        // 绑定删除按钮
+        container.querySelectorAll('.vibe-delete').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const idx = parseInt(e.currentTarget.dataset.index);
+                this.vibeImages.splice(idx, 1);
+                this._renderVibeList();
+                this._updateVibeStatus();
+            });
+        });
+    }
+    /**
+     * 渲染API预设下拉框
+     */
+    _renderApiPresetDropdown() {
+        const select = this.containerEl.querySelector('#nai-api-preset-select');
+        if (!select) return;
+
+        const settings = this._getSettings();
+        this.apiPresets = settings.apiPresets || [];
+        this.activeApiPreset = settings.activeApiPreset || (this.apiPresets[0]?.name || '');
+
+        select.innerHTML = '<option value="">-- 新建预设 --</option>';
+        this.apiPresets.forEach(preset => {
+            const option = document.createElement('option');
+            option.value = preset.name;
+            option.textContent = preset.name;
+            select.appendChild(option);
+        });
+
+        if (this.activeApiPreset) {
+            select.value = this.activeApiPreset;
+        }
+    }
+
+    /**
+     * [修改] 将当前选中的预设数据应用到UI (已重命名并修复联动)
+     */
+    _applyActiveApiPresetToUI() {
+        const preset = this.apiPresets.find(p => p.name === this.activeApiPreset);
+        const channelSelect = this.containerEl.querySelector('#nai-channel');
+        const urlInput = this.containerEl.querySelector('#nai-api-url');
+        const keyInput = this.containerEl.querySelector('#nai-token');
+        const deleteBtn = this.containerEl.querySelector('#nai-api-preset-delete');
+
+        if (preset) {
+            if (channelSelect) channelSelect.value = preset.channel || 'proxy';
+            if (urlInput) urlInput.value = preset.proxyUrl || '';
+            if (keyInput) keyInput.value = preset.apiKey || '';
+            if (deleteBtn) deleteBtn.disabled = false;
+        } else {
+            // “新建预设”状态
+            if (channelSelect) channelSelect.value = 'proxy';
+            if (urlInput) urlInput.value = '';
+            if (keyInput) keyInput.value = '';
+            if (deleteBtn) deleteBtn.disabled = true;
+        }
+
+        // [关键修复] 手动触发 change 事件，确保 UI 联动（例如显示/隐藏代理流式传输选项）
+        channelSelect?.dispatchEvent(new Event('change'));
+    }
+
+    /**
+     * 保存为新API预设
+     */
+    async _saveApiPreset() {
+        const newName = await this.ctx.helpers.promptInput('输入新 API 预设名称');
+        if (!newName || !newName.trim()) return;
+
+        if (this.apiPresets.some(p => p.name === newName)) {
+            this.ctx.helpers.showToast('预设名称已存在', 'error');
+            return;
+        }
+
+        const newPreset = {
+            name: newName,
+            channel: this.containerEl.querySelector('#nai-channel')?.value || 'proxy',
+            proxyUrl: this.containerEl.querySelector('#nai-api-url')?.value.trim() || '',
+            apiKey: this.containerEl.querySelector('#nai-token')?.value.trim() || '',
+        };
+
+        this.apiPresets.push(newPreset);
+        this.activeApiPreset = newName;
+        this._renderApiPresetDropdown();
+        this._applyActiveApiPresetToUI();
+        this.ctx.helpers.showToast('API 预设已保存', 'success');
+    }
+
+    /**
+     * 删除当前API预设
+     */
+    async _deleteApiPreset() {
+        if (!this.activeApiPreset) return;
+
+        const confirmed = await this.ctx.helpers.promptConfirm(`确定要删除预设 "${this.activeApiPreset}" 吗?`);
+        if (!confirmed) return;
+
+        this.apiPresets = this.apiPresets.filter(p => p.name !== this.activeApiPreset);
+        this.activeApiPreset = this.apiPresets.length > 0 ? this.apiPresets[0].name : '';
+
+        this._renderApiPresetDropdown();
+        this._applyActiveApiPresetToUI();
+        this.ctx.helpers.showToast('API 预设已删除', 'success');
+    }
+    /**
+     * 渲染预设下拉框
+     */
+    _renderPresetDropdown() {
+        const select = this.containerEl.querySelector('#nai-preset-select');
+        if (!select) return;
+
+        select.innerHTML = '<option value="">-- 新建预设 --</option>';
+        this.naiPresets.forEach(preset => {
+            const option = document.createElement('option');
+            option.value = preset.name;
+            option.textContent = preset.name;
+            option.selected = preset.name === this.activePresetName;
+            select.appendChild(option);
+        });
+    }
+
+    /**
+     * 将当前选中的预设数据应用到 UI
+     */
+    _applyActivePresetToUI() {
+        const preset = this.naiPresets.find(p => p.name === this.activePresetName);
+        const triggerInput = this.containerEl.querySelector('#nai-preset-triggers');
+        const deleteBtn = this.containerEl.querySelector('#nai-preset-delete');
+
+        if (preset) {
+            // 加载预设数据
+            this.vibeImages = preset.images || [];
+            this.referenceMode = preset.referenceMode || 'vibe';
+
+            // 更新 Director 模式相关 UI
+            const directorAwareCheck = this.containerEl.querySelector('#nai-director-style-aware');
+            if (directorAwareCheck) directorAwareCheck.checked = preset.directorStyleAware || false;
+
+            const directorStrengthSlider = this.containerEl.querySelector('#nai-director-strength');
+            if (directorStrengthSlider) directorStrengthSlider.value = preset.directorStrength || 0.6;
+
+            const directorStrengthValue = this.containerEl.querySelector('#nai-director-strength-value');
+            if (directorStrengthValue) directorStrengthValue.textContent = Number(preset.directorStrength || 0.6).toFixed(2);
+
+            if (triggerInput) triggerInput.value = preset.triggerWords || '';
+            if (deleteBtn) deleteBtn.disabled = false;
+
+        } else {
+            // “新建预设”状态
+            this.vibeImages = [];
+            this.referenceMode = 'vibe';
+            if (triggerInput) triggerInput.value = '';
+            if (deleteBtn) deleteBtn.disabled = true;
+        }
+
+        // 刷新 UI
+        this._updateRefModeUI();
+    }
+
+    /**
+     * 更新当前激活预设的触发词
+     */
+    _updateActivePresetTriggerWords(words) {
+        if (!this.activePresetName) return;
+        const preset = this.naiPresets.find(p => p.name === this.activePresetName);
+        if (preset) {
+            preset.triggerWords = words.trim();
+        }
+    }
+
+    /**
+     * 保存为新预设
+     */
+    async _saveAsNewPreset() {
+        const newName = await this.ctx.helpers.promptInput('输入预设名称');
+        if (!newName || !newName.trim()) return;
+
+        if (this.naiPresets.some(p => p.name === newName)) {
+            this.ctx.helpers.showToast('预设名称已存在', 'error');
+            return;
+        }
+
+        const newPreset = {
+            name: newName,
+            triggerWords: this.containerEl.querySelector('#nai-preset-triggers')?.value.trim() || '',
+            referenceMode: this.referenceMode,
+            images: JSON.parse(JSON.stringify(this.vibeImages)), // 深拷贝
+            directorStyleAware: this.containerEl.querySelector('#nai-director-style-aware')?.checked || false,
+            directorStrength: parseFloat(this.containerEl.querySelector('#nai-director-strength')?.value) || 0.6,
+        };
+
+        this.naiPresets.push(newPreset);
+        this.activePresetName = newName;
+
+        this._renderPresetDropdown();
+        this.ctx.helpers.showToast('预设已保存', 'success');
+    }
+
+    /**
+     * 删除当前预设
+     */
+    async _deleteActivePreset() {
+        if (!this.activePresetName) return;
+
+        const confirmed = await this.ctx.helpers.promptConfirm(`确定要删除预设 "${this.activePresetName}" 吗?`);
+        if (!confirmed) return;
+
+        // ==================== 修改开始 ====================
+        // 1. 在从数组中移除预设之前，先找到它
+        const presetToDelete = this.naiPresets.find(p => p.name === this.activePresetName);
+
+        if (presetToDelete) {
+            // 2. 获取 ImageGenerator 模块，并通过它访问 storageManager
+            const imageGen = this.ctx.getModule('imageGen');
+            if (imageGen && imageGen.storageManager) {
+                this.ctx.helpers.showToast('正在删除服务器上的关联图片...', 'info');
+                try {
+                    // 3. 调用新的删除方法，并等待其完成
+                    await imageGen.storageManager.deleteNaiPresetFiles(presetToDelete);
+                } catch (e) {
+                    this.ctx.helpers.showToast('删除服务器图片时出错，部分文件可能残留', 'error');
+                    console.error('[NAISettings] 删除预设图片失败:', e);
+                }
+            }
+        }
+        // ==================== 修改结束 ====================
+
+        // 原有的本地数据删除逻辑
+        this.naiPresets = this.naiPresets.filter(p => p.name !== this.activePresetName);
+        this.activePresetName = this.naiPresets.length > 0 ? this.naiPresets[0].name : '';
+
+        this._renderPresetDropdown();
+        this._applyActivePresetToUI();
+        this.ctx.helpers.showToast('预设已删除', 'success');
+    }
+    _updateVibeStatus() {
+        const status = this.containerEl?.querySelector('#nai-vibe-status');
+        if (!status) return;
+
+        if (this.vibeImages.length === 0) {
+            status.textContent = '';
+            return;
+        }
+
+        const modeText = this.referenceMode === 'vibe' ? '氛围模式' : '人物参考模式';
+        status.textContent = `当前: ${modeText}，${this.vibeImages.length} 张参考图`;
+    }
+
+    _readFileAsDataURL(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = reject;
+            reader.readAsDataURL(file);
+        });
+    }
+
+    /**
+     * 根据宽高计算尺寸预设
+     */
+    _getSizePreset() {
+        const width = parseInt(this.containerEl?.querySelector('#nai-width')?.value) || 832;
+        const height = parseInt(this.containerEl?.querySelector('#nai-height')?.value) || 1216;
+
+        // 标准预设尺寸
+        if (width === 832 && height === 1216) return '竖图';
+        if (width === 1216 && height === 832) return '横图';
+        if (width === 1024 && height === 1024) return '方图';
+
+        // 自定义尺寸
+        return 'Custom';
+    }
+
+    /**
+     * 收集表单数据
+     */
+    collectSettings() {
+        if (!this.containerEl) return null;
+
+        // [新增] 保存当前正在编辑的预设（如果不是 "新建" 状态）
+        if (this.activePresetName) {
+            const preset = this.naiPresets.find(p => p.name === this.activePresetName);
+            if (preset) {
+                preset.triggerWords = this.containerEl.querySelector('#nai-preset-triggers')?.value.trim() || '';
+                preset.referenceMode = this.referenceMode;
+                preset.images = JSON.parse(JSON.stringify(this.vibeImages));
+                preset.directorStyleAware = this.containerEl.querySelector('#nai-director-style-aware')?.checked || false;
+                preset.directorStrength = parseFloat(this.containerEl.querySelector('#nai-director-strength')?.value) || 0.6;
+            }
+        }
+        const activeApiPresetName = this.containerEl.querySelector('#nai-api-preset-select')?.value || '';
+        const preset = this.apiPresets.find(p => p.name === activeApiPresetName);
+
+        // 如果当前选中了一个预设，就用预设的值；否则用输入框的值
+        const currentChannel = preset ? preset.channel : (this.containerEl.querySelector('#nai-channel')?.value || 'proxy');
+        const currentUrl = preset ? preset.proxyUrl : (this.containerEl.querySelector('#nai-api-url')?.value || '');
+        const currentApiKey = preset ? preset.apiKey : (this.containerEl.querySelector('#nai-token')?.value || '');
+
+        return {
+            channel: currentChannel,
+            proxyUrl: currentUrl,
+            apiKey: currentApiKey,
+            proxyStream: this.containerEl.querySelector('#nai-proxy-stream')?.value === 'true',
+            model: this.containerEl.querySelector('#nai-model')?.value || 'nai-diffusion-3',
+            sampler: this.containerEl.querySelector('#nai-sampler')?.value || 'k_euler_ancestral',
+            noiseSchedule: this.containerEl.querySelector('#nai-noise-schedule')?.value || 'karras',
+            steps: parseInt(this.containerEl.querySelector('#nai-steps')?.value) || 28,
+            scale: parseFloat(this.containerEl.querySelector('#nai-scale')?.value) || 5,
+            cfgRescale: parseFloat(this.containerEl.querySelector('#nai-cfg-rescale')?.value) || 0,
+            width: parseInt(this.containerEl.querySelector('#nai-width')?.value) || 832,
+            height: parseInt(this.containerEl.querySelector('#nai-height')?.value) || 1216,
+            sizePreset: this._getSizePreset(),
+            sm: this.containerEl.querySelector('#nai-sm')?.value === 'true',
+            dyn: this.containerEl.querySelector('#nai-dyn')?.value === 'true',
+            variety: this.containerEl.querySelector('#nai-variety')?.value === 'true',
+            decrisper: this.containerEl.querySelector('#nai-decrisper')?.value === 'true',
+            multiRoleEnabled: this.containerEl.querySelector('#nai-multi-role')?.checked || false,
+            useCoords: this.containerEl.querySelector('#nai-use-coords')?.value === 'true',
+            i2iStrength: parseFloat(this.containerEl.querySelector('#nai-strength')?.value) || 0.7,
+            i2iNoise: parseFloat(this.containerEl.querySelector('#nai-noise')?.value) || 0,
+            inpaintStrength: parseFloat(this.containerEl.querySelector('#nai-inpaint-strength')?.value) || 1,
+            vibeEnabled: this.containerEl.querySelector('#nai-vibe-enabled')?.checked || false,
+            naiTriggersEnabled: this.containerEl.querySelector('#nai-triggers-enabled')?.checked || false,
+            naiPresets: this.naiPresets,
+            referenceMode: this.referenceMode,
+            directorStyleAware: this.containerEl.querySelector('#nai-director-style-aware')?.checked || false,
+            directorStrength: parseFloat(this.containerEl.querySelector('#nai-director-strength')?.value) || 0.6,
+            vibeImages: this.vibeImages,
+            apiPresets: this.apiPresets,
+            activeApiPreset: activeApiPresetName,
+        };
+    }
+}
