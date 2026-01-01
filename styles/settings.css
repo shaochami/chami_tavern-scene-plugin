@@ -419,7 +419,64 @@
     color: var(--tsp-accent-green);
     font-family: monospace;
 }
+/* 缓存网格多选模式 */
+.tsp-cache-grid-inner.selection-mode .tsp-cache-thumb {
+    cursor: pointer !important;
+}
 
+/* 多选模式下隐藏：模式标签、ID、悬浮动作按钮 */
+.tsp-cache-grid-inner.selection-mode .tsp-cache-thumb-mode,
+.tsp-cache-grid-inner.selection-mode .tsp-cache-id,
+.tsp-cache-grid-inner.selection-mode .tsp-cache-actions {
+    display: none !important;
+}
+
+/* 选中状态的边框高亮 */
+.tsp-cache-thumb.selected {
+    border: 3px solid var(--tsp-accent-primary);
+    box-sizing: border-box;
+}
+
+/* 选中状态的图片稍微变暗，突出勾选框 */
+.tsp-cache-thumb.selected img,
+.tsp-cache-thumb.selected video {
+    opacity: 0.8;
+}
+
+/* 勾选框样式 (默认隐藏) */
+.tsp-cache-checkbox {
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 24px;
+    height: 24px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    z-index: 10;
+}
+
+/* 多选模式下显示未勾选状态的框 (仅边框) */
+.tsp-cache-grid-inner.selection-mode .tsp-cache-checkbox {
+    display: flex;
+}
+.tsp-cache-grid-inner.selection-mode .tsp-cache-checkbox i {
+    display: none; /* 未选中时不显示钩 */
+}
+
+/* 选中后的勾选框样式 */
+.tsp-cache-thumb.selected .tsp-cache-checkbox {
+    background: var(--tsp-accent-primary);
+    border-color: var(--tsp-accent-primary);
+}
+.tsp-cache-thumb.selected .tsp-cache-checkbox i {
+    display: block; /* 选中时显示钩 */
+}
 /* ==================== 设置面板移动端适配 ==================== */
 @media (max-width: 900px) {
     .tsp-settings-modal {
@@ -502,6 +559,67 @@
 
     .tsp-settings-modal .tsp-modal-header {
         padding: 10px 16px;
+    }
+    /* 隐藏底部按钮的文字 */
+    .tsp-modal-footer .tsp-btn .tsp-btn-text {
+        display: none;
+    }
+
+    /* 调整按钮为方形，使其作为图标按钮更美观 */
+    .tsp-modal-footer .tsp-btn {
+        padding: 8px 10px; /* 调整内边距 */
+        justify-content: center;
+    }
+
+    /* 确保图标之间没有多余的 margin */
+    .tsp-modal-footer .tsp-btn i {
+        margin: 0;
+    }
+
+    /* 可选：稍微增大底部图标，方便手指点击 */
+    .tsp-modal-footer .tsp-btn i.fa-solid {
+        font-size: 1.1em;
+    }
+    /* 针对高级设置页 - 图片缓存工具栏的适配 */
+    .tsp-cache-toolbar {
+        flex-direction: column; /* 手机上强制垂直排列：上面是文字，下面是按钮 */
+        align-items: flex-start !important; /* 左对齐 */
+        gap: 12px !important;
+    }
+
+    /* 隐藏工具栏按钮的文字 */
+    .tsp-cache-toolbar .tsp-btn .tsp-btn-text {
+        display: none;
+    }
+
+    /* 让信息文字占满宽度，避免换行难看 */
+    .tsp-cache-toolbar #adv-cache-info {
+        width: 100%;
+        margin-bottom: 4px;
+        font-size: 0.85em; /* 字稍微小一点 */
+        padding-left: 4px;
+        border-left: 3px solid var(--tsp-accent-primary); /* 加个装饰条提升可读性 */
+        line-height: 1.4;
+    }
+
+    /* 让这一组按钮撑满宽度，并且两端对齐或均匀分布 */
+    .tsp-cache-toolbar .tsp-btn-group {
+        width: 100%;
+        display: flex;
+        justify-content: space-between; /* 按钮分散排列，或者用 gap: 8px */
+        gap: 8px;
+    }
+
+    /* 按钮样式微调：变成方形大按钮 */
+    .tsp-cache-toolbar .tsp-btn {
+        flex: 1; /* 让每个按钮平分宽度 */
+        padding: 10px 0; /* 增加高度 */
+        justify-content: center;
+    }
+
+    .tsp-cache-toolbar .tsp-btn i {
+        margin: 0;
+        font-size: 1.2em; /* 图标放大 */
     }
 }
 /* 增加权重覆盖默认 .tsp-input 的样式 */
