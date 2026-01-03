@@ -141,7 +141,30 @@
     transform: translateY(-2px);
     border-color: var(--tsp-accent-primary);
 }
+.ts-card.selected {
+    border-color: var(--tsp-accent-primary);
+    background-color: color-mix(in srgb, var(--tsp-accent-primary) 15%, transparent);
+    transform: translateY(-1px);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--tsp-accent-primary) 30%, transparent);
+}
 
+.ts-card.selected::before {
+    content: '✔';
+    position: absolute;
+    top: 4px;
+    right: 6px;
+    color: var(--tsp-accent-primary);
+    font-size: 1.1em;
+    font-weight: bold;
+    text-shadow: 0 0 4px var(--tsp-bg-input);
+}
+
+/* 同样为 Danbooru 列表行添加选中样式 */
+.ts-danbooru-row.selected {
+    background: rgba(122, 162, 247, 0.25); /* 使用与 hover 类似的颜色，但更深一些 */
+    border-left: 3px solid var(--tsp-accent-primary);
+    padding-left: 9px;
+}
 .ts-card-img-wrap {
     width: 100%;
     aspect-ratio: 2/3;
