@@ -649,3 +649,23 @@ input[type="color"].tsp-input::-moz-color-swatch {
     border-radius: var(--tsp-radius-sm);
     box-shadow: inset 0 0 2px rgba(0,0,0,0.2);
 }
+.tsp-bg-preview {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* 保持16:9的比例 */
+    background-color: var(--tsp-bg-input);
+    border: 2px dashed var(--tsp-border);
+    border-radius: var(--tsp-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    color: var(--tsp-text-muted);
+}
+
+.tsp-bg-preview img,
+.tsp-bg-preview video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

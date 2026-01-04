@@ -26,6 +26,7 @@
     --tsp-btn-gen-grad-2: #d49a3a;
     --tsp-btn-gen-text: #1b1b1b;
     --tsp-bg-secondary-rgb: 35, 40, 61; /* #23283d 的 RGB 值 */
+    --tsp-bg-opacity: 1;
     /* 圆角保持不变 */
     --tsp-radius-sm: 4px;
     --tsp-radius-md: 8px;
@@ -378,7 +379,48 @@ select.tsp-input option {
     width: 0%;
     transition: width 0.3s ease;
 }
+/* 让模态框本身可以容纳一个伪元素或子元素作为背景 */
+.tsp-modal {
+    position: relative;
+    overflow: hidden; /* 保证背景不会溢出圆角 */
+    /* 移除这里的 background: transparent; 修复默认背景变黑的问题 */
+}
+/* 自定义背景的容器 */
+#tsp-modal-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* 置于最底层 */
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.5s ease;
+}
 
+/* 背景容器内的视频/图片样式 */
+#tsp-modal-background video,
+#tsp-modal-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 填充整个容器 */
+    position: absolute;
+}
+/* 当自定义背景激活时，修改相关元素的背景色 */
+.tsp-modal.tsp-custom-bg-active .tsp-settings-group,
+.tsp-modal.tsp-custom-bg-active .tsp-settings-sidebar,
+.tsp-modal.tsp-custom-bg-active .tsp-modal-footer {
+    /* 使用 var() 函数动态计算半透明背景色 */
+    background-color: rgba(var(--tsp-bg-secondary-rgb), var(--tsp-bg-opacity));
+    backdrop-filter: blur(2px); /* 增加一点毛玻璃效果，提升质感 */
+    transition: background-color 0.3s ease; /* 过渡效果 */
+}
+
+/* 确保激活时，模态框的主背景是透明的 */
+.tsp-modal.tsp-custom-bg-active {
+    background: transparent !important;
+    border: 1px solid rgba(var(--tsp-border-rgb, 65, 72, 104), var(--tsp-bg-opacity)); /* 边框也半透明 */
+}
 /* ==================== 移动端通用适配 ==================== */
 @media screen and (max-width: 900px) {
     .tsp-modal {
