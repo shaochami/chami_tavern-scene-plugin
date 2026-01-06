@@ -145,7 +145,9 @@
     padding: 12px 16px;
     margin-bottom: 12px;
 }
-
+.tsp-slider-mobile {
+    display: none !important;
+}
 .tsp-lora-preview {
     background: rgba(122, 162, 247, 0.1);
     border: 1px solid rgba(122, 162, 247, 0.3);
@@ -174,5 +176,23 @@
 
     .tsp-vibe-info {
         width: 100%;
+    }
+    .tsp-slider-desktop {
+        display: none !important;
+    }
+
+    /* 手机端：显示并美化数字输入框 */
+    .tsp-slider-mobile {
+        display: block !important;
+        width: 90px; /* 固定宽度，方便输入 */
+        flex-shrink: 0;
+        flex-grow: 0;
+        text-align: center;
+        padding: 4px 8px; /* 较小的内边距 */
+    }
+
+    /* 手机端：调整滑块组布局，让标签和输入框两端对齐 */
+    .tsp-vibe-item .tsp-slider-group {
+        justify-content: space-between;
     }
 }
