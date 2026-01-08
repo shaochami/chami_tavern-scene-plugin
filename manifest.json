@@ -8,7 +8,7 @@
   "requires": [],
   "loading_order": 120,
   "js": "index.js",
-  "css": "styles/plugin.css",
+  "css": "styles/plugin.css?v=1.0.1",
   "persistent_files": [
     "data/static-tags.json"
   ]
