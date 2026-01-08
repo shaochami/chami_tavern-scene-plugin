@@ -232,25 +232,84 @@
     background: var(--tsp-accent-primary);
 }
 
-/* ==================== 移动端适配 (3列) ==================== */
 @media screen and (max-width: 900px) {
+    /* 1. 图片缓存网格 (Gallery) */
     .tsp-cache-grid-inner {
-        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-        gap: 6px !important;
+        /* [关键修复] 取消固定高度，让容器根据内容自动撑开 */
+        max-height: none !important;
+        height: auto !important;
+        overflow-y: visible !important;
+
+        /* 强制 2 列布局 */
+        grid-template-columns: repeat(2, 1fr) !important;
+
+        /* [关键修复] 强制每一行的高度根据内容决定，防止压缩堆叠 */
+        grid-auto-rows: max-content !important;
+
+        /* 增加间距 */
+        gap: 12px !important;
         padding: 5px !important;
-    }
-    .tsp-cache-thumb {
-        aspect-ratio: 1 / 1.4;
+
+        /* 底部留出空间，防止被操作栏遮挡 */
+        padding-bottom: 60px !important;
+        margin-bottom: 20px !important;
+        display: grid !important;
     }
 
+    /* 每一个图片单元格 */
+    .tsp-cache-thumb {
+        /* 强制比例，防止高度塌陷 */
+        aspect-ratio: 2 / 3 !important;
+        width: 100% !important;
+        height: auto !important;
+
+        /* 移除定位干扰 */
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important; /* 禁用悬浮动画 */
+
+        /* 确保图片撑满 */
+        display: flex !important;
+        align-items: stretch !important;
+    }
+
+    .tsp-cache-thumb img,
+    .tsp-cache-thumb video {
+        /* 确保内容物完全填充 */
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    /* 2. 预设浏览器 (Presets) 同样的修复逻辑 */
     .tsp-preset-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-        gap: 8px !important;
+        display: grid !important;
+        max-height: none !important; /* 取消高度限制 */
+        height: auto !important;
+        overflow-y: visible !important;
+
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-auto-rows: max-content !important; /* 防止堆叠 */
+        gap: 12px !important;
     }
-    .tsp-preset-title {
-        font-size: 0.75em !important;
+
+    .tsp-preset-card {
+        transform: none !important;
+        height: auto !important;
     }
+
     .tsp-preset-img-container {
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 2 / 3 !important;
+        height: auto !important;
+    }
+
+    /* 修复遮罩层按钮位置 */
+    .tsp-cache-actions {
+        opacity: 1 !important;
+        background: rgba(0,0,0,0.3) !important;
     }
 }

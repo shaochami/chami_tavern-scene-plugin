@@ -454,6 +454,27 @@ select.tsp-input option {
     .tsp-btn-group {
         flex-wrap: wrap;
     }
+    /* [新增/确认] 确保模态框主体可以由内部内容撑开并滚动 */
+    .tsp-settings-content {
+        /* 允许内容区滚动，接管原本由 grid-inner 负责的滚动 */
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important; /* iOS 惯性滚动 */
+        height: 100% !important;
+        display: block !important; /* 防止 flex 布局导致的压缩 */
+    }
+
+    /* 确保包含卡片的容器也不会限制高度 */
+    .tsp-settings-pane[data-pane="gallery"],
+    .tsp-settings-pane[data-pane="prompts"] {
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    /* 移除卡片本身的滚动条（因为现在外层滚动了） */
+    .tsp-card.muted {
+        max-height: none !important;
+        overflow: visible !important;
+    }
 }
 /* 增加权重覆盖默认 .tsp-input 的样式 */
 /* [修改] 增加父级选择器 .tsp-modal 以提权 */
