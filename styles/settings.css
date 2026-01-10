@@ -477,6 +477,49 @@
 .tsp-cache-thumb.selected .tsp-cache-checkbox i {
     display: block; /* 选中时显示钩 */
 }
+/* 控制台日志样式 */
+.tsp-console-item {
+    margin-bottom: 8px;
+    padding: 8px;
+    background: var(--tsp-bg-secondary);
+    border-radius: 4px;
+}
+.tsp-console-header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+.tsp-console-time {
+    color: var(--tsp-text-muted);
+    font-size: 0.8em;
+}
+.tsp-console-title {
+    color: var(--tsp-text-primary);
+}
+.tsp-console-details summary {
+    cursor: pointer;
+    color: var(--tsp-text-secondary);
+    font-size: 0.9em;
+}
+.tsp-console-empty {
+    text-align: center;
+    color: var(--tsp-text-muted);
+    padding: 20px;
+}
+/* --- 电脑端通用样式 (放大字体) --- */
+#tsp-console-output,
+.tsp-console-container {
+    /* 从原来的 0.85em (约13px) 增大到 14px 或 0.95em，阅读更清晰 */
+    font-size: 14px !important;
+    line-height: 1.5;
+}
+
+/* 详情里的代码块也同步放大 */
+.tsp-code-block {
+    font-size: 13px !important;
+}
 /* ==================== 设置面板移动端适配 ==================== */
 @media (max-width: 900px) {
     .tsp-settings-modal {
@@ -620,6 +663,52 @@
     .tsp-cache-toolbar .tsp-btn i {
         margin: 0;
         font-size: 1.2em; /* 图标放大 */
+    }
+    /*
+       让控制台容器不再是固定高度的内部滚动，
+       而是根据内容自动拉伸 (height: auto)，
+       利用最外层的页面滚动条来浏览，体验更像原生手机App。
+    */
+    #tsp-console-output,
+    .tsp-console-container {
+        flex: none !important;        /* 取消 flex 弹性伸缩 */
+        height: auto !important;      /* 高度随内容自适应 */
+        min-height: 300px;            /* 保证最少高度 */
+        overflow-y: visible !important; /* 取消内部滚动条 */
+        max-height: none !important;  /* 取消最大高度限制 */
+
+        /* 手机端字体进一步调整，确保手指不挡住视线 */
+        font-size: 13px !important;
+        padding: 12px !important;
+    }
+
+    /* 优化单条日志的显示，避免过于拥挤 */
+    .tsp-console-item {
+        margin-bottom: 12px !important;
+        padding: 10px !important;
+        background: rgba(0, 0, 0, 0.2) !important; /* 稍微加深背景区分 */
+    }
+
+    /* 头部信息换行显示，防止挤在一行 */
+    .tsp-console-header {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    /* 详情代码块在手机上允许横向滚动 */
+    .tsp-code-block {
+        font-size: 12px !important; /* 代码可以稍微小一点 */
+        overflow-x: auto !important;
+        padding: 8px !important;
+    }
+
+    /*
+       确保父级容器允许撑开
+       (对应你在 settings-panel.js 里生成的结构)
+    */
+    .tsp-settings-group {
+        display: block !important; /* 防止 flex 布局限制高度 */
+        height: auto !important;
     }
 }
 /* 增加权重覆盖默认 .tsp-input 的样式 */

@@ -17,8 +17,11 @@
     flex-direction: column;
     gap: 10px;
     min-width: 0;
-    overflow: hidden;
+    /* 修改点：允许左侧面板整体纵向滚动 */
+    overflow-y: auto;
+    height: 100%;
 }
+
 
 .ts-right-panel {
     width: 320px;
@@ -106,8 +109,11 @@
 
 /* ==================== 内容区域 (Tag卡片/图片) ==================== */
 .ts-content {
-    flex: 1;
-    overflow-y: auto;
+    /* 修改点：取消 flex: 1，改为 none，允许高度被内容撑开 */
+    flex: none;
+    height: auto;
+    /* 修改点：取消内部滚动，内容展示完整 */
+    overflow: visible;
     padding: 5px;
     min-height: 200px;
     border: 1px solid var(--tsp-border);
@@ -115,6 +121,7 @@
     background: rgba(0,0,0,0.1);
     position: relative;
 }
+
 
 .ts-content-grid {
     display: grid;
@@ -820,5 +827,6 @@
 }
 @media (min-width: 901px) {
     .ts-mobile-toggle { display: none; }
-    .ts-mobile-content-wrap { display: flex !important; flex-direction: column; gap: 10px; height: 100%; }
+    /* 修改点：height 改为 auto，允许包裹内容 */
+    .ts-mobile-content-wrap { display: flex !important; flex-direction: column; gap: 10px; height: auto; }
 }
