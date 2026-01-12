@@ -1,7 +1,7 @@
 {
   "name": "chami_tavern-scene-plugin",
   "display_name": "酒馆场景插件",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": "茶蘼 & Tavern Scene Team",
   "description": "整合标签超市、角色数据库、AI后处理和文生图功能的统一插件。从 Tampermonkey 脚本迁移而来。",
   "minSillyTavernVersion": "1.14.0",
