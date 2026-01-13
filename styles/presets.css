@@ -208,31 +208,99 @@
 
 /* ==================== 排序模态框 ==================== */
 .tsp-sorter-list {
-    max-height: 60vh;
-    overflow-y: auto;
+    /* 移除内部滚动条，跟随模态框滚动 */
+    max-height: none !important;
+    overflow-y: visible !important;
     padding: 10px;
     background: var(--tsp-bg-input);
     border-radius: var(--tsp-radius-md);
+    /* 增加底部空间，方便拖拽到底部 */
+    padding-bottom: 40px;
 }
 
 .tsp-sorter-item {
     display: flex;
     align-items: center;
-    padding: 10px;
-    margin-bottom: 6px;
+    padding: 12px 16px; /* 增大触控区域 */
+    margin-bottom: 8px;
     background: var(--tsp-bg-tertiary);
     border: 1px solid var(--tsp-border);
     border-radius: var(--tsp-radius-sm);
     cursor: grab;
+
+    /* [核心] 禁止浏览器默认的触摸操作(如滚动)，交给JS处理拖拽 */
+    touch-action: none;
     user-select: none;
+    -webkit-user-select: none;
+
+    transition: transform 0.1s, box-shadow 0.1s, background-color 0.2s;
 }
 
+.tsp-sorter-item:active {
+    cursor: grabbing;
+}
+
+/* 拖拽时的样式：高亮并浮起 */
 .tsp-sorter-item.dragging {
-    opacity: 0.5;
+    opacity: 0.9;
     background: var(--tsp-accent-primary);
+    color: var(--tsp-bg-main);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-color: var(--tsp-accent-primary);
+    z-index: 1000;
+    position: relative; /* 确保层级正确 */
 }
 
+.tsp-sorter-item.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: rgba(0,0,0,0.2);
+}
+
+/* 关闭按钮主题化 */
+.tsp-sorter-close {
+    background: transparent;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    /* 应用主题文字色 */
+    color: var(--tsp-text-primary);
+    transition: color 0.2s;
+    padding: 0 8px;
+    line-height: 1;
+}
+
+.tsp-sorter-close:hover {
+    /* 应用主题危险色(红色) */
+    color: var(--tsp-accent-red);
+}
+/* 1. 电脑端默认样式 */
+.tsp-sorter-modal {
+    width: 450px;       /* 固定适当宽度 */
+    height: 80vh;       /* 占据屏幕高度的 80% */
+    max-height: 800px;
+    display: flex;      /* Flex 布局确保头尾固定，中间滚动 */
+    flex-direction: column;
+}
+
+/* 确保中间内容区可以滚动 */
+.tsp-sorter-modal .tsp-modal-body {
+    flex: 1;            /* 自动占据剩余空间 */
+    overflow-y: auto;   /* 内部滚动 */
+    padding: 10px 15px;
+    /* 增加滚动平滑性 */
+    -webkit-overflow-scrolling: touch;
+}
 @media screen and (max-width: 900px) {
+    .tsp-sorter-modal {
+        width: 95%;
+        height: 90dvh;
+        max-width: none;
+        max-height: none;
+        border-radius: 0;
+        border-radius: 8px;
+        margin-bottom: 10vh;
+    }
     /* 1. 图片缓存网格 (Gallery) */
     .tsp-cache-grid-inner {
         /* [关键修复] 取消固定高度，让容器根据内容自动撑开 */
