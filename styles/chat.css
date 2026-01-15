@@ -96,7 +96,41 @@
     margin: 4px 0;
     pointer-events: none;
 }
+/* ==================== 快捷生成悬浮球 ==================== */
+#tsp-quick-gen-fab {
+    position: fixed;
+    z-index: 999; /* 略低于主菜单的1000 */
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(145deg, var(--tsp-btn-gen-grad-1, #f0c36a), var(--tsp-btn-gen-grad-2, #d49a3a));
+    color: var(--tsp-btn-gen-text, #1b1b1b);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    user-select: none;
+    touch-action: none; /* 防止移动端拖拽时滚动页面 */
+}
 
+#tsp-quick-gen-fab:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    filter: brightness(1.1);
+}
+
+#tsp-quick-gen-fab:active {
+    transform: scale(0.95);
+}
+
+/* 加载状态下的动画 */
+#tsp-quick-gen-fab.loading {
+    cursor: wait;
+    opacity: 0.8;
+}
 /* 悬浮球移动端位置 */
 @media screen and (max-width: 900px) {
     .tsp-fab-container {
@@ -104,7 +138,11 @@
         left: 5vw;
         transform: none;
     }
-
+    #tsp-quick-gen-fab {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
     .tsp-fab {
         width: 42px;  
         height: 42px;

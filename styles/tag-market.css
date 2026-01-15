@@ -760,7 +760,7 @@
     padding: 2px 4px;
     border-radius: 3px;
     transition: background 0.2s;
-    /* [新增] 关键样式，让文本在自己的格子内居中和换行 */
+    /*  关键样式，让文本在自己的格子内居中和换行 */
     text-align: center;
     word-break: break-word; /* 强制长单词换行 */
     min-width: 0; /* 允许网格项收缩 */

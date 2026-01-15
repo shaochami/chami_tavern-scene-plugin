@@ -281,7 +281,37 @@
 .tsp-autocomplete-item.highlight .tsp-highlight-match {
     filter: brightness(1.2);
 }
-/* 响应式调整 */
+.tsp-ai-gen-tabs {
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--tsp-border);
+}
+
+.tsp-ai-gen-tabs ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tsp-ai-gen-tabs li {
+    cursor: pointer;
+    padding: 8px 4px;
+    margin-bottom: -1px; /* 让边框重叠 */
+    color: var(--tsp-text-muted);
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.tsp-ai-gen-tabs li:hover {
+    color: var(--tsp-text-primary);
+}
+
+.tsp-ai-gen-tabs li.active {
+    color: var(--tsp-text-primary);
+    border-bottom-color: var(--tsp-accent-primary);
+}
 /* 响应式调整 - 修复手机端无法编辑的问题 */
 @media screen and (max-width: 900px) {
     .tsp-modal-large {
@@ -292,6 +322,24 @@
         border-radius: 0;
         border-radius: 8px;
         margin-bottom: 10vh;
+    }
+    .tsp-modal,
+    .tsp-modal-large {
+        width: 95%;
+        height: 90dvh;
+        max-width: none;
+        max-height: none;
+        border-radius: 0;
+        border-radius: 8px;
+        margin-bottom: 10vh;
+
+        display: flex;       /* 确保 Flex 布局生效 */
+        flex-direction: column;
+    }
+
+    .tsp-modal-body {
+        flex: 1;
+        overflow-y: auto;    /* 确保中间内容可滚动 */
     }
     /* 1. 布局容器不再限制高度，改为由内容撑开 */
     .tsp-chardb-layout {

@@ -453,7 +453,7 @@
     margin-bottom: 8px; /* 为下方的摘要留出空间 */
 }
 
-/* [新增] 摘要信息容器 */
+/*  摘要信息容器 */
 .ai-worldbook-entry-summary {
     display: flex;
     flex-wrap: wrap;
@@ -462,7 +462,7 @@
     border-top: 1px solid rgba(122, 162, 247, 0.1);
 }
 
-/* [新增] 单个摘要项 */
+/*  单个摘要项 */
 .wb-summary-item {
     display: inline-flex;
     align-items: center;
@@ -475,7 +475,7 @@
     border: 1px solid var(--tsp-border);
 }
 
-/* [新增] 状态徽章 (例如 "蓝灯", "禁用" 等) */
+/*  状态徽章 (例如 "蓝灯", "禁用" 等) */
 .wb-status-badge {
     font-weight: bold;
 }
@@ -510,7 +510,7 @@
     border-top: 1px dashed var(--tsp-border);
     padding-top: 16px;
 }
-/* [新增] 修复世界书已选标签的关闭按钮样式 */
+/*  修复世界书已选标签的关闭按钮样式 */
 .ai-worldbook-selected-container .tsp-tag {
     /* 使整个标签都可点击 */
     cursor: pointer;
@@ -543,7 +543,7 @@
     opacity: 1;
 }
 
-/* [新增] 可用世界书列表中，已激活条目的高亮样式 */
+/*  可用世界书列表中，已激活条目的高亮样式 */
 .ai-worldbook-item.active {
     /*
        魔法发生在这里！
