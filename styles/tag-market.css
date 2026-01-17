@@ -684,7 +684,65 @@
     color: var(--tsp-bg-main, #4a2c36);
     text-shadow: none;
 }
+.ts-category-btn.ts-btn-special-green {
+    /* 边框：使用自定义主题边框色，回退值为淡绿色 */
+    border-color: var(--tsp-tag-custom-border, rgba(158, 206, 106, 0.5)) !important;
+    /* 文字：使用自定义主题文字色 */
+    color: var(--tsp-tag-custom-text, #9ece6a);
+    /* 背景：使用自定义主题背景色 */
+    background: var(--tsp-tag-custom-bg, rgba(158, 206, 106, 0.05));
+    /* 阴影：使用边框色生成淡淡的辉光 */
+    box-shadow: 0 0 5px color-mix(in srgb, var(--tsp-tag-custom-border, #9ece6a) 20%, transparent);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.ts-category-btn.ts-btn-special-green:hover {
+    background: var(--tsp-tag-custom-hover-bg, rgba(158, 206, 106, 0.15));
+    /* 悬停时加深阴影 */
+    box-shadow: 0 0 12px color-mix(in srgb, var(--tsp-tag-custom-border, #9ece6a) 40%, transparent);
+    transform: translateY(-1px);
+}
+
+.ts-category-btn.ts-btn-special-green.active {
+    /* 激活状态：实心填充 */
+    background: var(--tsp-tag-custom-border, #9ece6a) !important;
+    border-color: var(--tsp-tag-custom-border, #9ece6a) !important;
+    /* 文字颜色适配背景 (使用主背景色作为反色) */
+    color: var(--tsp-bg-main, #1a1b26);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--tsp-tag-custom-border, #9ece6a) 50%, transparent);
+    font-weight: bold;
+}
+
+/*
+   2. 子分类按钮 (原粉色)
+   改为使用主题的 "Special" 变量 (通常是粉色/青色/金色，视主题而定)
+*/
+.ts-category-btn.ts-btn-special-pink {
+    /* 边框：使用特殊主题边框色，回退值为热粉色 */
+    border-color: var(--tsp-tag-special-border, rgba(255, 105, 180, 0.5)) !important;
+    /* 文字 */
+    color: var(--tsp-tag-special-text, hotpink);
+    /* 背景 */
+    background: var(--tsp-tag-special-bg, rgba(255, 105, 180, 0.05));
+    box-shadow: 0 0 5px color-mix(in srgb, var(--tsp-tag-special-border, hotpink) 20%, transparent);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ts-category-btn.ts-btn-special-pink:hover {
+    background: var(--tsp-tag-special-hover-bg, rgba(255, 105, 180, 0.15));
+    box-shadow: 0 0 12px color-mix(in srgb, var(--tsp-tag-special-border, hotpink) 40%, transparent);
+    transform: translateY(-1px);
+}
+
+.ts-category-btn.ts-btn-special-pink.active {
+    /* 激活状态：实心填充 */
+    background: var(--tsp-tag-special-border, hotpink) !important;
+    border-color: var(--tsp-tag-special-border, hotpink) !important;
+    /* 文字颜色适配背景 */
+    color: var(--tsp-bg-main, #1a1b26);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--tsp-tag-special-border, hotpink) 50%, transparent);
+    font-weight: bold;
+}
 /* -----------------------------------------------------------
    自定义按钮
    变量化改造
