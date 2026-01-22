@@ -266,3 +266,139 @@ body.tsp-mode-double-click .tsp-regenerate-btn {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     object-fit: contain;  
 }
+/* ==================== 隐私模式折叠层样式 ==================== */
+.tsp-privacy-container {
+    margin: 10px 0;
+    border: 1px solid var(--tsp-border);
+    border-radius: 10px;
+    background: rgba(var(--tsp-bg-secondary-rgb), 0.3);
+    overflow: hidden;
+    /* 简化过渡效果，只过渡必要的属性 */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    /* --- [修改开始] --- */
+    /* 改为 inline-flex 并设置为纵向，这样它会像文字一样流动，且宽度由内容决定 */
+    display: inline-flex;
+    flex-direction: column;
+    /* 核心：告诉浏览器宽度应适应内容 */
+    width: fit-content;
+    /* 移除最小宽度限制，否则图片缩到很小时，容器还会卡在200px */
+    min-width: 0;
+    /* --- [修改结束] --- */
+
+    /* 简化阴影效果，减少绘制开销 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* 确保容器不会超过聊天气泡的宽度 */
+    max-width: 100%;
+    /* 添加硬件加速 */
+    transform: translateZ(0);
+}
+
+/* 未展开时的发光效果 (二次元氛围) */
+.tsp-privacy-container:not(.expanded) {
+    border-color: var(--tsp-accent-primary);
+    box-shadow: 0 0 10px rgba(var(--tsp-accent-primary-rgb, 122, 162, 247), 0.2);
+}
+
+.tsp-privacy-toggle {
+    padding: 8px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--tsp-accent-primary);
+    background: linear-gradient(90deg, rgba(var(--tsp-accent-primary-rgb, 122, 162, 247), 0.1), transparent);
+    user-select: none;
+    position: relative;
+}
+
+.tsp-privacy-toggle:hover {
+    background: rgba(var(--tsp-accent-primary-rgb, 122, 162, 247), 0.15);
+}
+
+/* 扫描线动画效果 */
+.tsp-privacy-toggle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--tsp-accent-primary);
+    opacity: 0.5;
+    /* 移除扫描动画，减少性能损耗 */
+    /* animation: tsp-scan 3s infinite linear; */
+}
+
+/* 移除不必要的动画，减少性能损耗 */
+/* @keyframes tsp-scan {
+    0% { top: 0%; opacity: 0; }
+    50% { opacity: 0.5; }
+    100% { top: 100%; opacity: 0; }
+} */
+
+.tsp-privacy-toggle .tsp-chevron {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+.tsp-privacy-container.expanded .tsp-chevron {
+    transform: rotate(180deg);
+}
+
+/* 内容区域控制 */
+.tsp-privacy-content {
+    display: none;
+    padding: 12px;
+    border-top: 1px solid rgba(var(--tsp-border-rgb), 0.5);
+    background: var(--tsp-bg-main);
+    /* 移除淡入动画，使用简单的过渡效果 */
+    /* animation: tsp-fade-in 0.4s ease; */
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tsp-privacy-container.expanded .tsp-privacy-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 移除不必要的动画，减少性能损耗 */
+/* @keyframes tsp-fade-in {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+} */
+
+/* 展开时切换图标 */
+.tsp-privacy-container.expanded .tsp-privacy-toggle i:first-child::before {
+    content: "\f06e"; /* FontAwesome eye */
+}
+.tsp-privacy-container.expanded .tsp-privacy-toggle span {
+    content: "可视化层已展开";
+}
+.tsp-privacy-toggle span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+/* [新增] 确保内容区域也能正确收缩 */
+.tsp-privacy-content {
+    /* ... existing styles ... */
+    width: 100%;
+    box-sizing: border-box;
+}
+.tsp-privacy-container .tsp-generated-image,
+.tsp-privacy-container .tsp-inline-image {
+    max-width: 100% !important;
+}
+
+/* 确保容器本身有过渡效果，体验更好 */
+.tsp-privacy-container {
+    transition: max-width 0.3s ease, all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
