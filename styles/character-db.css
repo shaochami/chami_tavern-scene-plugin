@@ -26,7 +26,7 @@
 .tsp-chardb-editor {
     flex: 1;
     position: relative;
-    background: var(--tsp-bg-secondary); /* <-- 修改后 */
+    background: transparent;
     border: 1px solid var(--tsp-border);
     border-radius: var(--tsp-radius-md);
     padding: 24px;
