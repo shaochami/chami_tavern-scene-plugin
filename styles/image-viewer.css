@@ -46,6 +46,24 @@
     padding: 5px;
 }
 
+.tsp-lightbox-controls .tsp-lightbox-save-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+    background: var(--tsp-accent-primary);
+    color: var(--tsp-bg-main);
+    border: 1px solid var(--tsp-accent-primary);
+    border-radius: var(--tsp-radius-sm);
+    text-shadow: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tsp-lightbox-controls .tsp-lightbox-save-btn:hover {
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+}
+
 .tsp-lightbox-confirm-btn:hover { transform: scale(1.1); color: #8f8; }
 .tsp-lightbox-close-btn:hover { transform: scale(1.1); color: #ff5577; }
 
@@ -534,7 +552,13 @@
     .tsp-lightbox-nav.next {
         right: 5px;
     }
-    .tsp-lightbox-actions {
-        bottom: 10px;
+    .tsp-lightbox-controls {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+    .tsp-lightbox-controls .tsp-lightbox-save-btn {
+        font-size: 12px;
+        padding: 6px 12px;
     }
 }
