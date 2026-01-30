@@ -10,7 +10,9 @@
   "js": "index.js",
   "css": "styles/plugin.css",
   "persistent_files": [
-    "data/static-tags.json"
+    "data/static-tags.json",
+    "data/static-tags1.json",
+    "data/static-tags2.json"
   ]
 }
 
