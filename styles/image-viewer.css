@@ -325,17 +325,27 @@
     gap: 10px;
 }
 
-.tsp-edit-textarea {
+.tsp-edit-textarea,
+#tsp-prompt-textarea {
     flex-grow: 1;
     min-height: 200px;
     resize: vertical;
-    background-color: var(--tsp-bg-input);
-    color: var(--tsp-text-primary);
-    border: 1px solid var(--tsp-border);
-    border-radius: 5px;
-    padding: 10px;
-    font-family: inherit;
-    font-size: 14px;
+    background-color: var(--tsp-bg-input) !important;
+    color: var(--tsp-text-primary) !important;
+    border: 1px solid var(--tsp-border) !important;
+    border-radius: 5px !important;
+    padding: 10px !important;
+    font-family: inherit !important;
+    font-size: 14px !important;
+    box-sizing: border-box !important;
+}
+
+/* 确保文本框获得焦点时也使用主题色 */
+.tsp-edit-textarea:focus,
+#tsp-prompt-textarea:focus {
+    outline: none !important;
+    border-color: var(--tsp-accent-primary) !important;
+    box-shadow: 0 0 8px rgba(122, 162, 247, 0.3) !important;
 }
 
 .i2i-section {

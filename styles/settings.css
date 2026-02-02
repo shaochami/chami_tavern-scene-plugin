@@ -219,46 +219,124 @@
 
 /* ==================== 开关与滑块 ==================== */
 .tsp-switch-label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    cursor: pointer !important;
 }
 
-.tsp-switch {
-    position: relative;
-    width: 44px;
-    height: 24px;
-    appearance: none;
-    outline: none;
-    background: var(--tsp-border);
-    border-radius: 12px;
-    transition: background 0.3s;
-    cursor: pointer;
+/* 增强版 tsp-switch 样式 - 防止被其他样式覆盖 */
+.tsp-settings-content .tsp-switch,
+.tsp-modal-body .tsp-switch,
+.tsp-settings-group .tsp-switch,
+.tsp-form-group .tsp-switch,
+input[type="checkbox"].tsp-switch {
+    position: relative !important;
+    width: 44px !important;
+    height: 24px !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    outline: none !important;
+    background: var(--tsp-border) !important;
+    border-radius: 12px !important;
+    transition: background 0.3s !important;
+    cursor: pointer !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
 }
 
-.tsp-switch::after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 20px;
-    height: 20px;
-    background: #fff;
-    border-radius: 50%;
-    transition: transform 0.3s;
+.tsp-settings-content .tsp-switch::after,
+.tsp-modal-body .tsp-switch::after,
+.tsp-settings-group .tsp-switch::after,
+.tsp-form-group .tsp-switch::after,
+input[type="checkbox"].tsp-switch::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 2px !important;
+    left: 2px !important;
+    width: 20px !important;
+    height: 20px !important;
+    background: #fff !important;
+    border-radius: 50% !important;
+    transition: transform 0.3s !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
 }
 
-.tsp-switch:checked {
-    background: var(--tsp-accent-green);
+.tsp-settings-content .tsp-switch:checked,
+.tsp-modal-body .tsp-switch:checked,
+.tsp-settings-group .tsp-switch:checked,
+.tsp-form-group .tsp-switch:checked,
+input[type="checkbox"].tsp-switch:checked {
+    background: var(--tsp-accent-green) !important;
 }
 
-.tsp-switch:checked::after {
-    transform: translateX(20px);
+.tsp-settings-content .tsp-switch:checked::after,
+.tsp-modal-body .tsp-switch:checked::after,
+.tsp-settings-group .tsp-switch:checked::after,
+.tsp-form-group .tsp-switch:checked::after,
+input[type="checkbox"].tsp-switch:checked::after {
+    transform: translateX(20px) !important;
+}
+
+/* 针对 settings-auto-generate 的额外保护 */
+#settings-auto-generate.tsp-switch,
+.tsp-settings-content #settings-auto-generate.tsp-switch,
+.tsp-modal-body #settings-auto-generate.tsp-switch {
+    position: relative !important;
+    width: 44px !important;
+    height: 24px !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    outline: none !important;
+    background: var(--tsp-border) !important;
+    border-radius: 12px !important;
+    transition: background 0.3s !important;
+    cursor: pointer !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
+
+#settings-auto-generate.tsp-switch::after,
+.tsp-settings-content #settings-auto-generate.tsp-switch::after,
+.tsp-modal-body #settings-auto-generate.tsp-switch::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 2px !important;
+    left: 2px !important;
+    width: 20px !important;
+    height: 20px !important;
+    background: #fff !important;
+    border-radius: 50% !important;
+    transition: transform 0.3s !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+#settings-auto-generate.tsp-switch:checked,
+.tsp-settings-content #settings-auto-generate.tsp-switch:checked,
+.tsp-modal-body #settings-auto-generate.tsp-switch:checked {
+    background: var(--tsp-accent-green) !important;
+}
+
+#settings-auto-generate.tsp-switch:checked::after,
+.tsp-settings-content #settings-auto-generate.tsp-switch:checked::after,
+.tsp-modal-body #settings-auto-generate.tsp-switch:checked::after {
+    transform: translateX(20px) !important;
 }
 
 .tsp-switch-slider {
-    display: none;
+    display: none !important;
 }
 
 .tsp-slider-group {

@@ -128,6 +128,226 @@
 }
 
 /* --------------------------------------------------------------------------
+   AI 设置区域内的复选框统一样式 (防止被覆盖)
+   -------------------------------------------------------------------------- */
+.ai-settings-section input[type="checkbox"],
+.ai-settings-section .tsp-form-group input[type="checkbox"],
+.ai-settings-content input[type="checkbox"],
+.ai-content-panel input[type="checkbox"] {
+    position: relative !important;
+    width: 18px !important;
+    height: 18px !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    outline: none !important;
+    background: var(--tsp-bg-input) !important;
+    border: 2px solid var(--tsp-border) !important;
+    border-radius: 4px !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    flex-shrink: 0 !important;
+}
+
+.ai-settings-section input[type="checkbox"]:hover,
+.ai-settings-section .tsp-form-group input[type="checkbox"]:hover,
+.ai-settings-content input[type="checkbox"]:hover,
+.ai-content-panel input[type="checkbox"]:hover {
+    border-color: var(--tsp-accent-primary) !important;
+}
+
+.ai-settings-section input[type="checkbox"]:checked,
+.ai-settings-section .tsp-form-group input[type="checkbox"]:checked,
+.ai-settings-content input[type="checkbox"]:checked,
+.ai-content-panel input[type="checkbox"]:checked {
+    background: var(--tsp-accent-primary) !important;
+    border-color: var(--tsp-accent-primary) !important;
+}
+
+.ai-settings-section input[type="checkbox"]:checked::after,
+.ai-settings-section .tsp-form-group input[type="checkbox"]:checked::after,
+.ai-settings-content input[type="checkbox"]:checked::after,
+.ai-content-panel input[type="checkbox"]:checked::after {
+    content: '✓' !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    color: #fff !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    line-height: 1 !important;
+}
+
+/* 针对 tsp-switch 类型的复选框 (开关样式) */
+.ai-settings-section input[type="checkbox"].tsp-switch,
+.ai-settings-section .tsp-form-group input[type="checkbox"].tsp-switch,
+.ai-settings-content input[type="checkbox"].tsp-switch,
+.ai-content-panel input[type="checkbox"].tsp-switch {
+    position: relative !important;
+    width: 44px !important;
+    height: 24px !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    outline: none !important;
+    background: var(--tsp-border) !important;
+    border-radius: 12px !important;
+    transition: background 0.3s !important;
+    cursor: pointer !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
+
+.ai-settings-section input[type="checkbox"].tsp-switch::after,
+.ai-settings-section .tsp-form-group input[type="checkbox"].tsp-switch::after,
+.ai-settings-content input[type="checkbox"].tsp-switch::after,
+.ai-content-panel input[type="checkbox"].tsp-switch::after {
+    content: '' !important;
+    position: absolute !important;
+    top: 2px !important;
+    left: 2px !important;
+    width: 20px !important;
+    height: 20px !important;
+    background: #fff !important;
+    border-radius: 50% !important;
+    transition: transform 0.3s !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.ai-settings-section input[type="checkbox"].tsp-switch:checked,
+.ai-settings-section .tsp-form-group input[type="checkbox"].tsp-switch:checked,
+.ai-settings-content input[type="checkbox"].tsp-switch:checked,
+.ai-content-panel input[type="checkbox"].tsp-switch:checked {
+    background: var(--tsp-accent-green) !important;
+}
+
+.ai-settings-section input[type="checkbox"].tsp-switch:checked::after,
+.ai-settings-section .tsp-form-group input[type="checkbox"].tsp-switch:checked::after,
+.ai-settings-content input[type="checkbox"].tsp-switch:checked::after,
+.ai-content-panel input[type="checkbox"].tsp-switch:checked::after {
+    transform: translateX(20px) !important;
+}
+
+/* --------------------------------------------------------------------------
+   AI 设置区域内的按钮统一样式
+   -------------------------------------------------------------------------- */
+.ai-preset-actions .tsp-btn,
+.ai-settings-section .tsp-btn,
+.ai-settings-content .tsp-btn,
+.ai-content-panel .tsp-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    padding: 8px 12px !important;
+    background: var(--tsp-bg-tertiary) !important;
+    border: 1px solid var(--tsp-border) !important;
+    border-radius: var(--tsp-radius-sm) !important;
+    color: var(--tsp-text-primary) !important;
+    font-size: 0.9em !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    box-shadow: none !important;
+    outline: none !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+}
+
+.ai-preset-actions .tsp-btn:hover,
+.ai-settings-section .tsp-btn:hover,
+.ai-settings-content .tsp-btn:hover,
+.ai-content-panel .tsp-btn:hover {
+    background: var(--tsp-accent-primary) !important;
+    border-color: var(--tsp-accent-primary) !important;
+    color: #fff !important;
+    transform: translateY(-1px) !important;
+}
+
+.ai-preset-actions .tsp-btn:active,
+.ai-settings-section .tsp-btn:active,
+.ai-settings-content .tsp-btn:active,
+.ai-content-panel .tsp-btn:active {
+    transform: translateY(0) !important;
+}
+
+/* 按钮图标样式 */
+.ai-preset-actions .tsp-btn i,
+.ai-settings-section .tsp-btn i,
+.ai-settings-content .tsp-btn i,
+.ai-content-panel .tsp-btn i {
+    font-size: 1em !important;
+    margin: 0 !important;
+}
+
+/* 小按钮样式 */
+.ai-preset-actions .tsp-btn-sm,
+.ai-settings-section .tsp-btn-sm,
+.ai-settings-content .tsp-btn-sm,
+.ai-content-panel .tsp-btn-sm {
+    padding: 6px 10px !important;
+    font-size: 0.85em !important;
+}
+
+/* 主按钮样式 */
+.ai-preset-actions .tsp-btn-primary,
+.ai-settings-section .tsp-btn-primary,
+.ai-settings-content .tsp-btn-primary,
+.ai-content-panel .tsp-btn-primary {
+    background: var(--tsp-accent-primary) !important;
+    border-color: var(--tsp-accent-primary) !important;
+    color: #fff !important;
+}
+
+.ai-preset-actions .tsp-btn-primary:hover,
+.ai-settings-section .tsp-btn-primary:hover,
+.ai-settings-content .tsp-btn-primary:hover,
+.ai-content-panel .tsp-btn-primary:hover {
+    background: var(--tsp-accent-hover) !important;
+    border-color: var(--tsp-accent-hover) !important;
+}
+
+/* 成功按钮样式 */
+.ai-preset-actions .tsp-btn-success,
+.ai-settings-section .tsp-btn-success,
+.ai-settings-content .tsp-btn-success,
+.ai-content-panel .tsp-btn-success {
+    background: var(--tsp-accent-green) !important;
+    border-color: var(--tsp-accent-green) !important;
+    color: #fff !important;
+}
+
+.ai-preset-actions .tsp-btn-success:hover,
+.ai-settings-section .tsp-btn-success:hover,
+.ai-settings-content .tsp-btn-success:hover,
+.ai-content-panel .tsp-btn-success:hover {
+    filter: brightness(1.1) !important;
+}
+
+/* 图标按钮样式 */
+.ai-preset-actions .tsp-btn-icon,
+.ai-settings-section .tsp-btn-icon,
+.ai-settings-content .tsp-btn-icon,
+.ai-content-panel .tsp-btn-icon {
+    padding: 8px !important;
+    min-width: 32px !important;
+    width: 32px !important;
+    height: 32px !important;
+}
+
+/* --------------------------------------------------------------------------
    预设面板 (Preset Panel)
    -------------------------------------------------------------------------- */
 .ai-preset-header {

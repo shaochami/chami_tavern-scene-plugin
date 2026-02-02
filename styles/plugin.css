@@ -28,3 +28,5 @@
 @import url('modes.css');
 /* 新增：AI 提示词后处理样式 */
 @import url('ai-settings.css');
+/* 新增：图片编辑器样式 */
+@import url('image-editor.css');
