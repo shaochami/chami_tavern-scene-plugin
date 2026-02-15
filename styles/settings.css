@@ -869,6 +869,66 @@ input[type="color"].tsp-input::-moz-color-swatch {
     color: var(--tsp-text-secondary);
 }
 
+.tsp-changelog-controls {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--tsp-border);
+}
+
+.tsp-changelog-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tsp-changelog-item {
+    border: 1px solid var(--tsp-border);
+    border-radius: var(--tsp-radius-sm);
+    overflow: hidden;
+}
+
+.tsp-changelog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    background: var(--tsp-bg-secondary);
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+}
+
+.tsp-changelog-header:hover {
+    background: var(--tsp-bg-tertiary);
+}
+
+.tsp-changelog-header .tsp-changelog-version {
+    color: var(--tsp-accent-primary);
+    font-weight: bold;
+    font-size: 1em;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tsp-changelog-toggle {
+    color: var(--tsp-text-secondary);
+    transition: transform 0.2s;
+}
+
+.tsp-changelog-content {
+    padding: 10px 12px 10px 32px;
+    background: var(--tsp-bg-main);
+    list-style-type: disc;
+    margin: 0;
+}
+
+.tsp-changelog-content li {
+    margin-bottom: 4px;
+}
+
 .tsp-changelog-version {
     color: var(--tsp-accent-primary);
     font-weight: bold;
