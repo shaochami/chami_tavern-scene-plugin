@@ -304,6 +304,19 @@
 .tsp-edit-modal.visible .tsp-edit-content { transform: scale(1); }
 .tsp-edit-content.tsp-edit-advanced { max-width: 800px; }
 
+/* 编辑模态框内的输入框样式，确保使用正确的背景色 */
+.tsp-edit-modal .tsp-input {
+    background-color: var(--tsp-bg-input) !important;
+    color: var(--tsp-text-primary) !important;
+    border: 1px solid var(--tsp-border) !important;
+}
+
+.tsp-edit-modal .tsp-input:focus {
+    outline: none !important;
+    border-color: var(--tsp-accent-primary) !important;
+    box-shadow: 0 0 8px rgba(122, 162, 247, 0.3) !important;
+}
+
 .editor-header {
     text-align: center;
     margin: 0 0 10px 0;
