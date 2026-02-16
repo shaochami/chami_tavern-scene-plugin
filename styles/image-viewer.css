@@ -381,10 +381,142 @@
     cursor: crosshair;
 }
 
+.tsp-i2i-preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tsp-i2i-mask-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 2;
+    pointer-events: none;
+}
+
 .tsp-canvas-controls {
     padding: 10px;
     background: rgba(0, 0, 0, 0.2);
     border-radius: 5px;
+}
+
+/* 图片编辑器模态框 */
+.tsp-image-editor-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 10020;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.tsp-image-editor-content {
+    background: var(--tsp-bg-secondary);
+    color: var(--tsp-text-primary);
+    border-radius: 8px;
+    max-width: 95vw;
+    max-height: 95vh;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--tsp-border);
+}
+
+.tsp-image-editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--tsp-border);
+    flex-shrink: 0;
+}
+
+.tsp-image-editor-header h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.tsp-image-editor-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.tsp-image-editor-canvas-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    background: var(--tsp-bg-input);
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+#tsp-image-editor-canvas {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    cursor: default;
+}
+
+.tsp-image-editor-controls {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+.tsp-editor-tools {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tsp-editor-tool-btn {
+    min-width: 80px;
+}
+
+.tsp-editor-tool-btn.active {
+    box-shadow: 0 0 0 2px var(--tsp-accent-primary);
+}
+
+.tsp-editor-brush-size {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tsp-editor-brush-size label {
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.tsp-editor-brush-size input[type="range"] {
+    flex-grow: 1;
+}
+
+.tsp-editor-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
 }
 
 .tsp-edit-actions {
@@ -424,6 +556,65 @@
 
     .tsp-edit-actions {
         flex-direction: column;
+    }
+
+    /* 图片编辑器移动端适配 */
+    .tsp-image-editor-modal {
+        padding: 10px;
+    }
+
+    .tsp-image-editor-content {
+        max-width: 95vw;
+        max-height: 95vh;
+    }
+
+    .tsp-image-editor-header {
+        padding: 10px 15px;
+    }
+
+    .tsp-image-editor-header h3 {
+        font-size: 16px;
+    }
+
+    .tsp-image-editor-body {
+        padding: 5px;
+    }
+
+    .tsp-image-editor-canvas-container {
+        margin-bottom: 5px;
+    }
+
+    .tsp-image-editor-controls {
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .tsp-editor-tools {
+        gap: 8px;
+    }
+
+    .tsp-editor-tool-btn {
+        min-width: 70px;
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .tsp-editor-brush-size {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .tsp-editor-brush-size input[type="range"] {
+        width: 100%;
+    }
+
+    .tsp-editor-actions {
+        flex-direction: column;
+    }
+
+    .tsp-editor-actions button {
+        width: 100%;
     }
 }
 /* ==================== 灯箱通用导航与操作按钮 (新增) ==================== */
