@@ -1,0 +1,598 @@
+.tsp-phone-settings-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding: 20px;
+    padding-top: 64px;
+    overflow-y: auto;
+}
+
+.tsp-phone-module-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.tsp-phone-module-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.tsp-phone-module-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+}
+
+.tsp-phone-module-icon i {
+    color: white;
+    font-size: 18px;
+}
+
+.tsp-phone-module-info {
+    flex: 1;
+}
+
+.tsp-phone-module-title {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.tsp-phone-module-desc {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+}
+
+.tsp-phone-module-arrow {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 14px;
+}
+
+.tsp-phone-api-config-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding: 20px;
+    padding-top: 64px;
+    overflow-y: auto;
+}
+
+.tsp-phone-switch {
+    position: relative;
+    width: 50px;
+    height: 28px;
+    appearance: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.tsp-phone-switch:checked {
+    background: #667eea;
+}
+
+.tsp-phone-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.tsp-phone-switch:checked::after {
+    transform: translateX(22px);
+}
+
+.tsp-phone-form-select {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 12px;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.tsp-phone-form-select option {
+    background: #1a1a2e;
+    color: white;
+}
+
+.tsp-phone-form-select:focus {
+    border-color: #667eea;
+}
+
+.tsp-phone-model-fetch-group {
+    display: flex;
+    gap: 8px;
+    align-items: stretch;
+}
+
+.tsp-phone-model-fetch-group .tsp-phone-btn {
+    white-space: nowrap;
+    font-size: 14px;
+    padding: 12px;
+}
+
+.tsp-phone-model-fetch-group .tsp-phone-form-select {
+    min-width: 0;
+}
+
+.tsp-phone-config-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tsp-phone-config-item.active {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+}
+
+.tsp-phone-config-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.tsp-phone-config-item-title {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.tsp-phone-config-item-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.tsp-phone-config-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tsp-phone-config-item-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+.tsp-phone-config-item-row i {
+    width: 16px;
+    text-align: center;
+}
+
+.tsp-phone-config-item-row span {
+    flex: 1;
+}
+
+.tsp-phone-config-item-value {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+.tsp-phone-config-item-details {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tsp-phone-config-item-detail {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+}
+
+.tsp-phone-config-item-detail:last-child {
+    margin-bottom: 0;
+}
+
+.tsp-phone-config-item-detail i {
+    width: 14px;
+    text-align: center;
+}
+
+.tsp-phone-config-item-detail span {
+    flex: 1;
+}
+
+.tsp-phone-config-item-detail-value {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.tsp-phone-config-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.tsp-phone-config-actions .tsp-phone-btn {
+    flex: 1;
+}
+
+.tsp-phone-config-section {
+    margin-bottom: 24px;
+}
+
+.tsp-phone-config-section-title {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+}
+
+.tsp-phone-config-toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tsp-phone-config-toggle-row:last-child {
+    border-bottom: none;
+}
+
+.tsp-phone-config-toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-size: 14px;
+}
+
+.tsp-phone-config-toggle-label i {
+    color: rgba(255, 255, 255, 0.6);
+    width: 16px;
+}
+
+.tsp-phone-config-toggle-text {
+    flex: 1;
+}
+
+.tsp-phone-config-toggle-desc {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 2px;
+}
+
+.tsp-phone-config-input-row {
+    margin-bottom: 16px;
+}
+
+.tsp-phone-config-input-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.tsp-phone-config-input-label i {
+    color: rgba(255, 255, 255, 0.6);
+    width: 16px;
+}
+
+.tsp-phone-config-input-hint {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 4px;
+}
+
+.tsp-phone-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.tsp-phone-badge.active {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+}
+
+.tsp-phone-badge.inactive {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.tsp-phone-badge.warning {
+    background: rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
+}
+
+.tsp-phone-character-meme-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding: 20px;
+    padding-top: 64px;
+    overflow-y: auto;
+}
+
+.tsp-phone-meme-instruction {
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 16px;
+    border-left: 3px solid #667eea;
+}
+
+.tsp-phone-meme-instruction p {
+    color: white;
+    font-size: 13px;
+    margin: 4px 0;
+}
+
+.tsp-phone-meme-instruction p:first-child {
+    margin-top: 0;
+}
+
+.tsp-phone-meme-instruction p:last-child {
+    margin-bottom: 0;
+}
+
+.tsp-phone-meme-tip {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+}
+
+.tsp-phone-meme-selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.tsp-phone-meme-select-item {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    aspect-ratio: 1;
+}
+
+.tsp-phone-meme-select-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.tsp-phone-meme-select-item.selected {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.15);
+}
+
+.tsp-phone-meme-select-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.tsp-phone-meme-select-check {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 24px;
+    height: 24px;
+    background: #667eea;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-meme-select-item.selected .tsp-phone-meme-select-check {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.tsp-phone-meme-select-check i {
+    color: white;
+    font-size: 12px;
+}
+
+.tsp-phone-meme-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 11px;
+    padding: 6px 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tsp-phone-meme-selection-info {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+.tsp-phone-meme-selection-info strong {
+    color: #667eea;
+    font-weight: 600;
+}
+
+.tsp-phone-image-mode-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding: 20px;
+    padding-top: 64px;
+    overflow-y: auto;
+}
+
+.tsp-phone-image-mode-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.tsp-phone-image-mode-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tsp-phone-image-mode-title {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tsp-phone-image-mode-title i {
+    color: #667eea;
+}
+
+.tsp-phone-image-mode-desc {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.tsp-phone-toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tsp-phone-toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+}
+
+.tsp-phone-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.tsp-phone-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    transition: background 0.3s ease;
+}
+
+.tsp-phone-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 2px;
+    bottom: 2px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.tsp-phone-toggle input:checked + .tsp-phone-toggle-slider {
+    background: #667eea;
+}
+
+.tsp-phone-toggle input:checked + .tsp-phone-toggle-slider:before {
+    transform: translateX(22px);
+}
+
+.tsp-phone-toggle-label {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.tsp-phone-image-mode-info {
+    background: rgba(102, 126, 234, 0.05);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.tsp-phone-image-mode-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.tsp-phone-image-mode-info-item:last-child {
+    margin-bottom: 0;
+}
+
+.tsp-phone-image-mode-info-item i {
+    color: #667eea;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.tsp-phone-button-group {
+    margin-top: auto;
+    padding-top: 16px;
+}
