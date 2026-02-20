@@ -30,3 +30,5 @@
 @import url('ai-settings.css');
 /* 新增：图片编辑器样式 */
 @import url('image-editor.css');
+/* 新增：手机模拟器样式 */
+@import url('../Phone_emulator/css/phone-emulator.css');

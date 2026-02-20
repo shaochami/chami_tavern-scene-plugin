@@ -948,3 +948,66 @@ input[type="color"].tsp-input::-moz-color-swatch {
 .tsp-changelog-list li {
     margin-bottom: 4px;
 }
+
+/* ==================== 分页器样式 ==================== */
+.tsp-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    margin-top: 10px;
+}
+
+.tsp-pager {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 4px;
+}
+
+.tsp-pager-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    margin: 0 2px;
+    font-size: 14px;
+    color: var(--tsp-text-primary);
+    background: var(--tsp-bg-main);
+    border: 1px solid var(--tsp-border);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.tsp-pager-item:hover {
+    color: var(--tsp-accent-primary);
+    border-color: var(--tsp-accent-primary);
+    background: rgba(56, 189, 248, 0.1);
+}
+
+.tsp-pager-item.active {
+    color: var(--tsp-bg-main);
+    background: var(--tsp-accent-primary);
+    border-color: var(--tsp-accent-primary);
+    font-weight: bold;
+}
+
+.tsp-pager-item.more {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+.tsp-pager-item.more:hover {
+    color: var(--tsp-accent-primary);
+    background: transparent;
+}
+
+.tsp-pager-item.more i {
+    font-size: 12px;
+}
