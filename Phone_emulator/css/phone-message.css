@@ -152,21 +152,22 @@
 }
 
 .tsp-phone-chat-input-bar {
-    padding: 12px 16px;
+    padding: 10px 12px;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
-    gap: 10px;
+    gap: 8px;
     align-items: center;
+    position: relative;
 }
 
 .tsp-phone-chat-input {
     flex: 1;
     background: rgba(255, 255, 255, 0.1);
     border: none;
-    border-radius: 20px;
-    padding: 10px 16px;
+    border-radius: 18px;
+    padding: 8px 14px;
     color: white;
     font-size: 14px;
     outline: none;
@@ -177,8 +178,8 @@
 }
 
 .tsp-phone-send-btn {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border: none;
@@ -187,6 +188,7 @@
     align-items: center;
     justify-content: center;
     transition: transform 0.2s ease;
+    flex-shrink: 0;
 }
 
 .tsp-phone-send-btn:hover {
@@ -195,12 +197,44 @@
 
 .tsp-phone-send-btn i {
     color: white;
-    font-size: 16px;
+    font-size: 14px;
+}
+
+.tsp-phone-generate-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.tsp-phone-generate-btn:hover {
+    transform: scale(1.1);
+}
+
+.tsp-phone-generate-btn i {
+    color: white;
+    font-size: 14px;
+}
+
+.tsp-phone-generate-btn.generating {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.tsp-phone-generate-btn.generating i {
+    animation: spin 1s linear infinite;
 }
 
 .tsp-phone-more-btn {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.15);
     border: none;
@@ -209,6 +243,7 @@
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
+    flex-shrink: 0;
 }
 
 .tsp-phone-more-btn:hover {
@@ -218,12 +253,12 @@
 
 .tsp-phone-more-btn i {
     color: white;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .tsp-phone-more-menu {
     position: absolute;
-    bottom: 70px;
+    bottom: 64px;
     left: 12px;
     background: rgba(30, 30, 50, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -273,9 +308,100 @@
     text-align: center;
 }
 
+.tsp-phone-more-menu-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 8px 12px;
+}
+
+.tsp-phone-image-mode-section {
+    padding: 12px 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tsp-phone-image-mode-title {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tsp-phone-image-mode-title i {
+    color: #667eea;
+    font-size: 14px;
+}
+
+.tsp-phone-image-mode-desc {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.tsp-phone-toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tsp-phone-toggle {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.tsp-phone-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.tsp-phone-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    transition: background 0.3s ease;
+}
+
+.tsp-phone-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 2px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.tsp-phone-toggle input:checked + .tsp-phone-toggle-slider {
+    background: #667eea;
+}
+
+.tsp-phone-toggle input:checked + .tsp-phone-toggle-slider:before {
+    transform: translateX(20px);
+}
+
+.tsp-phone-toggle-label {
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+}
+
 .tsp-phone-emoji-picker {
     position: absolute;
-    bottom: 70px;
+    bottom: 64px;
     left: 12px;
     right: 12px;
     background: rgba(30, 30, 50, 0.95);
@@ -710,7 +836,7 @@
 
 .tsp-phone-meme-picker {
     position: absolute;
-    bottom: 70px;
+    bottom: 64px;
     left: 12px;
     right: 12px;
     background: rgba(30, 30, 50, 0.95);
@@ -947,4 +1073,505 @@
 
 .tsp-phone-message-content img.tsp-inline-image:hover {
     transform: scale(1.02);
+}
+
+.tsp-phone-transfer-modal {
+    position: absolute;
+    bottom: 64px;
+    left: 12px;
+    right: 12px;
+    background: rgba(30, 30, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    max-height: 400px;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-transfer-modal.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.tsp-phone-transfer-modal-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.tsp-phone-transfer-modal-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tsp-phone-transfer-modal-title {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.tsp-phone-transfer-modal-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    font-size: 18px;
+    padding: 4px;
+    transition: color 0.2s ease;
+}
+
+.tsp-phone-transfer-modal-close:hover {
+    color: white;
+}
+
+.tsp-phone-transfer-modal-body {
+    padding: 16px;
+}
+
+.tsp-phone-transfer-amount-section,
+.tsp-phone-transfer-note-section {
+    margin-bottom: 16px;
+}
+
+.tsp-phone-transfer-amount-section:last-child,
+.tsp-phone-transfer-note-section:last-child {
+    margin-bottom: 0;
+}
+
+.tsp-phone-transfer-label {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.tsp-phone-transfer-amount-input-wrapper {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: border-color 0.2s ease;
+}
+
+.tsp-phone-transfer-amount-input-wrapper:focus-within {
+    border-color: #667eea;
+}
+
+.tsp-phone-transfer-currency {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+.tsp-phone-transfer-amount-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+    width: 100%;
+}
+
+.tsp-phone-transfer-amount-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.tsp-phone-transfer-note-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.tsp-phone-transfer-note-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.tsp-phone-transfer-note-input:focus {
+    border-color: #667eea;
+}
+
+.tsp-phone-transfer-modal-footer {
+    padding: 12px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 8px;
+}
+
+.tsp-phone-transfer-cancel-btn,
+.tsp-phone-transfer-confirm-btn {
+    flex: 1;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.tsp-phone-transfer-cancel-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.tsp-phone-transfer-cancel-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.tsp-phone-transfer-confirm-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.tsp-phone-transfer-confirm-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+}
+
+.tsp-phone-transfer-message {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 8px;
+    min-width: 200px;
+}
+
+.tsp-phone-message.user .tsp-phone-transfer-message {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.tsp-phone-transfer-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.tsp-phone-transfer-icon i {
+    color: white;
+    font-size: 20px;
+}
+
+.tsp-phone-transfer-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tsp-phone-transfer-amount {
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.tsp-phone-message.user .tsp-phone-transfer-amount {
+    color: white;
+}
+
+.tsp-phone-transfer-status {
+    color: #666;
+    font-size: 12px;
+}
+
+.tsp-phone-message.user .tsp-phone-transfer-status {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.tsp-phone-transfer-note {
+    color: #999;
+    font-size: 11px;
+}
+
+.tsp-phone-message.user .tsp-phone-transfer-note {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.transfer-card {
+    background: #fa9d3b;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 260px;
+    flex-shrink: 0;
+}
+
+.transfer-card.sent {
+    background: #fa9d3b;
+}
+
+.transfer-card.received {
+    background: #fedf9a;
+}
+
+.transfer-card.received .transfer-card-amount {
+    color: #f8f8f8;
+}
+
+.transfer-card.received .transfer-card-status {
+    color: #f8f8f8;
+}
+
+.transfer-card.received .transfer-card-footer-label {
+    color: #f8f8f8;
+}
+
+.transfer-card.received .transfer-card-footer {
+    background: #fedf9a;
+}
+
+.transfer-card.refunded {
+    background: #ebdcba;
+}
+
+.transfer-card.refunded .transfer-card-amount {
+    color: white;
+}
+
+.transfer-card.refunded .transfer-card-status {
+    color: white;
+}
+
+.transfer-card.refunded .transfer-card-footer-label {
+    color: white;
+}
+
+.transfer-card.refunded .transfer-card-footer {
+    background: #ebdcba;
+}
+
+.transfer-card-main {
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.transfer-card-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.transfer-card-icon i {
+    color: white;
+    font-size: 16px;
+}
+
+.transfer-card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.transfer-card-amount {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.transfer-card-status {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.transfer-card-footer {
+    background: #fa9d3b;
+    padding: 6px 16px;
+    display: flex;
+    align-items: center;
+}
+
+.transfer-card-footer-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 11px;
+}
+
+.tsp-phone-message.user .transfer-card {
+    border-bottom-right-radius: 4px;
+}
+
+.tsp-phone-message:not(.user) .transfer-card {
+    border-bottom-left-radius: 4px;
+}
+
+.tsp-phone-transfer-detail-view {
+    position: absolute; /* 关键：绝对定位覆盖在聊天界面上 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100; /* 比聊天气泡层级高 */
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding-top: 44px; /* 为导航栏留出空间，如果不包含系统状态栏，则调整 */
+
+    /* 动画初始状态 */
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* 进场动画 */
+.tsp-phone-transfer-detail-view.slide-in {
+    transform: translateX(0);
+}
+
+/* 出场动画 */
+.tsp-phone-transfer-detail-view.slide-out {
+    transform: translateX(100%);
+}
+
+/* 确保详情页的内容区域可以正确显示 */
+.tsp-phone-transfer-detail-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.tsp-phone-transfer-detail-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    min-width: 280px;
+    backdrop-filter: blur(10px);
+}
+
+.tsp-phone-transfer-detail-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #fa9d3b 0%, #f8c471 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.tsp-phone-transfer-detail-icon i {
+    color: white;
+    font-size: 36px;
+}
+
+.tsp-phone-transfer-detail-amount {
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.tsp-phone-transfer-detail-status {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.tsp-phone-transfer-detail-note {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+.tsp-phone-transfer-receive-btn {
+    margin-top: 32px;
+    padding: 14px 48px;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.tsp-phone-transfer-receive-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(34, 197, 94, 0.4);
+}
+
+.tsp-phone-transfer-receive-btn:active {
+    transform: translateY(0);
+}
+
+.tsp-phone-transfer-receive-btn i {
+    font-size: 18px;
+}
+
+.tsp-phone-transfer-refund-btn {
+    margin-top: 16px;
+    padding: 12px 40px;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.tsp-phone-transfer-refund-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
+}
+
+.tsp-phone-transfer-refund-btn:active {
+    transform: translateY(0);
+}
+
+.tsp-phone-transfer-refund-btn i {
+    font-size: 16px;
 }
