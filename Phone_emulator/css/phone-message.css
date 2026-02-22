@@ -1039,6 +1039,28 @@
     border-radius: 8px;
 }
 
+@media (max-width: 786px) {
+    .tsp-phone-generate-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .tsp-phone-generate-btn i {
+        font-size: 12px;
+    }
+
+    .tsp-phone-more-btn,
+    .tsp-phone-send-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .tsp-phone-more-btn i,
+    .tsp-phone-send-btn i {
+        font-size: 12px;
+    }
+}
+
 @media (max-width: 360px) {
     .tsp-phone-chat-input-bar {
         gap: 6px;
@@ -1904,6 +1926,10 @@
     flex-shrink: 0;
     border: 1px solid rgba(250, 112, 154, 0.3);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    /* 新增属性：修复定位基准，并给常驻按钮留出空间 */
+    position: relative;
+    padding-right: 40px;
 }
 
 .tsp-phone-music-card:hover {
@@ -1952,17 +1978,26 @@
 
 .tsp-phone-music-card-play {
     position: absolute;
-    top: 12px;
+    /* 修改定位：改为垂直居中 */
+    top: 50%;
+    transform: translateY(-50%);
     right: 12px;
+
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
+    /* 修改背景色：稍微加深一点以便常驻时看清 */
+    background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
+
+    /* 新增属性：确保始终可见且层级最高 */
+    opacity: 1;
+    z-index: 10;
+    pointer-events: auto;
 }
 
 .tsp-phone-music-card:hover .tsp-phone-music-card-play {

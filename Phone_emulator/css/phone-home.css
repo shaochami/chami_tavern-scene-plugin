@@ -159,10 +159,10 @@
 
 .tsp-phone-close-btn {
     position: absolute;
-    top: -15px;
-    right: -15px;
-    width: 30px;
-    height: 30px;
+    top: -18px;
+    right: -18px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.2);
     border: none;
@@ -815,28 +815,87 @@
 }
 
 @media (max-width: 900px) {
+    .tsp-phone-modal-overlay {
+        align-items: flex-start;
+        padding-top: 2.5dvh;
+    }
+
     .tsp-phone-modal-overlay.visible .tsp-phone-container {
         width: 95%;
-        height: 90dvh;
+        height: 90vh;
         max-width: none;
         max-height: none;
-        border-radius: 0;
         border-radius: 8px;
-        position: fixed;
-        top: 5dvh;
-        left: 50%;
-        transform: translateX(-50%);
+        transform: none;
         margin: 0;
+        overflow: hidden;
+    }
+
+    .tsp-phone-screen {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .tsp-time-settings-content {
         width: 90%;
         max-width: 350px;
-        position: fixed;
-        top: 15dvh; 
-        left: 50%;
-        transform: translateX(-50%);
-        max-height: 80dvh;
+        max-height: 80vh;
         overflow-y: auto;
+    }
+}
+
+@media (max-width: 786px) {
+    .tsp-phone-modal-overlay.visible .tsp-phone-container {
+        overflow: visible;
+    }
+
+    .tsp-phone-close-btn {
+        top: -15px;
+        right: -15px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .tsp-phone-close-btn i {
+        font-size: 14px;
+    }
+
+    .tsp-phone-fab {
+        width: 36px;
+        height: 36px;
+    }
+
+    .tsp-phone-fab i {
+        font-size: 30px;
+    }
+
+    .tsp-phone-app-icon-box {
+        width: 50px;
+        height: 50px;
+    }
+
+    .tsp-phone-app-icon i {
+        font-size: 22px;
+    }
+
+    .tsp-phone-app-icon span {
+        font-size: 10px;
+    }
+
+    .tsp-phone-nav-title {
+        font-size: 16px;
+    }
+
+    .tsp-phone-nav-back i,
+    .tsp-phone-nav-btn i {
+        font-size: 16px;
+    }
+
+    .tsp-phone-bottom-tab i {
+        font-size: 18px;
+    }
+
+    .tsp-phone-bottom-tab span {
+        font-size: 9px;
     }
 }
