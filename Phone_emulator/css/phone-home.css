@@ -55,6 +55,7 @@
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
+    pointer-events: none;
 }
 
 .tsp-phone-modal-overlay.visible {
@@ -72,6 +73,7 @@
     overflow: visible;
     transform: scale(0.9);
     transition: transform 0.3s ease;
+    pointer-events: auto;
 }
 
 .tsp-phone-modal-overlay.visible .tsp-phone-container {
@@ -229,6 +231,10 @@
 
 .tsp-phone-app-icon-box.moments {
     background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.tsp-phone-app-icon-box.music {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
 }
 
 .tsp-phone-app-icon-box.settings {
