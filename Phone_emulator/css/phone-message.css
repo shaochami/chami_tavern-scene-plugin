@@ -152,25 +152,32 @@
 }
 
 .tsp-phone-chat-input-bar {
-    padding: 10px 12px;
+    padding: 8px 10px;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
-    gap: 8px;
+    gap: 6px;
     align-items: center;
     position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .tsp-phone-chat-input {
     flex: 1;
+    min-width: 0;
     background: rgba(255, 255, 255, 0.1);
     border: none;
-    border-radius: 18px;
-    padding: 8px 14px;
+    border-radius: 16px;
+    padding: 6px 12px;
     color: white;
-    font-size: 14px;
+    font-size: 13px;
     outline: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .tsp-phone-chat-input::placeholder {
@@ -178,8 +185,8 @@
 }
 
 .tsp-phone-send-btn {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border: none;
@@ -201,8 +208,8 @@
 }
 
 .tsp-phone-generate-btn {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
     border: none;
@@ -233,8 +240,8 @@
 }
 
 .tsp-phone-more-btn {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.15);
     border: none;

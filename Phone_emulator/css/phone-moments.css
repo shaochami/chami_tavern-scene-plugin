@@ -142,7 +142,7 @@
 
 .tsp-phone-add-comment {
     display: flex;
-    gap: 10px;
+    gap: 6px;
     padding: 0 15px 15px;
 }
 
@@ -168,8 +168,8 @@
 }
 
 .tsp-phone-comment-btn {
-    width: 40px;
-    height: 40px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border: none;
@@ -185,6 +185,31 @@
 .tsp-phone-comment-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.tsp-phone-reply-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    margin-left: 4px;
+}
+
+.tsp-phone-reply-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(245, 87, 108, 0.4);
+}
+
+.tsp-phone-reply-btn:active {
+    transform: scale(0.95);
 }
 
 .comments-section {
@@ -261,4 +286,16 @@
 
 .comment-reply-action:hover {
     color: #667eea;
+}
+
+.action-item .liked {
+    color: #ff4757;
+}
+
+.action-item .liked:hover {
+    color: #ff6b81;
+}
+
+.comment-delete-action:hover {
+    color: #ff4757;
 }
