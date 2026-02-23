@@ -822,7 +822,7 @@
 
     .tsp-phone-modal-overlay.visible .tsp-phone-container {
         width: 95%;
-        height: 90vh;
+        height: 85vh;
         max-width: none;
         max-height: none;
         border-radius: 8px;

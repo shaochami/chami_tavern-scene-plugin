@@ -162,7 +162,6 @@
     position: relative;
     width: 100%;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 .tsp-phone-chat-input {
@@ -1064,6 +1063,31 @@
 
     .tsp-phone-more-btn i,
     .tsp-phone-send-btn i {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 390px) {
+    .tsp-phone-chat-input-bar {
+        gap: 4px;
+        padding: 6px 8px;
+    }
+
+    .tsp-phone-chat-input {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+
+    .tsp-phone-more-btn,
+    .tsp-phone-send-btn,
+    .tsp-phone-generate-btn {
+        width: 28px;
+        height: 28px;
+    }
+
+    .tsp-phone-more-btn i,
+    .tsp-phone-send-btn i,
+    .tsp-phone-generate-btn i {
         font-size: 12px;
     }
 }
