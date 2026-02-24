@@ -18,6 +18,52 @@
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.tsp-phone-moments-actions.collapsed {
+    max-height: 0;
+    padding: 0 15px;
+    opacity: 0;
+}
+
+.tsp-phone-moments-actions-wrapper {
+    position: relative;
+}
+
+.tsp-phone-moments-toggle {
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tsp-phone-moments-toggle-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.tsp-phone-moments-toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
+}
+
+.tsp-phone-moments-toggle-btn i {
+    transition: transform 0.3s ease;
 }
 
 .post-card {
@@ -298,4 +344,157 @@
 
 .comment-delete-action:hover {
     color: #ff4757;
+}
+
+.post-card.private {
+    background: rgba(139, 0, 0, 0.08);
+    border: 1px solid rgba(139, 0, 0, 0.3);
+}
+
+.post-card.private .post-name {
+    color: #ff6b6b;
+}
+
+.post-card.private .post-content {
+    color: rgba(255, 200, 200, 0.9);
+}
+
+.post-card.private .post-actions {
+    background: rgba(139, 0, 0, 0.05);
+    margin: 0 15px 15px;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.post-card.private-locked {
+    position: relative;
+}
+
+.post-card.private-locked::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.post-card.private-locked .lock-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.post-card.private-locked .lock-overlay i {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #ff4757;
+    opacity: 0.8;
+}
+
+.post-card.private-locked .lock-overlay p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.post-card.private-locked .lock-overlay .unlock-hint {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 8px;
+}
+
+.post-card.private-locked .post-header,
+.post-card.private-locked .post-content,
+.post-card.private-locked .post-image,
+.post-card.private-locked .post-actions,
+.post-card.private-locked .tsp-phone-add-comment,
+.post-card.private-locked .comments-section {
+    filter: blur(8px);
+    pointer-events: none;
+}
+
+.post-card.private-locked:hover::before {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.post-card.private-locked:hover .lock-overlay {
+    cursor: pointer;
+}
+
+.post-card.private-locked:hover .lock-overlay i {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.post-card.private-locked .lock-overlay .click-to-peek {
+    display: none;
+}
+
+.post-card.private-locked:hover .lock-overlay .click-to-peek {
+    display: block;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.post-card.private-locked .no-interaction-hint {
+    display: none;
+}
+
+.post-card.private-locked .no-interaction-hint.visible {
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 12;
+    background: rgba(255, 71, 87, 0.9);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.tsp-phone-private-reply-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    margin-left: 4px;
+}
+
+.tsp-phone-private-reply-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(238, 90, 111, 0.4);
+}
+
+.tsp-phone-private-reply-btn:active {
+    transform: scale(0.95);
 }
