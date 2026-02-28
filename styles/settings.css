@@ -53,7 +53,7 @@
 
 .tsp-mode-switcher label {
     font-size: 0.9em;
-    color: var(--tsp-text-secondary);
+    color: var(--tsp-text-secondary) !important;
     white-space: nowrap;
 }
 
@@ -198,7 +198,7 @@
 .tsp-form-group label {
     font-size: 0.85em;
     font-weight: 500;
-    color: var(--tsp-text-primary);
+    color: var(--tsp-text-primary) !important;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -223,6 +223,11 @@
     align-items: center !important;
     gap: 10px !important;
     cursor: pointer !important;
+    color: var(--tsp-text-primary) !important;
+}
+
+.tsp-switch-label span {
+    color: var(--tsp-text-primary) !important;
 }
 
 /* 增强版 tsp-switch 样式 - 防止被其他样式覆盖 */
@@ -348,7 +353,7 @@ input[type="checkbox"].tsp-switch:checked::after {
 .tsp-slider-group label {
     min-width: 80px;
     font-size: 0.9em;
-    color: var(--tsp-text-secondary);
+    color: var(--tsp-text-secondary) !important;
 }
 
 .tsp-slider {

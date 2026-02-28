@@ -413,6 +413,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    color: var(--tsp-text-primary) !important;
 }
 
 /* --------------------------------------------------------------------------

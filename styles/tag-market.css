@@ -46,7 +46,7 @@
 .ts-search-item label {
     display: block;
     font-size: 0.85em;
-    color: var(--tsp-text-secondary);
+    color: var(--tsp-text-secondary) !important;
     margin-bottom: 4px;
 }
 

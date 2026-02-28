@@ -217,7 +217,7 @@
 }
 .tsp-bg-opacity-slider label {
     font-size: 0.9em;
-    color: var(--tsp-text-muted);
+    color: var(--tsp-text-muted) !important;
 }
 .tsp-autocomplete-container {
     position: absolute;
