@@ -2096,6 +2096,10 @@
     font-weight: 600;
 }
 
+.tsp-phone-chat-management-header #tsp-phone-open-moments {
+    margin-top: 16px;
+}
+
 .tsp-phone-chat-management-actions {
     display: flex;
     flex-direction: column;
