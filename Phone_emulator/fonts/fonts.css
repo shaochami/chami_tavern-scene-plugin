@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'PressStart2P';
+    src: url('./PressStart2P-Regular.woff2') format('woff2'),
+         url('./PressStart2P-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('./Orbitron-Regular.woff2') format('woff2'),
+         url('./Orbitron-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('./Orbitron-Bold.woff2') format('woff2'),
+         url('./Orbitron-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Creepster';
+    src: url('./Creepster-Regular.woff2') format('woff2'),
+         url('./Creepster-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ZCOOLKuaiLe';
+    src: url('./ZCOOLKuaiLe-Regular.woff2') format('woff2'),
+         url('./ZCOOLKuaiLe-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MaShanZheng';
+    src: url('./MaShanZheng-Regular.woff2') format('woff2'),
+         url('./MaShanZheng-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LiuJianMaoCao';
+    src: url('./LiuJianMaoCao-Regular.woff2') format('woff2'),
+         url('./LiuJianMaoCao-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ZhiMangXing';
+    src: url('./ZhiMangXing-Regular.woff2') format('woff2'),
+         url('./ZhiMangXing-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NotoSerifSC';
+    src: url('./NotoSerifSC-Regular.woff2') format('woff2'),
+         url('./NotoSerifSC-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NotoSansSC';
+    src: url('./NotoSansSC-Regular.woff2') format('woff2'),
+         url('./NotoSansSC-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PangMenZhengDao';
+    src: url('./PangMenZhengDao-Regular.woff2') format('woff2'),
+         url('./PangMenZhengDao-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

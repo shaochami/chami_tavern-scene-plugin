@@ -596,3 +596,520 @@
     margin-top: auto;
     padding-top: 16px;
 }
+
+.tsp-phone-wallpaper-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding: 20px;
+    padding-top: 64px;
+    overflow-y: auto;
+}
+
+.tsp-phone-wallpaper-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tsp-phone-wallpaper-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tsp-phone-wallpaper-title {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tsp-phone-wallpaper-title i {
+    color: #667eea;
+}
+
+.tsp-phone-wallpaper-desc {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.tsp-phone-wallpaper-preview {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9/16;
+    max-height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tsp-phone-wallpaper-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.tsp-phone-wallpaper-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.tsp-phone-wallpaper-placeholder i {
+    font-size: 48px;
+}
+
+.tsp-phone-wallpaper-placeholder span {
+    font-size: 14px;
+}
+
+.tsp-phone-wallpaper-upload-btn {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    z-index: 10;
+}
+
+.tsp-phone-wallpaper-upload-btn:hover {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.tsp-phone-wallpaper-upload-btn i {
+    font-size: 14px;
+}
+
+.tsp-phone-wallpaper-delete-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(239, 68, 68, 0.9);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.tsp-phone-wallpaper-delete-btn:hover {
+    background: #ef4444;
+    transform: scale(1.1);
+}
+
+.tsp-phone-wallpaper-delete-btn i {
+    font-size: 14px;
+}
+
+.tsp-phone-wallpaper-info {
+    background: rgba(102, 126, 234, 0.05);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.tsp-phone-wallpaper-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.tsp-phone-wallpaper-info-item:last-child {
+    margin-bottom: 0;
+}
+
+.tsp-phone-wallpaper-info-item i {
+    color: #667eea;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.wallpaper-icon {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+}
+
+.tsp-phone-wallpaper-opacity-section {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.tsp-phone-wallpaper-opacity-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+.tsp-phone-wallpaper-opacity-label span:last-child {
+    color: #667eea;
+    font-weight: 600;
+}
+
+.tsp-phone-wallpaper-opacity-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.tsp-phone-wallpaper-opacity-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(102, 126, 234, 0.4);
+    transition: transform 0.2s ease;
+}
+
+.tsp-phone-wallpaper-opacity-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+.tsp-phone-wallpaper-opacity-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 6px rgba(102, 126, 234, 0.4);
+}
+
+.tsp-phone-personal-settings-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding: 20px;
+    padding-top: 64px;
+    overflow-y: auto;
+}
+
+.tsp-phone-personal-settings-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tsp-phone-personal-settings-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tsp-phone-personal-settings-title {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tsp-phone-personal-settings-title i {
+    color: #667eea;
+}
+
+.tsp-phone-personal-settings-desc {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.tsp-phone-avatar-preview {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tsp-phone-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.tsp-phone-avatar-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.tsp-phone-avatar-placeholder i {
+    font-size: 48px;
+}
+
+.tsp-phone-avatar-placeholder span {
+    font-size: 12px;
+}
+
+.tsp-phone-avatar-upload-btn {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.tsp-phone-avatar-upload-btn:hover {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.tsp-phone-avatar-upload-btn i {
+    font-size: 12px;
+}
+
+.tsp-phone-avatar-delete-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(239, 68, 68, 0.9);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.tsp-phone-avatar-delete-btn:hover {
+    background: #ef4444;
+    transform: scale(1.1);
+}
+
+.tsp-phone-avatar-delete-btn i {
+    font-size: 14px;
+}
+
+.tsp-phone-bubble-style-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tsp-phone-bubble-style-selector select {
+    width: 100%;
+    padding: 10px 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+
+.tsp-phone-bubble-style-selector select:focus {
+    border-color: #667eea;
+}
+
+/* 表单标签样式 */
+.tsp-phone-personal-settings-section .tsp-phone-form-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.tsp-phone-personal-settings-section .tsp-phone-form-label i {
+    color: #667eea;
+    font-size: 14px;
+    width: 16px;
+    text-align: center;
+}
+
+/* 表单组间距 */
+.tsp-phone-personal-settings-section .tsp-phone-form-group {
+    margin-bottom: 16px;
+}
+
+.tsp-phone-personal-settings-section .tsp-phone-form-group:last-of-type {
+    margin-bottom: 20px;
+}
+
+/* 下拉框样式优化 */
+.tsp-phone-personal-settings-section .tsp-phone-form-select {
+    width: 100%;
+    padding: 12px 14px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-personal-settings-section .tsp-phone-form-select:hover {
+    border-color: rgba(102, 126, 234, 0.5);
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.tsp-phone-personal-settings-section .tsp-phone-form-select:focus {
+    border-color: #667eea;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+.tsp-phone-personal-settings-section .tsp-phone-form-select option {
+    background: #1a1a2e;
+    color: white;
+    padding: 10px;
+}
+
+/* 气泡预览区域 */
+.tsp-phone-bubble-preview {
+    margin-top: 8px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tsp-phone-bubble-preview .tsp-phone-message {
+    max-width: 80%;
+}
+
+.tsp-phone-bubble-preview .tsp-phone-message-bubble {
+    padding: 12px 16px;
+    word-wrap: break-word;
+    transition: all 0.3s ease;
+}
+
+.tsp-phone-bubble-preview .tsp-phone-message-content {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.tsp-phone-bubble-preview-text {
+    font-size: 14px;
+}
+
+.tsp-phone-personal-settings-info {
+    background: rgba(102, 126, 234, 0.05);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.tsp-phone-personal-settings-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.tsp-phone-personal-settings-info-item:last-child {
+    margin-bottom: 0;
+}
+
+.tsp-phone-personal-settings-info-item i {
+    color: #667eea;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.personal-icon {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%) !important;
+}

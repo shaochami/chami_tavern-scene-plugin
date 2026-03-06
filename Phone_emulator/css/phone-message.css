@@ -86,6 +86,23 @@
     flex-direction: column;
     background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
     padding-top: 44px;
+    position: relative;
+}
+
+.tsp-phone-chat-detail-view::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--chat-bg-url, none);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: var(--chat-bg-opacity, 1);
+    z-index: 0;
+    pointer-events: none;
 }
 
 .tsp-phone-chat-messages {
@@ -95,12 +112,16 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    position: relative;
+    z-index: 1;
 }
 
 .tsp-phone-message {
     display: flex;
     gap: 10px;
     max-width: 80%;
+    position: relative;
+    z-index: 2;
 }
 
 .tsp-phone-message.user {
@@ -114,6 +135,7 @@
     font-size: 14px;
     line-height: 1.4;
     word-wrap: break-word;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .tsp-phone-message.user .tsp-phone-message-bubble {
@@ -123,9 +145,10 @@
 }
 
 .tsp-phone-message:not(.user) .tsp-phone-message-bubble {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(40, 40, 60, 0.95);
     color: white;
     border-bottom-left-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .tsp-phone-message-avatar {
@@ -160,8 +183,81 @@
     gap: 6px;
     align-items: center;
     position: relative;
+    z-index: 2;
     width: 100%;
     box-sizing: border-box;
+}
+
+/* @用户列表样式 */
+.tsp-phone-at-user-list {
+    position: absolute;
+    bottom: 100%;
+    left: 60px;
+    right: 120px;
+    background: rgba(30, 30, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-at-user-list.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.tsp-phone-at-user-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-size: 14px;
+}
+
+.tsp-phone-at-user-item:hover {
+    background: rgba(102, 126, 234, 0.3);
+}
+
+.tsp-phone-at-user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.tsp-phone-at-user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tsp-phone-at-user-avatar i {
+    color: white;
+    font-size: 18px;
+}
+
+.tsp-phone-at-user-name {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .tsp-phone-chat-input {
@@ -2039,6 +2135,665 @@
 .tsp-phone-music-card-play i {
     color: white;
     font-size: 16px;
+}
+
+.tsp-phone-contacts-list-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding-top: 44px;
+}
+
+.tsp-phone-contacts-tabs {
+    display: flex;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 8px 12px;
+    gap: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tsp-phone-contacts-tab {
+    flex: 1;
+    padding: 10px 16px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-contacts-tab:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.tsp-phone-contacts-tab.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.tsp-phone-contacts-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px 0;
+}
+
+.tsp-phone-add-group-btn {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    transition: all 0.2s ease;
+    z-index: 100;
+}
+
+.tsp-phone-add-group-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
+}
+
+.tsp-phone-add-group-btn i {
+    color: white;
+    font-size: 24px;
+}
+
+.tsp-phone-group-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.tsp-phone-group-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tsp-phone-group-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.tsp-phone-group-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tsp-phone-group-avatar i {
+    color: white;
+    font-size: 24px;
+}
+
+.tsp-phone-group-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.tsp-phone-group-name {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tsp-phone-group-members {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+.tsp-phone-create-group-view,
+.tsp-phone-edit-group-name-view,
+.tsp-phone-group-detail-view,
+.tsp-phone-group-chat-view,
+.tsp-phone-group-settings-view,
+.tsp-phone-add-group-member-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding-top: 44px;
+    position: relative;
+}
+
+.tsp-phone-group-chat-view::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--chat-bg-url, none);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: var(--chat-bg-opacity, 1);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.tsp-phone-create-group-content,
+.tsp-phone-edit-group-name-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.tsp-phone-form-item {
+    margin-bottom: 20px;
+}
+
+.tsp-phone-form-label {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.tsp-phone-form-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.tsp-phone-form-input:focus {
+    border-color: #667eea;
+}
+
+.tsp-phone-form-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.tsp-phone-nav-btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-nav-btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+}
+
+.tsp-phone-group-detail-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.tsp-phone-group-detail-avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.tsp-phone-group-detail-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.tsp-phone-group-detail-avatar i {
+    color: white;
+    font-size: 48px;
+}
+
+.tsp-phone-group-detail-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tsp-phone-group-detail-name {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.tsp-phone-group-detail-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tsp-phone-chat-message-system {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+}
+
+.tsp-phone-chat-system-content {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 8px 16px;
+    border-radius: 16px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.tsp-phone-group-settings-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+.tsp-phone-group-avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.tsp-phone-group-avatar-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 12px;
+}
+
+.tsp-phone-group-avatar-large {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.tsp-phone-group-avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tsp-phone-group-avatar-placeholder i {
+    color: white;
+    font-size: 40px;
+}
+
+.tsp-phone-settings-section {
+    margin-bottom: 20px;
+}
+
+.tsp-phone-settings-section-title {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    padding-left: 4px;
+}
+
+.tsp-phone-settings-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    margin-bottom: 8px;
+}
+
+.tsp-phone-settings-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tsp-phone-settings-item span {
+    color: white;
+    font-size: 14px;
+}
+
+.tsp-phone-settings-item i {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+.tsp-phone-settings-item-value {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+.tsp-phone-settings-item-danger {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.tsp-phone-settings-item-danger:hover {
+    background: rgba(239, 68, 68, 0.2);
+}
+
+.tsp-phone-settings-item-danger span,
+.tsp-phone-settings-item-danger i {
+    color: #ef4444;
+}
+
+.tsp-phone-group-members-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.tsp-phone-group-member-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.tsp-phone-group-member-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.tsp-phone-group-member-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tsp-phone-group-member-avatar i {
+    color: white;
+    font-size: 18px;
+}
+
+.tsp-phone-group-member-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.tsp-phone-group-member-name {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 8px;
+}
+
+.tsp-phone-member-config {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.tsp-phone-member-config-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tsp-phone-member-config-item label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    min-width: 60px;
+}
+
+.tsp-phone-member-probability,
+.tsp-phone-member-order {
+    width: 80px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 4px 8px;
+    color: white;
+    font-size: 12px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.tsp-phone-member-probability:focus,
+.tsp-phone-member-order:focus {
+    border-color: #667eea;
+}
+
+.tsp-phone-member-probability::placeholder,
+.tsp-phone-member-order::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.tsp-phone-speak-mode-section {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.tsp-phone-speak-mode-title {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.tsp-phone-speak-mode-options {
+    display: flex;
+    gap: 16px;
+}
+
+.tsp-phone-speak-mode-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.tsp-phone-speak-mode-option input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.tsp-phone-speak-mode-option span {
+    color: white;
+    font-size: 13px;
+}
+
+.tsp-phone-message-info {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.tsp-phone-message-sender {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 12px;
+    margin-bottom: 4px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+}
+
+.tsp-phone-message.user .tsp-phone-message-sender {
+    text-align: right;
+}
+
+.tsp-phone-message.user .tsp-phone-message-info {
+    align-items: flex-end;
+}
+
+.tsp-phone-message:not(.user) > .tsp-phone-message-sender {
+    margin-bottom: 4px;
+}
+
+.tsp-phone-message.user > .tsp-phone-message-sender {
+    margin-bottom: 4px;
+}
+
+.tsp-phone-message-content {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.tsp-phone-remove-member-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(239, 68, 68, 0.2);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+    flex-shrink: 0;
+}
+
+.tsp-phone-remove-member-btn:hover {
+    background: rgba(239, 68, 68, 0.4);
+}
+
+.tsp-phone-remove-member-btn i {
+    color: #ef4444;
+    font-size: 14px;
+}
+
+.tsp-phone-add-group-member-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+.tsp-phone-add-member-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    margin-bottom: 8px;
+}
+
+.tsp-phone-add-member-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tsp-phone-add-member-item.selected {
+    background: rgba(102, 126, 234, 0.2);
+    border: 1px solid rgba(102, 126, 234, 0.4);
+}
+
+.tsp-phone-add-member-checkbox {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.tsp-phone-add-member-checkbox i {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 24px;
+}
+
+.tsp-phone-add-member-item.selected .tsp-phone-add-member-checkbox i {
+    color: #667eea;
+}
+
+.tsp-phone-add-member-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.tsp-phone-add-member-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tsp-phone-add-member-avatar i {
+    color: white;
+    font-size: 18px;
+}
+
+.tsp-phone-add-member-name {
+    flex: 1;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .tsp-phone-chat-management-view {
