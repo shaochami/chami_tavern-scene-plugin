@@ -117,26 +117,7 @@ Phone_emulator/
    - 支持跨设备同步
    - 头像上传到服务器
 
-4. **扩展性**
-   - 清晰的文件夹结构
-   - 模块化设计
-   - 预留论坛、朋友圈等功能接口
 
-## 后续扩展
-
-可以在以下位置添加新功能：
-
-1. **论坛功能**
-   - 在Phone_emulator/js/phone-emulator.js的_openApp方法中添加forum逻辑
-   - 创建对应的UI组件
-
-2. **朋友圈功能**
-   - 在Phone_emulator/js/phone-emulator.js的_openApp方法中添加moments逻辑
-   - 创建对应的UI组件
-
-3. **更多社交功能**
-   - 可以参考现有的消息列表和聊天详情界面
-   - 在Phone_emulator/css/phone-emulator.css中添加样式
 
 ## 注意事项
 
