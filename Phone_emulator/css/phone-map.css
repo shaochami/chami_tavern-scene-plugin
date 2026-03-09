@@ -169,6 +169,185 @@
     font-weight: 500;
 }
 
+/* 省份视图样式 */
+.tsp-phone-map-province-view {
+    margin-top: 16px;
+}
+
+.tsp-phone-map-province-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tsp-phone-map-province-title {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tsp-phone-map-back-to-overview {
+    background: rgba(0, 243, 255, 0.1);
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    color: #00f3ff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tsp-phone-map-back-to-overview:hover {
+    background: rgba(0, 243, 255, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+}
+
+.tsp-phone-map-back-to-province {
+    background: rgba(155, 89, 182, 0.1);
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    color: #9b59b6;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tsp-phone-map-back-to-province:hover {
+    background: rgba(155, 89, 182, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 0 15px rgba(155, 89, 182, 0.3);
+}
+
+.tsp-phone-map-cities {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tsp-phone-map-cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.tsp-phone-map-city-icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 16px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tsp-phone-map-city-icon-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-color: rgba(155, 89, 182, 0.5);
+}
+
+.tsp-phone-map-city-icon-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(155, 89, 182, 0.1);
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-map-city-icon-item:hover .tsp-phone-map-city-icon-circle {
+    background: rgba(155, 89, 182, 0.2);
+    box-shadow: 0 0 15px rgba(155, 89, 182, 0.3);
+}
+
+.tsp-phone-map-city-icon-symbol {
+    font-size: 32px;
+}
+
+.tsp-phone-map-city-icon-label {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 4px;
+}
+
+.tsp-phone-map-city-icon-desc {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.2;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.tsp-phone-map-no-cities {
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 14px;
+}
+
+.tsp-phone-map-move-to-province-btn {
+    background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+}
+
+.tsp-phone-map-move-to-province-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(155, 89, 182, 0.5);
+}
+
+/* 城市视图样式 */
 .tsp-phone-map-city-view {
     margin-top: 16px;
 }
@@ -180,12 +359,19 @@
     margin-bottom: 20px;
     padding-bottom: 12px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .tsp-phone-map-city-title {
     color: white;
     font-size: 20px;
     font-weight: 600;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .tsp-phone-map-back-to-overview {
@@ -373,8 +559,30 @@
         height: 350px;
     }
 
+    .tsp-phone-map-province-title {
+        font-size: 18px;
+    }
+
     .tsp-phone-map-city-title {
         font-size: 18px;
+    }
+
+    .tsp-phone-map-cities-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 12px;
+    }
+
+    .tsp-phone-map-city-icon-circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    .tsp-phone-map-city-icon-symbol {
+        font-size: 28px;
+    }
+
+    .tsp-phone-map-city-icon-label {
+        font-size: 13px;
     }
 
     .tsp-phone-map-location-header {
@@ -400,6 +608,36 @@
 @media (max-width: 480px) {
     .tsp-phone-map-container {
         height: 300px;
+    }
+
+    .tsp-phone-map-province-title {
+        font-size: 16px;
+    }
+
+    .tsp-phone-map-cities-grid {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        gap: 10px;
+    }
+
+    .tsp-phone-map-city-icon-item {
+        padding: 12px;
+    }
+
+    .tsp-phone-map-city-icon-circle {
+        width: 50px;
+        height: 50px;
+    }
+
+    .tsp-phone-map-city-icon-symbol {
+        font-size: 24px;
+    }
+
+    .tsp-phone-map-city-icon-label {
+        font-size: 12px;
+    }
+
+    .tsp-phone-map-city-icon-desc {
+        font-size: 10px;
     }
 
     .tsp-phone-map-location {
@@ -713,5 +951,443 @@
         width: 28px;
         height: 28px;
         font-size: 16px;
+    }
+}
+
+.tsp-phone-map-move-btn {
+    background: linear-gradient(135deg, #00f3ff 0%, #00b8d4 100%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    box-shadow: 0 4px 15px rgba(0, 243, 255, 0.3);
+}
+
+.tsp-phone-map-move-to-city-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+}
+
+.tsp-phone-map-location-detail .tsp-phone-map-move-btn {
+    margin-top: 24px;
+    padding: 14px 32px;
+    font-size: 16px;
+    border-radius: 24px;
+}
+
+.tsp-phone-map-move-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 243, 255, 0.6);
+}
+
+.tsp-phone-map-move-btn:active {
+    transform: translateY(-1px);
+}
+
+.tsp-phone-map-move-success {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    border-radius: 16px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 10000;
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.3);
+    animation: slideUp 0.3s ease;
+}
+
+.tsp-phone-map-move-success i {
+    color: #00f3ff;
+    font-size: 20px;
+}
+
+.tsp-phone-map-move-success span {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* 附近的人界面样式 */
+.tsp-phone-nearby-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding-top: 44px;
+}
+
+.tsp-phone-nearby-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tsp-phone-nearby-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.tsp-phone-nearby-title {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+.tsp-phone-nearby-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+.tsp-phone-nearby-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.tsp-phone-nearby-loading i {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: #00f3ff;
+    filter: drop-shadow(0 0 10px rgba(0, 243, 255, 0.5));
+}
+
+.tsp-phone-nearby-loading p {
+    font-size: 16px;
+}
+
+.tsp-phone-nearby-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+.tsp-phone-nearby-error i {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: #ff6b6b;
+    filter: drop-shadow(0 0 10px rgba(255, 107, 107, 0.5));
+}
+
+.tsp-phone-nearby-error p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.tsp-phone-nearby-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+    overflow-y: auto;
+    max-height: calc(100vh - 350px);
+    padding-right: 4px;
+}
+
+.tsp-phone-nearby-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.tsp-phone-nearby-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+}
+
+.tsp-phone-nearby-list::-webkit-scrollbar-thumb {
+    background: rgba(0, 243, 255, 0.3);
+    border-radius: 3px;
+}
+
+.tsp-phone-nearby-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 243, 255, 0.5);
+}
+
+.tsp-phone-nearby-empty {
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 14px;
+}
+
+.tsp-phone-nearby-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tsp-phone-nearby-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-color: rgba(0, 243, 255, 0.3);
+}
+
+.tsp-phone-nearby-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(0, 243, 255, 0.1);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.tsp-phone-nearby-avatar i {
+    font-size: 24px;
+    color: #00f3ff;
+}
+
+.tsp-phone-nearby-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.tsp-phone-nearby-name {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.tsp-phone-nearby-identity {
+    color: #00f3ff;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.tsp-phone-nearby-desc {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.tsp-phone-nearby-location {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tsp-phone-nearby-location i {
+    color: #00f3ff;
+    font-size: 14px;
+}
+
+.tsp-phone-nearby-inject-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    align-self: flex-start;
+}
+
+.tsp-phone-nearby-inject-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.4);
+}
+
+.tsp-phone-nearby-inject-btn:active {
+    transform: scale(0.95);
+}
+
+.tsp-phone-nearby-inject-btn i {
+    color: white;
+    font-size: 16px;
+}
+
+.tsp-phone-nearby-inject-btn.generating {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.tsp-phone-nearby-inject-btn.generating i {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.tsp-phone-nearby-actions-wrapper {
+    position: sticky;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(26, 26, 46, 0) 0%, rgba(26, 26, 46, 0.95) 20%);
+    padding: 16px 0 0 0;
+    margin-top: auto;
+    z-index: 10;
+}
+
+.tsp-phone-nearby-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.tsp-phone-nearby-toggle-btn {
+    width: 50px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    background: rgba(10, 10, 15, 0.9);
+    color: #00f3ff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+}
+
+.tsp-phone-nearby-toggle-btn:hover {
+    background: rgba(0, 243, 255, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+}
+
+.tsp-phone-nearby-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 16px 16px 16px;
+}
+
+.tsp-phone-nearby-actions .tsp-phone-map-refresh-btn {
+    margin-top: 0;
+}
+
+/* 响应式调整 */
+@media (max-width: 786px) {
+    .tsp-phone-nearby-content {
+        padding: 12px;
+    }
+
+    .tsp-phone-nearby-title {
+        font-size: 20px;
+    }
+
+    .tsp-phone-nearby-item {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .tsp-phone-nearby-avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .tsp-phone-nearby-avatar i {
+        font-size: 20px;
+    }
+
+    .tsp-phone-nearby-name {
+        font-size: 14px;
+    }
+
+    .tsp-phone-nearby-identity {
+        font-size: 12px;
+    }
+
+    .tsp-phone-nearby-desc {
+        font-size: 12px;
+    }
+
+    .tsp-phone-nearby-location {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tsp-phone-nearby-list {
+        max-height: calc(100vh - 320px);
+    }
+
+    .tsp-phone-nearby-item {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .tsp-phone-nearby-avatar {
+        width: 45px;
+        height: 45px;
+    }
+
+    .tsp-phone-nearby-avatar i {
+        font-size: 18px;
+    }
+
+    .tsp-phone-nearby-name {
+        font-size: 13px;
+    }
+
+    .tsp-phone-nearby-identity {
+        font-size: 11px;
+    }
+
+    .tsp-phone-nearby-desc {
+        font-size: 11px;
+    }
+
+    .tsp-phone-nearby-location {
+        font-size: 10px;
     }
 }

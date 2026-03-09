@@ -199,6 +199,96 @@
     font-weight: 500;
 }
 
+.tsp-phone-tts-config-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding-top: 64px;
+    overflow-y: auto;
+}
+
+.tsp-phone-tts-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.tsp-phone-tts-content .tsp-phone-form-group {
+    margin-bottom: 20px;
+}
+
+.tsp-phone-tts-content .tsp-phone-form-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.tsp-phone-tts-content .tsp-phone-form-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 12px;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.tsp-phone-tts-content .tsp-phone-form-input:focus {
+    border-color: #667eea;
+}
+
+.tsp-phone-tts-content .tsp-phone-form-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.tsp-phone-tts-content .tsp-phone-button-group {
+    margin-top: 32px;
+    display: flex;
+    gap: 12px;
+}
+
+.tsp-phone-tts-content .tsp-phone-btn {
+    flex: 1;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-tts-content .tsp-phone-btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.tsp-phone-tts-content .tsp-phone-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.tsp-phone-tts-content .tsp-phone-btn-secondary {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+.tsp-phone-tts-content .tsp-phone-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
 .tsp-phone-config-item-details {
     margin-top: 12px;
     padding-top: 12px;
@@ -1112,4 +1202,132 @@
 
 .personal-icon {
     background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%) !important;
+}
+
+/* TTS音色配置页面样式 */
+.tsp-phone-tts-voice-config-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding: 20px;
+    padding-top: 64px;
+    overflow-y: auto;
+}
+
+.tsp-phone-tts-voice-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tsp-phone-tts-voice-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.tsp-phone-tts-voice-filters .tsp-phone-form-group {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tsp-phone-tts-voice-filters .tsp-phone-form-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.tsp-phone-tts-voice-filters .tsp-phone-form-label::before {
+    content: '';
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.tsp-phone-tts-voice-filters .tsp-phone-form-select {
+    width: 100%;
+    padding: 12px 14px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-tts-voice-filters .tsp-phone-form-select:hover {
+    border-color: rgba(102, 126, 234, 0.5);
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.tsp-phone-tts-voice-filters .tsp-phone-form-select:focus {
+    border-color: #667eea;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+.tsp-phone-tts-voice-filters .tsp-phone-form-select option {
+    background: #1a1a2e;
+    color: white;
+    padding: 10px;
+}
+
+/* 音色信息卡片样式 */
+.tsp-phone-tts-voice-info-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tsp-phone-tts-voice-info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tsp-phone-tts-voice-info-item:last-child {
+    border-bottom: none;
+}
+
+.tsp-phone-tts-voice-info-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    flex-shrink: 0;
+    margin-right: 12px;
+}
+
+.tsp-phone-tts-voice-info-value {
+    color: white;
+    font-size: 13px;
+    text-align: right;
+    word-break: break-all;
+}
+
+.tsp-phone-tts-voice-info-empty {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 14px;
+    text-align: center;
+    padding: 20px;
+}
+
+.tsp-phone-tts-voice-content .tsp-phone-button-group {
+    margin-top: 8px;
+    padding: 0;
 }
