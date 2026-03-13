@@ -1514,7 +1514,7 @@
     color: rgba(255, 255, 255, 0.6);
 }
 
-.transfer-card {
+.tsp-phone-transfer-card {
     background: #fa9d3b;
     border-radius: 8px;
     overflow: hidden;
@@ -1522,58 +1522,58 @@
     flex-shrink: 0;
 }
 
-.transfer-card.sent {
+.tsp-phone-transfer-card.sent {
     background: #fa9d3b;
 }
 
-.transfer-card.received {
+.tsp-phone-transfer-card.received {
     background: #fedf9a;
 }
 
-.transfer-card.received .transfer-card-amount {
+.tsp-phone-transfer-card.received .tsp-phone-transfer-card-amount {
     color: #f8f8f8;
 }
 
-.transfer-card.received .transfer-card-status {
+.tsp-phone-transfer-card.received .tsp-phone-transfer-card-status {
     color: #f8f8f8;
 }
 
-.transfer-card.received .transfer-card-footer-label {
+.tsp-phone-transfer-card.received .tsp-phone-transfer-card-footer-label {
     color: #f8f8f8;
 }
 
-.transfer-card.received .transfer-card-footer {
+.tsp-phone-transfer-card.received .tsp-phone-transfer-card-footer {
     background: #fedf9a;
 }
 
-.transfer-card.refunded {
+.tsp-phone-transfer-card.refunded {
     background: #ebdcba;
 }
 
-.transfer-card.refunded .transfer-card-amount {
+.tsp-phone-transfer-card.refunded .tsp-phone-transfer-card-amount {
     color: white;
 }
 
-.transfer-card.refunded .transfer-card-status {
+.tsp-phone-transfer-card.refunded .tsp-phone-transfer-card-status {
     color: white;
 }
 
-.transfer-card.refunded .transfer-card-footer-label {
+.tsp-phone-transfer-card.refunded .tsp-phone-transfer-card-footer-label {
     color: white;
 }
 
-.transfer-card.refunded .transfer-card-footer {
+.tsp-phone-transfer-card.refunded .tsp-phone-transfer-card-footer {
     background: #ebdcba;
 }
 
-.transfer-card-main {
+.tsp-phone-transfer-card-main {
     padding: 10px 16px;
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-.transfer-card-icon {
+.tsp-phone-transfer-card-icon {
     width: 36px;
     height: 36px;
     background: rgba(255, 255, 255, 0.2);
@@ -1585,12 +1585,12 @@
     flex-shrink: 0;
 }
 
-.transfer-card-icon i {
+.tsp-phone-transfer-card-icon i {
     color: white;
     font-size: 16px;
 }
 
-.transfer-card-info {
+.tsp-phone-transfer-card-info {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -1598,7 +1598,7 @@
     min-width: 0;
 }
 
-.transfer-card-amount {
+.tsp-phone-transfer-card-amount {
     color: white;
     font-size: 18px;
     font-weight: 600;
@@ -1606,7 +1606,7 @@
     overflow: hidden;
 }
 
-.transfer-card-status {
+.tsp-phone-transfer-card-status {
     color: rgba(255, 255, 255, 0.9);
     font-size: 11px;
     white-space: nowrap;
@@ -1614,23 +1614,23 @@
     text-overflow: ellipsis;
 }
 
-.transfer-card-footer {
+.tsp-phone-transfer-card-footer {
     background: #fa9d3b;
     padding: 6px 16px;
     display: flex;
     align-items: center;
 }
 
-.transfer-card-footer-label {
+.tsp-phone-transfer-card-footer-label {
     color: rgba(255, 255, 255, 0.8);
     font-size: 11px;
 }
 
-.tsp-phone-message.user .transfer-card {
+.tsp-phone-message.user .tsp-phone-transfer-card {
     border-bottom-right-radius: 4px;
 }
 
-.tsp-phone-message:not(.user) .transfer-card {
+.tsp-phone-message:not(.user) .tsp-phone-transfer-card {
     border-bottom-left-radius: 4px;
 }
 
@@ -3613,4 +3613,325 @@
     40% {
         transform: scale(1);
     }
+}
+
+.tsp-phone-voice-call-menu {
+    position: fixed;
+    background: rgba(30, 30, 40, 0.98);
+    border-radius: 12px;
+    padding: 8px 0;
+    min-width: 140px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    z-index: 10000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    animation: tsp-phone-menu-fade-in 0.2s ease;
+}
+
+@keyframes tsp-phone-menu-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tsp-phone-voice-call-menu-item {
+    padding: 12px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    transition: background 0.15s ease;
+}
+
+.tsp-phone-voice-call-menu-item:hover {
+    background: rgba(102, 126, 234, 0.3);
+}
+
+.tsp-phone-voice-call-menu-item i {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+.tsp-phone-voice-history-view {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding-top: 44px;
+    position: relative;
+}
+
+.tsp-phone-voice-history-view .tsp-phone-nav-bar {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    right: 0;
+    height: 44px;
+}
+
+.tsp-phone-voice-history-toolbar {
+    display: flex;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+}
+
+.tsp-phone-voice-history-toolbar .tsp-phone-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+}
+
+.tsp-phone-voice-history-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px;
+}
+
+.tsp-phone-voice-history-loading,
+.tsp-phone-voice-history-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.5);
+    gap: 12px;
+}
+
+.tsp-phone-voice-history-loading i,
+.tsp-phone-voice-history-empty i {
+    font-size: 48px;
+}
+
+.tsp-phone-voice-history-loading span,
+.tsp-phone-voice-history-empty span {
+    font-size: 14px;
+}
+
+.tsp-phone-voice-history-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    margin-bottom: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.tsp-phone-voice-history-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.tsp-phone-voice-history-item.selected {
+    background: rgba(102, 126, 234, 0.2);
+    border: 1px solid rgba(102, 126, 234, 0.5);
+}
+
+.tsp-phone-voice-history-item.user {
+    background: rgba(102, 126, 234, 0.15);
+}
+
+.tsp-phone-voice-history-item.user.selected {
+    background: rgba(102, 126, 234, 0.3);
+}
+
+.tsp-phone-voice-history-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.tsp-phone-voice-history-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #667eea;
+}
+
+.tsp-phone-voice-history-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.tsp-phone-voice-history-time {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 6px;
+}
+
+.tsp-phone-voice-history-item .tsp-phone-voice-audio-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin-bottom: 6px;
+}
+
+.tsp-phone-voice-history-item .tsp-phone-voice-text {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+    word-break: break-word;
+    display: block;
+}
+
+.tsp-phone-voice-history-item.pressing {
+    background: rgba(102, 126, 234, 0.25);
+    transform: scale(0.98);
+}
+
+.tsp-phone-summary-management-view {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding-top: 44px;
+}
+
+.tsp-phone-summary-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+.tsp-phone-summary-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.tsp-phone-summary-section:last-child {
+    margin-bottom: 0;
+}
+
+.tsp-phone-summary-section-title {
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tsp-phone-summary-section-title i {
+    color: #667eea;
+}
+
+.tsp-phone-summary-section-desc {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.tsp-phone-summary-inject-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+}
+
+.tsp-phone-summary-marks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tsp-phone-summary-loading,
+.tsp-phone-summary-empty,
+.tsp-phone-summary-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+    color: rgba(255, 255, 255, 0.5);
+    gap: 8px;
+}
+
+.tsp-phone-summary-loading i,
+.tsp-phone-summary-empty i,
+.tsp-phone-summary-error i {
+    font-size: 24px;
+}
+
+.tsp-phone-summary-loading span,
+.tsp-phone-summary-empty span,
+.tsp-phone-summary-error span {
+    font-size: 13px;
+}
+
+.tsp-phone-summary-error {
+    color: #ff6b6b;
+}
+
+.tsp-phone-summary-mark-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    gap: 12px;
+}
+
+.tsp-phone-summary-mark-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.tsp-phone-summary-mark-info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+}
+
+.tsp-phone-summary-mark-label {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.tsp-phone-summary-mark-legacy {
+    font-size: 10px;
+    padding: 2px 6px;
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.tsp-phone-summary-clear-btn {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    font-size: 12px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin-left: auto;
 }

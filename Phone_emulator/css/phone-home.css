@@ -114,7 +114,7 @@
     border-radius: 40px;
 }
 
-.status-bar {
+.tsp-phone-status-bar {
     position: absolute;
     top: 0;
     left: 0;
@@ -128,13 +128,13 @@
     pointer-events: none;
 }
 
-.status-bar-left {
+.tsp-phone-status-bar-left {
     display: flex;
     align-items: center;
     pointer-events: auto;
 }
 
-.status-time {
+.tsp-phone-status-time {
     color: white;
     font-size: 14px;
     font-weight: 600;
@@ -142,17 +142,17 @@
     transition: color 0.2s ease;
 }
 
-.status-time:hover {
+.tsp-phone-status-time:hover {
     color: #667eea;
 }
 
-.status-bar-right {
+.tsp-phone-status-bar-right {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.status-icon-svg {
+.tsp-phone-status-icon-svg {
     color: white;
     font-size: 14px;
 }

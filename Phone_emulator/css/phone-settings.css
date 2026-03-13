@@ -857,7 +857,7 @@
     flex-shrink: 0;
 }
 
-.wallpaper-icon {
+.tsp-phone-wallpaper-icon {
     background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
 }
 
@@ -1165,7 +1165,7 @@
     transform: translateY(0);
 }
 
-.preset-icon {
+.tsp-phone-preset-icon {
     background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%) !important;
 }
 
@@ -1333,7 +1333,7 @@
     flex-shrink: 0;
 }
 
-.personal-icon {
+.tsp-phone-personal-icon {
     background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%) !important;
 }
 

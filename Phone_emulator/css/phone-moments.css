@@ -66,7 +66,7 @@
     transition: transform 0.3s ease;
 }
 
-.post-card {
+.tsp-phone-post-card {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
     margin-bottom: 15px;
@@ -85,53 +85,53 @@
     }
 }
 
-.post-header {
+.tsp-phone-post-header {
     display: flex;
     align-items: center;
     padding: 15px;
     gap: 12px;
 }
 
-.post-avatar-wrapper {
+.tsp-phone-post-avatar-wrapper {
     flex-shrink: 0;
 }
 
-.post-avatar {
+.tsp-phone-post-avatar {
     width: 48px;
     height: 48px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.post-info {
+.tsp-phone-post-info {
     flex: 1;
     min-width: 0;
 }
 
-.post-name {
+.tsp-phone-post-name {
     color: white;
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 4px;
 }
 
-.post-time {
+.tsp-phone-post-time {
     color: rgba(255, 255, 255, 0.5);
     font-size: 12px;
 }
 
-.post-more {
+.tsp-phone-post-more {
     flex-shrink: 0;
     color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     padding: 8px;
 }
 
-.post-more:hover {
+.tsp-phone-post-more:hover {
     color: rgba(255, 255, 255, 0.8);
 }
 
-.post-content {
+.tsp-phone-post-content {
     padding: 0 15px 15px;
     color: white;
     font-size: 15px;
@@ -139,7 +139,7 @@
     word-wrap: break-word;
 }
 
-.post-image {
+.tsp-phone-post-image {
     margin: 0 15px 15px;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 8px;
@@ -150,25 +150,25 @@
     gap: 10px;
 }
 
-.image-icon {
+.tsp-phone-image-icon {
     font-size: 32px;
     color: rgba(255, 255, 255, 0.3);
 }
 
-.image-caption {
+.tsp-phone-image-caption {
     color: rgba(255, 255, 255, 0.7);
     font-size: 13px;
     text-align: center;
     line-height: 1.5;
 }
 
-.post-actions {
+.tsp-phone-post-actions {
     display: flex;
     padding: 0 15px 15px;
     gap: 20px;
 }
 
-.action-item {
+.tsp-phone-action-item {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -178,11 +178,11 @@
     font-size: 14px;
 }
 
-.action-item:hover {
+.tsp-phone-action-item:hover {
     color: #667eea;
 }
 
-.action-count {
+.tsp-phone-action-count {
     font-size: 13px;
 }
 
@@ -258,13 +258,13 @@
     transform: scale(0.95);
 }
 
-.comments-section {
+.tsp-phone-comments-section {
     padding: 0 15px 15px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: 10px;
 }
 
-.comments-header {
+.tsp-phone-comments-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -273,50 +273,50 @@
     font-size: 13px;
 }
 
-.comments-count {
+.tsp-phone-comments-count {
     color: rgba(255, 255, 255, 0.4);
 }
 
-.comment-item {
+.tsp-phone-comment-item {
     display: flex;
     gap: 10px;
     padding: 10px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.comment-item:last-child {
+.tsp-phone-comment-item:last-child {
     border-bottom: none;
 }
 
-.comment-body {
+.tsp-phone-comment-body {
     flex: 1;
     min-width: 0;
 }
 
-.comment-header {
+.tsp-phone-comment-header {
     margin-bottom: 4px;
 }
 
-.comment-author {
+.tsp-phone-comment-author {
     color: rgba(255, 255, 255, 0.8);
     font-size: 14px;
     font-weight: 500;
 }
 
-.comment-text {
+.tsp-phone-comment-text {
     color: white;
     font-size: 14px;
     line-height: 1.5;
     word-wrap: break-word;
 }
 
-.comment-actions {
+.tsp-phone-comment-actions {
     display: flex;
     gap: 15px;
     margin-top: 6px;
 }
 
-.comment-action {
+.tsp-phone-comment-action {
     color: rgba(255, 255, 255, 0.4);
     font-size: 12px;
     cursor: pointer;
@@ -326,51 +326,51 @@
     gap: 4px;
 }
 
-.comment-action:hover {
+.tsp-phone-comment-action:hover {
     color: #667eea;
 }
 
-.comment-reply-action:hover {
+.tsp-phone-comment-reply-action:hover {
     color: #667eea;
 }
 
-.action-item .liked {
+.tsp-phone-action-item .liked {
     color: #ff4757;
 }
 
-.action-item .liked:hover {
+.tsp-phone-action-item .liked:hover {
     color: #ff6b81;
 }
 
-.comment-delete-action:hover {
+.tsp-phone-comment-delete-action:hover {
     color: #ff4757;
 }
 
-.post-card.private {
+.tsp-phone-post-card.private {
     background: rgba(139, 0, 0, 0.08);
     border: 1px solid rgba(139, 0, 0, 0.3);
 }
 
-.post-card.private .post-name {
+.tsp-phone-post-card.private .tsp-phone-post-name {
     color: #ff6b6b;
 }
 
-.post-card.private .post-content {
+.tsp-phone-post-card.private .tsp-phone-post-content {
     color: rgba(255, 200, 200, 0.9);
 }
 
-.post-card.private .post-actions {
+.tsp-phone-post-card.private .tsp-phone-post-actions {
     background: rgba(139, 0, 0, 0.05);
     margin: 0 15px 15px;
     padding: 10px 15px;
     border-radius: 8px;
 }
 
-.post-card.private-locked {
+.tsp-phone-post-card.private-locked {
     position: relative;
 }
 
-.post-card.private-locked::before {
+.tsp-phone-post-card.private-locked::before {
     content: '';
     position: absolute;
     top: 0;
@@ -386,7 +386,7 @@
     border-radius: 12px;
 }
 
-.post-card.private-locked .lock-overlay {
+.tsp-phone-post-card.private-locked .tsp-phone-lock-overlay {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -396,52 +396,52 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
-.post-card.private-locked .lock-overlay i {
+.tsp-phone-post-card.private-locked .tsp-phone-lock-overlay i {
     font-size: 48px;
     margin-bottom: 10px;
     color: #ff4757;
     opacity: 0.8;
 }
 
-.post-card.private-locked .lock-overlay p {
+.tsp-phone-post-card.private-locked .tsp-phone-lock-overlay p {
     font-size: 14px;
     margin: 0;
 }
 
-.post-card.private-locked .lock-overlay .unlock-hint {
+.tsp-phone-post-card.private-locked .tsp-phone-lock-overlay .tsp-phone-unlock-hint {
     font-size: 12px;
     color: rgba(255, 255, 255, 0.5);
     margin-top: 8px;
 }
 
-.post-card.private-locked .post-header,
-.post-card.private-locked .post-content,
-.post-card.private-locked .post-image,
-.post-card.private-locked .post-actions,
-.post-card.private-locked .tsp-phone-add-comment,
-.post-card.private-locked .comments-section {
+.tsp-phone-post-card.private-locked .tsp-phone-post-header,
+.tsp-phone-post-card.private-locked .tsp-phone-post-content,
+.tsp-phone-post-card.private-locked .tsp-phone-post-image,
+.tsp-phone-post-card.private-locked .tsp-phone-post-actions,
+.tsp-phone-post-card.private-locked .tsp-phone-add-comment,
+.tsp-phone-post-card.private-locked .tsp-phone-comments-section {
     filter: blur(8px);
     pointer-events: none;
 }
 
-.post-card.private-locked:hover::before {
+.tsp-phone-post-card.private-locked:hover::before {
     background: rgba(0, 0, 0, 0.75);
 }
 
-.post-card.private-locked:hover .lock-overlay {
+.tsp-phone-post-card.private-locked:hover .tsp-phone-lock-overlay {
     cursor: pointer;
 }
 
-.post-card.private-locked:hover .lock-overlay i {
+.tsp-phone-post-card.private-locked:hover .tsp-phone-lock-overlay i {
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }
 
-.post-card.private-locked .lock-overlay .click-to-peek {
+.tsp-phone-post-card.private-locked .tsp-phone-lock-overlay .tsp-phone-click-to-peek {
     display: none;
 }
 
-.post-card.private-locked:hover .lock-overlay .click-to-peek {
+.tsp-phone-post-card.private-locked:hover .tsp-phone-lock-overlay .tsp-phone-click-to-peek {
     display: block;
     animation: pulse 1.5s infinite;
 }
@@ -455,11 +455,11 @@
     }
 }
 
-.post-card.private-locked .no-interaction-hint {
+.tsp-phone-post-card.private-locked .tsp-phone-no-interaction-hint {
     display: none;
 }
 
-.post-card.private-locked .no-interaction-hint.visible {
+.tsp-phone-post-card.private-locked .tsp-phone-no-interaction-hint.visible {
     display: block;
     position: absolute;
     bottom: 20px;
