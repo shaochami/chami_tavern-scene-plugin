@@ -14,14 +14,14 @@
     padding: 0;
     cursor: pointer;
     overflow: hidden;
-    transition: all 0.2s ease;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
     display: flex;
     flex-direction: column;
+    contain: layout style;
 }
 
 .tsp-preset-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    border-color: var(--tsp-accent-primary);
 }
 
 /* 状态颜色 */
@@ -146,17 +146,15 @@
     overflow: hidden;
     border: 2px solid transparent;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: border-color 0.15s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    contain: layout style;
 }
 
 .tsp-cache-thumb:hover {
-    transform: scale(1.05);
     border-color: var(--tsp-accent-primary);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    z-index: 2;
 }
 
 .tsp-cache-thumb img {

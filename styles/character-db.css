@@ -21,6 +21,9 @@
     gap: 16px;
     overflow-y: auto;
     padding-right: 10px;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    contain: layout style;
 }
 
 .tsp-chardb-editor {
@@ -33,7 +36,9 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    transition: background-image 0.3s ease;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    contain: layout style;
 }
 
 .tsp-chardb-editor::before {
@@ -50,7 +55,6 @@
     opacity: var(--bg-opacity, 0.2);
     z-index: -1;
     border-radius: var(--tsp-radius-md);
-    transition: opacity 0.3s ease, background-image 0.3s ease;
 }
 
 /* ▼▼▼ 修改开始：问题二修复 ▼▼▼ */
@@ -60,11 +64,6 @@
     margin-right: 6px;
     color: var(--tsp-status-enabled, #9ece6a); /* 使用启用状态颜色 */
     vertical-align: middle;
-    transition: transform 0.2s; /* 添加一点交互效果 */
-}
-/* 鼠标悬停时稍微放大，提高可交互性 */
-.tsp-list-item-name .tsp-icon-sm:hover {
-    transform: scale(1.2);
 }
 /* ▲▲▲ 修改结束 ▲▲▲ */
 
@@ -128,12 +127,11 @@
     color: var(--tsp-text-muted);
     overflow: hidden;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: border-color 0.15s ease;
 }
 
 .tsp-editor-avatar:hover {
     border-color: var(--tsp-accent-primary);
-    transform: scale(1.05);
 }
 
 .tsp-editor-avatar img {

@@ -27,6 +27,9 @@
     flex-direction: column;
     overflow-y: auto;
     border-right: 1px solid var(--tsp-border);
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    contain: layout style;
 }
 
 .ai-settings-nav ul {
@@ -46,14 +49,15 @@
     cursor: pointer;
     border-radius: var(--tsp-radius-sm);
     color: var(--tsp-text-secondary);
-    transition: all 0.2s ease;
+    transition: background-color 0.15s ease, color 0.15s ease;
     font-size: 0.95em;
     font-weight: 500;
+    will-change: background-color;
 }
 
 /* 导航项悬停状态 */
 .ai-settings-nav li:hover {
-    background: rgba(122, 162, 247, 0.1);
+    background-color: rgba(122, 162, 247, 0.1);
     color: var(--tsp-text-primary);
 }
 
@@ -80,21 +84,18 @@
     padding-right: 8px; /* 预留滚动条空间 */
     display: flex;
     flex-direction: column;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    contain: layout style;
 }
 
 /* 独立的面板容器 */
 .ai-content-panel {
     display: none; /* 默认隐藏 */
-    animation: fadeIn 0.2s ease-in-out;
 }
 
 .ai-content-panel.active {
     display: block; /* 激活时显示 */
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(5px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 /* --------------------------------------------------------------------------
