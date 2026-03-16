@@ -1,8 +1,14 @@
 @import url('../fonts/fonts.css');
 @import url('./phone-home.css');
-@import url('./phone-message.css');
+@import url('./phone-chat.css');
+@import url('./phone-worldbook.css');
+@import url('./phone-transfer.css');
+@import url('./phone-contacts.css');
+@import url('./phone-voice.css');
+@import url('./phone-summary.css');
 @import url('./phone-settings.css');
 @import url('./phone-music.css');
 @import url('./phone-moments.css');
 @import url('./phone-forum.css');
 @import url('./phone-map.css');
+@import url('./phone-new-friends.css');

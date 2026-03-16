@@ -1,0 +1,846 @@
+.tsp-phone-transfer-modal {
+    position: absolute;
+    bottom: 64px;
+    left: 12px;
+    right: 12px;
+    background: rgba(30, 30, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    max-height: 400px;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-transfer-modal.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.tsp-phone-transfer-modal-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.tsp-phone-transfer-modal-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tsp-phone-transfer-modal-title {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.tsp-phone-transfer-modal-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    font-size: 18px;
+    padding: 4px;
+    transition: color 0.2s ease;
+}
+
+.tsp-phone-transfer-modal-close:hover {
+    color: white;
+}
+
+.tsp-phone-transfer-modal-body {
+    padding: 16px;
+}
+
+.tsp-phone-transfer-amount-section,
+.tsp-phone-transfer-note-section {
+    margin-bottom: 16px;
+}
+
+.tsp-phone-transfer-amount-section:last-child,
+.tsp-phone-transfer-note-section:last-child {
+    margin-bottom: 0;
+}
+
+.tsp-phone-transfer-label {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.tsp-phone-transfer-amount-input-wrapper {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: border-color 0.2s ease;
+}
+
+.tsp-phone-transfer-amount-input-wrapper:focus-within {
+    border-color: #667eea;
+}
+
+.tsp-phone-transfer-currency {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+.tsp-phone-transfer-amount-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+    width: 100%;
+}
+
+.tsp-phone-transfer-amount-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.tsp-phone-transfer-note-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.tsp-phone-transfer-note-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.tsp-phone-transfer-note-input:focus {
+    border-color: #667eea;
+}
+
+.tsp-phone-transfer-modal-footer {
+    padding: 12px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 8px;
+}
+
+.tsp-phone-transfer-cancel-btn,
+.tsp-phone-transfer-confirm-btn {
+    flex: 1;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.tsp-phone-transfer-cancel-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.tsp-phone-transfer-cancel-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.tsp-phone-transfer-confirm-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.tsp-phone-transfer-confirm-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+}
+
+.tsp-phone-transfer-message {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 8px;
+    min-width: 200px;
+}
+
+.tsp-phone-message.user .tsp-phone-transfer-message {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.tsp-phone-transfer-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.tsp-phone-transfer-icon i {
+    color: white;
+    font-size: 20px;
+}
+
+.tsp-phone-transfer-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tsp-phone-transfer-amount {
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.tsp-phone-message.user .tsp-phone-transfer-amount {
+    color: white;
+}
+
+.tsp-phone-transfer-status {
+    color: #666;
+    font-size: 12px;
+}
+
+.tsp-phone-message.user .tsp-phone-transfer-status {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.tsp-phone-transfer-note {
+    color: #999;
+    font-size: 11px;
+}
+
+.tsp-phone-message.user .tsp-phone-transfer-note {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.tsp-phone-transfer-card {
+    background: #fa9d3b;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 260px;
+    flex-shrink: 0;
+}
+
+.tsp-phone-transfer-card.sent {
+    background: #fa9d3b;
+}
+
+.tsp-phone-transfer-card.received {
+    background: #fedf9a;
+}
+
+.tsp-phone-transfer-card.received .tsp-phone-transfer-card-amount {
+    color: #f8f8f8;
+}
+
+.tsp-phone-transfer-card.received .tsp-phone-transfer-card-status {
+    color: #f8f8f8;
+}
+
+.tsp-phone-transfer-card.received .tsp-phone-transfer-card-footer-label {
+    color: #f8f8f8;
+}
+
+.tsp-phone-transfer-card.received .tsp-phone-transfer-card-footer {
+    background: #fedf9a;
+}
+
+.tsp-phone-transfer-card.refunded {
+    background: #ebdcba;
+}
+
+.tsp-phone-transfer-card.refunded .tsp-phone-transfer-card-amount {
+    color: white;
+}
+
+.tsp-phone-transfer-card.refunded .tsp-phone-transfer-card-status {
+    color: white;
+}
+
+.tsp-phone-transfer-card.refunded .tsp-phone-transfer-card-footer-label {
+    color: white;
+}
+
+.tsp-phone-transfer-card.refunded .tsp-phone-transfer-card-footer {
+    background: #ebdcba;
+}
+
+.tsp-phone-transfer-card-main {
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tsp-phone-transfer-card-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.tsp-phone-transfer-card-icon i {
+    color: white;
+    font-size: 16px;
+}
+
+.tsp-phone-transfer-card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.tsp-phone-transfer-card-amount {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.tsp-phone-transfer-card-status {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tsp-phone-transfer-card-footer {
+    background: #fa9d3b;
+    padding: 6px 16px;
+    display: flex;
+    align-items: center;
+}
+
+.tsp-phone-transfer-card-footer-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 11px;
+}
+
+.tsp-phone-message.user .tsp-phone-transfer-card {
+    border-bottom-right-radius: 4px;
+}
+
+.tsp-phone-message:not(.user) .tsp-phone-transfer-card {
+    border-bottom-left-radius: 4px;
+}
+
+.tsp-phone-transfer-detail-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding-top: 44px;
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in-out;
+}
+
+.tsp-phone-transfer-detail-view.slide-in {
+    transform: translateX(0);
+}
+
+.tsp-phone-transfer-detail-view.slide-out {
+    transform: translateX(100%);
+}
+
+.tsp-phone-transfer-detail-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.tsp-phone-transfer-detail-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    min-width: 280px;
+    backdrop-filter: blur(10px);
+}
+
+.tsp-phone-transfer-detail-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #fa9d3b 0%, #f8c471 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.tsp-phone-transfer-detail-icon i {
+    color: white;
+    font-size: 36px;
+}
+
+.tsp-phone-transfer-detail-amount {
+    color: white;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.tsp-phone-transfer-detail-status {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.tsp-phone-transfer-detail-note {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+.tsp-phone-transfer-receive-btn {
+    margin-top: 32px;
+    padding: 14px 48px;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.tsp-phone-transfer-receive-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(34, 197, 94, 0.4);
+}
+
+.tsp-phone-transfer-receive-btn:active {
+    transform: translateY(0);
+}
+
+.tsp-phone-transfer-receive-btn i {
+    font-size: 18px;
+}
+
+.tsp-phone-transfer-refund-btn {
+    margin-top: 16px;
+    padding: 12px 40px;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.tsp-phone-transfer-refund-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
+}
+
+.tsp-phone-transfer-refund-btn:active {
+    transform: translateY(0);
+}
+
+.tsp-phone-transfer-refund-btn i {
+    font-size: 16px;
+}
+
+.tsp-form-group {
+    margin-bottom: 20px;
+}
+
+.tsp-form-group label {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.ai-worldbook-selected-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-height: 40px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.tsp-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(102, 126, 234, 0.2);
+    border: 1px solid rgba(102, 126, 234, 0.4);
+    border-radius: 16px;
+    color: white;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+.tsp-tag:hover {
+    background: rgba(102, 126, 234, 0.3);
+    border-color: rgba(102, 126, 234, 0.6);
+}
+
+.tsp-tag-remove {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.tsp-tag-remove:hover {
+    background: rgba(239, 68, 68, 0.3);
+    color: #fff;
+}
+
+.tsp-phone-wb-item-activated {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.tsp-phone-wb-item-activated .tsp-phone-wb-item-name {
+    color: #22c55e;
+}
+
+.tsp-phone-wb-item-activated .tsp-phone-wb-item-name i {
+    color: #22c55e;
+}
+
+.tsp-phone-share-music-modal {
+    position: absolute;
+    bottom: 64px;
+    left: 12px;
+    right: 12px;
+    background: rgba(30, 30, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    max-height: 400px;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-share-music-modal.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.tsp-phone-share-music-modal-content {
+    display: flex;
+    flex-direction: column;
+    max-height: 400px;
+}
+
+.tsp-phone-share-music-modal-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tsp-phone-share-music-modal-title {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.tsp-phone-share-music-modal-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    font-size: 18px;
+    padding: 4px;
+    transition: color 0.2s ease;
+}
+
+.tsp-phone-share-music-modal-close:hover {
+    color: white;
+}
+
+.tsp-phone-share-music-modal-body {
+    padding: 16px;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.tsp-phone-share-music-search-section {
+    margin-bottom: 16px;
+}
+
+.tsp-phone-share-music-search-input-wrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.tsp-phone-share-music-search-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 10px 12px;
+    color: white;
+    font-size: 14px;
+    outline: none;
+}
+
+.tsp-phone-share-music-search-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.tsp-phone-share-music-search-input:focus {
+    border-color: #fa709a;
+}
+
+.tsp-phone-share-music-search-btn {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.tsp-phone-share-music-search-btn:hover {
+    transform: scale(1.05);
+}
+
+.tsp-phone-share-music-results {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.tsp-phone-share-music-result-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: background 0.2s ease;
+}
+
+.tsp-phone-share-music-result-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tsp-phone-share-music-result-cover {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.tsp-phone-share-music-result-cover i {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 18px;
+}
+
+.tsp-phone-share-music-result-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.tsp-phone-share-music-result-title {
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tsp-phone-share-music-result-artist {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tsp-phone-share-music-result-action {
+    flex-shrink: 0;
+}
+
+.tsp-phone-share-music-send-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.tsp-phone-share-music-send-btn:hover {
+    transform: scale(1.1);
+}
+
+.tsp-phone-share-music-send-btn i {
+    color: white;
+    font-size: 14px;
+}
+
+.tsp-phone-music-card {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 12px;
+    overflow: hidden;
+    width: 260px;
+    flex-shrink: 0;
+    border: 1px solid rgba(250, 112, 154, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    padding-right: 40px;
+}
+
+.tsp-phone-music-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(250, 112, 154, 0.3);
+}
+
+.tsp-phone-music-card-cover {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 12px;
+    flex-shrink: 0;
+}
+
+.tsp-phone-music-card-cover i {
+    color: white;
+    font-size: 24px;
+}
+
+.tsp-phone-music-card-info {
+    padding: 0 12px 12px;
+}
+
+.tsp-phone-music-card-title {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tsp-phone-music-card-artist {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tsp-phone-music-card-play {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    opacity: 1;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+.tsp-phone-music-card:hover .tsp-phone-music-card-play {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.tsp-phone-music-card-play i {
+    color: white;
+}

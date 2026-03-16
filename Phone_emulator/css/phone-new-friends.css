@@ -1,0 +1,500 @@
+.tsp-phone-new-friends-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding-top: 44px;
+}
+
+.tsp-phone-new-friends-content {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.tsp-phone-new-friends-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0;
+}
+
+.tsp-phone-new-friends-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    padding: 20px;
+}
+
+.tsp-phone-new-friends-empty i {
+    font-size: 64px;
+    margin-bottom: 16px;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.tsp-phone-new-friends-empty p {
+    font-size: 14px;
+}
+
+.tsp-phone-new-friend-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.2s ease;
+}
+
+.tsp-phone-new-friend-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.tsp-phone-new-friend-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.tsp-phone-new-friend-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tsp-phone-new-friend-avatar i {
+    color: white;
+    font-size: 24px;
+}
+
+.tsp-phone-new-friend-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tsp-phone-new-friend-name {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tsp-phone-new-friend-message {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tsp-phone-new-friend-identity {
+    color: rgba(102, 126, 234, 0.8);
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.tsp-phone-new-friend-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.tsp-phone-new-friend-accept-btn {
+    padding: 6px 16px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    border: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-new-friend-accept-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.4);
+}
+
+.tsp-phone-new-friend-accept-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.tsp-phone-new-friend-accepted {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 13px;
+    padding: 6px 16px;
+}
+
+.tsp-phone-new-friend-reject-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(239, 68, 68, 0.2);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-new-friend-reject-btn:hover {
+    background: rgba(239, 68, 68, 0.4);
+}
+
+.tsp-phone-new-friend-reject-btn i {
+    color: #ef4444;
+    font-size: 14px;
+}
+
+.tsp-phone-new-friends-actions-wrapper {
+    position: sticky;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(26, 26, 46, 0) 0%, rgba(26, 26, 46, 0.95) 20%);
+    padding: 16px 0 0 0;
+    margin-top: auto;
+    z-index: 10;
+}
+
+.tsp-phone-new-friends-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.tsp-phone-new-friends-toggle-btn {
+    width: 50px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    background: rgba(10, 10, 15, 0.9);
+    color: #667eea;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
+}
+
+.tsp-phone-new-friends-toggle-btn:hover {
+    background: rgba(102, 126, 234, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 0 15px rgba(102, 126, 234, 0.4);
+}
+
+.tsp-phone-new-friends-toggle-btn.expanded i {
+    transform: rotate(180deg);
+}
+
+.tsp-phone-new-friends-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 16px 16px 16px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.tsp-phone-new-friends-actions.show {
+    max-height: 200px;
+}
+
+.tsp-phone-new-friends-actions .tsp-phone-map-refresh-btn {
+    margin-top: 0;
+}
+
+.tsp-phone-new-friends-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.tsp-phone-new-friends-loading i {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: #667eea;
+    animation: spin 1s linear infinite;
+}
+
+.tsp-phone-new-friends-loading p {
+    font-size: 16px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.tsp-phone-new-friends-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+.tsp-phone-new-friends-error i {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: #ff6b6b;
+}
+
+.tsp-phone-new-friends-error p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.tsp-phone-new-friend-entry {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.tsp-phone-new-friend-entry:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.tsp-phone-new-friend-entry-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.tsp-phone-new-friend-entry-icon i {
+    color: white;
+    font-size: 24px;
+}
+
+.tsp-phone-new-friend-entry-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tsp-phone-new-friend-entry-name {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.tsp-phone-new-friend-entry-count {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.tsp-phone-new-friend-entry-badge {
+    min-width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background: #ef4444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tsp-phone-new-friend-detail-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding-top: 44px;
+}
+
+.tsp-phone-new-friend-detail-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tsp-phone-new-friend-detail-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    margin-bottom: 24px;
+}
+
+.tsp-phone-new-friend-detail-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.tsp-phone-new-friend-detail-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tsp-phone-new-friend-detail-avatar i {
+    color: white;
+    font-size: 36px;
+}
+
+.tsp-phone-new-friend-detail-name {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.tsp-phone-new-friend-detail-identity {
+    color: rgba(102, 126, 234, 0.8);
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.tsp-phone-new-friend-detail-message {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    text-align: center;
+    max-width: 280px;
+}
+
+.tsp-phone-new-friend-detail-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.tsp-phone-new-friend-detail-section-title {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.tsp-phone-new-friend-detail-section-content {
+    color: white;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.tsp-phone-new-friend-detail-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.tsp-phone-new-friend-detail-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 24px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-new-friend-detail-btn.primary {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: white;
+}
+
+.tsp-phone-new-friend-detail-btn.primary:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+}
+
+.tsp-phone-new-friend-detail-btn.secondary {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+.tsp-phone-new-friend-detail-btn.secondary:hover {
+    background: rgba(239, 68, 68, 0.3);
+}
+
+.tsp-phone-new-friend-detail-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+@media (max-width: 480px) {
+    .tsp-phone-new-friend-item {
+        padding: 10px 12px;
+    }
+
+    .tsp-phone-new-friend-avatar {
+        width: 45px;
+        height: 45px;
+    }
+
+    .tsp-phone-new-friend-name {
+        font-size: 15px;
+    }
+
+    .tsp-phone-new-friend-message {
+        font-size: 12px;
+    }
+}
