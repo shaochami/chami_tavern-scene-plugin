@@ -20,9 +20,6 @@
     /* 修改点：允许左侧面板整体纵向滚动 */
     overflow-y: auto;
     height: 100%;
-    overscroll-behavior: contain;
-    -webkit-overflow-scrolling: touch;
-    contain: layout style;
 }
 
 
@@ -76,12 +73,12 @@
     border: 1px solid var(--tsp-border);
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.15s ease, border-color 0.15s ease;
+    transition: all 0.2s;
     user-select: none;
 }
 
 .ts-category-btn:hover {
-    background-color: var(--tsp-bg-secondary);
+    background: var(--tsp-bg-secondary);
     border-color: var(--tsp-accent-primary);
 }
 
@@ -139,21 +136,23 @@
     border-radius: 6px;
     padding: 8px;
     cursor: pointer;
-    transition: border-color 0.15s ease, background-color 0.15s ease;
+    transition: transform 0.2s;
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: 4px;
-    contain: layout style;
 }
 
 .ts-card:hover {
+    transform: translateY(-2px);
     border-color: var(--tsp-accent-primary);
 }
 .ts-card.selected {
     border-color: var(--tsp-accent-primary);
     background-color: color-mix(in srgb, var(--tsp-accent-primary) 15%, transparent);
+    transform: translateY(-1px);
+    box-shadow: 0 0 8px color-mix(in srgb, var(--tsp-accent-primary) 30%, transparent);
 }
 
 .ts-card.selected::before {
@@ -221,7 +220,7 @@
     background: var(--tsp-bg-main);
     border: 1px solid var(--tsp-border);
     cursor: pointer;
-    transition: background-color 0.15s ease, border-color 0.15s ease;
+    transition: all 0.15s ease;
 }
 
 .tsp-tag-result.active {
