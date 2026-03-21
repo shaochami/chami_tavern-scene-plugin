@@ -1,0 +1,1097 @@
+.tsp-phone-novel-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #f5f5f5 0%, #e8e8e8 100%);
+    padding-top: 88px;
+    overflow: hidden;
+}
+
+.tsp-phone-screen > .tsp-phone-nav-bar.novel-nav {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    right: 0;
+    height: 44px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    z-index: 20;
+}
+
+.tsp-phone-nav-bar.novel-nav .tsp-phone-nav-title {
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.tsp-phone-nav-bar.novel-nav .tsp-phone-nav-back {
+    color: #333;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-nav-bar.novel-nav .tsp-phone-nav-back:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.tsp-phone-novel-filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.tsp-phone-novel-filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.tsp-phone-novel-filter-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.tsp-phone-novel-filter-btn i:first-child {
+    font-size: 12px;
+}
+
+.tsp-phone-novel-filter-arrow {
+    font-size: 10px;
+    transition: transform 0.3s ease;
+}
+
+.tsp-phone-novel-filter-arrow.rotated {
+    transform: rotate(180deg);
+}
+
+.tsp-phone-novel-filter-summary {
+    font-size: 12px;
+    color: #667eea;
+    font-weight: 500;
+    background: rgba(102, 126, 234, 0.1);
+    padding: 4px 10px;
+    border-radius: 12px;
+    display: none;
+}
+
+.tsp-phone-novel-categories {
+    padding: 16px;
+    background: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 16px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.tsp-phone-novel-categories.expanded {
+    max-height: 500px;
+    padding: 16px;
+    opacity: 1;
+}
+
+.tsp-phone-novel-category-section {
+    margin-bottom: 16px;
+}
+
+.tsp-phone-novel-category-section:last-child {
+    margin-bottom: 0;
+}
+
+.tsp-phone-novel-category-label {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 8px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tsp-phone-novel-category-label.multi-select::after {
+    content: '可多选';
+    font-size: 10px;
+    color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.tsp-phone-novel-category-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tsp-phone-novel-category-tag {
+    padding: 6px 14px;
+    background: #f0f0f0;
+    border-radius: 16px;
+    font-size: 13px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.tsp-phone-novel-category-tag:hover {
+    background: #e8e8e8;
+}
+
+.tsp-phone-novel-category-tag.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.tsp-phone-novel-generate-btn {
+    margin: 16px;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-novel-generate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.tsp-phone-novel-generate-btn:active {
+    transform: translateY(0);
+}
+
+.tsp-phone-novel-generate-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.tsp-phone-novel-results {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 16px 16px;
+}
+
+.tsp-phone-novel-results-title {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.tsp-phone-novel-book-item {
+    display: flex;
+    background: white;
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.tsp-phone-novel-book-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tsp-phone-novel-book-delete {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(255, 77, 79, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 5;
+}
+
+.tsp-phone-novel-book-delete i {
+    font-size: 10px;
+    color: #ff4d4f;
+}
+
+.tsp-phone-novel-book-delete:hover {
+    background: rgba(255, 77, 79, 0.2);
+    transform: scale(1.1);
+}
+
+.tsp-phone-novel-book-delete:active {
+    background: rgba(255, 77, 79, 0.3);
+    transform: scale(0.95);
+}
+
+.tsp-phone-novel-book-cover {
+    width: 60px;
+    height: 80px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 14px;
+    flex-shrink: 0;
+}
+
+.tsp-phone-novel-book-cover i {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 24px;
+}
+
+.tsp-phone-novel-book-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tsp-phone-novel-book-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tsp-phone-novel-book-desc {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.tsp-phone-novel-book-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto;
+}
+
+.tsp-phone-novel-book-tag {
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.tsp-phone-novel-book-tag-category {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.tsp-phone-novel-book-tag-xp {
+    background: rgba(255, 107, 107, 0.15);
+    color: #ff6b6b;
+}
+
+.tsp-phone-novel-detail-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #f5f5f5 0%, #e8e8e8 100%);
+    padding-top: 88px;
+    overflow: hidden;
+}
+
+.tsp-phone-novel-detail-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.tsp-phone-novel-detail-header {
+    display: flex;
+    margin-bottom: 24px;
+}
+
+.tsp-phone-novel-detail-cover {
+    width: 100px;
+    height: 140px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.tsp-phone-novel-detail-cover i {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 40px;
+}
+
+.tsp-phone-novel-detail-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tsp-phone-novel-detail-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.tsp-phone-novel-detail-author {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.tsp-phone-novel-detail-author span {
+    color: #667eea;
+    font-weight: 500;
+}
+
+.tsp-phone-novel-detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tsp-phone-novel-detail-tag {
+    padding: 4px 10px;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 12px;
+    font-size: 11px;
+    color: #667eea;
+    font-weight: 500;
+}
+
+.tsp-phone-novel-detail-section {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tsp-phone-novel-detail-section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tsp-phone-novel-detail-section-title i {
+    color: #667eea;
+}
+
+.tsp-phone-novel-detail-section-content {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.tsp-phone-novel-detail-character {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.tsp-phone-novel-detail-character:last-child {
+    border-bottom: none;
+}
+
+.tsp-phone-novel-detail-character-label {
+    width: 60px;
+    font-size: 12px;
+    color: #999;
+    flex-shrink: 0;
+}
+
+.tsp-phone-novel-detail-character-value {
+    flex: 1;
+    font-size: 13px;
+    color: #333;
+    font-weight: 500;
+}
+
+.tsp-phone-novel-characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 16px;
+    padding: 8px 0;
+}
+
+.tsp-phone-novel-character-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.tsp-phone-novel-character-item:hover {
+    background: rgba(102, 126, 234, 0.05);
+    transform: translateY(-2px);
+}
+
+.tsp-phone-novel-character-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.tsp-phone-novel-character-avatar span {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.tsp-phone-novel-character-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.tsp-phone-novel-character-role {
+    font-size: 11px;
+    color: #999;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.tsp-phone-novel-characters-empty {
+    text-align: center;
+    color: #999;
+    padding: 20px 0;
+    font-size: 13px;
+}
+
+.tsp-phone-character-detail-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #f5f5f5 0%, #e8e8e8 100%);
+    padding-top: 88px;
+    overflow: hidden;
+}
+
+.tsp-phone-character-detail-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.tsp-phone-character-detail-header {
+    display: flex;
+    margin-bottom: 24px;
+    align-items: center;
+}
+
+.tsp-phone-character-detail-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.tsp-phone-character-detail-avatar span {
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.tsp-phone-character-detail-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tsp-phone-character-detail-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.tsp-phone-character-detail-role {
+    font-size: 14px;
+    color: #667eea;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.tsp-phone-character-detail-identity {
+    font-size: 13px;
+    color: #666;
+}
+
+.tsp-phone-character-detail-section {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tsp-phone-character-detail-section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tsp-phone-character-detail-section-title i {
+    color: #667eea;
+}
+
+.tsp-phone-character-detail-section-content {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.tsp-phone-character-detail-book {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tsp-phone-character-detail-book-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.tsp-phone-character-detail-book-author {
+    font-size: 12px;
+    color: #999;
+}
+
+.tsp-phone-novel-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: #999;
+}
+
+.tsp-phone-novel-loading i {
+    font-size: 32px;
+    color: #667eea;
+    animation: spin 1s linear infinite;
+    margin-bottom: 12px;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.tsp-phone-novel-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.tsp-phone-novel-empty i {
+    font-size: 48px;
+    color: #ddd;
+    margin-bottom: 16px;
+}
+
+.tsp-phone-novel-empty p {
+    font-size: 14px;
+    color: #999;
+}
+
+.tsp-phone-novel-select-hint {
+    text-align: center;
+    padding: 30px 20px;
+    color: #999;
+}
+
+.tsp-phone-novel-select-hint i {
+    font-size: 36px;
+    color: #ddd;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.tsp-phone-novel-select-hint p {
+    font-size: 14px;
+}
+
+.tsp-phone-novel-actions-wrapper {
+    position: sticky;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, #e8e8e8 20%);
+    padding-top: 20px;
+    z-index: 10;
+}
+
+.tsp-phone-novel-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.tsp-phone-novel-toggle-btn {
+    width: 50px;
+    height: 28px;
+    border-radius: 14px;
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    background: rgba(255, 255, 255, 0.95);
+    color: #667eea;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
+}
+
+.tsp-phone-novel-toggle-btn:hover {
+    background: rgba(102, 126, 234, 0.1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.25);
+}
+
+.tsp-phone-novel-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 16px 16px 16px;
+}
+
+.tsp-phone-novel-action-btn {
+    padding: 12px 20px;
+    background: white;
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    border-radius: 10px;
+    color: #667eea;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.tsp-phone-novel-action-btn:hover {
+    background: rgba(102, 126, 234, 0.1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.2);
+}
+
+.tsp-phone-novel-action-btn:active {
+    transform: translateY(0);
+}
+
+.tsp-phone-novel-action-btn:disabled {
+    background: #f5f5f5;
+    color: #ccc;
+    border-color: #e0e0e0;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.tsp-phone-novel-action-btn.primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.tsp-phone-novel-action-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.tsp-phone-novel-action-btn.primary:disabled {
+    background: #ccc;
+    box-shadow: none;
+}
+
+/* 章节管理按钮样式 */
+.tsp-phone-novel-chapter-list-btn {
+    width: 100%;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.tsp-phone-novel-chapter-list-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.tsp-phone-novel-chapter-list-btn:active {
+    transform: translateY(0);
+}
+
+/* 章节列表页面样式 */
+.tsp-phone-chapter-list-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #f5f5f5 0%, #e8e8e8 100%);
+    padding-top: 88px;
+    overflow: hidden;
+}
+
+.tsp-phone-chapter-list-header {
+    background: white;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tsp-phone-chapter-list-book-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.tsp-phone-chapter-list-book-info {
+    font-size: 13px;
+    color: #666;
+}
+
+.tsp-phone-chapter-list-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 20px;
+}
+
+.tsp-phone-chapter-list-count {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.tsp-phone-chapter-item {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-chapter-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tsp-phone-chapter-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 16px;
+    flex-shrink: 0;
+}
+
+.tsp-phone-chapter-title {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.4;
+}
+
+.tsp-phone-chapter-actions {
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+}
+
+.tsp-phone-chapter-delete-btn {
+    background: none;
+    border: none;
+    color: #ff4757;
+    cursor: pointer;
+    padding: 4px;
+    margin-right: 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-chapter-delete-btn:hover {
+    background: rgba(255, 71, 87, 0.1);
+    transform: scale(1.1);
+}
+
+.tsp-phone-chapter-arrow {
+    color: #999;
+}
+
+.tsp-phone-chapter-list-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: #999;
+}
+
+.tsp-phone-chapter-list-loading i {
+    font-size: 32px;
+    color: #667eea;
+    animation: spin 1s linear infinite;
+    margin-bottom: 12px;
+}
+
+.tsp-phone-chapter-list-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.tsp-phone-chapter-list-empty i {
+    font-size: 48px;
+    color: #ddd;
+    margin-bottom: 16px;
+}
+
+.tsp-phone-chapter-list-empty p {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 8px;
+}
+
+.tsp-phone-chapter-list-empty-hint {
+    font-size: 12px;
+    color: #999;
+}
+
+/* 章节详情页面样式 */
+.tsp-phone-chapter-detail-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #f5f5f5 0%, #e8e8e8 100%);
+    padding-top: 88px;
+    overflow: hidden;
+}
+
+.tsp-phone-chapter-detail-header {
+    background: white;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tsp-phone-chapter-detail-book-title {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.tsp-phone-chapter-detail-chapter-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.3;
+}
+
+.tsp-phone-chapter-detail-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background: white;
+    margin: 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    font-size: 14px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.tsp-phone-chapter-detail-content p {
+    margin-bottom: 16px;
+}
+
+.tsp-phone-chapter-detail-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* 章节大纲输入页面样式 */
+.tsp-phone-outline-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #f5f5f5 0%, #e8e8e8 100%);
+    padding-top: 88px;
+    overflow: hidden;
+}
+
+.tsp-phone-outline-header {
+    background: white;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tsp-phone-outline-book-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.tsp-phone-outline-hint {
+    font-size: 12px;
+    color: #999;
+}
+
+.tsp-phone-outline-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 20px;
+}
+
+.tsp-phone-outline-textarea {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    padding: 16px;
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333 !important;
+    background: white !important;
+    resize: none;
+    outline: none;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.tsp-phone-outline-textarea:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    color: #333 !important;
+    background: white !important;
+}
+
+.tsp-phone-outline-textarea::placeholder {
+    color: #aaa;
+}
+
+.tsp-phone-outline-actions {
+    display: flex;
+    gap: 12px;
+    padding: 16px 20px;
+    background: white;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.tsp-phone-outline-actions .tsp-phone-novel-action-btn {
+    flex: 1;
+}

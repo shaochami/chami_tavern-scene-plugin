@@ -425,6 +425,11 @@
     margin-bottom: 8px;
 }
 
+.tsp-phone-transfer-detail-status-failed {
+    color: #ef4444;
+    font-weight: 600;
+}
+
 .tsp-phone-transfer-detail-note {
     color: rgba(255, 255, 255, 0.6);
     font-size: 14px;

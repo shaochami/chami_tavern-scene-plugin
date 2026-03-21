@@ -264,6 +264,10 @@
     background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
 }
 
+.tsp-phone-app-icon-box.novel {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
 .tsp-phone-app-icon i {
     color: white;
     font-size: 28px;
