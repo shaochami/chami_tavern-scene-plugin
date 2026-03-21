@@ -328,9 +328,11 @@
 .editor-main-content {
     display: flex;
     gap: 20px;
-    min-height: 0;
+    flex-shrink: 0;
 }
-
+.tsp-edit-content > * {
+    flex-shrink: 0;
+}
 .prompt-section {
     flex: 1;
     display: flex;
@@ -560,8 +562,9 @@
 
     .editor-main-content {
         flex-direction: column;
-        overflow-y: auto;
+        overflow-y: visible; /* 改成 visible，将滚动权交还给父容器 */
     }
+
 
     .i2i-section {
         width: 100%;
