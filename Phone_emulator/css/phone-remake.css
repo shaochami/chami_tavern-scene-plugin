@@ -1,0 +1,495 @@
+/* 人生重开模拟器样式 */
+.tsp-phone-remake {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    padding-top: 40px; /* 给状态栏腾出位置 */
+}
+
+.tsp-phone-remake-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.tsp-phone-remake-header h2 {
+    margin: 0;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+    flex: 1;
+}
+
+.tsp-phone-remake-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tsp-phone-remake-toggle span {
+    font-size: 14px;
+    color: #333333;
+}
+
+.tsp-toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+}
+
+.tsp-toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.tsp-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.tsp-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .tsp-toggle-slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .tsp-toggle-slider:before {
+    transform: translateX(24px);
+}
+
+.tsp-remake-loading {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #4CAF50;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.tsp-phone-remake-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+/* 开始界面 */
+.tsp-remake-start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+.tsp-remake-start h3 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.tsp-remake-start p {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 40px;
+}
+
+/* 天赋选择界面 */
+.tsp-remake-talent-selection h3 {
+    font-size: 20px;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.tsp-remake-talent-selection p {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.tsp-remake-talent-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.tsp-remake-talent-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tsp-remake-talent-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.tsp-remake-talent-card.selected {
+    border-color: #4CAF50;
+    background-color: #f0f9ff;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.tsp-remake-talent-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333333;
+}
+
+.tsp-remake-talent-desc {
+    font-size: 12px;
+    color: #666666;
+    line-height: 1.4;
+}
+
+.tsp-remake-selected-talents {
+    margin-bottom: 20px;
+}
+
+.tsp-remake-selected-talents h4 {
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.tsp-remake-selected-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tsp-remake-selected-talent {
+    background-color: #e8f5e8;
+    border: 1px solid #c8e6c9;
+    border-radius: 16px;
+    padding: 5px 12px;
+    font-size: 12px;
+    color: #2e7d32;
+}
+
+/* 属性分配界面 */
+.tsp-remake-property-allocation h3 {
+    font-size: 20px;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.tsp-remake-property-allocation p {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.tsp-remake-property-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.tsp-remake-property-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.tsp-remake-property-item label {
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.tsp-remake-property-item input {
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.tsp-remake-property-info {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #666666;
+}
+
+.tsp-remake-property-info span {
+    font-weight: 600;
+    color: #333333;
+}
+
+/* 人生结果界面 */
+.tsp-remake-life-results h3 {
+    font-size: 20px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.tsp-remake-results-container {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.tsp-remake-result-item {
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.tsp-remake-result-item:last-child {
+    border-bottom: none;
+}
+
+.tsp-remake-result-age {
+    font-weight: 600;
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.tsp-remake-result-stats {
+    font-size: 12px;
+    color: #666666;
+    margin-bottom: 10px;
+}
+
+.tsp-remake-result-events {
+    margin-bottom: 10px;
+}
+
+.tsp-remake-event {
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+.tsp-remake-result-talents {
+    margin-top: 10px;
+}
+
+.tsp-remake-talent-event {
+    font-size: 14px;
+    color: #4CAF50;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+/* 总结界面 */
+.tsp-remake-summary h3 {
+    font-size: 20px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.tsp-remake-summary-content {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.tsp-remake-summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.tsp-remake-summary-item:last-child {
+    border-bottom: none;
+}
+
+.tsp-remake-summary-item label {
+    font-size: 14px;
+    color: #666666;
+}
+
+.tsp-remake-summary-item span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+}
+
+/* 操作按钮 */
+.tsp-remake-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* 通用按钮样式 */
+.tsp-phone-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tsp-phone-btn-primary {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.tsp-phone-btn-primary:hover {
+    background-color: #45a049;
+}
+
+.tsp-phone-btn-primary:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.tsp-phone-btn-secondary {
+    background-color: #f1f1f1;
+    color: #333333;
+    border: 1px solid #e0e0e0;
+}
+
+.tsp-phone-btn-secondary:hover {
+    background-color: #e0e0e0;
+}
+
+.tsp-phone-btn-back {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #333333;
+    padding: 5px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.tsp-phone-btn-back:hover {
+    background-color: #f0f0f0;
+}
+
+/* 滚动条样式 */
+.tsp-remake-results-container::-webkit-scrollbar,
+.tsp-phone-remake-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.tsp-remake-results-container::-webkit-scrollbar-track,
+.tsp-phone-remake-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.tsp-remake-results-container::-webkit-scrollbar-thumb,
+.tsp-phone-remake-content::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.tsp-remake-results-container::-webkit-scrollbar-thumb:hover,
+.tsp-phone-remake-content::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* AI 总结样式 */
+.tsp-remake-ai-summary {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.tsp-remake-ai-summary h4 {
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.tsp-remake-ai-summary-content {
+    margin-top: 15px;
+}
+
+.tsp-remake-ai-summary-item {
+    margin-bottom: 15px;
+}
+
+.tsp-remake-ai-summary-item label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.tsp-remake-ai-summary-item p {
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+    .tsp-remake-talent-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tsp-remake-property-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tsp-remake-actions {
+        flex-direction: column;
+    }
+    
+    .tsp-phone-btn {
+        width: 100%;
+    }
+}

@@ -111,9 +111,30 @@
 }
 
 .tsp-phone-novel-categories.expanded {
-    max-height: 500px;
+    max-height: 300px;
     padding: 16px;
     opacity: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(102, 126, 234, 0.3) rgba(0, 0, 0, 0.05);
+}
+
+.tsp-phone-novel-categories.expanded::-webkit-scrollbar {
+    width: 6px;
+}
+
+.tsp-phone-novel-categories.expanded::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+}
+
+.tsp-phone-novel-categories.expanded::-webkit-scrollbar-thumb {
+    background: rgba(102, 126, 234, 0.3);
+    border-radius: 3px;
+}
+
+.tsp-phone-novel-categories.expanded::-webkit-scrollbar-thumb:hover {
+    background: rgba(102, 126, 234, 0.5);
 }
 
 .tsp-phone-novel-category-section {
@@ -382,6 +403,31 @@
     color: #333;
     margin-bottom: 8px;
     line-height: 1.3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tsp-phone-novel-title-edit {
+    background: none;
+    border: none;
+    color: #667eea;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tsp-phone-novel-title-edit:hover {
+    background: rgba(102, 126, 234, 0.1);
+    transform: scale(1.1);
+}
+
+.tsp-phone-novel-title-edit i {
+    font-size: 14px;
 }
 
 .tsp-phone-novel-detail-author {
@@ -1018,6 +1064,38 @@
 
 .tsp-phone-chapter-detail-content p:last-child {
     margin-bottom: 0;
+}
+
+/* 步骤按钮样式 */
+.tsp-phone-novel-step-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.tsp-phone-novel-step-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.tsp-phone-novel-step-btn:active {
+    transform: translateY(0);
+}
+
+.tsp-phone-novel-step-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
 }
 
 /* 章节大纲输入页面样式 */
