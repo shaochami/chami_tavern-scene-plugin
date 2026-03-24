@@ -351,6 +351,11 @@
     color: #ff6b6b;
 }
 
+.tsp-phone-novel-book-tag-category3 {
+    background: rgba(76, 175, 80, 0.15);
+    color: #4caf50;
+}
+
 .tsp-phone-novel-detail-view {
     width: 100%;
     height: 100%;
@@ -1134,7 +1139,7 @@
     padding: 16px 20px;
 }
 
-.tsp-phone-outline-textarea {
+.tsp-phone-outline-view .tsp-phone-outline-content .tsp-phone-outline-textarea {
     width: 100%;
     height: 100%;
     min-height: 200px;
@@ -1143,23 +1148,28 @@
     border-radius: 12px;
     font-size: 14px;
     line-height: 1.6;
-    color: #333 !important;
-    background: white !important;
+    color: var(--tsp-text-primary) !important;
+    background: var(--tsp-bg-input) !important;
     resize: none;
     outline: none;
     transition: all 0.2s ease;
     font-family: inherit;
+    box-sizing: border-box;
 }
 
-.tsp-phone-outline-textarea:focus {
+.tsp-phone-outline-view .tsp-phone-outline-content .tsp-phone-outline-textarea:focus {
     border-color: #667eea;
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
     color: #333 !important;
     background: white !important;
 }
 
-.tsp-phone-outline-textarea::placeholder {
-    color: #aaa;
+.tsp-phone-outline-view .tsp-phone-outline-content .tsp-phone-outline-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.tsp-phone-outline-view .tsp-phone-outline-content .tsp-phone-outline-textarea:focus::placeholder {
+    color: #aaa !important;
 }
 
 .tsp-phone-outline-actions {
@@ -1172,4 +1182,231 @@
 
 .tsp-phone-outline-actions .tsp-phone-novel-action-btn {
     flex: 1;
+}
+
+.tsp-phone-outline-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: #999;
+    height: 100%;
+}
+
+.tsp-phone-outline-loading i {
+    font-size: 32px;
+    color: #667eea;
+    animation: spin 1s linear infinite;
+    margin-bottom: 12px;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* 导航栏更多按钮样式 */
+.tsp-phone-nav-bar.novel-nav .tsp-phone-nav-actions {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.tsp-phone-nav-more {
+    color: #333;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.tsp-phone-nav-more:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.tsp-phone-nav-more i {
+    font-size: 14px;
+    color: #666;
+}
+
+/* 更多菜单样式 */
+.tsp-phone-nav-more-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    min-width: 160px;
+    z-index: 100;
+    animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tsp-phone-nav-more-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    width: 100%;
+    border: none;
+    background: none;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-nav-more-item:hover {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+}
+
+.tsp-phone-nav-more-item i {
+    font-size: 14px;
+    min-width: 16px;
+}
+
+/* 确保导航栏样式一致 */
+.tsp-phone-nav-bar.novel-nav {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    right: 0;
+    height: 44px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    z-index: 20;
+}
+
+/* 小说设置页面样式 */
+.tsp-phone-novel-settings {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #f5f5f5 0%, #e8e8e8 100%);
+    padding-top: 88px;
+    overflow: hidden;
+}
+
+.tsp-phone-novel-settings-section {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tsp-phone-novel-settings-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tsp-phone-novel-settings-section h3 i {
+    color: #667eea;
+}
+
+.tsp-phone-novel-settings-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.tsp-phone-novel-settings-item:last-child {
+    margin-bottom: 0;
+}
+
+.tsp-phone-novel-settings-item label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.tsp-phone-novel-settings-item input[type="number"] {
+    padding: 10px 14px;
+    border: 1px solid rgba(102, 126, 234, 0.3) !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+    color: #333 !important;
+    background: white !important;
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-novel-settings-item input[type="number"]:focus {
+    outline: none !important;
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+}
+
+.tsp-phone-novel-settings-hint {
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+}
+
+.tsp-phone-novel-settings-actions {
+    padding: 0 16px 16px;
+    margin-top: auto;
+}
+
+.tsp-phone-novel-settings-actions .tsp-phone-btn {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+}
+
+.tsp-phone-novel-settings-actions .tsp-phone-btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.tsp-phone-novel-settings-actions .tsp-phone-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.tsp-phone-novel-settings-actions .tsp-phone-btn-primary:active {
+    transform: translateY(0);
 }

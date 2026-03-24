@@ -1,0 +1,14 @@
+{
+  "books": [
+    {
+      "id": "book_1",
+      "title": "示例书名",
+      "description": "这是一本示例小说的简介，描述了故事的主要内容和背景设定。",
+      "author": "示例作者",
+      "category1": "玄幻",
+      "category2": "纯爱",
+      "maleLead": "男主角姓名",
+      "femaleLead": "女主角姓名"
+    }
+  ]
+}

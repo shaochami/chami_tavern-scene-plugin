@@ -167,6 +167,17 @@
     border-color: var(--tsp-accent-primary);
 }
 
+.tsp-shelter-delete-btn {
+    background-color: #ff6b6b;
+    color: var(--tsp-bg-main);
+    border-color: #ff6b6b;
+}
+
+.tsp-shelter-delete-btn:hover {
+    background-color: #ff5252;
+    border-color: #ff6b6b;
+}
+
 /* 悬浮球容器 */
 .tsp-shelter-balls-container {
     flex: 1;
@@ -216,7 +227,6 @@
 .tsp-shelter-ball-item {
     display: flex;
     align-items: center;
-    gap: 12px;
     padding: 10px 12px;
     background: rgba(45, 55, 72, 0.8);
     border: 1px solid rgba(71, 80, 96, 0.3);
@@ -226,18 +236,56 @@
     overflow: visible;
     width: calc(50% - 4px);
     box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .tsp-shelter-ball-item:hover {
     background: rgba(35, 45, 62, 0.8);
     border-color: var(--tsp-accent-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 删除模式 */
+.tsp-floating-shelter.delete-mode .tsp-shelter-ball-item {
+    border-color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.1);
+}
+
+.tsp-floating-shelter.delete-mode .tsp-shelter-ball-item:hover {
+    background: rgba(255, 107, 107, 0.2);
+    border-color: #ff5252;
+    transform: scale(1.05);
+}
+
+.tsp-floating-shelter.delete-mode .tsp-shelter-ball-item::after {
+    content: '点击删除';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #ff6b6b;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.tsp-floating-shelter.delete-mode .tsp-shelter-ball-item:hover::after {
+    opacity: 1;
 }
 
 .tsp-shelter-ball-container {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
+    position: relative;
 }
 
 .tsp-shelter-ball-container button {
@@ -255,40 +303,6 @@
     color: var(--tsp-accent-primary);
     font-size: 14px;
     border: 1px solid var(--tsp-border);
-}
-
-.tsp-shelter-ball-info {
-    flex: 1;
-    min-width: 0;
-}
-
-.tsp-shelter-ball-name {
-    display: block;
-    font-size: 0.9em;
-    font-weight: 500;
-    color: var(--tsp-text-primary);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.tsp-shelter-ball-release {
-    background: var(--tsp-bg-secondary);
-    border: 1px solid var(--tsp-border);
-    border-radius: var(--tsp-radius-sm);
-    color: var(--tsp-text-secondary);
-    cursor: pointer;
-    padding: 6px 8px;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.tsp-shelter-ball-release:hover {
-    background: var(--tsp-accent-primary);
-    color: var(--tsp-bg-main);
-    border-color: var(--tsp-accent-primary);
 }
 
 /* 捕获覆盖层 */
@@ -388,8 +402,17 @@
     }
     
     .tsp-shelter-actions {
-        flex-direction: column;
+        flex-direction: row;
+        gap: 4px;
     }
     
+    .tsp-shelter-btn {
+        padding: 6px 8px;
+        font-size: 0.8em;
+    }
+    
+    .tsp-shelter-btn i {
+        font-size: 14px;
+    }
 
 }
