@@ -366,6 +366,28 @@
     overflow: hidden;
 }
 
+.tsp-phone-novel-detail-view .tsp-phone-novel-toggle {
+    position: sticky;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, #e8e8e8 20%);
+    padding-top: 20px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tsp-phone-novel-detail-view .tsp-phone-novel-toggle-content {
+    width: 100%;
+    padding: 0 16px 16px;
+    display: none;
+    justify-content: center;
+}
+
+.tsp-phone-novel-detail-view .tsp-phone-novel-toggle-content button {
+    width: 100%;
+}
+
 .tsp-phone-novel-detail-content {
     flex: 1;
     overflow-y: auto;
@@ -476,7 +498,32 @@
     margin-bottom: 12px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 8px;
+}
+
+.tsp-phone-novel-section-edit {
+    background: none;
+    border: none;
+    color: #667eea;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.tsp-phone-novel-section-edit:hover {
+    background: rgba(102, 126, 234, 0.1);
+    transform: scale(1.1);
+}
+
+.tsp-phone-novel-section-edit i {
+    font-size: 14px;
+    color: #667eea !important;
 }
 
 .tsp-phone-novel-detail-section-title i {
