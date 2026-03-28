@@ -1,5 +1,12 @@
 export const changelogData = [
     {
+        version: "1.1.5(9)",
+        items: [
+            "自定义触发词增加触发后删除类型",
+            "有bug清及时提交下Issues或群内反应"
+        ]
+    },
+    {
         version: "1.1.5(8)",
         items: [
             "为新朋友，附近的人绑定弹窗额外要求功能。确保用户可以自定义想要的角色",
