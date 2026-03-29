@@ -1,5 +1,12 @@
 export const changelogData = [
     {
+        version: "1.1.5(10)",
+        items: [
+            "为收纳盒增加层级",
+            "opai增加适配的渠道"
+        ]
+    },
+    {
         version: "1.1.5(9)",
         items: [
             "自定义触发词增加触发后删除类型",

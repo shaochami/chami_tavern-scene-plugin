@@ -238,6 +238,31 @@
     box-sizing: border-box;
     cursor: pointer;
     transition: all 0.2s ease;
+    position: relative;
+    z-index: 1;
+}
+
+/* 激活状态时提升层级 */
+.tsp-shelter-ball-item:hover,
+.tsp-shelter-ball-item.active,
+.tsp-shelter-ball-item:focus-within {
+    z-index: 100;
+}
+
+/* 确保悬浮球容器不影响缩放 */
+.tsp-shelter-ball-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: inherit;
+}
+
+/* 确保弹出菜单不被裁剪 */
+.tsp-shelter-ball-container > * {
+    position: relative;
+    z-index: inherit;
 }
 
 .tsp-shelter-ball-item:hover {
