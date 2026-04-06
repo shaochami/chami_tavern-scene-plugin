@@ -1,0 +1,464 @@
+/* 保活应用样式 */
+.tsp-phone-keepalive {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding-top: 44px;
+}
+
+.tsp-phone-keepalive-header {
+    display: flex;
+    align-items: center;
+    padding: 18px 20px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: 44px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.tsp-phone-keepalive-header h2 {
+    flex: 1;
+    margin: 0;
+    font-size: 19px;
+    font-weight: 600;
+    text-align: center;
+    color: #667eea;
+}
+
+.tsp-phone-keepalive-content {
+    flex: 1;
+    padding: 90px 24px 24px;
+    overflow-y: auto;
+}
+
+/* 主控制区域 */
+.tsp-keepalive-main-control {
+    margin-bottom: 32px;
+}
+
+.tsp-keepalive-status-display {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.tsp-keepalive-status-display:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.2);
+}
+
+.tsp-keepalive-status-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    animation: heartbeat 2s infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.tsp-keepalive-status-icon::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 50%
+    );
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    15% {
+        transform: scale(1.1);
+    }
+    30% {
+        transform: scale(1);
+    }
+    45% {
+        transform: scale(1.1);
+    }
+    60% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+.tsp-keepalive-status-icon i {
+    color: white;
+    font-size: 28px;
+    z-index: 1;
+}
+
+.tsp-keepalive-status-info {
+    flex: 1;
+}
+
+.tsp-keepalive-status-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.tsp-keepalive-status-info p {
+    margin: 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.4;
+}
+
+.tsp-keepalive-main-btn {
+    display: flex;
+}
+
+.tsp-phone-btn-large {
+    flex: 1;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.tsp-phone-btn-large:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+/* 高级设置 */
+.tsp-keepalive-advanced-settings {
+    margin-bottom: 32px;
+}
+
+.tsp-keepalive-advanced-settings h3 {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tsp-keepalive-advanced-settings h3::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background: #667eea;
+    border-radius: 2px;
+}
+
+/* 设置卡片 */
+.tsp-keepalive-setting-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.tsp-keepalive-setting-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+    border-color: rgba(102, 126, 234, 0.2);
+}
+
+.tsp-keepalive-setting-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tsp-keepalive-setting-header i {
+    color: #667eea;
+    font-size: 18px;
+}
+
+.tsp-keepalive-setting-header span {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.tsp-keepalive-setting-content {
+    padding: 20px;
+}
+
+.tsp-keepalive-setting-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.tsp-keepalive-setting-status span {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.tsp-keepalive-setting-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #64748b;
+    transition: all 0.3s ease;
+}
+
+.tsp-keepalive-setting-dot.active {
+    background-color: #4ade80;
+    box-shadow: 0 0 12px rgba(74, 222, 128, 0.6);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 12px rgba(74, 222, 128, 0.6);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 16px rgba(74, 222, 128, 0.8);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 12px rgba(74, 222, 128, 0.6);
+    }
+}
+
+.tsp-keepalive-setting-option {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.tsp-keepalive-setting-option:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(102, 126, 234, 0.2);
+    transform: translateX(4px);
+}
+
+.tsp-keepalive-setting-option input[type="radio"],
+.tsp-keepalive-setting-option input[type="checkbox"] {
+    margin: 0 0 0 12px;
+    accent-color: #667eea;
+}
+
+.tsp-keepalive-setting-option span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.tsp-keepalive-setting-option span .option-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tsp-keepalive-setting-option span i {
+    color: #667eea;
+    font-size: 16px;
+}
+
+.tsp-keepalive-setting-option p {
+    margin: 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    padding-left: 34px;
+}
+
+.tsp-keepalive-setting-note {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+    margin: 12px 0 16px 0;
+    padding-left: 24px;
+    position: relative;
+}
+
+.tsp-keepalive-setting-note::before {
+    content: '💡';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.tsp-keepalive-setting-action {
+    margin-top: 16px;
+}
+
+.tsp-keepalive-setting-action .tsp-phone-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* 信息提示 */
+.tsp-keepalive-info-section {
+    margin-bottom: 24px;
+}
+
+.tsp-keepalive-info-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(102, 126, 234, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.tsp-keepalive-info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.tsp-keepalive-info-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(102, 126, 234, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.tsp-keepalive-info-icon i {
+    color: #667eea;
+    font-size: 20px;
+}
+
+.tsp-keepalive-info-content h4 {
+    margin: 0 0 12px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.tsp-keepalive-info-content ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.tsp-keepalive-info-content li {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 8px;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.tsp-keepalive-info-content li:hover {
+    color: #667eea;
+}
+
+.tsp-keepalive-info-content li:last-child {
+    margin-bottom: 0;
+}
+
+/* 确保状态图标颜色正确 */
+.tsp-phone-app-icon-box.keepalive {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.tsp-phone-app-icon-box.keepalive::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 50%
+    );
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+/* 确保滚动条样式一致 */
+.tsp-phone-keepalive-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.tsp-phone-keepalive-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.tsp-phone-keepalive-content::-webkit-scrollbar-thumb {
+    background: rgba(102, 126, 234, 0.3);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.tsp-phone-keepalive-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(102, 126, 234, 0.5);
+}

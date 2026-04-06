@@ -77,6 +77,20 @@
     font-size: 12px;
     margin-left: 8px;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.tsp-phone-chat-unread {
+    background-color: #ff6b6b;
+    color: white;
+    border-radius: 10px;
+    padding: 2px 6px;
+    font-size: 10px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .tsp-phone-chat-detail-view {
@@ -122,6 +136,22 @@
     max-width: 80%;
     position: relative;
     z-index: 2;
+}
+
+.tsp-phone-message-system {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+    max-width: 100%;
+}
+
+.tsp-phone-chat-system-content {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 8px 16px;
+    border-radius: 16px;
+    font-size: 12px;
+    text-align: center;
 }
 
 .tsp-phone-message.user {
@@ -259,23 +289,38 @@
     white-space: nowrap;
 }
 
-.tsp-phone-chat-input {
-    flex: 1;
-    min-width: 0;
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    border-radius: 16px;
-    padding: 6px 12px;
-    color: white;
-    font-size: 13px;
-    outline: none;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+.tsp-phone-chat-input-bar .tsp-phone-chat-input,
+#tsp-phone-chat-input {
+    flex: 1 !important;
+    min-width: 0 !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: none !important;
+    border-radius: 16px !important;
+    padding: 6px 12px !important;
+    color: white !important;
+    font-size: 13px !important;
+    outline: none !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    font-family: inherit !important;
+    line-height: 1.4 !important;
+    transition: none !important;
 }
 
-.tsp-phone-chat-input::placeholder {
-    color: rgba(255, 255, 255, 0.4);
+.tsp-phone-chat-input-bar .tsp-phone-chat-input::placeholder,
+#tsp-phone-chat-input::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+    font-size: 13px !important;
+    font-family: inherit !important;
+}
+
+.tsp-phone-chat-input-bar .tsp-phone-chat-input:focus,
+#tsp-phone-chat-input:focus {
+    background: rgba(255, 255, 255, 0.15) !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .tsp-phone-send-btn {
@@ -635,4 +680,44 @@
 .tsp-phone-emoji-item:hover {
     background: rgba(255, 255, 255, 0.15);
     transform: scale(1.1);
+}
+
+/* 确保聊天输入框样式优先于其他插件 */
+body .tsp-phone-chat-input-bar .tsp-phone-chat-input,
+body #tsp-phone-chat-input {
+    flex: 1 !important;
+    min-width: 0 !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: none !important;
+    border-radius: 16px !important;
+    padding: 6px 12px !important;
+    color: white !important;
+    font-size: 13px !important;
+    outline: none !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+    font-family: inherit !important;
+    line-height: 1.4 !important;
+    transition: none !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+}
+
+body .tsp-phone-chat-input-bar .tsp-phone-chat-input::placeholder,
+body #tsp-phone-chat-input::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+    font-size: 13px !important;
+    font-family: inherit !important;
+    opacity: 1 !important;
+}
+
+body .tsp-phone-chat-input-bar .tsp-phone-chat-input:focus,
+body #tsp-phone-chat-input:focus {
+    background: rgba(255, 255, 255, 0.15) !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
 }

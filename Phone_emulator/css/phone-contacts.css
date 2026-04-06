@@ -181,25 +181,141 @@
     margin-bottom: 10px;
 }
 
-.tsp-phone-form-input {
+.tsp-phone-form-input,
+#tsp-phone-contact-name,
+#tsp-phone-contact-deposit {
     width: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 12px 16px;
-    color: white;
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.2s ease;
-    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    color: white !important;
+    font-size: 14px !important;
+    outline: none !important;
+    transition: border-color 0.2s ease !important;
+    box-sizing: border-box !important;
 }
 
-.tsp-phone-form-input:focus {
-    border-color: #667eea;
+.tsp-phone-form-input:focus,
+#tsp-phone-contact-name:focus,
+#tsp-phone-contact-deposit:focus {
+    border-color: #667eea !important;
+    background: rgba(255, 255, 255, 0.15) !important;
 }
 
-.tsp-phone-form-input::placeholder {
-    color: rgba(255, 255, 255, 0.4);
+.tsp-phone-form-input::placeholder,
+#tsp-phone-contact-name::placeholder,
+#tsp-phone-contact-deposit::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+#tsp-phone-contact-bubble-style {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    color: white !important;
+    font-size: 14px !important;
+    outline: none !important;
+    cursor: pointer !important;
+    transition: border-color 0.2s ease !important;
+    box-sizing: border-box !important;
+}
+
+#tsp-phone-contact-bubble-style option {
+    background: #1a1a2e !important;
+    color: white !important;
+    padding: 8px !important;
+}
+
+#tsp-phone-contact-bubble-style:focus {
+    border-color: #667eea !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* 聊天入口内其他输入框样式 */
+#tsp-phone-group-name-input,
+#tsp-phone-transfer-amount,
+#tsp-phone-transfer-note,
+#tsp-phone-share-music-search-input,
+#tsp-phone-new-group-name-input,
+.tsp-phone-member-probability,
+.tsp-phone-member-order {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    color: white !important;
+    font-size: 14px !important;
+    outline: none !important;
+    transition: border-color 0.2s ease !important;
+    box-sizing: border-box !important;
+}
+
+#tsp-phone-group-name-input:focus,
+#tsp-phone-transfer-amount:focus,
+#tsp-phone-transfer-note:focus,
+#tsp-phone-share-music-search-input:focus,
+#tsp-phone-new-group-name-input:focus,
+.tsp-phone-member-probability:focus,
+.tsp-phone-member-order:focus {
+    border-color: #667eea !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+
+#tsp-phone-group-name-input::placeholder,
+#tsp-phone-transfer-amount::placeholder,
+#tsp-phone-transfer-note::placeholder,
+#tsp-phone-share-music-search-input::placeholder,
+#tsp-phone-new-group-name-input::placeholder,
+.tsp-phone-member-probability::placeholder,
+.tsp-phone-member-order::placeholder,
+#tsp-phone-contact-transaction::placeholder,
+#tsp-phone-contact-conversation-style::placeholder,
+#tsp-phone-contact-writing-style::placeholder,
+#tsp-phone-contact-clique::placeholder,
+#tsp-phone-contact-private-style::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* 联系人详细设置页面输入框和下拉框 */
+#tsp-phone-contact-transaction,
+#tsp-phone-contact-conversation-style,
+#tsp-phone-contact-writing-style,
+#tsp-phone-contact-clique,
+#tsp-phone-contact-private-style,
+#tsp-phone-contact-font-style,
+#tsp-phone-contact-border-style {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    color: white !important;
+    font-size: 14px !important;
+    outline: none !important;
+    transition: border-color 0.2s ease !important;
+    box-sizing: border-box !important;
+}
+
+#tsp-phone-contact-transaction:focus,
+#tsp-phone-contact-conversation-style:focus,
+#tsp-phone-contact-writing-style:focus,
+#tsp-phone-contact-clique:focus,
+#tsp-phone-contact-private-style:focus,
+#tsp-phone-contact-font-style:focus,
+#tsp-phone-contact-border-style:focus {
+    border-color: #667eea !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+
+#tsp-phone-contact-font-style option,
+#tsp-phone-contact-border-style option {
+    background: #1a1a2e !important;
+    color: white !important;
+    padding: 8px !important;
 }
 
 .tsp-phone-nav-btn-primary {

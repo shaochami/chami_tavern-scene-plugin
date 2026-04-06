@@ -56,6 +56,7 @@
     visibility: hidden;
     transition: all 0.3s ease;
     pointer-events: none;
+    padding: 2dvh;
 }
 
 .tsp-phone-modal-overlay.visible {
@@ -74,6 +75,8 @@
     transform: scale(0.9);
     transition: transform 0.3s ease;
     pointer-events: auto;
+    max-width: calc(100vw - 4dvh);
+    max-height: calc(100dvh - 4dvh);
 }
 
 .tsp-phone-modal-overlay.visible .tsp-phone-container {
@@ -238,6 +241,24 @@
     justify-content: center;
     margin-bottom: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.tsp-phone-app-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff6b6b;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .tsp-phone-app-icon-box.chat {
@@ -266,6 +287,10 @@
 
 .tsp-phone-app-icon-box.novel {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.tsp-phone-app-icon-box.keepalive {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
 }
 
 .tsp-phone-app-icon i {
@@ -851,9 +876,9 @@
 
     .tsp-phone-modal-overlay.visible .tsp-phone-container {
         width: 95%;
-        height: 85vh;
-        max-width: none;
-        max-height: none;
+        height: 85dvh;
+        max-width: calc(100vw - 4dvh);
+        max-height: calc(100dvh - 5dvh);
         border-radius: 8px;
         transform: none;
         margin: 0;
@@ -868,7 +893,7 @@
     .tsp-time-settings-content {
         width: 90%;
         max-width: 350px;
-        max-height: 80vh;
+        max-height: 80dvh;
         overflow-y: auto;
     }
 }
@@ -926,5 +951,12 @@
 
     .tsp-phone-bottom-tab span {
         font-size: 9px;
+    }
+}
+
+@media (max-height: 700px) {
+    .tsp-phone-modal-overlay.visible .tsp-phone-container {
+        height: 90dvh;
+        max-height: calc(100dvh - 2dvh);
     }
 }

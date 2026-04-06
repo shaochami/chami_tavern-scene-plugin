@@ -103,25 +103,44 @@
     transform: translateX(22px);
 }
 
-.tsp-phone-form-select {
+.tsp-phone-api-config-view .tsp-phone-form-select,
+.tsp-phone-tts-config-view .tsp-phone-form-select,
+.tsp-phone-image-mode-view .tsp-phone-form-select,
+.tsp-phone-feature-preset-content .tsp-phone-form-select,
+.tsp-phone-tts-voice-filters .tsp-phone-form-select,
+.tsp-phone-personal-settings-section .tsp-phone-form-select {
     width: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    padding: 12px;
-    color: white;
-    font-size: 14px;
-    outline: none;
-    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    color: white !important;
+    font-size: 14px !important;
+    outline: none !important;
+    cursor: pointer !important;
+    transition: border-color 0.2s ease !important;
+    box-sizing: border-box !important;
 }
 
-.tsp-phone-form-select option {
-    background: #1a1a2e;
-    color: white;
+.tsp-phone-api-config-view .tsp-phone-form-select option,
+.tsp-phone-tts-config-view .tsp-phone-form-select option,
+.tsp-phone-image-mode-view .tsp-phone-form-select option,
+.tsp-phone-feature-preset-content .tsp-phone-form-select option,
+.tsp-phone-tts-voice-filters .tsp-phone-form-select option,
+.tsp-phone-personal-settings-section .tsp-phone-form-select option {
+    background: #1a1a2e !important;
+    color: white !important;
+    padding: 8px !important;
 }
 
-.tsp-phone-form-select:focus {
-    border-color: #667eea;
+.tsp-phone-api-config-view .tsp-phone-form-select:focus,
+.tsp-phone-tts-config-view .tsp-phone-form-select:focus,
+.tsp-phone-image-mode-view .tsp-phone-form-select:focus,
+.tsp-phone-feature-preset-content .tsp-phone-form-select:focus,
+.tsp-phone-tts-voice-filters .tsp-phone-form-select:focus,
+.tsp-phone-personal-settings-section .tsp-phone-form-select:focus {
+    border-color: #667eea !important;
+    background: rgba(255, 255, 255, 0.15) !important;
 }
 
 .tsp-phone-model-fetch-group {
@@ -138,6 +157,27 @@
 
 .tsp-phone-model-fetch-group .tsp-phone-form-select {
     min-width: 0;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    color: white !important;
+    font-size: 14px !important;
+    outline: none !important;
+    cursor: pointer !important;
+    transition: border-color 0.2s ease !important;
+    box-sizing: border-box !important;
+}
+
+.tsp-phone-model-fetch-group .tsp-phone-form-select option {
+    background: #1a1a2e !important;
+    color: white !important;
+    padding: 8px !important;
+}
+
+.tsp-phone-model-fetch-group .tsp-phone-form-select:focus {
+    border-color: #667eea !important;
+    background: rgba(255, 255, 255, 0.15) !important;
 }
 
 .tsp-phone-config-item {
@@ -228,25 +268,41 @@
     display: block;
 }
 
-.tsp-phone-tts-content .tsp-phone-form-input {
+.tsp-phone-api-config-view .tsp-phone-form-input,
+.tsp-phone-tts-config-view .tsp-phone-form-input,
+.tsp-phone-image-mode-view .tsp-phone-form-input,
+.tsp-phone-feature-preset-content .tsp-phone-form-input,
+.tsp-phone-tts-voice-filters .tsp-phone-form-input,
+.tsp-phone-personal-settings-section .tsp-phone-form-input {
     width: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    padding: 12px;
-    color: white;
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.2s ease;
-    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    color: white !important;
+    font-size: 14px !important;
+    outline: none !important;
+    transition: border-color 0.2s ease !important;
+    box-sizing: border-box !important;
 }
 
-.tsp-phone-tts-content .tsp-phone-form-input:focus {
-    border-color: #667eea;
+.tsp-phone-api-config-view .tsp-phone-form-input:focus,
+.tsp-phone-tts-config-view .tsp-phone-form-input:focus,
+.tsp-phone-image-mode-view .tsp-phone-form-input:focus,
+.tsp-phone-feature-preset-content .tsp-phone-form-input:focus,
+.tsp-phone-tts-voice-filters .tsp-phone-form-input:focus,
+.tsp-phone-personal-settings-section .tsp-phone-form-input:focus {
+    border-color: #667eea !important;
+    background: rgba(255, 255, 255, 0.15) !important;
 }
 
-.tsp-phone-tts-content .tsp-phone-form-input::placeholder {
-    color: rgba(255, 255, 255, 0.4);
+.tsp-phone-api-config-view .tsp-phone-form-input::placeholder,
+.tsp-phone-tts-config-view .tsp-phone-form-input::placeholder,
+.tsp-phone-image-mode-view .tsp-phone-form-input::placeholder,
+.tsp-phone-feature-preset-content .tsp-phone-form-input::placeholder,
+.tsp-phone-tts-voice-filters .tsp-phone-form-input::placeholder,
+.tsp-phone-personal-settings-section .tsp-phone-form-input::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
 }
 
 .tsp-phone-tts-content .tsp-phone-button-group {
