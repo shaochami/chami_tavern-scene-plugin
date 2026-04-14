@@ -1,5 +1,14 @@
 export const changelogData = [
     {
+        version: "1.1.6",
+        items: [
+            "增加状态栏与关系图功能",
+            "触发词增加导入导出功能",
+            "优化部分加载"
+
+        ]
+    },
+    {
         version: "1.1.5(12)",
         items: [
             "私聊时的转账与图片功能尝试智能化，有bug及时说下",

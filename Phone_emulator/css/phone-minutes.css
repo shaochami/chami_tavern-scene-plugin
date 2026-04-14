@@ -1,0 +1,1061 @@
+/* 剧情百科悬浮球样式 */
+.tsp-minutes-fab {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tsp-minutes-fab:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+.tsp-minutes-fab.dragging {
+    transition: none;
+}
+
+/* 剧情百科面板样式 */
+.tsp-minutes-panel {
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 600px;
+    background-color: var(--tsp-bg-main);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    z-index: 10000;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: var(--tsp-text-primary);
+    transition: transform 0.2s ease;
+}
+
+.tsp-minutes-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--tsp-bg-secondary);
+    cursor: move;
+}
+
+.tsp-minutes-panel-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--tsp-text-primary);
+}
+
+.tsp-minutes-close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--tsp-text-secondary);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tsp-minutes-close-btn:hover {
+    background-color: var(--tsp-bg-secondary);
+    color: var(--tsp-text-primary);
+}
+
+/* 状态栏样式 */
+#status-container {
+    width: 100%;
+    height: calc(100% - 40px);
+    display: flex;
+    flex-direction: column;
+}
+
+#tsp-minutes-status-container {
+    width: 100%;
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* 标签栏样式 */
+#tsp-minutes-nav-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--tsp-bg-secondary);
+    margin-bottom: 20px;
+}
+
+.tsp-minutes-tab-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--tsp-text-secondary);
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tsp-minutes-tab-item:hover {
+    color: var(--tsp-accent-primary);
+}
+
+.tsp-minutes-tab-item.active {
+    color: var(--tsp-accent-primary);
+    border-bottom-color: var(--tsp-accent-primary);
+    font-weight: bold;
+}
+
+/* 内容区域样式 */
+#tsp-minutes-content {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+    min-height: 0;
+}
+
+.tsp-minutes-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 10px 0;
+}
+
+/* 角色卡片样式 */
+.tsp-minutes-char-card {
+    position: relative;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--tsp-bg-secondary);
+}
+
+.tsp-minutes-char-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.tsp-minutes-card-state-tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: #f56565;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 2;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+.tsp-minutes-char-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 0;
+}
+
+.tsp-minutes-char-img-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.tsp-minutes-char-img-container .tsp-generated-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.tsp-minutes-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, transparent 100%);
+    color: white;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.tsp-minutes-card-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.tsp-minutes-card-rank {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 8px;
+}
+
+
+
+/* 滚动条样式 */
+#tsp-minutes-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+#tsp-minutes-content::-webkit-scrollbar-track {
+    background: var(--tsp-bg-secondary);
+    border-radius: 3px;
+}
+
+#tsp-minutes-content::-webkit-scrollbar-thumb {
+    background: var(--tsp-bg-tertiary);
+    border-radius: 3px;
+}
+
+#tsp-minutes-content::-webkit-scrollbar-thumb:hover {
+    background: var(--tsp-text-secondary);
+}
+
+/* 剧情百科设置页面样式 */
+.tsp-phone-settings-screen {
+    width: 100%;
+    height: 100%;
+    background-color: var(--tsp-bg-main);
+    display: flex;
+    flex-direction: column;
+    color: var(--tsp-text-primary);
+    padding-top: 44px;
+}
+
+.tsp-phone-settings-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--tsp-bg-secondary);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.tsp-phone-btn-back {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--tsp-text-primary);
+    cursor: pointer;
+    margin-right: 15px;
+    padding: 5px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tsp-phone-btn-back:hover {
+    background-color: var(--tsp-bg-tertiary);
+}
+
+.tsp-phone-settings-header h2 {
+    margin: 0;
+    font-size: 16px;
+    color: var(--tsp-text-primary);
+}
+
+.tsp-phone-settings-content {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.tsp-phone-settings-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--tsp-bg-secondary);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.tsp-phone-settings-item-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tsp-phone-settings-label {
+    font-size: 14px;
+    color: var(--tsp-text-primary);
+}
+
+.tsp-phone-settings-label-large {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/* 选择框样式 */
+.tsp-input {
+    background-color: var(--tsp-bg-input);
+    color: var(--tsp-text-input);
+    border: 1px solid var(--tsp-border);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    width: 150px;
+}
+
+.tsp-input:focus {
+    outline: none;
+    border-color: var(--tsp-accent-primary);
+    box-shadow: 0 0 0 2px rgba(122, 162, 247, 0.2);
+}
+
+/* 世界书映射设置样式 */
+.tsp-phone-settings-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.tsp-phone-settings-checkbox-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.tsp-phone-settings-checkbox-row span {
+    font-size: 14px;
+    color: var(--tsp-text-primary);
+}
+
+.tsp-phone-settings-checkbox-row input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* 开关样式 */
+.tsp-phone-toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.tsp-phone-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.tsp-phone-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #4a5568;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.tsp-phone-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #e2e8f0;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.tsp-phone-toggle input:checked + .tsp-phone-toggle-slider {
+    background-color: #48bb78;
+}
+
+/* 添加角色按钮 */
+.tsp-add-character-btn {
+    margin-left: 10px;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.tsp-add-character-btn:hover {
+    background-color: #2c5282;
+}
+
+/* 空状态提示 */
+.tsp-minutes-empty-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px 20px;
+    color: #a0aec0;
+    font-size: 16px;
+}
+
+/* 错误提示 */
+.tsp-minutes-error-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px 20px;
+    color: #fc8181;
+    font-size: 16px;
+}
+
+.tsp-phone-toggle input:focus + .tsp-phone-toggle-slider {
+    box-shadow: 0 0 1px #48bb78;
+}
+
+.tsp-phone-toggle input:checked + .tsp-phone-toggle-slider:before {
+    transform: translateX(26px);
+}
+
+/* 剧情百科应用图标样式 */
+.tsp-phone-app-icon-box.minutes {
+    background-color: #2d3748;
+    color: #48bb78;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    border: 1px solid #4a5568;
+}
+
+.tsp-phone-app-icon-box.minutes i {
+    font-size: 24px;
+}
+
+/* 角色详情面板样式 */
+.tsp-minutes-character-detail {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--tsp-bg-main);
+    border-radius: 0 0 10px 10px;
+    z-index: 10001;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.tsp-minutes-detail-header {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--tsp-bg-secondary);
+    background-color: var(--tsp-bg-main);
+}
+
+.tsp-minutes-detail-back {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: var(--tsp-text-secondary);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.tsp-minutes-detail-back:hover {
+    background-color: var(--tsp-bg-secondary);
+    color: var(--tsp-text-primary);
+}
+
+.tsp-minutes-detail-header h3 {
+    margin: 0;
+    font-size: 16px;
+    color: var(--tsp-text-primary);
+    flex: 1;
+    text-align: center;
+}
+
+.tsp-minutes-detail-close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: var(--tsp-text-secondary);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+.tsp-minutes-detail-close:hover {
+    background-color: var(--tsp-bg-secondary);
+    color: var(--tsp-text-primary);
+}
+
+.tsp-minutes-detail-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* 表单样式 */
+#tsp-character-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tsp-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tsp-form-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--tsp-accent-primary); /* 键的颜色与值不同 */
+}
+
+.tsp-minutes-panel input[type="text"].tsp-form-input,
+.tsp-minutes-panel select.tsp-form-input,
+.tsp-minutes-panel .tsp-form-input {
+    padding: 10px !important;
+    background: var(--tsp-bg-input) !important; /* 同步覆盖 background 避免被宿主属性覆盖 */
+    background-color: var(--tsp-bg-input) !important;
+    border: 1px solid var(--tsp-border) !important;
+    border-radius: 6px !important;
+    color: var(--tsp-text-input) !important; /* 值的颜色跟随主题 */
+    font-size: 14px !important;
+    box-sizing: border-box !important;
+}
+
+.tsp-minutes-panel input[type="text"].tsp-form-input:focus,
+.tsp-minutes-panel select.tsp-form-input:focus,
+.tsp-minutes-panel .tsp-form-input:focus {
+    outline: none !important;
+    border-color: var(--tsp-accent-primary) !important;
+    box-shadow: 0 0 0 2px rgba(122, 162, 247, 0.2) !important;
+}
+
+.tsp-form-section {
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 1px solid var(--tsp-bg-secondary);
+}
+
+.tsp-form-section h4 {
+    margin: 0 0 15px 0;
+    font-size: 16px; /* 第一层级的大字体 */
+    color: var(--tsp-accent-primary);
+    font-weight: bold;
+}
+
+.tsp-form-section-content {
+    margin-left: 20px; /* 第二层级的缩进 */
+}
+
+.tsp-form-section-content .tsp-form-label {
+    font-size: 13px; /* 第二层级的小字体 */
+}
+
+.tsp-form-section-content input[type="text"].tsp-form-input,
+.tsp-form-section-content select.tsp-form-input {
+    font-size: 13px !important;
+}
+
+.tsp-form-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tsp-btn-primary {
+    padding: 12px 24px;
+    background-color: var(--tsp-accent-primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tsp-btn-primary:hover {
+    background-color: var(--tsp-accent-primary);
+    opacity: 0.8;
+}
+
+.tsp-btn-primary:active {
+    transform: translateY(1px);
+}
+
+/* 角色详情面板滚动条样式 */
+.tsp-minutes-detail-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.tsp-minutes-detail-content::-webkit-scrollbar-track {
+    background: var(--tsp-bg-secondary);
+    border-radius: 3px;
+}
+
+.tsp-minutes-detail-content::-webkit-scrollbar-thumb {
+    background: var(--tsp-bg-tertiary);
+    border-radius: 3px;
+}
+
+.tsp-minutes-detail-content::-webkit-scrollbar-thumb:hover {
+    background: var(--tsp-text-secondary);
+}
+/* 美化详情页面样式 */
+.tsp-minutes-character-beauty-detail {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--tsp-bg-main);
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+    z-index: 10001;
+}
+
+.tsp-minutes-beauty-detail-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.tsp-minutes-beauty-detail-left {
+    flex: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    height: 100%;
+    border: 1px solid var(--tsp-text-secondary);
+}
+
+.tsp-minutes-beauty-detail-left .tsp-minutes-image-slot {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.tsp-minutes-beauty-detail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.tsp-minutes-beauty-detail-left .tsp-generated-image {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain;
+    border-radius: 0 !important;
+    box-shadow: none;
+}
+
+.tsp-minutes-beauty-detail-right {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.tsp-minutes-beauty-detail-section {
+    margin-bottom: 24px;
+}
+
+.tsp-minutes-beauty-detail-section h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--tsp-text-primary);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--tsp-bg-secondary);
+}
+
+.tsp-minutes-beauty-detail-subsection {
+    margin-left: 16px;
+}
+
+.tsp-minutes-beauty-detail-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--tsp-text-secondary);
+    align-items: flex-start;
+}
+
+.tsp-minutes-beauty-detail-label {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--tsp-text-secondary);
+    margin-bottom: 4px;
+}
+
+.tsp-minutes-beauty-detail-value {
+    flex: 1;
+    color: var(--tsp-text-primary);
+    word-break: break-word;
+}
+
+.tsp-minutes-detail-edit-btn {
+    background: rgba(123, 183, 255, 0.2);
+    color: rgba(123, 183, 255, 0.9);
+    border: 1px solid rgba(123, 183, 255, 0.3);
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tsp-minutes-detail-edit-btn:hover {
+    background: rgba(123, 183, 255, 0.3);
+    color: rgba(123, 183, 255, 1);
+}
+
+/* 美化详情页面返回按钮样式 */
+.tsp-minutes-beauty-detail-back {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: var(--tsp-text-secondary);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    transition: all 0.2s ease;
+}
+
+.tsp-minutes-beauty-detail-back:hover {
+    background-color: var(--tsp-bg-secondary);
+    color: var(--tsp-text-primary);
+}
+
+/* 美化详情页面滚动条样式 */
+.tsp-minutes-beauty-detail-right::-webkit-scrollbar {
+    width: 6px;
+}
+
+.tsp-minutes-beauty-detail-right::-webkit-scrollbar-track {
+    background: var(--tsp-bg-secondary);
+    border-radius: 3px;
+}
+
+.tsp-minutes-beauty-detail-right::-webkit-scrollbar-thumb {
+    background: var(--tsp-bg-tertiary);
+    border-radius: 3px;
+}
+
+.tsp-minutes-beauty-detail-right::-webkit-scrollbar-thumb:hover {
+    background: var(--tsp-text-secondary);
+}
+/* 关系图面板样式 */
+.tsp-minutes-relationship-detail {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--tsp-bg-main);
+    border-radius: 0 0 10px 10px;
+    z-index: 10001;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.tsp-minutes-relationship-content {
+    flex: 1;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.tsp-relationship-graph-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--tsp-bg-secondary);
+    border-radius: 8px;
+    touch-action: none;
+}
+
+.tsp-relationship-nodes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.tsp-relationship-links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* 关系图节点样式 */
+.tsp-relationship-node {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.tsp-relationship-node:hover {
+    transform: scale(1.1);
+}
+
+.tsp-relationship-node-selected {
+    transform: scale(1.1);
+}
+
+.tsp-relationship-node-selected .tsp-relationship-avatar {
+    border-color: var(--tsp-theme-color);
+    box-shadow: 0 0 15px 2px var(--tsp-theme-color);
+}
+
+.tsp-relationship-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--tsp-accent-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--tsp-bg-main);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tsp-relationship-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tsp-relationship-avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--tsp-text-primary);
+    background-color: var(--tsp-bg-tertiary);
+}
+
+.tsp-relationship-node-name {
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--tsp-text-primary);
+    text-align: center;
+    white-space: nowrap;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 关系图连线样式 */
+.tsp-relationship-link {
+    position: absolute;
+    height: 2px;
+    background-color: var(--tsp-accent-primary);
+    transform-origin: left center;
+    z-index: 0;
+}
+
+.tsp-relationship-link::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -4px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid var(--tsp-accent-primary);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    z-index: 3;
+}
+
+.tsp-relationship-link-label {
+    position: absolute;
+    background-color: var(--tsp-bg-main);
+    color: var(--tsp-text-primary);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    white-space: nowrap;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--tsp-border);
+    z-index: 2;
+}
+
+
+/* 关系图控制按钮 */
+.tsp-relationship-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    display: flex;
+    gap: 5px;
+}
+
+.tsp-relationship-zoom-in,
+.tsp-relationship-zoom-out {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--tsp-bg-main);
+    color: var(--tsp-text-primary);
+    border: 1px solid var(--tsp-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.tsp-relationship-zoom-in:hover,
+.tsp-relationship-zoom-out:hover {
+    background-color: var(--tsp-bg-secondary);
+    transform: scale(1.1);
+}
+
+/* 关系图包装器 */
+.tsp-relationship-graph-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    /* 调整默认过渡，并加入GPU渲染提成 */
+    transition: transform 0.2s ease;
+    will-change: transform;
+    backface-visibility: hidden;
+    cursor: grab; /* 修正原本为move */
+}
+
+
+/* 头像占位符样式 */
+.tsp-minutes-avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--tsp-text-primary);
+    background-color: var(--tsp-bg-tertiary);
+    border-radius: 50%;
+}
+
+/* 响应式设计 */
+@media (max-width: 800px) {
+    .tsp-minutes-panel {
+        width: 95%;
+        left: 2.5%;
+        transform: none;
+    }
+
+    .tsp-minutes-grid-layout {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .tsp-relationship-avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .tsp-relationship-node-name {
+        font-size: 10px;
+        max-width: 80px;
+    }
+}

@@ -499,15 +499,26 @@ input[type="checkbox"].tsp-switch:checked::after {
     min-width: 0;
 }
 
-.tsp-trigger-delete {
+.tsp-trigger-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
     flex-shrink: 0;
     margin-left: 8px;
     opacity: 0.6;
     transition: opacity 0.15s ease;
 }
 
-.tsp-trigger-item:hover .tsp-trigger-delete {
+.tsp-trigger-item:hover .tsp-trigger-actions {
     opacity: 1;
+}
+
+.tsp-trigger-edit {
+    flex-shrink: 0;
+}
+
+.tsp-trigger-delete {
+    flex-shrink: 0;
 }
 
 #trigger-test-output {
