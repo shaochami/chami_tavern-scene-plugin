@@ -34,3 +34,5 @@
 @import url('../Phone_emulator/css/phone-emulator.css');
 /* 新增：悬浮球收纳盒样式 */
 @import url('floating-ball-shelter.css');
+/* 新增：图片解析器样式 */
+@import url('image-analyzer.css');
