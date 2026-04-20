@@ -1,0 +1,1041 @@
+.tsp-phone-livestreaming-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding-top: 88px;
+    overflow: hidden;
+}
+
+.tsp-phone-screen > .tsp-phone-nav-bar.livestreaming-nav {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    right: 0;
+    height: 44px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 20;
+}
+
+.tsp-phone-livestreaming-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.tsp-phone-livestreaming-actions {
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.tsp-phone-livestreaming-actions.collapsed {
+    max-height: 0;
+    padding: 0 15px;
+    opacity: 0;
+}
+
+.tsp-phone-livestreaming-actions-wrapper {
+    position: relative;
+}
+
+.tsp-phone-livestreaming-toggle {
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tsp-phone-livestreaming-toggle-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(240, 147, 251, 0.3);
+}
+
+.tsp-phone-livestreaming-toggle-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(240, 147, 251, 0.5);
+}
+
+.tsp-phone-livestreaming-toggle-btn i {
+    transition: transform 0.3s ease;
+}
+
+.tsp-phone-livestreaming-category-tabs {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
+}
+
+.tsp-phone-livestreaming-category-tabs::-webkit-scrollbar {
+    height: 4px;
+}
+
+.tsp-phone-livestreaming-category-tabs::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+}
+
+/* 移动设备样式 */
+@media (hover: none) and (pointer: coarse) {
+    .tsp-phone-livestreaming-category-tabs {
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .tsp-phone-livestreaming-category-tabs::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.tsp-phone-livestreaming-tab-item {
+    padding: 8px 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.tsp-phone-livestreaming-tab-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(240, 147, 251, 0.3);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.tsp-phone-livestreaming-tab-item.active {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 2px 8px rgba(240, 147, 251, 0.3);
+}
+
+.tsp-phone-livestreaming-room-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    animation: fadeInUp 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-livestreaming-room-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(240, 147, 251, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tsp-phone-livestreaming-room-cover {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.tsp-phone-livestreaming-room-cover i {
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.tsp-phone-livestreaming-room-status {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 71, 87, 0.9);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.tsp-phone-livestreaming-room-status i {
+    font-size: 10px;
+    animation: pulse 1.5s infinite;
+}
+
+.tsp-phone-livestreaming-room-status.offline {
+    background: rgba(153, 153, 153, 0.9);
+}
+
+.tsp-phone-livestreaming-room-status.offline i {
+    animation: none;
+    color: #999;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.tsp-phone-livestreaming-room-viewers {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.tsp-phone-livestreaming-room-duration {
+    position: absolute;
+    top: 10px;
+    left: 80px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.tsp-phone-livestreaming-room-info {
+    padding: 12px;
+}
+
+.tsp-phone-livestreaming-room-title {
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.tsp-phone-livestreaming-room-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tsp-phone-livestreaming-streamer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tsp-phone-livestreaming-streamer-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+}
+
+.tsp-phone-livestreaming-streamer-name {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+}
+
+.tsp-phone-livestreaming-room-category {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    background: linear-gradient(135deg, rgba(240, 147, 251, 0.2) 0%, rgba(245, 87, 108, 0.2) 100%);
+    color: #f093fb;
+    border: 1px solid rgba(240, 147, 251, 0.3);
+}
+
+.tsp-phone-livestreaming-action-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tsp-phone-livestreaming-action-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.tsp-phone-livestreaming-action-btn.primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: transparent;
+}
+
+.tsp-phone-livestreaming-action-btn.primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.tsp-phone-livestreaming-action-btn.primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.tsp-phone-livestreaming-actions-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tsp-phone-livestreaming-actions-container .tsp-phone-livestreaming-action-btn {
+    flex: 1;
+    min-width: 100px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tsp-phone-livestreaming-room-detail-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding-top: 88px;
+    overflow: hidden;
+}
+
+.tsp-phone-screen > .tsp-phone-nav-bar {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    right: 0;
+    height: 44px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 20;
+}
+
+.tsp-phone-livestreaming-room-detail-nav {
+    justify-content: flex-start !important;
+    gap: 12px;
+}
+
+.tsp-phone-livestreaming-room-detail-streamer-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.tsp-phone-livestreaming-room-detail-avatar {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 14px !important;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: white !important;
+}
+
+.tsp-phone-livestreaming-room-detail-avatar:hover {
+    transform: scale(1.1);
+}
+
+.tsp-phone-livestreaming-room-detail-streamer-name {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.tsp-phone-livestreaming-room-detail-viewers-count {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: white;
+    font-size: 13px;
+    padding: 4px 10px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.tsp-phone-livestreaming-room-detail-viewers-count i {
+    font-size: 12px;
+}
+
+.tsp-phone-livestreaming-room-detail-content {
+    flex: 1;
+    /* 去掉 overflow-y: auto，交给内部区域各自滚动 */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.tsp-phone-livestreaming-interactive-area {
+    flex: 1;
+    position: relative;
+    margin: 10px;
+}
+.tsp-phone-livestreaming-room-video-area {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.tsp-livestreaming-danmaku-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.tsp-livestreaming-danmaku {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    opacity: 0.95;
+    left: 100%;
+}
+
+@keyframes danmakuScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}
+
+.tsp-livestreaming-page-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.tsp-livestreaming-page-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.tsp-livestreaming-page-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.tsp-livestreaming-page-prev {
+    left: 10px;
+}
+
+.tsp-livestreaming-page-next {
+    right: 10px;
+}
+
+.tsp-livestreaming-page-indicator {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 12px;
+    z-index: 10;
+}
+
+.tsp-phone-livestreaming-screen-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 45px; /* 底部流出部分缝隙让评论区露出来 */
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    overflow-y: auto;
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.tsp-phone-livestreaming-screen-area:not(.active) {
+    z-index: 5;
+    opacity: 0.6;
+    transform: scale(0.95) translateY(-8px);
+}
+.tsp-phone-livestreaming-chat-area:not(.active) {
+    z-index: 5;
+    opacity: 0.6;
+    transform: scale(0.95) translateY(8px);
+}
+.tsp-phone-livestreaming-screen-area.active {
+    z-index: 10;
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+.tsp-phone-livestreaming-chat-area.active {
+    z-index: 10;
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+.tsp-livestreaming-screen-item {
+    margin-bottom: 12px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tsp-livestreaming-screen-desc {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.tsp-livestreaming-streamer-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.tsp-streamer-name {
+    color: #f093fb;
+    font-weight: 600;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.tsp-streamer-text {
+    color: white;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.tsp-phone-livestreaming-chat-area {
+    position: absolute;
+    top: 45px; /* 顶部流出部分缝隙让主播画面露出来 */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    overflow-y: auto;
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.3);
+}
+
+.tsp-livestreaming-chat-item {
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    animation: fadeInUp 0.2s ease;
+}
+
+.tsp-livestreaming-chat-item.user-message {
+    background: rgba(240, 147, 251, 0.15);
+    border: 1px solid rgba(240, 147, 251, 0.3);
+}
+
+.tsp-chat-nickname {
+    color: #76c7ff;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.tsp-chat-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.tsp-phone-livestreaming-chat-input-area {
+    padding: 6px 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.tsp-phone-livestreaming-chat-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 7px 12px;
+    color: white;
+    font-size: 12px;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+.tsp-phone-livestreaming-chat-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.tsp-phone-livestreaming-chat-input:focus {
+    border-color: #f093fb;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.tsp-phone-livestreaming-chat-send-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    font-size: 12px;
+}
+
+.tsp-phone-livestreaming-chat-send-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.tsp-phone-livestreaming-chat-send-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.tsp-phone-livestreaming-chat-generate-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    font-size: 12px;
+}
+
+.tsp-phone-livestreaming-chat-generate-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(240, 147, 251, 0.4);
+}
+
+.tsp-phone-livestreaming-chat-generate-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.tsp-phone-livestreaming-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.tsp-phone-livestreaming-empty-state i {
+    font-size: 64px;
+    color: rgba(255, 255, 255, 0.3);
+    margin-bottom: 20px;
+}
+
+.tsp-phone-livestreaming-empty-state p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 15px;
+}
+
+.tsp-phone-livestreaming-empty-screen,
+.tsp-phone-livestreaming-empty-chat {
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+}
+
+/* 主播详情展开面板 */
+.tsp-phone-livestreaming-room-detail-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.tsp-phone-livestreaming-room-detail-panel.show {
+    pointer-events: auto;
+}
+
+.tsp-phone-livestreaming-room-detail-panel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tsp-phone-livestreaming-room-detail-panel.show .tsp-phone-livestreaming-room-detail-panel-overlay {
+    opacity: 1;
+}
+
+.tsp-phone-livestreaming-room-detail-panel-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 60%;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 20px 20px 0 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.tsp-phone-livestreaming-room-detail-panel.show .tsp-phone-livestreaming-room-detail-panel-content {
+    transform: translateY(0);
+}
+
+.tsp-phone-livestreaming-room-detail-panel-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tsp-phone-livestreaming-room-detail-panel-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.tsp-phone-livestreaming-room-detail-panel-streamer-name {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.tsp-phone-livestreaming-room-detail-panel-stats {
+    display: flex;
+    gap: 32px;
+}
+
+.tsp-phone-livestreaming-room-detail-panel-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tsp-phone-livestreaming-room-detail-panel-stat-value {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.tsp-phone-livestreaming-room-detail-panel-stat-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+}
+
+.tsp-phone-livestreaming-room-detail-panel-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.tsp-phone-livestreaming-room-detail-panel-title {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.tsp-phone-livestreaming-room-detail-panel-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.tsp-phone-livestreaming-room-detail-panel-footer {
+    padding: 15px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tsp-phone-livestreaming-remind-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tsp-phone-livestreaming-remind-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.tsp-phone-livestreaming-remind-btn:active {
+    transform: scale(0.98);
+}
+
+/* 催播弹窗样式 */
+.tsp-phone-livestreaming-remind-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tsp-phone-livestreaming-remind-dialog.show {
+    opacity: 1;
+}
+
+.tsp-phone-livestreaming-remind-dialog-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.tsp-phone-livestreaming-remind-dialog-content {
+    position: relative;
+    width: 85%;
+    max-width: 400px;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.tsp-phone-livestreaming-remind-dialog.show .tsp-phone-livestreaming-remind-dialog-content {
+    transform: scale(1);
+}
+
+.tsp-phone-livestreaming-remind-dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tsp-phone-livestreaming-remind-dialog-header span {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.tsp-phone-livestreaming-remind-dialog-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.tsp-phone-livestreaming-remind-dialog-close:hover {
+    color: white;
+}
+
+.tsp-phone-livestreaming-remind-dialog-body {
+    padding: 20px;
+}
+
+.tsp-phone-livestreaming-remind-dialog-input {
+    width: 100%;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 12px;
+    color: white;
+    font-size: 14px;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.tsp-phone-livestreaming-remind-dialog-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.tsp-phone-livestreaming-remind-dialog-input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.tsp-phone-livestreaming-remind-dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 16px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tsp-phone-livestreaming-remind-dialog-cancel,
+.tsp-phone-livestreaming-remind-dialog-submit {
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tsp-phone-livestreaming-remind-dialog-cancel {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tsp-phone-livestreaming-remind-dialog-cancel:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.tsp-phone-livestreaming-remind-dialog-submit {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+}
+
+.tsp-phone-livestreaming-remind-dialog-submit:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}

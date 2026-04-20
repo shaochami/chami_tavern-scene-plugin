@@ -313,3 +313,61 @@
     border-color: rgba(34, 197, 94, 0.3);
     color: #22c55e;
 }
+
+/* 直播页面图片样式 */
+.tsp-livestreaming-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.tsp-livestreaming-image {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* 确保图片层级在弹幕之下 */
+.tsp-livestreaming-image-container {
+    z-index: 1;
+}
+
+/* 弹幕容器通常会有更高的层级，确保图片在其之下 */
+.tsp-phone-livestreaming-room-video-area .tsp-livestreaming-image-container {
+    z-index: 1;
+}
+
+/* 按钮样式 */
+.tsp-livestreaming-gen-btn {
+    margin-right: 10px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, var(--tsp-accent-primary, #7c3aed), var(--tsp-accent-secondary, #a855f7));
+    color: white;
+}
+
+.tsp-livestreaming-gen-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+}
+
+.tsp-livestreaming-gen-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
