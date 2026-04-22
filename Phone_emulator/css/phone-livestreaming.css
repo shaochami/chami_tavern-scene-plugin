@@ -436,11 +436,30 @@
     display: flex;
     flex-direction: column;
 }
-.tsp-phone-livestreaming-interactive-area {
+/* ====== 新增：包裹醒目留言和交互图层的滚动容器 ====== */
+.tsp-phone-livestreaming-scroll-wrapper {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;    /* 当醒目留言增多时会在此处出现滚动条 */
+    overflow-x: hidden;
+}
+
+/* ====== 修改：交互区域赋予最小高度防止被挤压 ====== */
+.tsp-phone-livestreaming-interactive-area {
     position: relative;
     margin: 10px;
+    /* 核心修改：高度固定为 100% 减去 margin 的 20px，并且不允许收缩。它将完全固定当前视口下的大小。 */
+    flex: 0 0 calc(100% - 20px);
+    min-height: 300px; /* 加一个保底高度适配极小的机型 */
 }
+
+/* 特殊消息区域需要设为不收缩 */
+.tsp-phone-livestreaming-special-message {
+    flex-shrink: 0;
+}
+
+
 .tsp-phone-livestreaming-room-video-area {
     width: 100%;
     aspect-ratio: 16/9;
@@ -648,6 +667,8 @@
     align-items: center;
     box-sizing: border-box;
     width: 100%;
+    position: relative;
+    z-index: 20;
 }
 
 .tsp-phone-livestreaming-chat-input {
@@ -1038,4 +1059,1030 @@
 .tsp-phone-livestreaming-remind-dialog-submit:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* 直播间更多菜单按钮 */
+.tsp-phone-livestreaming-more-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    color: white;
+    font-size: 14px;
+}
+
+.tsp-phone-livestreaming-more-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
+}
+
+/* 直播间更多菜单 */
+.tsp-phone-livestreaming-more-menu {
+    position: absolute;
+    bottom: 100%;
+    left: 10px;
+    background: rgba(30, 30, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    min-width: 140px;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-livestreaming-more-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.tsp-phone-livestreaming-more-menu-item {
+    padding: 12px 16px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tsp-phone-livestreaming-more-menu-item:first-child {
+    border-radius: 12px 12px 0 0;
+}
+
+.tsp-phone-livestreaming-more-menu-item:last-child {
+    border-radius: 0;
+}
+
+.tsp-phone-livestreaming-more-menu-item:hover {
+    background: rgba(102, 126, 234, 0.3);
+}
+
+.tsp-phone-livestreaming-more-menu-item i {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+/* 礼物选择面板 */
+.tsp-phone-gift-picker {
+    position: absolute;
+    bottom: 100%;
+    left: 10px;
+    right: 10px;
+    background: rgba(30, 30, 50, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    max-height: 380px;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-gift-picker.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.tsp-phone-gift-picker-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tsp-phone-gift-picker-title {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.tsp-phone-gift-picker-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    font-size: 18px;
+    padding: 4px;
+    transition: color 0.2s ease;
+}
+
+.tsp-phone-gift-picker-close:hover {
+    color: white;
+}
+
+.tsp-phone-gift-grid {
+    padding: 12px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    overflow-y: auto;
+    max-height: 260px;
+}
+
+.tsp-phone-gift-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-gift-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+.tsp-phone-gift-item.selected {
+    background: rgba(102, 126, 234, 0.3);
+    border-color: #667eea;
+}
+
+.tsp-phone-gift-icon {
+    font-size: 28px;
+    margin-bottom: 4px;
+}
+
+.tsp-phone-gift-name {
+    color: white;
+    font-size: 11px;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+.tsp-phone-gift-price {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.tsp-phone-gift-price::before {
+    content: '💰';
+    font-size: 10px;
+}
+
+.tsp-phone-gift-picker-footer {
+    padding: 12px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 12px 12px;
+}
+
+.tsp-phone-gift-selected {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: white;
+    font-size: 13px;
+}
+
+.tsp-phone-gift-selected-name {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.tsp-phone-gift-selected-count {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+}
+
+.tsp-phone-gift-send-btn {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-gift-send-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(240, 147, 251, 0.4);
+}
+
+/* 礼物特效弹幕样式 */
+.gift-danmaku {
+    font-weight: 600;
+    font-size: 16px;
+    padding: 4px 12px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gift-effect-rocket {
+    background: linear-gradient(90deg, #ff6b6b, #ffa500, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 8px rgba(255, 107, 107, 0.8));
+}
+
+.gift-effect-sparkle {
+    background: linear-gradient(90deg, #00d4ff, #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.8));
+}
+
+.gift-effect-glow {
+    background: linear-gradient(90deg, #ffd700, #ff8c00, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.9));
+}
+
+.gift-effect-flame {
+    background: linear-gradient(90deg, #ff4500, #ff6b6b, #ffa500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 10px rgba(255, 69, 0, 0.8));
+}
+
+.gift-effect-rainbow {
+    background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #8b00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 10px rgba(255, 127, 0, 0.8));
+    animation: rainbowShift 1s linear infinite;
+}
+
+@keyframes rainbowShift {
+    0% { filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8)); }
+    16% { filter: drop-shadow(0 0 10px rgba(255, 127, 0, 0.8)); }
+    33% { filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.8)); }
+    50% { filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.8)); }
+    66% { filter: drop-shadow(0 0 10px rgba(0, 0, 255, 0.8)); }
+    83% { filter: drop-shadow(0 0 10px rgba(139, 0, 255, 0.8)); }
+    100% { filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8)); }
+}
+
+.gift-effect-float {
+    background: linear-gradient(90deg, #ff69b4, #ff1493, #ff69b4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.8));
+}
+
+.gift-effect-twinkle {
+    background: linear-gradient(90deg, #ffd700, #fffacd, #ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.9));
+    animation: twinkle 0.5s ease-in-out infinite alternate !important;
+}
+
+.gift-effect-fall {
+    background: linear-gradient(90deg, #90ee90, #98fb98, #90ee90);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 8px rgba(144, 238, 144, 0.8));
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.6; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes danmakuFloat {
+    0% { transform: translateX(100%); opacity: 1; }
+    50% { transform: translateX(50%) translateY(-10px); opacity: 0.8; }
+    100% { transform: translateX(-200%); opacity: 0; }
+}
+
+@keyframes danmakuFall {
+    0% { transform: translateX(100%) translateY(0); opacity: 1; }
+    50% { transform: translateX(50%) translateY(15px); opacity: 0.8; }
+    100% { transform: translateX(-200%) translateY(30px); opacity: 0; }
+}
+
+/* 评论区礼物消息样式 */
+.tsp-livestreaming-chat-item.gift-item {
+    background: linear-gradient(90deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+    border-left: 3px solid #667eea;
+    padding-left: 8px;
+}
+
+.tsp-livestreaming-chat-item.gift-item .tsp-chat-nickname.gift-message {
+    color: #ffd700;
+    font-size: 16px;
+}
+
+.tsp-livestreaming-chat-item.gift-item .tsp-chat-text.gift-message {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+/* 醒目留言显示区域 */
+.tsp-phone-livestreaming-special-message {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 12px;
+    margin: 0 12px 8px 12px;
+}
+
+.tsp-special-message-item {
+    position: relative;
+    padding: 8px 12px;
+    border-radius: 12px;
+    /* 容器不再直接设底色，而是交由::after去覆盖，这样才能透出边缘的流光 */
+    background: transparent;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    animation: slideDown 0.3s ease-out;
+    display: flex;
+    align-items: center;
+    min-height: 36px;
+    overflow: hidden; /* 保证流转底盘绝不越过圆角边框以外 */
+}
+
+.tsp-special-message-item::before {
+    content: '';
+    position: absolute;
+    /* 铺满并外扩，确保在旋转时四个角落都不会出现空缺 */
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        transparent 60%,
+        rgba(255, 107, 107, 0.8) 75%,   /* 红橙调起点 */
+        rgba(255, 215, 0, 1) 90%,       /* 魔法金拖尾 */
+        #ffffff 100%                    /* 耀眼的白金头部 */
+    );
+    z-index: 0;
+    /* reverse 属性让它逆时针环绕 */
+    animation: conicGlow 3s linear infinite reverse;
+}
+
+.tsp-special-message-item::after {
+    content: '';
+    position: absolute;
+    /* inset 的值决定了边框有多粗，这里设为 1.5px */
+    inset: 1.5px;
+    /* 边框圆角等于 外层减去 inset，保证贴合 */
+    border-radius: 10.5px;
+    /* 醒目留言舒适的高级深色内底 */
+    background: linear-gradient(135deg, rgba(30, 30, 45, 0.95), rgba(15, 15, 25, 0.95));
+    backdrop-filter: blur(12px);
+    z-index: 0;
+}
+
+/* 金额50：增强版流光 - 更鲜艳的橙红色调 */
+.tsp-special-message-item.amount-50::before {
+    background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        transparent 50%,
+        rgba(255, 107, 107, 1) 65%,
+        rgba(255, 165, 0, 1) 80%,
+        #ff6b6b 90%,
+        #ffffff 100%
+    );
+    animation: conicGlow 2.5s linear infinite reverse;
+}
+
+/* 金额100：金银双色流光 + 内发光 */
+.tsp-special-message-item.amount-100 {
+    box-shadow: 0 4px 25px rgba(255, 215, 0, 0.3), 0 0 15px rgba(255, 165, 0, 0.2);
+}
+
+.tsp-special-message-item.amount-100::before {
+    background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        transparent 45%,
+        rgba(192, 192, 192, 0.9) 60%,
+        rgba(255, 215, 0, 1) 75%,
+        #ffffff 90%,
+        rgba(255, 215, 0, 1) 100%
+    );
+    animation: conicGlow 2s linear infinite reverse;
+}
+
+.tsp-special-message-item.amount-100::after {
+    inset: 1.5px;
+    background: linear-gradient(135deg, rgba(40, 35, 50, 0.95), rgba(20, 18, 30, 0.95));
+    box-shadow: inset 0 0 15px rgba(255, 215, 0, 0.15);
+}
+
+/* 金额500：彩虹流光 + 双重边框 + 脉冲发光 */
+.tsp-special-message-item.amount-500 {
+    box-shadow: 0 4px 30px rgba(255, 105, 180, 0.4), 0 0 20px rgba(138, 43, 226, 0.3), 0 0 40px rgba(255, 215, 0, 0.2);
+    animation: slideDown 0.3s ease-out, pulseGlow500 2s ease-in-out infinite;
+}
+
+.tsp-special-message-item.amount-500::before {
+    background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        transparent 35%,
+        rgba(255, 105, 180, 1) 50%,
+        rgba(138, 43, 226, 1) 65%,
+        rgba(255, 215, 0, 1) 80%,
+        #00ffff 90%,
+        #ffffff 100%
+    );
+    animation: conicGlow 1.5s linear infinite reverse;
+}
+
+.tsp-special-message-item.amount-500::after {
+    inset: 1.5px;
+    background: linear-gradient(135deg, rgba(50, 40, 60, 0.95), rgba(25, 20, 40, 0.95));
+    box-shadow: inset 0 0 20px rgba(138, 43, 226, 0.2), inset 0 0 10px rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 10.5px;
+}
+
+/* 金额1000：终极特效 - 全彩虹 + 火花粒子 + 多层光晕 + 闪烁 */
+.tsp-special-message-item.amount-1000 {
+    box-shadow:
+        0 4px 35px rgba(255, 0, 0, 0.4),
+        0 0 25px rgba(255, 165, 0, 0.4),
+        0 0 35px rgba(255, 215, 0, 0.3),
+        0 0 45px rgba(0, 255, 255, 0.3),
+        0 0 55px rgba(138, 43, 226, 0.3),
+        0 0 65px rgba(255, 105, 180, 0.3);
+    animation: slideDown 0.3s ease-out, rainbowPulse 1.5s ease-in-out infinite, sparkle1000 0.8s ease-in-out infinite;
+}
+
+.tsp-special-message-item.amount-1000::before {
+    background: conic-gradient(
+        from 0deg,
+        #ff0000 0%,
+        #ff7f00 15%,
+        #ffff00 30%,
+        #00ff00 45%,
+        #00ffff 60%,
+        #0000ff 75%,
+        #8b00ff 85%,
+        #ff0000 100%
+    );
+    animation: conicGlow 1s linear infinite reverse;
+}
+
+.tsp-special-message-item.amount-1000::after {
+    inset: 1.5px;
+    background: linear-gradient(135deg, rgba(60, 50, 80, 0.95), rgba(30, 25, 50, 0.95));
+    box-shadow:
+        inset 0 0 25px rgba(255, 215, 0, 0.25),
+        inset 0 0 15px rgba(255, 105, 180, 0.15);
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    border-radius: 10.5px;
+}
+
+/* 1000专属：彩虹脉冲动画 */
+@keyframes rainbowPulse {
+    0%, 100% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.3);
+    }
+}
+
+/* 1000专属：闪烁动画 */
+@keyframes sparkle1000 {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.85;
+    }
+}
+
+/* 500专属：脉冲光晕动画 */
+@keyframes pulseGlow500 {
+    0%, 100% {
+        box-shadow: 0 4px 30px rgba(255, 105, 180, 0.4), 0 0 20px rgba(138, 43, 226, 0.3), 0 0 40px rgba(255, 215, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 4px 35px rgba(255, 105, 180, 0.6), 0 0 25px rgba(138, 43, 226, 0.5), 0 0 50px rgba(255, 215, 0, 0.4);
+    }
+}
+
+.tsp-phone-livestreaming-settings-nav {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    right: 0;
+    height: 44px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 20;
+}
+
+.tsp-phone-livestreaming-settings-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    padding-top: 88px;
+    overflow-y: auto;
+}
+
+.tsp-phone-livestreaming-settings-section {
+    padding: 15px;
+}
+
+.tsp-phone-livestreaming-settings-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+.tsp-phone-livestreaming-settings-item-info {
+    flex: 1;
+}
+
+.tsp-phone-livestreaming-settings-item-title {
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.tsp-phone-livestreaming-settings-item-desc {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.tsp-phone-toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.tsp-phone-toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.tsp-phone-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+    border-radius: 28px;
+}
+
+.tsp-phone-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+.tsp-phone-toggle-switch input:checked + .tsp-phone-toggle-slider {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.tsp-phone-toggle-switch input:checked + .tsp-phone-toggle-slider:before {
+    transform: translateX(24px);
+}
+
+/* 4. 流动动画：平滑无限旋转 */
+@keyframes conicGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+.tsp-special-message-name,
+.tsp-special-message-content,
+.tsp-special-message-delete {
+    position: relative;
+    z-index: 1;
+}
+
+.tsp-special-message-name {
+    color: #ffd700;
+    font-size: 13px;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+}
+
+.tsp-special-message-content {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 13px;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    word-break: break-word;
+    flex: 1;
+    text-align: left;
+    min-height: 16px;
+}
+
+.tsp-special-message-delete {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    margin-left: auto;
+}
+
+.tsp-special-message-delete:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+    color: #fff;
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* 醒目留言输入对话框 */
+.tsp-phone-special-msg-dialog {
+    position: absolute;
+    bottom: 60px;
+    left: 10px;
+    right: 10px;
+    background: rgba(30, 30, 50, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+}
+
+.tsp-phone-special-msg-dialog.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.tsp-special-msg-dialog-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tsp-special-msg-dialog-title {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.tsp-special-msg-dialog-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    font-size: 18px;
+    padding: 4px;
+    transition: color 0.2s ease;
+}
+
+.tsp-special-msg-dialog-close:hover {
+    color: #fff;
+}
+
+.tsp-special-msg-dialog-body {
+    padding: 12px 16px;
+}
+
+.tsp-special-msg-amount-section {
+    margin-bottom: 12px;
+}
+
+.tsp-special-msg-amount-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.tsp-special-msg-amount-options {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tsp-special-msg-amount-item {
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tsp-special-msg-amount-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.tsp-special-msg-amount-item.selected {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: transparent;
+    color: #fff;
+}
+
+.tsp-special-message-amount {
+    color: #ffa500;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.tsp-special-msg-input {
+    width: 100%;
+    min-height: 100px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 14px;
+    padding: 12px;
+    resize: none;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.tsp-special-msg-input:focus {
+    border-color: #667eea;
+}
+
+.tsp-special-msg-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.tsp-special-msg-dialog-footer {
+    padding: 12px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 12px 12px;
+}
+
+.tsp-special-msg-cancel-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tsp-special-msg-cancel-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.tsp-special-msg-send-btn {
+    background: linear-gradient(135deg, #ff6b6b, #ffa500);
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tsp-special-msg-send-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+}
+
+/* 贡献榜面板样式 */
+.tsp-phone-livestreaming-contribution-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.tsp-phone-livestreaming-contribution-panel.show {
+    pointer-events: auto;
+}
+
+.tsp-phone-livestreaming-contribution-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tsp-phone-livestreaming-contribution-panel.show .tsp-phone-livestreaming-contribution-overlay {
+    opacity: 1;
+}
+
+.tsp-phone-livestreaming-contribution-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 70%;
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 20px 20px 0 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.tsp-phone-livestreaming-contribution-panel.show .tsp-phone-livestreaming-contribution-content {
+    transform: translateY(0);
+}
+
+.tsp-phone-livestreaming-contribution-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.tsp-phone-livestreaming-contribution-title {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.tsp-phone-livestreaming-contribution-close {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 18px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.tsp-phone-livestreaming-contribution-close:hover {
+    color: white;
+}
+
+.tsp-phone-livestreaming-contribution-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px 15px;
+}
+
+.tsp-contribution-empty {
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    padding: 40px 0;
+    font-size: 14px;
+}
+
+.tsp-contribution-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 10px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+}
+
+.tsp-contribution-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tsp-contribution-item.rank-first {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 165, 0, 0.1) 100%);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.tsp-contribution-item.rank-second {
+    background: linear-gradient(135deg, rgba(192, 192, 192, 0.15) 0%, rgba(169, 169, 169, 0.1) 100%);
+    border: 1px solid rgba(192, 192, 192, 0.3);
+}
+
+.tsp-contribution-item.rank-third {
+    background: linear-gradient(135deg, rgba(205, 127, 50, 0.15) 0%, rgba(184, 115, 51, 0.1) 100%);
+    border: 1px solid rgba(205, 127, 50, 0.3);
+}
+
+.tsp-contribution-rank {
+    width: 36px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+.tsp-contribution-nickname {
+    flex: 1;
+    color: white;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+.tsp-contribution-price {
+    color: #ffa500;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 50px;
+    text-align: right;
 }
