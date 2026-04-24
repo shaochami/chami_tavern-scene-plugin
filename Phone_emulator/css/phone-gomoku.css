@@ -1,0 +1,238 @@
+.tsp-phone-gomoku {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    padding-top: 40px;
+    overflow-y: auto;
+}
+
+.tsp-phone-gomoku-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.tsp-phone-gomoku-header h2 {
+    margin: 0;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+    flex: 1;
+}
+
+.tsp-gomoku-info {
+    display: flex;
+    align-items: center;
+}
+
+.tsp-gomoku-info span {
+    font-size: 14px;
+    color: #666;
+    padding: 4px 12px;
+    background-color: #f0f0f0;
+    border-radius: 12px;
+}
+
+.tsp-phone-gomoku-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
+}
+
+.tsp-gomoku-board-container {
+    position: relative;
+    background: linear-gradient(135deg, #DEB887 0%, #D2B48C 50%, #C4A67C 100%);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tsp-gomoku-board {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.gomoku-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.gomoku-grid {
+    pointer-events: auto;
+}
+
+.gomoku-cell {
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-radius: 50%;
+}
+
+.gomoku-cell:hover {
+    background-color: rgba(139, 69, 19, 0.2);
+}
+
+.tsp-gomoku-pieces-panel {
+    display: flex;
+    gap: 20px;
+    padding: 15px 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tsp-gomoku-piece {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 3px solid transparent;
+}
+
+.tsp-gomoku-piece .piece-inner {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.tsp-gomoku-piece.black-piece .piece-inner {
+    background: radial-gradient(circle at 30% 30%, #555, #000);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tsp-gomoku-piece.white-piece .piece-inner {
+    background: radial-gradient(circle at 30% 30%, #fff, #ddd);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tsp-gomoku-piece:hover {
+    transform: scale(1.1);
+}
+
+.tsp-gomoku-piece.selected {
+    border-color: #4CAF50;
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+}
+
+.tsp-gomoku-piece.selected .piece-inner {
+    animation: piecePulse 1s infinite;
+}
+
+@keyframes piecePulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.tsp-gomoku-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.tsp-gomoku-hint {
+    font-size: 13px;
+    color: #888;
+    text-align: center;
+    padding: 8px 16px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.tsp-phone-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tsp-phone-btn-back {
+    background-color: transparent;
+    color: #333;
+    padding: 8px;
+}
+
+.tsp-phone-btn-back:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.tsp-phone-btn-primary {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.tsp-phone-btn-primary:hover {
+    background-color: #45a049;
+}
+
+.tsp-phone-btn-secondary {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.tsp-phone-btn-secondary:hover {
+    background-color: #d0d0d0;
+}
+
+.tsp-phone-gomoku-result-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
+}
+
+.tsp-gomoku-result-board-container {
+    position: relative;
+    background: linear-gradient(135deg, #DEB887 0%, #D2B48C 50%, #C4A67C 100%);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tsp-gomoku-result-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tsp-gomoku-result-text {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+}

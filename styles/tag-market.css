@@ -11,6 +11,45 @@
     position: relative;
 }
 
+.ts-params-panel {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-right: 1px solid var(--tsp-border);
+    padding-right: 15px;
+    flex-shrink: 0;
+    overflow-y: auto;
+    height: 100%;
+}
+
+/* 参数面板的表单样式 */
+.ts-params-panel .tsp-form-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.ts-params-panel .tsp-form-group {
+    flex: 1;
+}
+
+.ts-params-panel .tsp-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.ts-params-panel .tsp-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--tsp-border);
+    border-radius: 4px;
+    background: var(--tsp-bg-input);
+    color: var(--tsp-text-primary);
+}
+
 .ts-left-panel {
     flex: 1;
     display: flex;
@@ -27,10 +66,53 @@
     width: 320px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     border-left: 1px solid var(--tsp-border);
-    padding-left: 15px;
+    padding: 15px;
     flex-shrink: 0;
+}
+
+.ts-top-nav {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.ts-top-nav-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid var(--tsp-border);
+    border-radius: 8px;
+    background: var(--tsp-bg-secondary);
+    color: var(--tsp-text-secondary);
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ts-top-nav-btn i {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ts-top-nav-btn:hover {
+    background: var(--tsp-bg-hover);
+    color: var(--tsp-text-primary);
+    border-color: var(--tsp-accent-primary);
+}
+
+.ts-top-nav-btn.active {
+    background: var(--tsp-accent-primary);
+    color: white;
+    border-color: var(--tsp-accent-primary);
 }
 
 /* ==================== 搜索与导航 ==================== */
@@ -460,11 +542,6 @@
         margin-top: auto; /* 辅助定位 */
     }
 
-    /* 展开模式下的特殊处理 (隐藏预览区) */
-    .ts-layout.mobile-expanded-mode .ts-right-panel {
-        display: none !important;
-    }
-
     /* 搜索框适配保持不变... */
     .ts-search-grid { display: flex; flex-direction: column; gap: 8px; padding: 5px 0; }
     .ts-search-item label { display: none; }
@@ -885,6 +962,133 @@
 }
 @media (min-width: 901px) {
     .ts-mobile-toggle { display: none; }
-    /* 修改点：height 改为 auto，允许包裹内容 */
+    .ts-mobile-bottom-nav { display: none !important; }
     .ts-mobile-content-wrap { display: flex !important; flex-direction: column; gap: 10px; height: auto; }
+}
+
+/* ==================== 移动端底部固定导航栏 ==================== */
+.ts-mobile-bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--tsp-bg-input);
+    backdrop-filter: blur(10px);
+    border-top: 2px solid var(--tsp-accent-primary);
+    z-index: 9999;
+    display: flex;
+}
+
+.ts-mobile-bottom-nav .ts-nav-tab {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 4px;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    color: var(--tsp-text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ts-mobile-bottom-nav .ts-nav-tab i {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ts-mobile-bottom-nav .ts-nav-tab span {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.ts-mobile-bottom-nav .ts-nav-tab.active {
+    color: var(--tsp-accent-primary);
+    background: var(--tsp-bg-hover);
+}
+
+/* 移动端隐藏左右面板，通过导航控制显示 */
+@media (max-width: 900px) {
+    .ts-mobile-bottom-nav { display: flex; }
+
+    .tsp-modal-xlarge {
+        width: 100vw;
+        height: 100vh;
+        max-width: 100vw;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+
+    .ts-layout {
+        height: calc(100vh - 50px);
+        position: relative;
+    }
+
+    .ts-mobile-content-wrap {
+        display: flex !important;
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+    }
+
+    .ts-params-panel,
+    .ts-left-panel,
+    .ts-right-panel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 50px;
+        width: 100%;
+        height: calc(100% - 50px);
+        display: none !important;
+        flex-direction: column;
+    }
+
+    .ts-params-panel.active,
+    .ts-left-panel.active,
+    .ts-right-panel.active {
+        display: flex !important;
+    }
+
+    .ts-params-panel.active {
+        background: var(--tsp-bg-primary);
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ts-params-panel.active .ts-mobile-content-wrap {
+        display: flex !important;
+        flex-direction: column;
+        flex: 1;
+        overflow-y: auto;
+    }
+
+    #ts-params-wrap {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        overflow-y: auto;
+    }
+
+    .ts-right-panel {
+        flex-direction: column;
+    }
+
+    #ts-preview-area {
+        flex: 1;
+        overflow-y: auto;
+    }
+
+    .tsp-modal-body {
+        padding-bottom: 50px;
+    }
 }

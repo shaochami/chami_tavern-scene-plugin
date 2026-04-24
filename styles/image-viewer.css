@@ -263,6 +263,50 @@
 .tsp-simple-lightbox.visible img,
 .tsp-simple-lightbox.visible video { transform: scale(1); }
 
+.tsp-simple-lightbox .tsp-lightbox-save-btn {
+    position: absolute;
+    top: 20px;
+    right: 80px;
+    font-size: 14px;
+    padding: 8px 16px;
+    background: var(--tsp-accent-primary);
+    color: var(--tsp-bg-main);
+    border: 1px solid var(--tsp-accent-primary);
+    border-radius: var(--tsp-radius-sm);
+    text-shadow: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.tsp-simple-lightbox .tsp-lightbox-save-btn:hover {
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+}
+
+.tsp-simple-lightbox .tsp-lightbox-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    text-shadow: 0 0 5px black;
+    transition: all 0.2s ease;
+    padding: 5px;
+    z-index: 10;
+}
+
+.tsp-simple-lightbox .tsp-lightbox-close-btn:hover {
+    transform: scale(1.1);
+    color: #ff5577;
+}
+
 /* ==================== 编辑 (图生图) 模态框 (保持不变) ==================== */
 .tsp-edit-modal {
     position: fixed;
