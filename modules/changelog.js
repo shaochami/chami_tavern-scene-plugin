@@ -1,5 +1,15 @@
 export const changelogData = [
     {
+        version: "1.1.7(6)",
+        items: [
+            "other模式可以直接使用GPT生图，在问自杀！！",
+            "角色数据库操作略微调整",
+            "nai模式对重复的tag进行删除,避免触发操作不熟悉的用户导致爆token",
+            "只会删除同字段内完全重复的tag，跨越字段不会匹配到。例如Char1的tag出现两个girl才会进行删除。1girl或者(girl)都不会进行删除。Char2字段的内容哪怕完全一致也不会删除"
+
+        ]
+    },
+    {
         version: "1.1.7(5)",
         items: [
             "最近沉迷GPT生图，为方便自己使用标签超市ui进行大改，参数调整内置",

@@ -206,6 +206,57 @@
     color: var(--tsp-accent-primary);
 }
 
+.tsp-role-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tsp-role-tags-container {
+    flex: 1;
+    overflow-y: auto;
+    max-height: calc(100vh - 300px);
+}
+
+.tsp-role-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: var(--tsp-bg-input, #25232b);
+    border: 1px solid var(--tsp-border, #3a3b4a);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    color: var(--tsp-text-primary);
+}
+
+.tsp-role-tag:hover {
+    background: var(--tsp-accent-primary);
+    border-color: var(--tsp-accent-primary);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tsp-role-tag.disabled {
+    opacity: 0.5;
+}
+
+.tsp-role-tag.disabled span {
+    text-decoration: line-through;
+}
+
+.tsp-role-tag i {
+    color: var(--tsp-accent-primary);
+    transition: color 0.2s ease;
+}
+
+.tsp-role-tag:hover i {
+    color: #fff;
+}
+
 /* 背景透明度滑块 */
 .tsp-bg-opacity-slider {
     width: 100%;
