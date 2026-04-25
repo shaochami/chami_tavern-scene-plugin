@@ -1,5 +1,13 @@
 export const changelogData = [
     {
+        version: "1.1.7(7)",
+        items: [
+            "提示词预设增加防呆提示",
+            "nai增加元数据token计算、计算方式不同会有一点偏差"
+
+        ]
+    },
+    {
         version: "1.1.7(6)",
         items: [
             "other模式可以直接使用GPT生图，在问自杀！！",
