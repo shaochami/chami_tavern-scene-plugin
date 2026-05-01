@@ -1,5 +1,13 @@
 export const changelogData = [
     {
+        version: "1.1.7(10)",
+        items: [
+            "优化聊天插入的预设",
+            "标签超市移动端进行优化"
+
+        ]
+    },
+    {
         version: "1.1.7(9)",
         items: [
             "tts增加语音指令，情感功能大幅度提升",
