@@ -723,6 +723,29 @@
     transform: translateY(1px);
 }
 
+/* 次要按钮样式 */
+.tsp-btn-secondary {
+    padding: 12px 24px;
+    background-color: var(--tsp-bg-secondary);
+    color: var(--tsp-text-primary);
+    border: 1px solid var(--tsp-bg-tertiary);
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tsp-btn-secondary:hover {
+    background-color: var(--tsp-bg-tertiary);
+    border-color: var(--tsp-accent-primary);
+    color: var(--tsp-accent-primary);
+}
+
+.tsp-btn-secondary:active {
+    transform: translateY(1px);
+}
+
 /* 角色详情面板滚动条样式 */
 .tsp-minutes-detail-content::-webkit-scrollbar {
     width: 6px;
@@ -1118,8 +1141,578 @@
     border-radius: 50%;
 }
 
+/* 擂台界面样式 */
+.tsp-minutes-battle-arena {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tsp-battle-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    text-align: center;
+}
+
+.tsp-battle-empty-icon {
+    font-size: 48px;
+    color: var(--tsp-accent-primary);
+}
+
+.tsp-battle-empty-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--tsp-text-primary);
+}
+
+.tsp-battle-empty-desc {
+    font-size: 14px;
+    color: var(--tsp-text-secondary);
+}
+
+.tsp-battle-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    align-items: stretch;
+    padding: 10px;
+}
+
+.tsp-battle-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tsp-battle-player-side {
+    align-items: flex-start;
+}
+
+.tsp-battle-enemy-side {
+    align-items: flex-end;
+}
+
+.tsp-battle-character-panel {
+    width: 100%;
+    height: 100%;
+    background: var(--tsp-bg-secondary);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tsp-battle-player-side .tsp-battle-character-panel {
+    border: 2px solid #4CAF50;
+}
+
+.tsp-battle-enemy-side .tsp-battle-character-panel {
+    border: 2px solid #f44336;
+}
+
+.tsp-battle-character-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--tsp-text-primary);
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--tsp-bg-tertiary);
+}
+
+.tsp-battle-character-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tsp-battle-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    background: var(--tsp-bg-tertiary);
+    border-radius: 6px;
+}
+
+.tsp-battle-stat-label {
+    font-size: 14px;
+    color: var(--tsp-text-secondary);
+}
+
+.tsp-battle-stat-value {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--tsp-accent-primary);
+}
+
+.tsp-battle-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.tsp-battle-skill {
+    font-size: 13px;
+    color: var(--tsp-text-primary);
+    padding: 8px 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+.tsp-battle-character-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--tsp-bg-secondary);
+    position: relative;
+}
+
+.tsp-btn-small {
+    padding: 4px 8px !important;
+    font-size: 12px !important;
+    min-width: auto !important;
+    background-color: var(--tsp-bg-secondary);
+    color: var(--tsp-text-secondary);
+    border: 1px solid var(--tsp-border);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.tsp-btn-small:hover {
+    background-color: var(--tsp-bg-tertiary);
+    color: var(--tsp-accent-primary);
+    border-color: var(--tsp-accent-primary);
+}
+
+.tsp-btn-small:active {
+    transform: scale(0.95);
+}
+
+.tsp-battle-character-edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.tsp-battle-edit-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.tsp-battle-edit-label {
+    font-size: 13px;
+    color: var(--tsp-text-secondary);
+    font-weight: 500;
+}
+
+.tsp-battle-edit-input {
+    padding: 8px 10px !important;
+    background: var(--tsp-bg-input) !important;
+    background-color: var(--tsp-bg-input) !important;
+    border: 1px solid var(--tsp-border) !important;
+    border-radius: 6px !important;
+    color: var(--tsp-text-input) !important;
+    font-size: 13px !important;
+    box-sizing: border-box !important;
+}
+
+.tsp-battle-edit-input:focus {
+    outline: none !important;
+    border-color: var(--tsp-accent-primary) !important;
+    box-shadow: 0 0 0 2px rgba(122, 162, 247, 0.2) !important;
+}
+
+.tsp-btn-battle-save {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.tsp-battle-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-width: 120px;
+}
+
+.tsp-battle-vs {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--tsp-accent-primary);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tsp-btn-battle {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    font-size: 16px;
+    padding: 12px 24px;
+    box-shadow: 0 4px 12px rgba(255, 65, 108, 0.4);
+}
+
+.tsp-btn-battle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 65, 108, 0.6);
+}
+
+.tsp-btn-regenerate {
+    background: var(--tsp-bg-tertiary);
+    color: var(--tsp-text-primary);
+    border: 1px solid var(--tsp-border);
+    font-size: 14px;
+    padding: 8px 16px;
+}
+
+.tsp-btn-regenerate:hover {
+    background: var(--tsp-bg-secondary);
+}
+
+.tsp-btn-loading {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.tsp-btn-loading:hover {
+    transform: none !important;
+}
+
+.tsp-btn-loading .fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 战斗场景 */
+.tsp-battle-scene {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.tsp-battle-map {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: auto;
+    max-height: calc(100% - 120px);
+}
+
+/* 角色立绘 */
+.tsp-battle-character {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.tsp-battle-player-character {
+    position: absolute;
+    left: 80px;
+    top: 20px;
+}
+
+.tsp-battle-enemy-character {
+    position: absolute;
+    right: 80px;
+    top: 20px;
+}
+
+.tsp-battle-portrait {
+    width: 200px;
+    height: 300px;
+    object-fit: contain;
+    object-position: bottom;
+}
+
+.tsp-battle-name-tag {
+    order: -1;
+    margin-bottom: 8px;
+    padding: 6px 16px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* HP条 */
+.tsp-battle-hp-bar-container {
+    width: 180px;
+    margin-bottom: 10px;
+}
+
+.tsp-battle-hp-bar {
+    width: 100%;
+    height: 16px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.tsp-battle-hp-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff4444, #ff6666);
+    transition: width 0.3s ease;
+}
+
+.tsp-battle-hp-text {
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    margin-top: 4px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+}
+
+/* 气点 */
+.tsp-battle-qi-container {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.tsp-battle-qi-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.tsp-battle-qi-dot-active {
+    background: linear-gradient(135deg, #ffaa00, #ff6600);
+    box-shadow: 0 0 8px #ffaa00;
+}
+
+/* 回合指示器 */
+.tsp-battle-turn-indicator {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 30px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 战斗日志 */
+.tsp-battle-log {
+    width: 280px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-left: 2px solid #0f3460;
+    padding: 16px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.tsp-battle-log-entry {
+    color: white;
+    font-size: 13px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tsp-battle-log-entry:last-child {
+    border-bottom: none;
+}
+
+/* 战斗底部栏容器 */
+.tsp-battle-bottom-bar {
+    display: flex;
+    height: 140px;
+    background: linear-gradient(to top, #1a1a2e, #16213e);
+    border-top: 3px solid #0f3460;
+}
+
+/* 技能栏 */
+.tsp-battle-skill-bar {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    gap: 12px;
+    padding: 16px 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 技能卡牌 */
+.tsp-battle-skill-card {
+    width: 110px;
+    height: 100px;
+    background: linear-gradient(135deg, #2d3436, #636e72);
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 2px solid #74b9ff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tsp-battle-skill-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    border-color: #0984e3;
+}
+
+.tsp-battle-skill-card-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(50%);
+}
+
+.tsp-battle-skill-card-disabled:hover {
+    transform: none;
+}
+
+.tsp-battle-skill-name {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    line-height: 1.3;
+}
+
+.tsp-battle-skill-cost {
+    color: #fdcb6e;
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.tsp-battle-skill-type-tag {
+    font-size: 10px;
+    padding: 2px 8px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    color: #74b9ff;
+}
+
+/* 退出战斗按钮 */
+.tsp-btn-exit-battle {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 100;
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--tsp-text-primary);
+    border: 1px solid var(--tsp-border);
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.tsp-btn-exit-battle:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #e74c3c;
+    color: #e74c3c;
+}
+
+.tsp-btn-exit-battle:active {
+    transform: scale(0.95);
+}
+
+/* 战斗结果 */
+.tsp-battle-result-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.tsp-battle-result-panel {
+    background: linear-gradient(135deg, #2d3436, #1a1a2e);
+    border-radius: 20px;
+    padding: 40px 60px;
+    text-align: center;
+    border: 3px solid #0984e3;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.tsp-battle-result-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #fdcb6e;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tsp-battle-result-icon {
+    font-size: 64px;
+    color: #fdcb6e;
+    margin-bottom: 20px;
+}
+
+.tsp-battle-result-text {
+    font-size: 18px;
+    color: #dfe6e9;
+    margin-bottom: 30px;
+}
+
+.tsp-battle-result-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
 /* 响应式设计 */
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .tsp-minutes-panel {
         width: 95%;
         left: 2.5%;
@@ -1139,4 +1732,370 @@
         font-size: 10px;
         max-width: 80px;
     }
+
+    .tsp-battle-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .tsp-battle-center {
+        flex-direction: row;
+        min-height: 80px;
+    }
+
+    .tsp-battle-vs {
+        font-size: 24px;
+    }
+
+    /* 战斗场景响应式 */
+    .tsp-battle-portrait {
+        width: 140px;
+        height: 210px;
+    }
+
+    .tsp-battle-player-character {
+        left: 40px;
+    }
+
+    .tsp-battle-enemy-character {
+        right: 40px;
+    }
+
+    /* 响应式底部栏 */
+    .tsp-battle-bottom-bar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .tsp-battle-skill-bar {
+        flex-wrap: wrap;
+        height: auto;
+        gap: 8px;
+        padding: 12px 16px;
+        min-height: 100px;
+    }
+
+    .tsp-battle-skill-card {
+        width: 90px;
+        height: 85px;
+    }
+
+    .tsp-battle-skill-name {
+        font-size: 11px;
+    }
+
+    .tsp-battle-log {
+        width: 100%;
+        height: 150px;
+        border-left: none;
+        border-top: 2px solid #0f3460;
+    }
 }
+
+/* 战斗按钮组样式 */
+.tsp-battle-button-group {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 100;
+    display: flex;
+    gap: 8px;
+}
+
+/* 全屏按钮样式 */
+.tsp-btn-fullscreen-battle {
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--tsp-text-primary);
+    border: 1px solid var(--tsp-border);
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    white-space: nowrap;
+}
+
+.tsp-btn-fullscreen-battle:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: var(--tsp-accent-primary);
+    color: var(--tsp-accent-primary);
+}
+
+.tsp-btn-fullscreen-battle:active {
+    transform: scale(0.95);
+}
+
+/* 调整战斗按钮位置 */
+.tsp-battle-button-group .tsp-btn-exit-battle {
+    position: relative;
+    top: auto;
+    right: auto;
+}
+
+/* 全屏模式样式 */
+.tsp-minutes-panel.tsp-minutes-fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    height: min(100dvh, 100vh) !important;
+    border-radius: 0;
+    z-index: 99999;
+    transform: none !important;
+    padding: 0;
+    margin: 0;
+}
+
+/* 全屏模式下隐藏头部（可选）*/
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-minutes-panel-header {
+    display: none;
+}
+
+/* 全屏模式下的内容容器 */
+.tsp-minutes-panel.tsp-minutes-fullscreen #tsp-minutes-status-container {
+    height: 100%;
+}
+
+.tsp-minutes-panel.tsp-minutes-fullscreen #tsp-minutes-content {
+    padding: 0;
+    overflow: hidden;
+}
+
+/* 全屏模式下的战斗场景放大 */
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-scene {
+    width: 100%;
+    height: 100%;
+}
+
+/* 全屏模式下的地图占满整个高度 */
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-map {
+    height: calc(100% - 180px);
+    max-height: none;
+    flex: none;
+}
+
+/* 全屏模式下的底部栏 */
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-bottom-bar {
+    height: 180px;
+}
+
+/* 全屏模式下的技能栏 */
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-skill-bar {
+    flex: 1;
+}
+
+/* 全屏模式下的立绘放大 */
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-portrait {
+    width: 300px;
+    height: 450px;
+}
+
+/* 全屏模式下的立绘位置调整 - 使用底部百分比定位，确保不管地图高度如何变化，立绘都能从底部开始对齐 */
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-character {
+    position: absolute !important;
+    margin-top: 0 !important;
+}
+
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-player-character {
+    position: absolute !important;
+    left: 10% !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: 5% !important;
+}
+
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-enemy-character {
+    position: absolute !important;
+    right: 10% !important;
+    left: auto !important;
+    top: auto !important;
+    bottom: 5% !important;
+}
+
+/* 全屏模式下的HP条放大 */
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-hp-bar-container {
+    width: 270px;
+}
+
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-hp-bar {
+    height: 24px;
+}
+
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-hp-text {
+    font-size: 16px;
+}
+
+/* 全屏模式下的气点放大 */
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-qi-dot {
+    width: 18px;
+    height: 18px;
+}
+
+/* 全屏模式下的名字标签放大 */
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-name-tag {
+    padding: 8px 24px;
+    font-size: 18px;
+}
+
+/* 全屏模式下的回合指示器放大 */
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-turn-indicator {
+    padding: 12px 40px;
+    font-size: 20px;
+}
+
+/* 全屏模式下的战斗日志放大 */
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-log {
+    width: 420px;
+    height: 100%;
+    padding: 20px;
+}
+
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-log-entry {
+    font-size: 15px;
+    padding: 8px 0;
+}
+
+/* 全屏模式下的技能栏放大 */
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-skill-bar {
+    padding: 20px 30px;
+    gap: 16px;
+}
+
+/* 全屏模式下的技能卡牌放大 */
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-skill-card {
+    width: 165px;
+    height: 150px;
+    padding: 15px;
+}
+
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-skill-name {
+    font-size: 15px;
+}
+
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-skill-cost {
+    font-size: 14px;
+}
+
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-skill-type-tag {
+    font-size: 11px;
+}
+
+/* 全屏模式下的按钮放大 */
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-btn-fullscreen-battle,
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-btn-exit-battle {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+/* 技能气泡样式 */
+.tsp-battle-skill-bubble {
+    position: absolute;
+    padding: 8px 16px;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 12px;
+    color: #ffd700;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    animation: bubbleAppear 0.3s ease-out;
+    white-space: nowrap;
+    max-width: 200px;
+}
+
+/* 玩家技能气泡 - 显示在立绘右侧 */
+.tsp-battle-player-character .tsp-battle-skill-bubble {
+    left: calc(100% + 10px);
+    top: 30%;
+}
+
+/* 敌人技能气泡 - 显示在立绘左侧 */
+.tsp-battle-enemy-character .tsp-battle-skill-bubble {
+    right: calc(100% + 10px);
+    top: 30%;
+}
+
+/* 技能气泡尾巴 */
+.tsp-battle-skill-bubble::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+}
+
+.tsp-battle-player-character .tsp-battle-skill-bubble::after {
+    right: -16px;
+    transform: translateY(-50%);
+    border-left-color: rgba(0, 0, 0, 0.85);
+}
+
+.tsp-battle-enemy-character .tsp-battle-skill-bubble::after {
+    left: -16px;
+    transform: translateY(-50%);
+    border-right-color: rgba(0, 0, 0, 0.85);
+}
+
+/* 伤害数字样式 */
+.tsp-battle-damage-number {
+    position: absolute;
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff4444;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    animation: damageFloat 1s ease-out forwards;
+}
+
+/* 玩家受到伤害 - 显示在玩家立绘附近 */
+.tsp-battle-player-character .tsp-battle-damage-number {
+    right: -30px;
+    top: 50%;
+}
+
+/* 敌人受到伤害 - 显示在敌人立绘附近 */
+.tsp-battle-enemy-character .tsp-battle-damage-number {
+    left: -30px;
+    top: 50%;
+}
+
+/* 动画关键帧 */
+@keyframes bubbleAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes damageFloat {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-30px) scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-60px) scale(0.8);
+    }
+}
+
+/* 全屏模式下的技能气泡放大 */
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-skill-bubble {
+    padding: 12px 24px;
+    font-size: 22px;
+}
+
+/* 全屏模式下的伤害数字放大 */
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-damage-number {
+    font-size: 36px;
+}
+

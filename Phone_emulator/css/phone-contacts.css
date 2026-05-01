@@ -458,6 +458,54 @@
     padding-left: 4px;
 }
 
+/* 群聊设置中的设置项使用暗色系，不使用主题色 */
+.tsp-phone-group-settings-view .tsp-phone-settings-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    margin-bottom: 8px;
+}
+
+.tsp-phone-group-settings-view .tsp-phone-settings-item:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.tsp-phone-group-settings-view .tsp-phone-settings-item span {
+    color: white !important;
+    font-size: 14px;
+}
+
+.tsp-phone-group-settings-view .tsp-phone-settings-item i {
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 14px;
+}
+
+.tsp-phone-group-settings-view .tsp-phone-settings-item-value {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 14px;
+}
+
+.tsp-phone-group-settings-view .tsp-phone-settings-item-danger {
+    background: rgba(239, 68, 68, 0.1) !important;
+}
+
+.tsp-phone-group-settings-view .tsp-phone-settings-item-danger:hover {
+    background: rgba(239, 68, 68, 0.2) !important;
+}
+
+.tsp-phone-group-settings-view .tsp-phone-settings-item-danger span,
+.tsp-phone-group-settings-view .tsp-phone-settings-item-danger i {
+    color: #ef4444 !important;
+}
+
 .tsp-phone-settings-item {
     display: flex;
     align-items: center;
@@ -578,7 +626,8 @@
 }
 
 .tsp-phone-member-probability,
-.tsp-phone-member-order {
+.tsp-phone-member-order,
+.tsp-phone-member-preset {
     width: 80px;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -591,8 +640,20 @@
 }
 
 .tsp-phone-member-probability:focus,
-.tsp-phone-member-order:focus {
+.tsp-phone-member-order:focus,
+.tsp-phone-member-preset:focus {
     border-color: #667eea;
+}
+
+.tsp-phone-member-preset {
+    flex: 1;
+    min-width: 100px;
+    cursor: pointer;
+}
+
+.tsp-phone-member-preset option {
+    background: #1a1a2e;
+    color: white;
 }
 
 .tsp-phone-member-probability::placeholder,
