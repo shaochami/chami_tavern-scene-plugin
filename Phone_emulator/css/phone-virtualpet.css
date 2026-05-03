@@ -1,0 +1,666 @@
+/* 云宠物悬浮球样式 */
+.tsp-virtualpet-fab {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tsp-virtualpet-fab:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: scale(1.1);
+}
+
+.tsp-virtualpet-fab.dragging {
+  transition: none;
+}
+
+/* 云宠物面板样式 */
+.tsp-virtualpet-panel {
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 700px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  z-index: 10000;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease, transform 0.3s ease;
+}
+
+.tsp-virtualpet-panel.fullscreen {
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  transform: none;
+}
+
+.tsp-virtualpet-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  cursor: move;
+}
+
+.tsp-virtualpet-panel-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: white;
+  font-weight: 600;
+}
+
+.tsp-virtualpet-panel-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tsp-virtualpet-panel-header-right {
+  display: flex;
+  gap: 10px;
+}
+
+.tsp-virtualpet-close-btn {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.tsp-virtualpet-close-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.tsp-btn-secondary {
+  background: rgba(100, 200, 255, 0.2);
+  border: 1px solid rgba(100, 200, 255, 0.4);
+  color: #64c8ff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tsp-btn-secondary:hover {
+  background: rgba(100, 200, 255, 0.3);
+  border-color: rgba(100, 200, 255, 0.6);
+}
+
+/* 标签导航样式 */
+#tsp-virtualpet-nav-tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  margin-bottom: 15px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+#tsp-virtualpet-nav-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tsp-virtualpet-tab-item {
+  flex: 0 0 auto;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-size: 15px;
+  color: rgba(255,255,255,0.7);
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+}
+
+.tsp-virtualpet-tab-item:hover {
+  color: #64c8ff;
+  background: rgba(100, 200, 255, 0.05);
+}
+
+.tsp-virtualpet-tab-item.active {
+  color: #64c8ff;
+  border-bottom-color: #64c8ff;
+  font-weight: 600;
+  background: rgba(100, 200, 255, 0.1);
+}
+
+/* 云宠物容器 */
+.tsp-virtualpet-container {
+  width: 100%;
+  height: calc(100% - 120px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Spine查看器样式 */
+.tsp-spine-viewer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tsp-spine-viewer-main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.tsp-spine-sidebar {
+  width: 280px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tsp-spine-sidebar-header {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 100%);
+}
+
+.tsp-spine-sidebar-header h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.tsp-spine-sidebar-header p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  margin: 0;
+}
+
+.tsp-spine-search-box {
+  padding: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.tsp-spine-search-box input {
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  font-size: 14px;
+  outline: none;
+  transition: background 0.3s;
+}
+
+.tsp-spine-search-box input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+.tsp-spine-search-box input:focus {
+  background: rgba(255,255,255,0.2);
+}
+
+.tsp-spine-character-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.tsp-spine-character-item {
+  padding: 12px 15px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: rgba(255,255,255,0.08);
+}
+
+.tsp-spine-character-item:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateX(5px);
+}
+
+.tsp-spine-character-item.active {
+  background: linear-gradient(90deg, rgba(100, 200, 255, 0.4) 0%, rgba(100, 200, 255, 0.15) 100%);
+  border-left: 3px solid #64c8ff;
+}
+
+.tsp-spine-character-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.tsp-spine-character-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.tsp-spine-character-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+}
+
+.tsp-spine-character-skin {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  margin-top: 2px;
+}
+
+.tsp-spine-cache-status {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 3px;
+  font-weight: 500;
+  color: #ffcc66;
+  background: rgba(255, 204, 102, 0.15);
+}
+
+.tsp-spine-cache-status.cached {
+  color: #64ff8f;
+  background: rgba(100, 255, 143, 0.15);
+}
+
+.tsp-spine-download-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(100, 200, 255, 0.3) 0%, rgba(100, 200, 255, 0.15) 100%);
+  color: #64c8ff;
+  border: 1px solid rgba(100, 200, 255, 0.3);
+}
+
+.tsp-spine-download-btn:hover {
+  background: linear-gradient(135deg, rgba(100, 200, 255, 0.4) 0%, rgba(100, 200, 255, 0.25) 100%);
+  border-color: rgba(100, 200, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.tsp-spine-download-btn:active {
+  transform: scale(0.95);
+}
+
+.tsp-spine-download-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tsp-spine-download-btn[aria-label="已下载"] {
+  background: linear-gradient(135deg, rgba(100, 255, 143, 0.3) 0%, rgba(100, 255, 143, 0.15) 100%);
+  color: #64ff8f;
+  border-color: rgba(100, 255, 143, 0.3);
+}
+
+.tsp-spine-download-btn.loading {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.tsp-spine-canvas-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background: rgba(0,0,0,0.35);
+}
+
+.tsp-spine-canvas-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.tsp-spine-canvas-container canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.tsp-spine-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.tsp-spine-loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(100, 200, 255, 0.3);
+  border-top-color: #64c8ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.tsp-spine-loading-text {
+  font-size: 14px;
+  color: rgba(255,255,255,0.9);
+}
+
+.tsp-spine-info-panel {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(10px);
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.9);
+}
+
+.tsp-spine-info-panel span {
+  color: #64c8ff;
+}
+
+.tsp-spine-toolbar {
+  padding: 15px 20px;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.tsp-spine-toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tsp-spine-toolbar-label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+  min-width: 60px;
+}
+
+.tsp-spine-toolbar-select {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.3s;
+}
+
+.tsp-spine-toolbar-select:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.tsp-spine-toolbar-select option {
+  background: #1a1a2e;
+  color: white;
+}
+
+.tsp-spine-zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+}
+
+.tsp-spine-zoom-btn {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tsp-spine-zoom-btn:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+.tsp-spine-zoom-value {
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+  min-width: 45px;
+}
+
+/* 云宠物设置页面样式 */
+.tsp-virtualpet-settings-screen {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding-top: 44px;
+}
+
+.tsp-virtualpet-settings-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: rgba(0,0,0,0.3);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.tsp-virtualpet-btn-back {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  margin-right: 15px;
+  padding: 5px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tsp-virtualpet-btn-back:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.tsp-virtualpet-settings-header h2 {
+  margin: 0;
+  font-size: 16px;
+  color: white;
+}
+
+.tsp-virtualpet-settings-content {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.tsp-virtualpet-settings-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.tsp-virtualpet-settings-item-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tsp-virtualpet-settings-label {
+  font-size: 14px;
+  color: white;
+}
+
+.tsp-virtualpet-settings-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  margin-top: 4px;
+}
+
+/* 开关样式 */
+.tsp-virtualpet-toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.tsp-virtualpet-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.tsp-virtualpet-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #4a5568;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.tsp-virtualpet-toggle-slider::before {
+  position: absolute;
+  content: '';
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #e2e8f0;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.tsp-virtualpet-toggle input:checked + .tsp-virtualpet-toggle-slider {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.tsp-virtualpet-toggle input:checked + .tsp-virtualpet-toggle-slider::before {
+  transform: translateX(26px);
+}
+
+/* 云宠物应用图标样式 */
+.tsp-phone-app-icon-box.virtualpet {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  border: 1px solid #4a5568;
+}
+
+.tsp-phone-app-icon-box.virtualpet i {
+  font-size: 24px;
+}
+
+/* 响应式设计 */
+@media (max-width: 1000px) {
+  .tsp-virtualpet-panel {
+    width: 95%;
+    left: 2.5%;
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .tsp-spine-viewer-main {
+    flex-direction: column;
+  }
+  
+  .tsp-spine-sidebar {
+    width: 100%;
+    height: 200px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  
+  .tsp-spine-character-list {
+    max-height: 100px;
+  }
+}

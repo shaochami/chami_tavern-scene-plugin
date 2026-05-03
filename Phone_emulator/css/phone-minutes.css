@@ -2088,6 +2088,39 @@
     }
 }
 
+/* 攻击特效样式 */
+.tsp-battle-attack-effect {
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 999;
+    pointer-events: none;
+    opacity: 1;
+}
+
+/* 用户攻击敌人 - 特效显示在敌人左侧30%进入立绘内部 */
+.tsp-battle-enemy-character .tsp-battle-attack-effect {
+    right: calc(100% - 45%);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 敌人攻击用户 - 特效显示在用户右侧30%进入立绘内部 */
+.tsp-battle-player-character .tsp-battle-attack-effect {
+    left: calc(100% - 45%);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 全屏模式下的攻击特效放大 */
+.tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-attack-effect {
+    width: 225px;
+    height: 300px;
+}
+
 /* 全屏模式下的技能气泡放大 */
 .tsp-minutes-panel.tsp-minutes-fullscreen .tsp-battle-skill-bubble {
     padding: 12px 24px;
