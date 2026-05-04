@@ -1,5 +1,12 @@
 export const changelogData = [
     {
+        version: "1.1.8(2)",
+        items: [
+            "增加多种加载渲染图片的模式"
+
+        ]
+    },
+    {
         version: "1.1.8(1)",
         items: [
             "增加桌宠功能，手机没做适配也不打算做，影响性能+立绘太小看不清",
