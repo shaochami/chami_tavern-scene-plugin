@@ -45,13 +45,14 @@
 }
 
 .tsp-virtualpet-panel.fullscreen {
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  width: calc(100% - 20px);
-  height: calc(100% - 20px);
-  transform: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw !important;
+  height: min(100dvh, 100vh) !important;
+  border-radius: 0;
+  transform: none !important;
 }
 
 .tsp-virtualpet-panel-header {
@@ -124,6 +125,8 @@
 /* 标签导航样式 */
 #tsp-virtualpet-nav-tabs {
   display: flex;
+  position: relative;
+  z-index: 10;
   border-bottom: 1px solid rgba(255,255,255,0.2);
   margin-bottom: 15px;
   overflow-x: auto;
@@ -253,8 +256,12 @@
 }
 
 .tsp-spine-category-content.expanded {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0; /* 关键：防止内容溢出撑爆父级，强制内部列表出现滚动条 */
 }
+
 
 .tsp-spine-search-box {
   padding: 15px;
@@ -285,6 +292,7 @@
   flex: 1;
   overflow-y: auto;
   padding: 10px;
+  min-height: 0; /* 补充这行 */
 }
 
 .tsp-spine-character-item {
@@ -698,15 +706,176 @@
   .tsp-spine-viewer-main {
     flex-direction: column;
   }
-  
+
   .tsp-spine-sidebar {
     width: 100%;
     height: 200px;
     border-right: none;
     border-bottom: 1px solid rgba(255,255,255,0.15);
   }
-  
+
   .tsp-spine-character-list {
     max-height: 100px;
   }
 }
+
+@media (max-width: 900px) {
+  .tsp-virtualpet-fab {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+  }
+}
+
+/* ==================== 移动端底部固定导航栏 ==================== */
+.tsp-virtualpet-mobile-bottom-nav {
+  display: none !important; /* 默认隐藏，由JS来决定何时开启 */
+  position: absolute; /* 相对于父级 panel 定位，而不是固定在屏幕底层 */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: rgba(20, 25, 40, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255,255,255,0.15);
+  z-index: 10001;
+  flex-direction: row;
+}
+
+
+.tsp-virtualpet-mobile-bottom-nav .tsp-virtualpet-nav-tab {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 4px;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    color: var(--tsp-text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tsp-virtualpet-mobile-bottom-nav .tsp-virtualpet-nav-tab i {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tsp-virtualpet-mobile-bottom-nav .tsp-virtualpet-nav-tab span {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.tsp-virtualpet-mobile-bottom-nav .tsp-virtualpet-nav-tab.active {
+    color: var(--tsp-accent-primary);
+    background: var(--tsp-bg-hover);
+}
+
+/* 桌面端隐藏移动端导航 */
+@media (min-width: 901px) {
+    .tsp-virtualpet-mobile-bottom-nav {
+        display: none !important;
+    }
+}
+
+/* 移动端布局调整 */
+@media (max-width: 900px) {
+  /* 当通过JS赋值 block / flex 时，强制生效 */
+  .tsp-virtualpet-mobile-bottom-nav[style*="display: flex"] {
+      display: flex !important;
+  }
+
+  .tsp-virtualpet-panel {
+      height: 90vh;
+      padding-bottom: 0;
+  }
+
+  .tsp-virtualpet-panel.fullscreen {
+      height: 100vh !important;
+      padding-bottom: 0;
+  }
+
+  .tsp-virtualpet-container {
+      position: absolute;
+      top: 110px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding-bottom: 50px; /* 内部安全区，给绝对定位到底部的 nav 留出这50px空间 */
+      overflow: hidden;
+  }
+
+  .tsp-virtualpet-tab-item {
+      padding: 8px 12px;
+      font-size: 12px;
+  }
+
+  .tsp-virtualpet-panel-header-right {
+    display: flex;
+}
+
+.tsp-virtualpet-panel-header-right .tsp-btn-fullscreen-battle {
+    display: none; /* 移动端默认不需要全屏按钮，仅隐藏全屏 */
+}
+
+
+  .tsp-spine-viewer-main {
+      flex-direction: column;
+      flex: 1;
+      height: 100%;
+  }
+
+  /* 侧边栏完全铺满容器 */
+  .tsp-spine-sidebar {
+      width: 100%;
+      height: 100%;
+      flex: 1; /* 撑满剩余高度 */
+      border-right: none;
+      border-bottom: none;
+      overflow-y: auto;
+  }
+
+  /* 预览画布完全铺满容器，初始隐藏 */
+  .tsp-spine-canvas-area {
+      width: 100%;
+      height: 100%;
+      flex: 1; /* 撑满剩余高度 */
+      display: none;
+  }
+
+  /* 当带有active类时覆盖display隐藏为弹性布局 */
+  .tsp-spine-canvas-area.active {
+      display: flex;
+      flex-direction: column;
+  }
+  /* ======== 新增：强制分类内容和列表在移动端垂直占满 ======== */
+  .tsp-spine-category-content.expanded {
+    display: flex !important;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    overflow: hidden; /* 防止溢出，把滚动交给内部的 list */
+}
+
+.tsp-spine-character-list {
+    max-height: none !important; /* 覆盖可能存在的 100px 或其他写死高度限制 */
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* 针对 Live2d 的嵌套包装器也补充弹性以向内传递高度 */
+.tsp-live2d-category-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+}
+
