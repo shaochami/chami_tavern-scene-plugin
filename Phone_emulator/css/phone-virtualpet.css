@@ -193,7 +193,8 @@
   border-right: 1px solid rgba(255,255,255,0.15);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-y: auto;
+  max-height: 100%;
 }
 
 .tsp-spine-sidebar-header {
@@ -213,6 +214,46 @@
   font-size: 12px;
   color: rgba(255,255,255,0.7);
   margin: 0;
+}
+
+.tsp-spine-category-header {
+  cursor: pointer;
+  transition: background 0.2s ease;
+  user-select: none;
+}
+
+.tsp-spine-category-header:hover {
+  background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.05) 100%);
+}
+
+.tsp-spine-category-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tsp-spine-category-title h4 {
+  margin: 0;
+  flex: 1;
+}
+
+.tsp-spine-category-arrow {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+  color: rgba(255,255,255,0.7);
+}
+
+.tsp-spine-category-header.expanded .tsp-spine-category-arrow {
+  transform: rotate(180deg);
+}
+
+.tsp-spine-category-content {
+  display: none;
+  overflow: hidden;
+}
+
+.tsp-spine-category-content.expanded {
+  display: block;
 }
 
 .tsp-spine-search-box {
@@ -475,15 +516,20 @@
 }
 
 .tsp-spine-zoom-btn {
-  width: 35px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 12px;
   height: 35px;
   border: none;
   border-radius: 6px;
   background: rgba(255,255,255,0.15);
   color: white;
-  font-size: 18px;
+  font-size: 14px;
   cursor: pointer;
   transition: all 0.2s;
+  white-space: nowrap;
 }
 
 .tsp-spine-zoom-btn:hover {
