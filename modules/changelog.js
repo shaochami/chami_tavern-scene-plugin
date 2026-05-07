@@ -1,5 +1,12 @@
 export const changelogData = [
     {
+        version: "1.1.8(5)",
+        items: [
+            "桌宠功能完善，增加语音，对话功能"
+
+        ]
+    },
+    {
         version: "1.1.8(4)",
         items: [
             "不能说的秘密"

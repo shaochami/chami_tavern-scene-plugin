@@ -122,6 +122,68 @@
   border-color: rgba(100, 200, 255, 0.6);
 }
 
+.tsp-toggle-switch input[type="checkbox"]:checked + label {
+  background-color: #64c8ff;
+}
+
+.tsp-toggle-switch input[type="checkbox"]:checked + label + span {
+  transform: translateX(24px);
+}
+
+.tsp-toggle-switch input[type="checkbox"]:checked + label + span {
+  background-color: white;
+}
+
+#tsp-deskpet-chat-toggle:checked + label {
+  background-color: #64c8ff;
+}
+
+#tsp-deskpet-chat-toggle:checked + label + span {
+  transform: translateX(24px);
+}
+
+/* 桌宠气泡样式 */
+.tsp-deskpet-bubble {
+  position: absolute; 
+  left: 50%;
+  top: 12%;
+  transform: translate(-50%, -100%);
+  margin-top: 0;
+  max-width: 250px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240,240,240,0.95) 100%);
+  border-radius: 18px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  color: #333;
+  font-size: 14px;
+  line-height: 1.4;
+  z-index: 999999;
+  pointer-events: none;
+  word-wrap: break-word;
+  animation: tsp-deskpet-bubble-appear 0.3s ease-out;
+}
+
+.tsp-deskpet-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px 10px 0;
+  border-style: solid;
+  border-color: rgba(255,255,255,0.95) transparent transparent;
+}
+
+@keyframes tsp-deskpet-bubble-appear {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -90%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -100%) scale(1);
+  }
+}
 /* 标签导航样式 */
 #tsp-virtualpet-nav-tabs {
   display: flex;
@@ -259,7 +321,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  min-height: 0; /* 关键：防止内容溢出撑爆父级，强制内部列表出现滚动条 */
+  min-height: 0;
 }
 
 
@@ -292,7 +354,7 @@
   flex: 1;
   overflow-y: auto;
   padding: 10px;
-  min-height: 0; /* 补充这行 */
+  min-height: 0; 
 }
 
 .tsp-spine-character-item {
@@ -637,6 +699,51 @@
   height: 24px;
 }
 
+/* 桌宠对话开关样式 */
+.tsp-toggle-switch {
+  position: relative;
+  width: 50px;
+  height: 26px;
+  cursor: pointer;
+}
+
+.tsp-toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.tsp-toggle-switch label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #4a5568;
+  transition: .4s;
+  border-radius: 26px;
+}
+
+.tsp-toggle-switch span {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background-color: #e2e8f0;
+  transition: .4s;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.tsp-toggle-switch input:checked + label {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.tsp-toggle-switch input:checked + label + span {
+  transform: translateX(24px);
+}
+
 .tsp-virtualpet-toggle input {
   opacity: 0;
   width: 0;
@@ -729,8 +836,8 @@
 
 /* ==================== 移动端底部固定导航栏 ==================== */
 .tsp-virtualpet-mobile-bottom-nav {
-  display: none !important; /* 默认隐藏，由JS来决定何时开启 */
-  position: absolute; /* 相对于父级 panel 定位，而不是固定在屏幕底层 */
+  display: none !important; 
+  position: absolute; 
   bottom: 0;
   left: 0;
   right: 0;
@@ -786,7 +893,6 @@
 
 /* 移动端布局调整 */
 @media (max-width: 900px) {
-  /* 当通过JS赋值 block / flex 时，强制生效 */
   .tsp-virtualpet-mobile-bottom-nav[style*="display: flex"] {
       display: flex !important;
   }
@@ -807,7 +913,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      padding-bottom: 50px; /* 内部安全区，给绝对定位到底部的 nav 留出这50px空间 */
+      padding-bottom: 50px; 
       overflow: hidden;
   }
 
@@ -821,7 +927,7 @@
 }
 
 .tsp-virtualpet-panel-header-right .tsp-btn-fullscreen-battle {
-    display: none; /* 移动端默认不需要全屏按钮，仅隐藏全屏 */
+    display: none; 
 }
 
 
@@ -835,7 +941,7 @@
   .tsp-spine-sidebar {
       width: 100%;
       height: 100%;
-      flex: 1; /* 撑满剩余高度 */
+      flex: 1; 
       border-right: none;
       border-bottom: none;
       overflow-y: auto;
@@ -845,7 +951,7 @@
   .tsp-spine-canvas-area {
       width: 100%;
       height: 100%;
-      flex: 1; /* 撑满剩余高度 */
+      flex: 1; 
       display: none;
   }
 
@@ -854,17 +960,16 @@
       display: flex;
       flex-direction: column;
   }
-  /* ======== 新增：强制分类内容和列表在移动端垂直占满 ======== */
   .tsp-spine-category-content.expanded {
     display: flex !important;
     flex-direction: column;
     flex: 1;
     height: 100%;
-    overflow: hidden; /* 防止溢出，把滚动交给内部的 list */
+    overflow: hidden; 
 }
 
 .tsp-spine-character-list {
-    max-height: none !important; /* 覆盖可能存在的 100px 或其他写死高度限制 */
+    max-height: none !important; 
     flex: 1;
     height: 100%;
     overflow-y: auto;
