@@ -1,5 +1,13 @@
 export const changelogData = [
     {
+        version: "1.1.8(7)",
+        items: [
+            "人生模拟器增加自定义模式",
+            "增加并发功能，方便GPT、大香蕉本地、nai多号池等用户同时生成",
+
+        ]
+    },
+    {
         version: "1.1.8(6)",
         items: [
             "添加桌宠上传功能，优化预设",
