@@ -1,5 +1,12 @@
 export const changelogData = [
     {
+        version: "1.1.8(8)",
+        items: [
+            "部分功能进行操作上的优化"
+
+        ]
+    },
+    {
         version: "1.1.8(7)",
         items: [
             "人生模拟器增加自定义模式",

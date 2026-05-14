@@ -287,6 +287,32 @@
     white-space: nowrap;
 }
 
+/* 换行按钮激活状态 */
+#ts-wrap-btn.active {
+    background-color: var(--tsp-accent-primary);
+    color: white;
+}
+
+/* 开启换行时的中文标签样式 */
+.ts-wrap-enabled .ts-card-chinese .ts-card-text {
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: visible;
+    text-overflow: unset;
+}
+
+/* 开启换行时，英文标签仍然保持隐藏过长文本 */
+.ts-wrap-enabled .ts-card:not(.ts-card-chinese) .ts-card-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ts-wrap-enabled .ts-card:not(.ts-card-chinese) .ts-card-sub {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 /* 标签选择结果列表 */
 .tsp-tag-result-list {
     display: flex;
