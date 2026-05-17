@@ -1,5 +1,13 @@
 export const changelogData = [
     {
+        version: "1.1.9(3)",
+        items: [
+            "标签超市加入代理池子、请求上限时自动切换",
+            "comfyui公益站增加lora的适配，可以在lora管理器中自行开启使用lora了",
+
+        ]
+    },
+    {
         version: "1.1.9(2)",
         items: [
             "添加comfyui的apikey配置，可以使用中转公益站进行请求"
