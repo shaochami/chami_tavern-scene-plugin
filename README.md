@@ -1,3 +1,4 @@
+# comfyui体验公益站：http://124.222.73.244:7861/login
 # 酒馆场景插件 (Tavern Scene Plugin)
 ### 支持nai、sd、comfyui、大香蕉、grok以及各种其它自定义渠道。可以文生图、图生图、重绘、图生视频、去除文字等完善功能
 整合标签超市、角色数据库、AI后处理和文生图功能的统一 SillyTavern 扩展插件。
