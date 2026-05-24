@@ -1,5 +1,12 @@
 export const changelogData = [
     {
+        version: "1.1.9(7)",
+        items: [
+            "修复新版提示词模板导致的解压冲突"
+
+        ]
+    },
+    {
         version: "1.1.9(6)",
         items: [
             "发现图片懒加载在某些带宽较低的设备上同步会出现问题，进行修复",
