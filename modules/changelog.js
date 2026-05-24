@@ -1,5 +1,13 @@
 export const changelogData = [
     {
+        version: "1.1.9(9)",
+        items: [
+            "修复部分小bug",
+            "优化提示词模版，请进行更新"
+
+        ]
+    },
+    {
         version: "1.1.9(8)",
         items: [
             "修复部分小bug",
