@@ -1,5 +1,12 @@
 export const changelogData = [
     {
+        version: "1.1.9(10)",
+        items: [
+            "二次处理世界书触发方式进行优化，避免触发无关内容。直接调用酒馆逻辑，key支持正则写法"
+
+        ]
+    },
+    {
         version: "1.1.9(9)",
         items: [
             "修复部分小bug",
