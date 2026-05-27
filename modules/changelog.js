@@ -1,5 +1,12 @@
 export const changelogData = [
     {
+        version: "1.1.9(12)",
+        items: [
+            "增加扫描容器的类型，避免不同写法的容器无法解析内容"
+
+        ]
+    },
+    {
         version: "1.1.9(11)",
         items: [
             "优化nai多样性",
