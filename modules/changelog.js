@@ -1,5 +1,13 @@
 export const changelogData = [
     {
+        version: "1.2.0(1)",
+        items: [
+            "图片编辑tag进行分块显示并翻译",
+            "通用设置增加修复###单独换行被渲染为标题的功能"
+
+        ]
+    },
+    {
         version: "1.1.9(13)",
         items: [
             "other模式增加嵌套处理"
