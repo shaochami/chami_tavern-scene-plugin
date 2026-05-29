@@ -1,5 +1,12 @@
 export const changelogData = [
     {
+        version: "1.1.9(13)",
+        items: [
+            "other模式增加嵌套处理"
+
+        ]
+    },
+    {
         version: "1.1.9(12)",
         items: [
             "增加扫描容器的类型，避免不同写法的容器无法解析内容"
