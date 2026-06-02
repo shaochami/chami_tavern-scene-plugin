@@ -1,5 +1,14 @@
 export const changelogData = [
     {
+        version: "1.2.0(2)",
+        items: [
+            "图片编辑增加点击高亮的功能",
+            "other增加多角色的分词功能",
+            "other增加NewAPI渠道NAI请求预设，清下拉到底部自行启用",
+
+        ]
+    },
+    {
         version: "1.2.0(1)",
         items: [
             "图片编辑tag进行分块显示并翻译",
