@@ -1,5 +1,12 @@
 export const changelogData = [
     {
+        version: "1.2.0(3)",
+        items: [
+            "日常更新，修复小bug",
+
+        ]
+    },
+    {
         version: "1.2.0(2)",
         items: [
             "图片编辑增加点击高亮的功能",
