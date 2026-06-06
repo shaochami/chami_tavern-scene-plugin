@@ -1,5 +1,12 @@
 export const changelogData = [
     {
+        version: "1.2.0(5)",
+        items: [
+            "修复提示词新字段与其它模块的冲突导致无法加载卸载问题"
+
+        ]
+    },
+    {
         version: "1.2.0(4)",
         items: [
             "提示词预设进行优化",
