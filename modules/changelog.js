@@ -1,5 +1,12 @@
 export const changelogData = [
     {
+        version: "1.2.0(7)",
+        items: [
+            "增加部分便捷功能"
+
+        ]
+    },
+    {
         version: "1.2.0(6)",
         items: [
             "取消提示词预设不存在时使用旧字段的兜底功能，避免重复添加"
