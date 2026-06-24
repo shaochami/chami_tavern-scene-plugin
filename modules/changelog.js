@@ -1,5 +1,12 @@
 export const changelogData = [
     {
+        version: "1.2.0(9)",
+        items: [
+            "优化二次处理逻辑，只要不是空回。在半截断的情况下也能插入",
+
+        ]
+    },
+    {
         version: "1.2.0(8)",
         items: [
             "聊天插入提示词模版优化，请进行恢复默认",
