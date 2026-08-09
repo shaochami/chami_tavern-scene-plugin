@@ -141,6 +141,33 @@
     margin: 4px 0;
     pointer-events: none;
 }
+
+/* ==================== 双击/三连击快捷操作菜单 ==================== */
+.tsp-context-menu {
+    position: fixed;
+    z-index: 10050;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--tsp-bg-main);
+    border: 1px solid var(--tsp-border);
+    border-radius: var(--tsp-radius-md);
+    box-shadow: 0 5px 15px var(--tsp-shadow);
+    padding: 8px;
+    min-width: 160px;
+    opacity: 0;
+    transform: scale(0.9);
+    transform-origin: top left;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.tsp-context-menu.visible {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+    visibility: visible;
+}
 /* ==================== 快捷生成悬浮球 ==================== */
 #tsp-quick-gen-fab {
     position: fixed;
