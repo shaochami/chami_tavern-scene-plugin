@@ -1,5 +1,11 @@
 export const changelogData = [
     {
+        version: "1.2.2(3)",
+        items: [
+            "增加透明背景，只有nai-5模型可以用。",
+        ]
+    },
+    {
         version: "1.2.2(2)",
         items: [
             "增加nai5，还没细看其它功能，有空在同步",
