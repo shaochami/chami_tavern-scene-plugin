@@ -1,5 +1,11 @@
 export const changelogData = [
     {
+        version: "1.2.2(4)",
+        items: [
+            "nai5修改为直接返回png，可以略微提升返回速度",
+        ]
+    },
+    {
         version: "1.2.2(3)",
         items: [
             "增加透明背景，只有nai-5模型可以用。",
