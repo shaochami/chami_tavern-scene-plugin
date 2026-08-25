@@ -878,3 +878,114 @@
     color: var(--tsp-accent-primary);
     font-weight: 600;
 }
+
+/* ==========================================================================
+   [新增] 实时数据查看与编辑面板
+   ========================================================================== */
+.tsp-realtime-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.tsp-realtime-data-view {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tsp-realtime-char {
+    border: 1px solid var(--tsp-border);
+    border-radius: var(--tsp-radius-md);
+    background: var(--tsp-bg-tertiary);
+    padding: 10px 12px;
+}
+
+.tsp-realtime-char-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--tsp-border);
+}
+
+.tsp-realtime-char-header strong {
+    color: var(--tsp-text-primary);
+    font-size: 14px;
+}
+
+.tsp-realtime-char-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tsp-realtime-field {
+    display: flex;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.tsp-realtime-field-key {
+    color: var(--tsp-text-muted);
+    flex-shrink: 0;
+    min-width: 70px;
+}
+
+.tsp-realtime-field-val {
+    color: var(--tsp-text-primary);
+    word-break: break-all;
+}
+
+/* 编辑模式 */
+.tsp-realtime-editing .tsp-realtime-edit-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.tsp-realtime-editing .tsp-realtime-edit-row label {
+    color: var(--tsp-text-muted);
+    flex-shrink: 0;
+}
+
+.tsp-realtime-edit-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.tsp-realtime-field-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tsp-realtime-field-row input {
+    flex: 1;
+    min-width: 0;
+}
+
+.tsp-realtime-row-del {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border: 1px solid var(--tsp-border);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--tsp-text-muted);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.tsp-realtime-row-del:hover {
+    border-color: var(--tsp-accent-red);
+    color: var(--tsp-accent-red);
+}
