@@ -363,6 +363,11 @@ export class MultiCharacterParser {
             result = result.replace(ucRegex, '');
         }
 
+        // 移除全局 negative prompt 段落（与角色 UC 同样处理：从头部分隔符开始，直到 ; / BREAK / 结尾）
+        const globalNegHeader = this.config.negativePromptHeader || this.defaultConfig.negativePromptHeader;
+        const globalNegEscaped = this._escapeRegex(globalNegHeader);
+        result = result.replace(new RegExp(`${globalNegEscaped}.*?(;|BREAK|$)`, 'gis'), '');
+
         const sceneHeaderBase = this._getSceneHeaderBase();
         result = result.replace(new RegExp(this._escapeRegex(sceneHeaderBase), 'gi'), '');
         result = result.replace(/^\s*,\s*/, '');
@@ -476,6 +481,10 @@ export class MultiCharacterParser {
                 negativeParts.push(charUC.trim());
             }
         }
+        // 同时包含全局负面提示词
+        if (parsedData['Negative prompt']) {
+            negativeParts.push(parsedData['Negative prompt'].trim());
+        }
 
         return {
             positive: positiveParts.join(', '),
@@ -497,6 +506,11 @@ export class MultiCharacterParser {
             const ucHeader = this._escapeRegex(this._getUCHeaderForChar(i));
             result = result.replace(new RegExp(`${ucHeader}.*?(;|BREAK|$)`, 'gis'), '');
         }
+
+        // 移除全局 negative prompt 段落（与角色 UC 同样处理）
+        const globalNegHeaderG = this.config.negativePromptHeader || this.defaultConfig.negativePromptHeader;
+        const globalNegEscapedG = this._escapeRegex(globalNegHeaderG);
+        result = result.replace(new RegExp(`${globalNegEscapedG}.*?(;|BREAK|$)`, 'gis'), '');
 
         const sceneHeaderBase = this._getSceneHeaderBase();
         result = result.replace(new RegExp(this._escapeRegex(sceneHeaderBase), 'gi'), '');

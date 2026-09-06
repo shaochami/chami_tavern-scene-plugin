@@ -1051,3 +1051,75 @@ input[type="color"].tsp-input::-moz-color-swatch {
 .tsp-pager-item.more i {
     font-size: 12px;
 }
+
+/* ==================== 固定形象多组输入 & 参考图选择弹窗 ==================== */
+
+/* 参考图弹窗 header：允许换行，避免移动端提示语被挤成竖列单字 */
+.tsp-refimg-modal .tsp-modal-header {
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.tsp-refimg-modal .tsp-modal-header .tsp-modal-title {
+    min-width: 0;
+}
+/* 提示语：默认一行，在移动端（窄屏）自动换到下一行并占满宽度，文字正常横向换行 */
+.tsp-refimg-modal .tsp-modal-header > div:not(.tsp-modal-title) {
+    flex: 1 1 100%;
+    max-width: 100%;
+    word-break: break-word;
+    white-space: normal;
+    line-height: 1.5;
+    padding-top: 2px;
+}
+@media (min-width: 560px) {
+    /* 宽屏：提示语在标题右侧，不独占整行 */
+    .tsp-refimg-modal .tsp-modal-header > div:not(.tsp-modal-title) {
+        flex: 0 1 auto;
+        max-width: none;
+    }
+}
+
+/* 移除按钮的内边距紧凑些 */
+.tsp-fixed-appearance-remove {
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 34px;
+    line-height: 1;
+}
+
+/* 图片卡片 hover 效果 */
+.tsp-refimg-card:hover {
+    transform: translateY(-3px) !important;
+    filter: brightness(1.03);
+}
+
+/* 参考图滚动条美化 */
+.tsp-refimg-grid::-webkit-scrollbar {
+    height: 8px;
+}
+.tsp-refimg-grid::-webkit-scrollbar-thumb {
+    background: var(--tsp-border);
+    border-radius: 4px;
+}
+.tsp-refimg-grid::-webkit-scrollbar-thumb:hover {
+    background: var(--tsp-accent-primary);
+}
+
+/* 小屏适配：参考图弹窗允许换行，图片铺满整行 */
+@media (max-width: 720px) {
+    .tsp-refimg-grid {
+        flex-wrap: wrap !important;
+    }
+    .tsp-refimg-card {
+        flex: 1 1 100% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+/* 保证 tsp-btn-sm 的 + / - 图标垂直居中 */
+button.tsp-btn-sm i {
+    vertical-align: middle;
+}
+
