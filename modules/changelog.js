@@ -1,5 +1,11 @@
 export const changelogData = [
     {
+        version: "1.2.2(8)",
+        items: [
+            "修复标签超市缓存导致未使用服务器代理404问题",
+        ]
+    },
+    {
         version: "1.2.2(7)",
         items: [
             "角色数据库的自动生成增加导出导入，另存。api预设热切换的功能",
