@@ -1,5 +1,11 @@
 export const changelogData = [
     {
+        version: "1.2.2(10)",
+        items: [
+            "二次处理提示词模板更新，请恢复默认进行同步",
+        ]
+    },
+    {
         version: "1.2.2(9)",
         items: [
             "实时数据与二次添加工具调用,外审频繁请手动开启使用",
