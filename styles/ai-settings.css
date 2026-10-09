@@ -375,6 +375,20 @@
     margin-bottom: 12px;
 }
 
+/* [新增] 内容替换词规则头部：标题与按钮换行显示，避免按钮过多挤压标题 */
+.ai-word-replacements-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+}
+
+.ai-word-replacements-header .ai-regex-actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
 .ai-worldbook-list,
 .ai-regex-list,
 .ai-tagref-folders {
@@ -919,6 +933,11 @@
     font-size: 14px;
 }
 
+.tsp-realtime-char-actions {
+    display: flex;
+    gap: 4px;
+}
+
 .tsp-realtime-char-body {
     display: flex;
     flex-direction: column;
@@ -988,4 +1007,54 @@
 .tsp-realtime-row-del:hover {
     border-color: var(--tsp-accent-red);
     color: var(--tsp-accent-red);
+}
+
+/* ==========================================================================
+   [新增] 帮助导航 — tab 感叹号标记 + 向导弹窗样式
+   ========================================================================== */
+.ai-tab-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    margin-left: 6px;
+    border-radius: 9px;
+    background: var(--tsp-accent-danger, #e74c3c);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    animation: ai-badge-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes ai-badge-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.15); }
+}
+
+/* tab 内 span 排列修正：图标+文字+badge 横排 */
+.ai-settings-nav li[data-panel="helpnav"] {
+    flex-wrap: nowrap;
+}
+
+.ai-settings-nav li[data-panel="helpnav"] > span:not(.ai-tab-badge) {
+    flex: 1;
+}
+
+/* 大按钮样式 */
+.tsp-btn-lg {
+    padding: 10px 24px !important;
+    font-size: 15px !important;
+}
+
+/* 向导弹窗内 body 最小高度 */
+.tsp-modal-body:has(.ai-wizard-wb-item) {
+    min-height: 200px;
+}
+
+/* 向导世界书列表条目 hover */
+.ai-wizard-wb-item:hover {
+    background: var(--tsp-bg-hover, rgba(0,0,0,0.05)) !important;
 }
