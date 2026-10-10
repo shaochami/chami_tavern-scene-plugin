@@ -128,6 +128,16 @@
     font-style: italic;
 }
 
+.tsp-form-hint a {
+    color: var(--tsp-accent-primary);
+    text-decoration: underline;
+    font-style: normal;
+}
+
+.tsp-form-hint a:hover {
+    opacity: 0.8;
+}
+
 /* --------------------------------------------------------------------------
    AI 设置区域内的复选框统一样式 (防止被覆盖)
    -------------------------------------------------------------------------- */
