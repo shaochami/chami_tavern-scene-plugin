@@ -1,5 +1,11 @@
 export const changelogData = [
     {
+        version: "1.2.3(2)",
+        items: [
+            "小更",
+        ]
+    },
+    {
         version: "1.2.3",
         items: [
             "二次处理增加漫画模式，推荐使用黑白，彩色测试发现毁图概率较大，黑白稳定",
