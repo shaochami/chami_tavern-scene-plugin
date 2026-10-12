@@ -136,7 +136,8 @@
 }
 
 .tsp-image-editor-cancel,
-.tsp-image-editor-save {
+.tsp-image-editor-save,
+.tsp-image-editor-delete-all {
     padding: 10px 20px;
     border-radius: var(--tsp-radius-md);
     border: none;
@@ -144,6 +145,16 @@
     font-size: 14px;
     font-weight: 500;
     transition: all 0.2s;
+}
+
+.tsp-image-editor-delete-all {
+    margin-right: auto;
+    background: var(--tsp-accent-red, #e53e3e);
+    color: #fff;
+}
+
+.tsp-image-editor-delete-all:hover {
+    opacity: 0.9;
 }
 
 .tsp-image-editor-cancel {
@@ -198,7 +209,8 @@
     }
 
     .tsp-image-editor-cancel,
-    .tsp-image-editor-save {
+    .tsp-image-editor-save,
+    .tsp-image-editor-delete-all {
         width: 100%;
     }
 }

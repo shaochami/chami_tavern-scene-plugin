@@ -1,5 +1,12 @@
 export const changelogData = [
     {
+        version: "1.2.3(3)",
+        items: [
+            "修改tag增加一键删除",
+            "角色数据库增加未分类兜底，避免数据出错导致的幽灵数据",
+        ]
+    },
+    {
         version: "1.2.3(2)",
         items: [
             "小更",
