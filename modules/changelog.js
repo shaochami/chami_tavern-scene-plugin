@@ -1,5 +1,12 @@
 export const changelogData = [
     {
+        version: "1.2.3(7)",
+        items: [
+            "哈基米破限更新，请同步",
+            "提示词预设增加搜索功能",
+        ]
+    },
+    {
         version: "1.2.3(6)",
         items: [
             "帮助导航增加国模的引导，方便萌新用户快速设置",
