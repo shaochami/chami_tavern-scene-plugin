@@ -330,36 +330,430 @@
 .tsp-autocomplete-item.highlight .tsp-highlight-match {
     filter: brightness(1.2);
 }
-.tsp-ai-gen-tabs {
-    margin-bottom: 15px;
-    border-bottom: 1px solid var(--tsp-border);
+/* ==================== AI 角色生成器：引导设置 ==================== */
+.ai-gen-nav-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.ai-gen-nav-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 17px;
+    height: 17px;
+    padding: 0 5px;
+    border-radius: 9px;
+    background: var(--tsp-accent-red, #f7768e);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    animation: ai-gen-badge-pulse 1.5s ease-in-out infinite;
+}
+@keyframes ai-gen-badge-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .7; transform: scale(1.15); }
 }
 
-.tsp-ai-gen-tabs ul {
+/* 版本信息块 */
+.ai-gen-guide-version {
+    background: var(--tsp-bg-tertiary);
+    border: 1px solid var(--tsp-border);
+    border-radius: var(--tsp-radius-md);
+    padding: 12px 14px;
+    margin-bottom: 16px;
+}
+.ai-gen-guide-version-title {
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 8px;
     display: flex;
-    gap: 15px;
-    list-style: none;
+    align-items: center;
+    gap: 6px;
+}
+.ai-gen-guide-version-title i { color: var(--tsp-accent-primary); }
+
+/* 模型选择卡片 */
+.ai-gen-guide-model-cards {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+.ai-gen-guide-model-card {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    border-radius: var(--tsp-radius-md);
+    border: 2px solid var(--tsp-border);
+    background: var(--tsp-bg-tertiary);
+    cursor: pointer;
+    transition: border-color .15s, background .15s;
+}
+.ai-gen-guide-model-card:hover { border-color: rgba(122, 162, 247, .5); }
+.ai-gen-guide-model-card.selected {
+    border-color: var(--tsp-accent-primary);
+    background: rgba(122, 162, 247, .08);
+}
+.ai-gen-guide-model-card input { display: none; }
+.ai-gen-guide-model-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--tsp-radius-md);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    background: var(--tsp-bg-input);
+    color: var(--tsp-text-muted);
+}
+.ai-gen-guide-model-card.selected .ai-gen-guide-model-icon {
+    background: var(--tsp-accent-primary);
+    color: #1b1b1b;
+}
+.ai-gen-guide-model-title { font-weight: 700; margin-bottom: 4px; }
+.ai-gen-guide-model-sub {
+    font-size: 12px;
+    color: var(--tsp-text-muted);
+    line-height: 1.5;
+}
+
+/* 推荐项预览 */
+.ai-gen-guide-preview {
+    background: var(--tsp-bg-tertiary);
+    border: 1px solid var(--tsp-border);
+    border-radius: var(--tsp-radius-md);
+    padding: 12px 14px;
+    margin-bottom: 16px;
+}
+.ai-gen-guide-preview-title {
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.ai-gen-guide-preview-title i { color: var(--tsp-accent-primary); }
+.ai-gen-guide-preview-list {
+    margin: 0;
     padding: 0;
+    list-style: none;
+}
+.ai-gen-guide-preview-list li {
+    padding: 6px 0;
+    font-size: 13px;
+    color: var(--tsp-text-secondary);
+    border-bottom: 1px dashed var(--tsp-border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.ai-gen-guide-preview-list li:last-child { border-bottom: none; }
+.ai-gen-guide-preview-list li i { color: var(--tsp-accent-primary); width: 16px; }
+.ai-gen-guide-preview-list li b { color: var(--tsp-text-primary); }
+
+.ai-gen-guide-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+    .ai-gen-guide-model-cards { flex-direction: column; }
+}
+
+/* ==================== AI 角色生成器：侧边导航工作台 ==================== */
+.tsp-modal.tsp-ai-gen-modal {
+    width: 1080px;
+    max-width: 96vw;
+    height: 86vh;
+    max-height: 920px;
+}
+
+/* 头部接口预设（临时选择，生成时可见当前模型） */
+.ai-gen-header-preset {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+.ai-gen-header-preset > label {
+    font-size: 12px;
+    color: var(--tsp-text-muted);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 5px;
     margin: 0;
 }
+.ai-gen-header-preset select {
+    width: 200px;
+    padding: 6px 8px;
+    font-size: 12px;
+}
+.ai-gen-model-tag {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    background: rgba(122, 162, 247, .15);
+    color: var(--tsp-accent-primary);
+    border: 1px solid rgba(122, 162, 247, .35);
+}
 
-.tsp-ai-gen-tabs li {
-    cursor: pointer;
-    padding: 8px 4px;
-    margin-bottom: -1px; /* 让边框重叠 */
+/* 工作台布局：左导航 + 右面板 */
+.ai-gen-workbench {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+}
+.ai-gen-side-nav {
+    width: 220px;
+    flex-shrink: 0;
+    background: var(--tsp-bg-tertiary);
+    border-right: 1px solid var(--tsp-border);
+    padding: 14px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow-y: auto;
+}
+.ai-gen-nav-group {
+    font-size: 11px;
     color: var(--tsp-text-muted);
-    border-bottom: 2px solid transparent;
-    transition: all 0.2s ease;
-    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 8px 10px 4px;
+}
+.ai-gen-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: var(--tsp-radius-md);
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background .15s ease, border-color .15s ease;
+    user-select: none;
+}
+.ai-gen-nav-item:hover {
+    background: rgba(122, 162, 247, .08);
+}
+.ai-gen-nav-item.active {
+    background: rgba(122, 162, 247, .14);
+    border-color: rgba(122, 162, 247, .4);
+}
+.ai-gen-nav-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    background: var(--tsp-bg-input);
+    color: var(--tsp-text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+}
+.ai-gen-nav-item.active .ai-gen-nav-icon {
+    background: var(--tsp-accent-primary);
+    color: #1b1b1b;
+}
+.ai-gen-nav-text { min-width: 0; }
+.ai-gen-nav-title { font-weight: 600; font-size: 13px; }
+.ai-gen-nav-sub {
+    font-size: 11px;
+    color: var(--tsp-text-muted);
+    margin-top: 2px;
+    line-height: 1.35;
 }
 
-.tsp-ai-gen-tabs li:hover {
-    color: var(--tsp-text-primary);
+/* 右侧内容面板 */
+.ai-gen-panel-area {
+    flex: 1;
+    min-width: 0;
+    overflow-y: auto;
+    padding: 20px 24px;
+}
+.ai-gen-panel-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.ai-gen-panel-title i { color: var(--tsp-accent-primary); }
+.ai-gen-panel-desc {
+    font-size: 12px;
+    color: var(--tsp-text-muted);
+    margin-bottom: 16px;
+    line-height: 1.5;
 }
 
-.tsp-ai-gen-tabs li.active {
-    color: var(--tsp-text-primary);
-    border-bottom-color: var(--tsp-accent-primary);
+/* 注入目标选择卡片 */
+.ai-gen-target-cards {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+.ai-gen-target-card {
+    flex: 1;
+    padding: 16px;
+    border-radius: var(--tsp-radius-md);
+    border: 2px solid var(--tsp-border);
+    background: var(--tsp-bg-tertiary);
+    cursor: pointer;
+    transition: border-color .15s, background .15s;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+.ai-gen-target-card:hover { border-color: rgba(122, 162, 247, .5); }
+.ai-gen-target-card.selected {
+    border-color: var(--tsp-accent-primary);
+    background: rgba(122, 162, 247, .08);
+}
+.ai-gen-target-card input { display: none; }
+.ai-gen-tc-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--tsp-radius-md);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    background: var(--tsp-bg-input);
+    color: var(--tsp-text-muted);
+}
+.ai-gen-target-card.selected .ai-gen-tc-icon {
+    background: var(--tsp-accent-primary);
+    color: #1b1b1b;
+}
+.ai-gen-tc-title { font-weight: 700; margin-bottom: 3px; }
+.ai-gen-tc-sub {
+    font-size: 12px;
+    color: var(--tsp-text-muted);
+    line-height: 1.4;
+}
+
+/* 消息预设工具栏 */
+.ai-gen-preset-toolbar {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.ai-gen-preset-toolbar select { flex: 1; margin: 0; }
+.ai-gen-preset-toolbar .ai-preset-actions { display: flex; gap: 5px; flex-shrink: 0; }
+.ai-gen-preset-toolbar2 {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+.ai-gen-msg-list {
+    max-height: 46vh;
+    overflow-y: auto;
+    padding: 5px;
+    border: 1px solid var(--tsp-border);
+    border-radius: 4px;
+}
+
+/* Tool 面板 */
+.ai-gen-tool-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.ai-gen-tool-switch {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+}
+.ai-gen-field-list {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid var(--tsp-border);
+    border-radius: 4px;
+}
+
+/* 底部执行栏 + 日志抽屉 */
+.ai-gen-exec-bar {
+    flex-shrink: 0;
+    border-top: 1px solid var(--tsp-border);
+    background: rgba(0, 0, 0, .18);
+}
+.ai-gen-log-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s ease;
+}
+.ai-gen-log-drawer.open {
+    max-height: 170px;
+    border-bottom: 1px solid var(--tsp-border);
+}
+.ai-gen-log-inner {
+    padding: 10px 20px;
+    font-family: monospace;
+    font-size: 12px;
+    max-height: 170px;
+    overflow-y: auto;
+    color: var(--tsp-text-secondary);
+    background: var(--tsp-bg-tertiary);
+}
+.ai-gen-exec-main {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 20px;
+}
+.ai-gen-exec-summary {
+    font-size: 12px;
+    color: var(--tsp-text-muted);
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.ai-gen-exec-summary b {
+    color: var(--tsp-text-secondary);
+    font-weight: 600;
+}
+.ai-gen-execute-btn {
+    margin-left: auto;
+    padding: 10px 28px;
+    font-size: 14px;
+    border-radius: var(--tsp-radius-md);
+    background: linear-gradient(135deg, var(--tsp-btn-gen-grad-1), var(--tsp-btn-gen-grad-2));
+    border: none;
+    color: var(--tsp-btn-gen-text);
+    font-weight: 700;
+}
+.ai-gen-execute-btn:hover {
+    background: linear-gradient(135deg, var(--tsp-btn-gen-grad-1), var(--tsp-btn-gen-grad-2));
+    filter: brightness(1.08);
+    border: none;
+}
+.ai-gen-execute-btn:disabled { opacity: .6; }
+
+/* 窄屏：侧导航收缩为纯图标 */
+@media screen and (max-width: 768px) {
+    .ai-gen-side-nav { width: 62px; padding: 10px 6px; }
+    .ai-gen-nav-group, .ai-gen-nav-text { display: none; }
+    .ai-gen-nav-item { justify-content: center; padding: 10px 6px; }
+    .ai-gen-header-preset > label { display: none; }
+    .ai-gen-header-preset select { width: 130px; }
+    .ai-gen-exec-summary { display: none; }
+    .ai-gen-target-cards { flex-direction: column; }
 }
 /* 响应式调整 - 修复手机端无法编辑的问题 */
 @media screen and (max-width: 900px) {

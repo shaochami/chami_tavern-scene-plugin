@@ -1,5 +1,11 @@
 export const changelogData = [
     {
+        version: "1.2.3(8)",
+        items: [
+            "角色生成增加国模破限，增加工具调用与一键化设置",
+        ]
+    },
+    {
         version: "1.2.3(7)",
         items: [
             "哈基米破限更新，请同步",
