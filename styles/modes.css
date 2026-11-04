@@ -170,29 +170,96 @@
         max-height: 150px;
     }
 
+    /* Vibe 列表：移动端改为紧凑竖向布局 */
     .tsp-vibe-item {
         flex-wrap: wrap;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .tsp-vibe-thumbnail {
+        width: 48px;
+        height: 48px;
     }
 
     .tsp-vibe-info {
-        width: 100%;
+        flex: 1;
+        min-width: 0; /* 关键：允许 flex 子元素收缩到内容以下，防止跑出 */
+        overflow: hidden;
+        gap: 6px;
     }
+
+    .tsp-vibe-info > div:first-child {
+        max-width: 100%; /* 文件名/标签容器 */
+    }
+
+    .tsp-vibe-info .tsp-form-group,
+    .tsp-vibe-info .tsp-slider-group {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        min-width: 0;
+    }
+
+    .tsp-vibe-info .tsp-form-group > label,
+    .tsp-vibe-info .tsp-slider-group > label {
+        flex-shrink: 0;
+        font-size: 0.85em;
+        white-space: nowrap;
+    }
+
+    .tsp-vibe-info .tsp-form-group > select,
+    .tsp-vibe-info .tsp-slider-group > .tsp-input,
+    .tsp-vibe-info .tsp-slider-group > input[type="number"] {
+        flex: 1;
+        min-width: 0; /* 关键：让 select/input 可以收缩 */
+        max-width: 100%;
+    }
+
+    /* 删除按钮保持在右上角 */
+    .tsp-vibe-item .vibe-delete {
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+
+    /* 桌面端隐藏，手机端显示数字输入框 */
     .tsp-slider-desktop {
         display: none !important;
     }
 
-    /* 手机端：显示并美化数字输入框 */
     .tsp-slider-mobile {
         display: block !important;
-        width: 90px; /* 固定宽度，方便输入 */
+        width: 80px;
         flex-shrink: 0;
         flex-grow: 0;
         text-align: center;
-        padding: 4px 8px; /* 较小的内边距 */
+        padding: 4px 6px;
     }
 
-    /* 手机端：调整滑块组布局，让标签和输入框两端对齐 */
+    /* 手机端：滑块组紧凑布局 */
     .tsp-vibe-item .tsp-slider-group {
-        justify-content: space-between;
+        justify-content: flex-start;
+    }
+
+    /* 按钮组移动端换行，按钮变小 */
+    .tsp-btn-group {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .tsp-btn-group .tsp-btn {
+        flex: 1 1 calc(50% - 6px);
+        min-width: calc(50% - 6px);
+        font-size: 0.85em;
+        padding: 6px 10px;
+    }
+
+    /* 文件名长文本省略 */
+    .tsp-vibe-info > div:first-child,
+    .tsp-vibe-info [class*="tsp-text-muted"] {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 100%;
     }
 }
