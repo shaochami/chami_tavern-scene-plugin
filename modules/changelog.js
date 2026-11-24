@@ -1,5 +1,11 @@
 export const changelogData = [
     {
+        version: "1.2.4(1)",
+        items: [
+            "增加nai-v5系列模型角色参考功能",
+        ]
+    },
+    {
         version: "1.2.3(9)",
         items: [
             "nai氛围文件增加导出功能",
